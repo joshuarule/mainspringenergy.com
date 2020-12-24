@@ -1,0 +1,57 @@
+import React from "react"
+import { Link } from "gatsby"
+
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import tw from 'twin.macro';
+import styled from "@emotion/styled"
+
+const SecondPage = () => (
+  <Layout>
+    <SEO title="Sink" />
+    <section className="mb-d">
+      <h1>Typography</h1>
+      <h1>Headline 1</h1>
+      <h2>Headline 2</h2>
+      <h3>Body 1</h3>
+      <h4>Body 2</h4>
+      <h5>Body 3</h5>
+    </section> 
+
+    <section className="mb-d">
+      <h1 className="border-b-2 mb-b">Responsive Spacing Units</h1>
+      <div className="grid grid-cols-7 gap-2">
+        <div>
+          <span className="body2">a</span>
+          <div className="bg-seaGreen" style={{height:'var(--unit-a)'}}></div>
+        </div>
+        <div>
+          <span className="body2">b</span>
+          <div className="bg-seaGreen" style={{height:'var(--unit-b)'}}></div>
+        </div>
+        <div>
+          <span className="body2">c</span>
+          <div className="bg-seaGreen" style={{height:'var(--unit-c)'}}></div>
+        </div>
+        <div>
+          <span className="body2">d</span>
+          <div className="bg-seaGreen" style={{height:'var(--unit-d)'}}></div>
+        </div>
+        <div>
+        <span className="body2">e</span>
+          <div className="bg-seaGreen" style={{height:'var(--unit-e)'}}></div>
+        </div>
+        <div>
+          <span className="body2">f</span>
+          <div className="bg-seaGreen" style={{height:'var(--unit-f)'}}></div>
+        </div>
+        <div>
+          <span className="body2">g</span>
+          <div className="bg-seaGreen" style={{height:'var(--unit-g)'}}></div>
+        </div>
+      </div>
+    </section>
+  </Layout>
+)
+
+export default SecondPage

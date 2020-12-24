@@ -23,10 +23,16 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+    "postcss": "^8.1.10",
+    "twin.macro": "^2.0.4"
   },
   "devDependencies": {
-    "prettier": "2.1.2"
+    "@babel/plugin-proposal-decorators": "^7.12.1",
+    "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
+    "autoprefixer": "^10.0.4",
+    "babel-preset-gatsby": "^0.7.0",
+    "cssnano": "^4.1.10",
+    "prettier": "^2.2.1"
   },
   "keywords": [
     "gatsby"

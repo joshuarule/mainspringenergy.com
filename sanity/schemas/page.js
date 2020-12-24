@@ -14,13 +14,12 @@ export default {
       type: 'array',
       title: 'Page builder',
       of: [
-        { type: 'hero' }, // hero.js (same applies for the other types)
+        { type: 'hero' },
         { type: 'textWithIllustration' },
         { type: 'callToAction' },
         { type: 'gallery' },
         { type: 'form' },
         { type: 'video' },
-        // etc...
         ]
     }
   ]
