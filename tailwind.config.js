@@ -9,7 +9,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
+        medium: ['CamphorStd-Medium', ...defaultTheme.fontFamily.sans],
+        regular: ['CamphorStd-Regular', ...defaultTheme.fontFamily.sans],
+        light: ['CamphorStd-Light', ...defaultTheme.fontFamily.sans],
+        bold: ['CamphorStd-Bold', ...defaultTheme.fontFamily.sans],
+        heavy: ['CamphorStd-Heavy', ...defaultTheme.fontFamily.sans],
+        thin: ['CamphorStd-Thin', ...defaultTheme.fontFamily.sans],
       },
     },
     screens: {
@@ -50,6 +55,9 @@ module.exports = {
       'e': 'var(--unit-e)',
       'f': 'var(--unit-f)',
       'g': 'var(--unit-gz)',
+    },
+    container: {
+      center: true,
     },
     colors: {
       transparent: 'transparent',

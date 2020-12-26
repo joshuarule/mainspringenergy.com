@@ -6,13 +6,7 @@ const Header = ({ siteTitle }) => (
   <header>
     <div>
       <h1>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
+        <Link to="/" >
           {siteTitle}
         </Link>
       </h1>

@@ -13,14 +13,14 @@ const SecondPage = () => (
       <h1>Typography</h1>
       <h1>Headline 1</h1>
       <h2>Headline 2</h2>
-      <h3>Body 1</h3>
-      <h4>Body 2</h4>
-      <h5>Body 3</h5>
+      <h3>Body 3</h3>
+      <h4>Body 1</h4>
+      <p>Body 2</p>
     </section> 
 
     <section className="mb-d">
       <h1 className="border-b-2 mb-b">Responsive Spacing Units</h1>
-      <div className="grid grid-cols-7 gap-2">
+      <div className="grid grid-cols-7">
         <div>
           <span className="body2">a</span>
           <div className="bg-seaGreen" style={{height:'var(--unit-a)'}}></div>
