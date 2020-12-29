@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 export default function careers() {
   return (
     <Layout>
-      <div className="container">careers</div>
+      <div className="container">careers.js</div>
     </Layout>
   )
 }

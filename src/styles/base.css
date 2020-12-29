@@ -1,0 +1,155 @@
+:root {
+  --bp-sm: 320px;
+  --bp-md: 640px;
+  --bp-lg: 1280px;
+
+  --gap: 32px;
+
+  --unit-1: 3px;
+  --unit-a: var(--unit-1);
+  --unit-b: calc(var(--unit-1) * 2);
+  --unit-c: calc(var(--unit-1) * 4);
+  --unit-d: calc(var(--unit-1) * 8);
+  --unit-e: calc(var(--unit-1) * 11);
+  --unit-f: calc(var(--unit-1) * 21);
+  --unit-g: calc(var(--unit-1) * 21);
+
+  /* Colors */
+  --c-brand: #f53d00;
+
+  /* Primary */
+  --c-navy: #2b2c58;
+  --c-seaGreen: #30758f;
+  --c-freshBlue: #08b2e3;
+
+  /* Secondary */
+  --c-green: #60b34f;
+  --c-yellow: #ffe225;
+  --c-orange: #fd7d39;
+  --c-lavender: #d9a1dc;
+
+  /* Tertiary */
+  --c-cream: #e5d2c3;
+  --c-tan: #ebe1d7;
+  --c-ivory: #f1f0ea;
+  --c-porcelain: #fffffc;
+
+  /* Monochromatic */
+  --c-black: #000000;
+  --c-charcoal: #222222;
+  --c-iron: #4f5250;
+  --c-steel: #8e9291;
+  --c-smoke: #c5c7c4;
+  --c-fog: #e6e6e6;
+  --c-white: #ffffff;
+
+  --f-h1--size: 32px;
+  --f-h1--lineHeight: 40px;
+  --f-h2--size: 32px;
+  --f-h2--lineHeight: 40px;
+  --f-h3--size: 24px;
+  --f-h3--lineHeight: 28px;
+
+  --f-b1--size: 16px;
+  --f-b1--lineHeight: 20px;
+  --f-b2--size: 16px;
+  --f-b2--lineHeight: 20px;
+
+  --bg-default: var(--c-porcelain);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --unit-g: 108px;
+  }
+}
+
+@media (min-width: 1240px) {
+  :root {
+    --unit-g: 120px;
+
+    --f-h1--size: 40px;
+    --f-h1--lineHeight: 46px;
+    --f-b2--size: 14px;
+    --f-b2--lineHeight: 18px;
+  }
+}
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    background-color: var(--bg-default);
+    color: var(--black);
+    @apply text-b2;
+    @apply font-light;
+    @apply m-0;
+    width: 100%;
+    @apply flex;
+  }
+
+  #___gatsby,
+  #gatsby-focus-wrapper {
+    flex: 1;
+    display: flex;
+  }
+
+  a {
+    color: var(--c-brand);
+    text-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply m-0;
+  }
+
+  h1,
+  .f-h1 {
+    @apply text-h1;
+    @apply font-heavy;
+  }
+  h2,
+  .f-h2 {
+    @apply text-h2;
+    @apply font-heavy;
+  }
+  h3,
+  .f-h3 {
+    @apply text-h3;
+    @apply font-heavy;
+  }
+  h4,
+  .f-b1 {
+    @apply text-b1;
+    @apply font-light;
+  }
+  h5,
+  .f-b2 {
+    @apply text-b2;
+    @apply font-light;
+    color: var(--c-iron);
+  }
+
+  .grid {
+    gap: var(--gap);
+  }
+}
+
+.link--clean {
+  color: currentColor;
+}
+
+.button--clean {
+  background: none;
+  border: 0;
+  outline: none;
+  padding: 0;
+}

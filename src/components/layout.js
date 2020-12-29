@@ -10,6 +10,7 @@ import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
+import Nav from './nav'
 import Footer from './footer'
 
 const Layout = ({ children, className = null }) => {
@@ -25,7 +26,7 @@ const Layout = ({ children, className = null }) => {
 
   return (
     <div className="flex flex-col flex-1">
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Nav />
       <main className={`${className} flex-1`}>{children}</main>
       <Footer />
     </div>
