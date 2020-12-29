@@ -54,6 +54,8 @@
   --f-b1--lineHeight: 20px;
   --f-b2--size: 16px;
   --f-b2--lineHeight: 20px;
+
+  --bg-default: var(--c-porcelain);
 }
 
 @media (min-width: 640px) {
@@ -75,40 +77,69 @@
 
 @font-face {
   font-family: 'CamphorStd-Medium';
-  src: local('CamphorStd-Medium'), url(../assets/fonts/CamphorStd-Medium.woff) format('woff');
+  src: local('CamphorStd-Medium'),
+    url(../assets/fonts/CamphorStd-Medium.woff) format('woff');
 }
 @font-face {
   font-family: 'CamphorStd-Thin';
-  src: local('CamphorStd-Thin'), url(../assets/fonts/CamphorStd-Thin.woff) format('woff');
+  src: local('CamphorStd-Thin'),
+    url(../assets/fonts/CamphorStd-Thin.woff) format('woff');
 }
 @font-face {
   font-family: 'CamphorStd-Heavy';
-  src: local('CamphorStd-Heavy'), url(../assets/fonts/CamphorStd-Heavy.woff) format('woff');
+  src: local('CamphorStd-Heavy'),
+    url(../assets/fonts/CamphorStd-Heavy.woff) format('woff');
 }
 @font-face {
   font-family: 'CamphorStd-Light';
-  src: local('CamphorStd-Light'), url(../assets/fonts/CamphorStd-Light.woff) format('woff');
+  src: local('CamphorStd-Light'),
+    url(../assets/fonts/CamphorStd-Light.woff) format('woff');
 }
 @font-face {
   font-family: 'CamphorStd-Regular';
-  src: local('CamphorStd-Regular'), url(../assets/fonts/CamphorStd-Regular.woff) format('woff');
+  src: local('CamphorStd-Regular'),
+    url(../assets/fonts/CamphorStd-Regular.woff) format('woff');
 }
 @font-face {
   font-family: 'CamphorStd-Bold';
-  src: local('CamphorStd-Bold'), url(../assets/fonts/CamphorStd-Bold.woff) format('woff');
+  src: local('CamphorStd-Bold'),
+    url(../assets/fonts/CamphorStd-Bold.woff) format('woff');
 }
 
 @layer base {
+  html,
   body {
-    background-color: var(--c-porcelain);
+    height: 100%;
+  }
+
+  body {
+    background-color: var(--bg-default);
     color: var(--black);
-    gap: var(--gap);
     @apply text-b2;
     @apply font-light;
+    @apply m-0;
+    width: 100%;
+    @apply flex;
+  }
+
+  #___gatsby,
+  #gatsby-focus-wrapper {
+    flex: 1;
+    display: flex;
   }
 
   a {
     color: var(--c-brand);
+    text-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply m-0;
   }
 
   h1,
@@ -137,6 +168,14 @@
     @apply font-light;
     color: var(--c-iron);
   }
+
+  .grid {
+    gap: var(--gap);
+  }
+}
+
+.link--clean {
+  color: currentColor;
 }
 
 @tailwind components;

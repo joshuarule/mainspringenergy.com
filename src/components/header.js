@@ -4,13 +4,19 @@ import React from "react"
 
 const Header = ({ siteTitle }) => (
   <header>
-    <div>
-      <h1>
+    <nav className="container grid grid-cols-12">
+      <div className="col-span-4">
         <Link to="/" >
           {siteTitle}
         </Link>
-      </h1>
-    </div>
+      </div>
+      <ul className="col-span-8 grid grid-cols-8 list-none list-inside m-0">
+        <li className="col-span-2"><Link to="/solutions">Solutions</Link></li>
+        <li className="col-span-2"><Link to="/technology">Technology</Link></li>
+        <li className="col-span-2"><Link to="/company">Company</Link></li>
+        <li className="col-span-2"><Link to="/careers">Careers</Link></li>
+      </ul>
+    </nav>
   </header>
 )
 

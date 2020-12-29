@@ -1,9 +1,6 @@
 import React from 'react'
+import Layout from '../components/layout'
 
 export default function privacy() {
-    return (
-        <div>
-            privacy.js
-        </div>
-    )
+  return <Layout>privacy.js</Layout>
 }

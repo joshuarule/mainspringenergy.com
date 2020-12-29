@@ -28,6 +28,7 @@ module.exports = {
       // => @media (min-width: 1024px) { ... }
     },
     spacing: {
+      '0': 0,
       '1': 'var(--unit-1)',
       '2': 'calc(var(--unit-1) * 2)',
       '3': 'calc(var(--unit-1) * 3)',
