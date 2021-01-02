@@ -25,9 +25,9 @@ const Layout = ({ children, className = null }) => {
   `)
 
   return (
-    <div className="flex flex-col flex-1">
+    <div className="flex flex-col flex-1 overflow-x-hidden">
       <Nav />
-      <main className={`${className} flex-1`}>{children}</main>
+      <main className={`${className} flex-1 `}>{children}</main>
       <Footer />
     </div>
   )

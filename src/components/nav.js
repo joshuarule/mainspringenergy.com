@@ -6,8 +6,10 @@ import React, {
   useEffect,
   useRef,
 } from 'react'
-import { useCurrentBreakpoint } from '../hooks/useCurrentBreakpoint'
 import { Link } from 'gatsby'
+
+import { useCurrentBreakpoint } from '../hooks/useCurrentBreakpoint'
+import Icon from '../components/icon'
 
 const navLinks = [
   {
@@ -62,7 +64,7 @@ const Header = () => {
 
   return (
     <header
-      style={{ paddingTop: `${dimensions ? `${dimensions.height}px` : ''}` }}
+    // style={{ paddingTop: `${dimensions ? `${dimensions.height}px` : ''}` }}
     >
       <Helmet
         bodyAttributes={{
@@ -72,11 +74,15 @@ const Header = () => {
       <div ref={headerRef} className="header-wrapper">
         <div
           ref={headerBarRef}
-          className="header-bar container grid grid-cols-12"
+          className="container header-bar grid grid-cols-12"
         >
           <div className="col-span-4">
-            <Link to="/" className="header-logo">
-              icon
+            <Link
+              to="/"
+              className="header-logo block"
+              style={{ maxWidth: '246px' }}
+            >
+              <Icon name="logo" />
             </Link>
           </div>
           {isWindowSmall && (

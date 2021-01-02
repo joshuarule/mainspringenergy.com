@@ -141,6 +141,9 @@
   .grid {
     gap: var(--gap);
   }
+  .font-bold {
+    font-weight: 300 !important;
+  }
 }
 
 .link--clean {

@@ -23,7 +23,18 @@ module.exports = {
         printRejected: true,
         tailwind: true,
       },
-    }, 
+    },
+    {
+      resolve: 'gatsby-plugin-svgr',
+      options: {
+        prettier: true,
+        svgo: true,
+        replaceAttrValues: {
+          '#000000': 'currentColor',
+          '#000': 'currentColor',
+        },
+      },
+    },
     {
       resolve: `gatsby-source-sanity`,
       options: {
@@ -35,7 +46,7 @@ module.exports = {
         // use `graphqlTag` to specify the tag name. Defaults to `default`.
         graphqlTag: 'default',
       },
-    }, 
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -45,7 +56,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: 'src/assets/images/gatsby-icon.png'
+        icon: 'src/assets/images/gatsby-icon.png',
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

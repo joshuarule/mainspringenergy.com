@@ -4,7 +4,7 @@ import React from 'react'
 
 const Header = ({ siteTitle }) => (
   <header>
-    <nav className="container grid grid-cols-12">
+    <nav className="grid grid-cols-12">
       <div className="col-span-4">
         <Link to="/">{siteTitle}</Link>
       </div>

@@ -96,7 +96,7 @@
 }
 
 .header-nav {
-  background-color: var(--c-white);
+  /* background-color: var(--c-white); */
 
   @screen sm-only {
     display: flex;
