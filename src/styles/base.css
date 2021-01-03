@@ -138,6 +138,13 @@
     color: var(--c-iron);
   }
 
+  blockquote p:before {
+    content: '“';
+  }
+  blockquote p:after {
+    content: '”';
+  }
+
   address {
     font-style: normal;
     font-family: inherit;
