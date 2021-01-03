@@ -1,12 +1,17 @@
 export default {
-  title: 'Image',
   name: 'figure',
-  type: 'image',
+  title: 'Image',
+  type: 'object',
   fields: [
     {
-      title: 'Alternative Text',
+      name: 'src',
+      title: 'source',
+      type: 'image',
+    },
+    {
       name: 'alt',
-      type: 'string'
+      title: 'Alternative Text',
+      type: 'string',
     }
   ]
 }

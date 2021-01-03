@@ -1,24 +1,22 @@
-
-
 export default {
   name: "hero",
-  type: "object",
   title: "Hero",
+  type: "object",
   fields: [
     {
       name: 'heading',
+      title: 'Heading',
       type: 'string',
-      title: 'Heading'
     },
     {
       name: 'tagline',
+      title: 'Tagline',
       type: 'string',
-      title: 'Tagline'
     },
     {
       name: 'heroImage',
-      type: 'figure',
       title: 'Image',
+      type: 'figure',
     }
   ]
 }
