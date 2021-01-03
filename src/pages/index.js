@@ -1,5 +1,6 @@
 import React from 'react'
 import Cta, { CtaThird } from '../components/cta'
+import ImageGrid from '../components/imageGrid'
 
 import Layout from '../components/layout'
 import { LinkPrimary } from '../components/link'
@@ -40,41 +41,38 @@ const IndexPage = () => (
       description="Fuel-flexible, and resilient power, saving carbon and cost today and accelerating the transition to the electric grid of the future."
     />
 
-    {/* Image Grid Component */}
     <section className="container mb-g">
+      {/* Section Title ? */}
       <h1 className="f-h2">Solutions</h1>
-      <div className="lg:grid lg:grid-cols-3 gap-1">
-        <div className="md-max:mb-b relative aspect-w-16 aspect-h-9">
-          <img
-            src="https://placehold.it/400x228"
-            alt=""
-            className="object-cover w-full h-full"
-          />
-          <div className="bg-gradient-to-t from-black to-transparent absolute fill left-0 right-0 bottom-0 top-0 opacity-40">
-            <h3 className="absolute bottom-0 left-0 p-c text-white">Title</h3>
-          </div>
-        </div>
-        <div className="md-max:mb-b relative aspect-w-16 aspect-h-9">
-          <img
-            src="https://placehold.it/400x228"
-            alt=""
-            className="object-cover w-full h-full"
-          />
-          <div className="bg-gradient-to-t from-black to-transparent absolute fill left-0 right-0 bottom-0 top-0 opacity-40">
-            <h3 className="absolute bottom-0 left-0 p-c text-white">Title</h3>
-          </div>
-        </div>
-        <div className="md-max:mb-b relative aspect-w-16 aspect-h-9">
-          <img
-            src="https://placehold.it/400x228"
-            alt=""
-            className="object-cover w-full h-full"
-          />
-          <div className="bg-gradient-to-t from-black to-transparent absolute fill left-0 right-0 bottom-0 top-0 opacity-40">
-            <h3 className="absolute bottom-0 left-0 p-c text-white">Title</h3>
-          </div>
-        </div>
-      </div>
+      <ImageGrid
+        items={[
+          {
+            title: 'test title',
+            url: '/solutions',
+            image: {
+              src: 'https://placehold.it/1920x1080',
+              alt: 'Solutions ',
+            },
+          },
+          {
+            title: 'Vision Image',
+            url: '/vision',
+            image: {
+              src: 'https://placehold.it/1920x1080',
+              alt: 'Vision image',
+            },
+          },
+          {
+            title: 'Technology Image',
+            url: '/technology',
+            image: {
+              src: 'https://placehold.it/1920x1080',
+              alt: 'Tech image',
+            },
+          },
+        ]}
+        columns="3"
+      />
     </section>
     <div className="container mb-g">
       <figure className="border-t-6 border-smoke text-seaGreen pt-c lg:grid lg:grid-cols-2">
@@ -101,7 +99,7 @@ const IndexPage = () => (
         efficiency, low cost, and ultimate flexibility."
         linkUrl="/"
         linkLabel="Read all about it"
-        imgSrc="https://placehold.it/400x228"
+        imgSrc="https://placehold.it/1920x1080"
         imgAlt="Alt text of the image"
       />
     </section>
@@ -112,7 +110,7 @@ const IndexPage = () => (
         linkUrl="/jobs"
         reverse
         linkLabel="Opportunies"
-        imgSrc="https://placehold.it/400x228"
+        imgSrc="https://placehold.it/1920x1080"
         imgAlt="Alt text of the image"
       />
     </section>
