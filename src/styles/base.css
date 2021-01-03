@@ -138,21 +138,16 @@
     color: var(--c-iron);
   }
 
+  address {
+    font-style: normal;
+    font-family: inherit;
+    color: currentColor;
+  }
+
   .grid {
     gap: var(--gap);
   }
   .font-bold {
     font-weight: 300 !important;
   }
-}
-
-.link--clean {
-  color: currentColor;
-}
-
-.button--clean {
-  background: none;
-  border: 0;
-  outline: none;
-  padding: 0;
 }

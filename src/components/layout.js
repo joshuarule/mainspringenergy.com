@@ -9,11 +9,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import Header from './header'
-import Nav from './nav'
+import Nav from './header'
 import Footer from './footer'
 
-const Layout = ({ children, className = null }) => {
+const Layout = ({ children, className = null, navTheme }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -26,7 +25,7 @@ const Layout = ({ children, className = null }) => {
 
   return (
     <div className="flex flex-col flex-1 overflow-x-hidden">
-      <Nav />
+      <Nav theme={navTheme} />
       <main className={`${className} flex-1 `}>{children}</main>
       <Footer />
     </div>

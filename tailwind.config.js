@@ -51,10 +51,7 @@ module.exports = {
       d: 'var(--unit-d)',
       e: 'var(--unit-e)',
       f: 'var(--unit-f)',
-      g: 'var(--unit-gz)',
-    },
-    container: {
-      center: true,
+      g: 'var(--unit-g)',
     },
     colors: {
       transparent: 'transparent',
@@ -89,4 +86,7 @@ module.exports = {
   },
   variants: {},
   plugins: [],
+  corePlugins: {
+    container: false,
+  },
 }

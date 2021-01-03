@@ -5,6 +5,4 @@
 @import './components.css';
 
 @import 'tailwindcss/utilities';
-/* 
-@tailwind components;
-@tailwind utilities; */
+@import './utilities.css';

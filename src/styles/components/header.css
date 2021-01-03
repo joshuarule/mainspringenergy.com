@@ -179,6 +179,15 @@
   }
 }
 
+.header-nav-item > a {
+  border-bottom: 4px solid transparent;
+  transition: border-color 0.5s;
+
+  &.link--active {
+    border-bottom-color: var(--c-brand);
+  }
+}
+
 .header-nav-item-icon {
   display: flex;
   justify-content: center;
