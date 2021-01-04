@@ -28,6 +28,12 @@ export default function Cta({
   )
 }
 
+export const CtaText = ({ url, children, ...rest }) => (
+  <LinkPrimary {...rest} to={url}>
+    {children}
+  </LinkPrimary>
+)
+
 export const CtaThird = ({
   className = '',
   reverse = false,
