@@ -1,17 +1,17 @@
 export default {
   name: "callToAction",
-  type: "object",
   title: "Call to Action",
+  type: "object",
   fields: [
     {
       name: 'linkText',
+      title: 'Link Text',
       type: 'string',
-      title: 'Link Text'
     },
     {
       name: 'url',
+      title: 'URL',
       type: 'url',
-      title: 'URL'
     }
   ]
 }
