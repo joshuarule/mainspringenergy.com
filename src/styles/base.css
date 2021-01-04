@@ -151,9 +151,13 @@
     color: currentColor;
   }
 
-  .grid {
+  /* FIX */
+  .grid,
+  .lg\:grid,
+  .md\:grid {
     gap: var(--gap);
   }
+
   .font-bold {
     font-weight: 300 !important;
   }

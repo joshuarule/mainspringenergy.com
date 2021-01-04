@@ -1,5 +1,7 @@
 import React from 'react'
+import Columns from '../components/Columns'
 import Layout from '../components/layout'
+import { LinkPrimary } from '../components/link'
 
 export default function technology() {
   return (
@@ -39,6 +41,84 @@ export default function technology() {
         alt="alt text"
         className="block w-full"
       />
+      <div className="container bg-navy py-e">
+        <Columns
+          amount={3}
+          items={[
+            {
+              content: (
+                <>
+                  <h2 className="f-h3 mb-c border-t-6 border-transparent text-white pt-c">
+                    Technology Features
+                  </h2>
+                  <p className="f-b1 mb-c">
+                    Breakthrough design and adaptive control software enable an
+                    unprecedented combination of features and benefits.
+                  </p>
+                  <LinkPrimary to="/test">Product specifications</LinkPrimary>
+                </>
+              ),
+            },
+            {
+              content: (
+                <List
+                  items={[
+                    {
+                      title: 'Title',
+                      subtitle: 'Subtitle',
+                      description: 'Description paragraph',
+                    },
+                    {
+                      title: 'Title 2',
+                      subtitle: 'Subtitle 2',
+                      description: 'Description paragraph',
+                    },
+                  ]}
+                />
+              ),
+            },
+            {
+              content: (
+                <List
+                  items={[
+                    {
+                      title: 'Title',
+                      subtitle: 'Subtitle',
+                      description: 'Description paragraph',
+                      cta: {
+                        label: 'Go Here',
+                        url: '/',
+                      },
+                    },
+                    {
+                      title: 'Title 2',
+                      subtitle: 'Subtitle 2',
+                      description: 'Description paragraph',
+                    },
+                  ]}
+                />
+              ),
+            },
+          ]}
+        />
+      </div>
     </Layout>
   )
 }
+
+const List = ({ items }) => (
+  <ul>
+    {items.map(item => (
+      <li className="mb-f border-t-6 border-seaGreen text-white pt-c">
+        <h3>{item.title}</h3>
+        <h5 className="mb-c">{item.subtitle}</h5>
+        <p>{item.description}</p>
+        {item.cta && (
+          <LinkPrimary className="mt-c block" to={item.cta.url}>
+            {item.cta.label}
+          </LinkPrimary>
+        )}
+      </li>
+    ))}
+  </ul>
+)
