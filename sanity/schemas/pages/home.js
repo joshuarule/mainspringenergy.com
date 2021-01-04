@@ -1,6 +1,7 @@
 export default {
   name: 'home',
   title: 'Home',
+  __experimental_actions: ['update', 'publish'],
   type: 'document',
   fields: [
     {
@@ -20,4 +21,4 @@ export default {
       description: 'cta',
     },
   ],
-};
+}
