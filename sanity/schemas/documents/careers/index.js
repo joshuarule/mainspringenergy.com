@@ -9,5 +9,9 @@ export default {
       title: 'Careers',
       type: 'string',
     },
+    {
+      name: 'sectionBlah',
+      type: 'sectionBlah',
+    },
   ],
 }

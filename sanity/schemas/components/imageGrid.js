@@ -10,7 +10,7 @@ export default {
       options: {
         layout: 'radio',
         direction: 'horizontal',
-        list: [2, 3, 4],
+        list: ['2', '3', '4'],
       },
     },
     {

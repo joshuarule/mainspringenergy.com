@@ -14,6 +14,7 @@ export default {
     {
       name: 'alt',
       title: 'Alternative Text',
+      description: 'Describe the image',
       type: 'string',
     },
   ],

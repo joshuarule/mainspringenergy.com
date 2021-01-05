@@ -6,11 +6,11 @@ export default {
     editModal: 'fullscreen',
   },
   of: [
-    { type: 'cta' },
-    { type: 'gallery' },
-    { type: 'video' },
-    { type: 'list' },
     { type: 'figure' },
+    { type: 'imageGrid' },
+    { type: 'video' },
+    { type: 'cta' },
+    { type: 'list' },
     { type: 'blockquote' },
   ],
 }

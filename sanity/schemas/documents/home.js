@@ -1,16 +1,14 @@
-import { FaQuoteLeft } from 'react-icons/fa'
 export default {
   name: 'home',
   title: 'Home',
   __experimental_actions: ['update', 'publish'],
   type: 'document',
-  icon: FaQuoteLeft,
+  preview: {
+    select: {
+      'title': 'seo.title'
+    }
+  },
   fields: [
-    {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-    },
     {
       name: 'seo',
       title: 'SEO',
