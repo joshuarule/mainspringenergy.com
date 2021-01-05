@@ -17,27 +17,23 @@ export default () =>
                 .child(S.document().schemaType('home').documentId('home')),
               S.listItem()
                 .title('Solutions')
-                .child(
-                  S.document().schemaType('solutions').documentId('solutions')
-                ),
+                .child(S.document().schemaType('solutions').documentId('solutions')),
               S.listItem()
                 .title('Technology')
                 .child(
-                  S.document().schemaType('technology').documentId('technology')
-                ),
+                  S.document().schemaType('technology').documentId('technology')),
               S.listItem()
                 .title('Vision')
                 .child(S.document().schemaType('vision').documentId('vision')),
               S.listItem()
                 .title('Careers')
-                .child(
-                  S.document().schemaType('careers').documentId('careers')
-                ),
+                .child(S.document().schemaType('careers').documentId('careers')),
               S.listItem()
                 .title('Company')
-                .child(
-                  S.document().schemaType('company').documentId('company')
-                ),
+                .child(S.document().schemaType('company').documentId('company')),
+              S.listItem()
+                .title('Jobs')
+                .child(S.document().schemaType('jobs').documentId('jobs')),
             ])
         ),
       // Add a visual divider (optional)
@@ -53,6 +49,7 @@ export default () =>
             'jobs',
             'roles',
             'company',
+            'jobs',
             'settings',
           ].includes(listItem.getId())
       ),
