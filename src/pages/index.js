@@ -12,10 +12,11 @@ const IndexPage = () => (
     <SEO title="Home" />
     <div className="bg-navy">
       <div
-        className="container text-white flex items-center relative"
+        className="container text-white flex flex-col justify-center relative"
         style={{ height: '85vh' }}
       >
-        <div className="relative z-10">
+        <div class="flex-1"></div>
+        <div className="relative z-10 flex-1">
           <h1 className="mb-e">
             Onsite power generation for{' '}
             <span className="md:block">the net-zero carbon future</span>
@@ -24,7 +25,7 @@ const IndexPage = () => (
             Read Our Vision
           </LinkPrimary>
         </div>
-        {/* Gallery */}
+        {/* Gallery min height 720 */}
         <img
           className="absolute -right-1/4 bottom-1/4 w-2/3 transform -rotate-45"
           src="https://placehold.it/816/816"

@@ -1,7 +1,9 @@
+import { BsFillPersonFill } from 'react-icons/bs'
 export default {
   name: 'settings',
   title: 'Site Settings',
   type: 'document',
+  icon: BsFillPersonFill,
   fields: [
     {
       name: 'siteTitle',

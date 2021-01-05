@@ -6,6 +6,7 @@
  */
 
 import React from 'react'
+import Headroom from 'react-headroom'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 
@@ -24,9 +25,13 @@ const Layout = ({ children, className = null, navTheme }) => {
   `)
 
   return (
-    <div className="flex flex-col flex-1 overflow-x-hidden">
-      <Nav theme={navTheme} />
-      <main className={`${className} flex-1 `}>{children}</main>
+    <div className="overflow-x-hidden">
+      <Headroom>
+        <Nav theme={navTheme} />
+      </Headroom>
+      <main className={`${className}`} style={{ minHeight: '50vh' }}>
+        {children}
+      </main>
       <Footer />
     </div>
   )

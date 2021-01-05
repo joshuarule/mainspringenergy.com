@@ -3,12 +3,37 @@
   --menu-in-transition-time: 0.35s;
 }
 
-.header-wrapper {
-  position: fixed;
+.headroom {
+  background-color: transparent;
+  will-change: transform;
   top: 0;
-  width: 100%;
-  z-index: 100;
+  left: 0;
+  right: 0;
+  zindex: 1;
+  transition: background-color 200ms ease-in-out;
+}
+.headroom--unfixed {
+  position: absolute !important;
+}
+.headroom--scrolled {
+  background-color: var(--c-porcelain);
+  transition: transform 200ms ease-in-out, background-color 200ms ease-in-out;
+}
+.headroom--unpinned {
+  position: fixed;
+  transform: translateY(-100%);
+}
+.headroom--pinned {
+  position: fixed;
+  transform: translateY(0%);
+}
+.headroom-wrapper {
+  position: relative;
+  z-index: 3000;
+  height: 0 !important;
+}
 
+.header-wrapper {
   @screen sm-only {
     display: flex;
     flex-direction: column;
@@ -18,17 +43,12 @@
 }
 
 .header-bar {
-  /* background-color: var(--c-black); */
-  /* color: var(--c-white); */
-
   @screen sm-only {
     pointer-events: all;
     transition: background-color var(--menu-out-transition-time),
       color var(--menu-out-transition-time);
 
     .menu-is-open & {
-      /* background-color: var(--c-white); */
-      /* color: var(--c-black); */
       transition: background-color var(--menu-in-transition-time),
         color var(--menu-in-transition-time);
     }
@@ -36,7 +56,14 @@
 }
 
 .header-logo {
-  color: inherit;
+  color: var(--c-black);
+  .theme-dark & {
+    color: var(--c-white);
+  }
+
+  .headroom--scrolled & {
+    color: inherit;
+  }
 }
 
 .header-menuButton {
@@ -137,20 +164,6 @@
 /* make breakpoints */
 
 .header-nav-item {
-  @screen sm-only {
-    border-bottom: 1px solid var(--c-grey80);
-
-    &:last-child,
-    &:nth-last-child(2) {
-      border: none;
-    }
-
-    &:last-child {
-      margin-top: var(--unit-12);
-      border-top: 1px solid var(--c-black);
-    }
-  }
-
   @screen lg {
     &:first-child .header-nav-item-icon {
       display: none;
@@ -180,11 +193,19 @@
 }
 
 .header-nav-item > a {
+  color: var(--c-black);
   border-bottom: 4px solid transparent;
-  transition: border-color 0.5s;
+  transition: border-color 0.5s, color 0.2s ease-in-out;
 
   &.link--active {
     border-bottom-color: var(--c-brand);
+  }
+
+  .theme-dark & {
+    color: var(--c-white);
+  }
+  .headroom--scrolled & {
+    color: var(--c-black);
   }
 }
 

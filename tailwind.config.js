@@ -77,6 +77,8 @@ module.exports = {
       smoke: 'var(--c-smoke)',
       fog: 'var(--c-fog)',
       white: 'var(--c-white)',
+      techGradientFrom: '#4C8CF6',
+      techGradientTo: '#2B2C58',
     },
     fontSize: {
       h1: ['var(--f-h1--size)', 'var(--f-h1--lineHeight)'],

@@ -2,6 +2,9 @@ export default {
   name: 'figure',
   title: 'Image',
   type: 'object',
+  options: {
+    collapsible: true,
+  },
   fields: [
     {
       name: 'src',
@@ -12,6 +15,6 @@ export default {
       name: 'alt',
       title: 'Alternative Text',
       type: 'string',
-    }
-  ]
+    },
+  ],
 }

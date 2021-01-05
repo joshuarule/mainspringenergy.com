@@ -2,12 +2,15 @@ export default {
   name: 'contentBlocks',
   title: 'Content Blocks',
   type: 'array',
+  options: {
+    editModal: 'fullscreen',
+  },
   of: [
-    { type: 'textWithIllustration' },
-    { type: 'callToAction' },
+    { type: 'cta' },
     { type: 'gallery' },
     { type: 'video' },
-    { type: 'list'},
-    { type: 'figure'},
-  ]
+    { type: 'list' },
+    { type: 'figure' },
+    { type: 'blockquote' },
+  ],
 }

@@ -62,7 +62,7 @@ const Header = ({ theme = 'light' }) => {
     }
   }, [isMenuOpen, escFunction])
 
-  const themeClass = theme == 'light' ? 'text-black' : 'text-white'
+  const themeClass = theme == 'light' ? 'theme-light' : 'theme-dark'
 
   return (
     <header
@@ -76,7 +76,7 @@ const Header = ({ theme = 'light' }) => {
       <div ref={headerRef} className="header-wrapper">
         <div
           ref={headerBarRef}
-          className="container header-bar w-full md:grid md:grid-cols-12 items-center"
+          className={`${themeClass} container header-bar w-full md:grid md:grid-cols-12 items-center`}
           style={{ height: '64px' }}
         >
           <div className="flex justify-between items-center md:col-span-4">
@@ -85,7 +85,7 @@ const Header = ({ theme = 'light' }) => {
               className="header-logo block"
               style={{ maxWidth: '246px' }}
             >
-              <Icon name="logo" className={`${themeClass} w-full h-auto`} />
+              <Icon name="logo" className={`w-full h-auto`} />
             </Link>
             {isWindowSmall && (
               <button
@@ -97,16 +97,16 @@ const Header = ({ theme = 'light' }) => {
                 onClick={() => toggleMenuOpen(!isMenuOpen)}
               >
                 <div
-                  className={`${themeClass} header-menuButton-line header-menuButton-lineExterior`}
+                  className={`header-menuButton-line header-menuButton-lineExterior`}
                 ></div>
                 <div
-                  className={`${themeClass} header-menuButton-line header-menuButton-lineInterior header-menuButton-lineInterior-1`}
+                  className={`header-menuButton-line header-menuButton-lineInterior header-menuButton-lineInterior-1`}
                 ></div>
                 <div
-                  className={`${themeClass} header-menuButton-line header-menuButton-lineInterior header-menuButton-lineInterior-2`}
+                  className={`header-menuButton-line header-menuButton-lineInterior header-menuButton-lineInterior-2`}
                 ></div>
                 <div
-                  className={`${themeClass} header-menuButton-line header-menuButton-lineExterior`}
+                  className={`header-menuButton-line header-menuButton-lineExterior`}
                 ></div>
               </button>
             )}

@@ -3,10 +3,15 @@ import Columns from '../components/Columns'
 import Layout from '../components/layout'
 import { LinkPrimary } from '../components/link'
 
+import heroImage from '../assets/images/technology-hero.png'
+
 export default function technology() {
   return (
     <Layout navTheme="dark">
-      <div className="bg-gradient-to-t from-freshBlue to-seaGreen relative">
+      <div
+        className="bg-gradient-to-t from-techGradientFrom to-techGradientTo relative"
+        style={{ minHeight: '600px', height: '90vh' }}
+      >
         {/* noise */}
         <div
           className="absolute left-0 right-0 bottom-0 top-0 opacity-50"
@@ -16,8 +21,8 @@ export default function technology() {
           }}
         />
         <div
-          className="container text-white flex justify-center"
-          style={{ height: '50vh' }}
+          className="container text-white flex justify-center items-top h-full pt-g"
+          // style={{ height: '50vh' }}
         >
           {/* add margin of header height */}
           <div className="w-full md:w-2/3 mt-g">
@@ -37,70 +42,73 @@ export default function technology() {
         </div>
       </div>
       <img
-        src="https://placehold.it/1200x900"
+        src={heroImage}
         alt="alt text"
-        className="block w-full"
+        className="block w-full relative z-1"
+        style={{ marginTop: '-35vh' }}
       />
-      <div className="container bg-navy py-e">
-        <Columns
-          amount={3}
-          items={[
-            {
-              content: (
-                <>
-                  <h2 className="f-h3 mb-c border-t-6 border-transparent text-white pt-c">
-                    Technology Features
-                  </h2>
-                  <p className="f-b1 mb-c">
-                    Breakthrough design and adaptive control software enable an
-                    unprecedented combination of features and benefits.
-                  </p>
-                  <LinkPrimary to="/test">Product specifications</LinkPrimary>
-                </>
-              ),
-            },
-            {
-              content: (
-                <List
-                  items={[
-                    {
-                      title: 'Title',
-                      subtitle: 'Subtitle',
-                      description: 'Description paragraph',
-                    },
-                    {
-                      title: 'Title 2',
-                      subtitle: 'Subtitle 2',
-                      description: 'Description paragraph',
-                    },
-                  ]}
-                />
-              ),
-            },
-            {
-              content: (
-                <List
-                  items={[
-                    {
-                      title: 'Title',
-                      subtitle: 'Subtitle',
-                      description: 'Description paragraph',
-                      cta: {
-                        label: 'Go Here',
-                        url: '/',
+      <div className="bg-navy py-e">
+        <div className="container">
+          <Columns
+            amount={3}
+            items={[
+              {
+                content: (
+                  <>
+                    <h2 className="f-h3 mb-c border-t-6 border-transparent text-white pt-c">
+                      Technology Features
+                    </h2>
+                    <p className="f-b1 mb-c">
+                      Breakthrough design and adaptive control software enable
+                      an unprecedented combination of features and benefits.
+                    </p>
+                    <LinkPrimary to="/test">Product specifications</LinkPrimary>
+                  </>
+                ),
+              },
+              {
+                content: (
+                  <List
+                    items={[
+                      {
+                        title: 'Title',
+                        subtitle: 'Subtitle',
+                        description: 'Description paragraph',
                       },
-                    },
-                    {
-                      title: 'Title 2',
-                      subtitle: 'Subtitle 2',
-                      description: 'Description paragraph',
-                    },
-                  ]}
-                />
-              ),
-            },
-          ]}
-        />
+                      {
+                        title: 'Title 2',
+                        subtitle: 'Subtitle 2',
+                        description: 'Description paragraph',
+                      },
+                    ]}
+                  />
+                ),
+              },
+              {
+                content: (
+                  <List
+                    items={[
+                      {
+                        title: 'Title',
+                        subtitle: 'Subtitle',
+                        description: 'Description paragraph',
+                        cta: {
+                          label: 'Go Here',
+                          url: '/',
+                        },
+                      },
+                      {
+                        title: 'Title 2',
+                        subtitle: 'Subtitle 2',
+                        description: 'Description paragraph',
+                      },
+                    ]}
+                  />
+                ),
+              },
+            ]}
+          />
+        </div>
       </div>
     </Layout>
   )

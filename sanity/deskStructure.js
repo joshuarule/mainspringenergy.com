@@ -1,4 +1,5 @@
 import S from '@sanity/desk-tool/structure-builder'
+import { FiSettings } from 'react-icons/fi'
 
 export default () =>
   S.list()
@@ -9,6 +10,7 @@ export default () =>
         .child(
           S.list()
             .title('Pages')
+            .showIcons(false)
             .items([
               S.listItem()
                 .title('Home')
@@ -57,5 +59,6 @@ export default () =>
       S.divider(),
       S.listItem()
         .title('Settings')
+        .icon(FiSettings)
         .child(S.document().schemaType('settings').documentId('settings')),
     ])

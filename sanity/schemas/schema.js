@@ -8,7 +8,6 @@ import contentBlocks from './components/contentBlocks.js'
 import callToAction from './components/callToAction.js'
 import hero from './components/hero.js'
 import gallery from './components/gallery.js'
-import textWithIllustration from './components/textWithillustration.js'
 import video from './components/video.js'
 import figure from './components/figure.js'
 import home from './pages/home.js'
@@ -21,6 +20,9 @@ import careers from './pages/careers.js'
 import person from './components/person.js'
 import company from './pages/company.js'
 import settings from './components/settings.js'
+import seo from './components/seo.js'
+import imageGrid from './components/imageGrid.js'
+import blockQuote from './components/blockQuote.js'
 
 export default createSchema({
   name: 'default',
@@ -29,7 +31,6 @@ export default createSchema({
     callToAction,
     hero,
     gallery,
-    textWithIllustration,
     video,
     figure,
     home,
@@ -42,5 +43,8 @@ export default createSchema({
     person,
     company,
     settings,
+    seo,
+    imageGrid,
+    blockQuote,
   ]),
 })
