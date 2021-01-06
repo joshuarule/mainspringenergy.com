@@ -14,9 +14,10 @@ export default {
       type: 'text',
     },
     {
-      name: 'body',
       title: 'Body',
-      type: 'block',
+      name: 'body',
+      type: 'array',
+      of: [{ type: 'block' }],
     },
     {
       name: 'cta',

@@ -13,8 +13,9 @@ export default {
     },
     {
       name: 'alt',
-      title: 'Alternative Text',
+      title: 'Alt Text',
       description: 'Describe the image',
+      placeholder: 'exterior of mainspring headquarters',
       type: 'string',
     },
   ],

@@ -5,7 +5,7 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // documents
-import home from './documents/home.js'
+import home from './documents/home/index.js'
 import person from './documents/person.js'
 import solutions from './documents/solutions'
 import technology from './documents/technology'
@@ -15,35 +15,47 @@ import company from './documents/company'
 import jobs from './documents/jobs'
 // components
 import contentBlocks from './components/contentBlocks.js'
-import callToAction from './components/callToAction.js'
+import cta from './components/callToAction.js'
 import hero from './components/hero.js'
 import gallery from './components/gallery.js'
 import video from './components/video.js'
 import figure from './components/figure.js'
 import list from './components/list.js'
 import listItem from './components/listItem.js'
-import settings from './components/settings.js'
+import settings from './documents/settings/index.js'
 import seo from './components/seo.js'
 import imageGrid from './components/imageGrid.js'
 import blockQuote from './components/blockQuote.js'
 import link from './components/link.js'
-import { sectionBlah } from './documents/careers/components.js'
+import address from './components/address.js'
+import { home_solutions } from './documents/home/components.js'
+import {
+  solutions_specs,
+  solutions_specs_media,
+} from './documents/solutions/components.js'
+import { vision_sources } from './documents/vision/components.js'
+// import {  } from './documents/careers/components.js'
 
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
-    // documents
+    // document specific
     home,
+    home_solutions,
     person,
     solutions,
+    solutions_specs,
+    solutions_specs_media,
     technology,
     vision,
+    vision_sources,
     careers,
     company,
     jobs,
     // components
+    address,
     contentBlocks,
-    callToAction,
+    cta,
     hero,
     gallery,
     video,
@@ -55,6 +67,5 @@ export default createSchema({
     imageGrid,
     blockQuote,
     link,
-    sectionBlah,
   ]),
 })

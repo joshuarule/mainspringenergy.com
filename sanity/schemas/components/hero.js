@@ -1,22 +1,31 @@
 export default {
-  name: "hero",
-  title: "Hero",
-  type: "object",
+  name: 'hero',
+  title: 'Hero',
+  type: 'object',
+  options: {
+    collapsible: true,
+    collapsed: true,
+  },
   fields: [
     {
-      name: 'heading',
-      title: 'Heading',
+      name: 'title',
+      title: 'Title',
       type: 'string',
     },
     {
-      name: 'tagline',
-      title: 'Tagline',
+      name: 'subtitle',
+      title: 'Subtitle',
       type: 'string',
     },
     {
-      name: 'heroImage',
-      title: 'Image',
-      type: 'figure',
-    }
-  ]
+      name: 'gallery',
+      title: 'Images',
+      type: 'gallery',
+    },
+    {
+      name: 'Link',
+      title: 'Link',
+      type: 'link',
+    },
+  ],
 }

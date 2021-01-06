@@ -5,8 +5,8 @@ export default {
   type: 'document',
   preview: {
     select: {
-      'title': 'seo.title'
-    }
+      title: 'seo.title',
+    },
   },
   fields: [
     {
@@ -15,54 +15,9 @@ export default {
       type: 'seo',
     },
     {
-      name: 'productSpecs',
+      name: 'solutions_specs',
       title: 'Product Specs',
-      type: 'object',
-      fields: [
-        {
-          name: 'title',
-          title: 'Title',
-          type: 'string',
-        },
-        {
-          name: 'subtitle',
-          title: 'Subtitle',
-          type: 'string',
-        },
-        {
-          name: 'sectionMedia',
-          title: 'Section Media',
-          type: 'object',
-          fields: [
-            {
-              name: 'title',
-              title: 'Title',
-              type: 'string',
-            },
-            {
-              name: 'image',
-              title: 'Image',
-              type: 'figure',
-            },
-            {
-              name: 'specs',
-              title: 'Specification List',
-              type: 'array',
-              of: [{ type: 'string' }],
-            },
-          ],
-        },
-        {
-          name: 'description',
-          title: 'Description',
-          type: 'text',
-        },
-        {
-          name: 'subtext',
-          title: 'Subtext',
-          type: 'text',
-        },
-      ],
+      type: 'solutions_specs',
     },
   ],
 }

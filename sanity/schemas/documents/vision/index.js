@@ -5,8 +5,8 @@ export default {
   __experimental_actions: ['update', 'publish'],
   preview: {
     select: {
-      'title': 'seo.title'
-    }
+      title: 'seo.title',
+    },
   },
   fields: [
     {
@@ -15,34 +15,15 @@ export default {
       type: 'seo',
     },
     {
-      name: 'article',
-      title: 'Article',
-      type: 'block', //TODO: this is almost exactly what we want...minus image(s)
+      title: 'body',
+      name: 'body',
+      type: 'array',
+      of: [{ type: 'block' }],
     },
     {
-      name: 'sources',
+      name: 'vision_sources',
       title: 'Sources',
-      type: 'object',
-      fields: [
-        {
-          name: 'title',
-          title: 'Title',
-          type: 'string',
-        },
-        {
-          name: 'sourceList',
-          title: 'Source List',
-          type: 'string',
-          options: {
-            list: [
-              { title: 'test', value: 'Test' },
-              { title: 'test1', value: 'Test1' },
-              { title: 'test2', value: 'Test2' },
-            ],
-            layout: 'radio',
-          },
-        },
-      ],
+      type: 'vision_sources',
     },
   ],
 }
