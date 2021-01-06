@@ -1,6 +1,6 @@
 export default {
-  name: 'link',
-  title: 'Link',
+  name: 'fileSrc',
+  title: 'File Download',
   type: 'object',
   options: {
     collapsible: true,
@@ -8,14 +8,14 @@ export default {
   },
   fields: [
     {
-      name: 'label',
+      name: 'title',
       title: 'Label',
       type: 'string',
     },
     {
-      name: 'url',
-      title: 'URL',
-      type: 'url',
+      name: 'src',
+      title: 'Source',
+      type: 'file',
     },
   ],
 }

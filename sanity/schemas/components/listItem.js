@@ -11,18 +11,26 @@ export default {
     {
       name: 'subtitle',
       title: 'Subtitle',
-      type: 'text',
+      type: 'string',
     },
     {
       title: 'Body',
       name: 'body',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [
+        {
+          type: 'block',
+          styles: [],
+          marks: {
+            decorators: [],
+          },
+        },
+      ],
     },
     {
       name: 'cta',
-      title: 'Call to Action',
-      type: 'cta',
+      title: 'Link',
+      type: 'link',
     },
   ],
 }

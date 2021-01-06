@@ -2,36 +2,40 @@ export default {
   name: 'address',
   title: 'address',
   type: 'object',
+  options: {
+    collapsible: true,
+    collapsed: true,
+  },
   fields: [
     {
       name: 'street',
       title: 'Street',
       type: 'string',
-      placholder: '123 Main St',
+      placeholder: '123 Main St',
     },
     {
       name: 'street2',
       title: 'Street ',
       type: 'string',
-      placholder: 'PO BOX 5555',
+      placeholder: 'PO BOX 5555',
     },
     {
       name: 'city',
       title: 'City',
       type: 'string',
-      placholder: 'Sunnyvale',
+      placeholder: 'Sunnyvale',
     },
     {
       name: 'state',
       title: 'State',
       type: 'string',
-      placholder: 'CA',
+      placeholder: 'CA',
     },
     {
       name: 'zip',
       title: 'Zip code',
       type: 'number',
-      placholder: '12345',
+      placeholder: '12345',
     },
   ],
 }

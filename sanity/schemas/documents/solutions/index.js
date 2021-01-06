@@ -15,9 +15,19 @@ export default {
       type: 'seo',
     },
     {
+      name: 'hero',
+      title: 'Hero',
+      type: 'hero',
+    },
+    {
       name: 'solutions_specs',
       title: 'Product Specs',
       type: 'solutions_specs',
+    },
+    {
+      name: 'solutions_downloads',
+      title: 'Downloads',
+      type: 'solutions_downloads',
     },
   ],
 }

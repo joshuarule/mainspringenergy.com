@@ -17,26 +17,45 @@ export default () =>
                 .child(S.document().schemaType('home').documentId('home')),
               S.listItem()
                 .title('Solutions')
-                .child(S.document().schemaType('solutions').documentId('solutions')),
+                .child(
+                  S.document().schemaType('solutions').documentId('solutions')
+                ),
               S.listItem()
                 .title('Technology')
                 .child(
-                  S.document().schemaType('technology').documentId('technology')),
+                  S.document().schemaType('technology').documentId('technology')
+                ),
               S.listItem()
                 .title('Vision')
                 .child(S.document().schemaType('vision').documentId('vision')),
               S.listItem()
                 .title('Careers')
-                .child(S.document().schemaType('careers').documentId('careers')),
+                .child(
+                  S.document().schemaType('careers').documentId('careers')
+                ),
               S.listItem()
                 .title('Company')
-                .child(S.document().schemaType('company').documentId('company')),
+                .child(
+                  S.document().schemaType('company').documentId('company')
+                ),
               S.listItem()
                 .title('Jobs')
                 .child(S.document().schemaType('jobs').documentId('jobs')),
+              S.listItem()
+                .title('Privacy')
+                .child(
+                  S.document().schemaType('privacy').documentId('privacy')
+                ),
+              S.listItem()
+                .title('Patents')
+                .child(
+                  S.document().schemaType('patents').documentId('patents')
+                ),
+              S.listItem()
+                .title('Terms')
+                .child(S.document().schemaType('terms').documentId('terms')),
             ])
         ),
-      // Add a visual divider (optional)
       S.divider(),
       ...S.documentTypeListItems().filter(
         listItem =>
@@ -51,6 +70,9 @@ export default () =>
             'company',
             'jobs',
             'settings',
+            'terms',
+            'privacy',
+            'patents',
           ].includes(listItem.getId())
       ),
       S.divider(),

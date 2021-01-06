@@ -6,14 +6,36 @@ export default {
   icon: BsFillPersonFill,
   fields: [
     {
-      name: 'siteTitle',
-      title: 'Default Site Title',
-      type: 'string',
+      name: 'seo',
+      title: 'Default SEO',
+      type: 'seo',
     },
     {
       name: 'address',
-      title: 'Mainsspring Office Address',
+      title: 'Mainspring Office Address',
       type: 'address',
+    },
+    {
+      name: 'email',
+      title: 'Email',
+      type: 'string',
+      placeholder: 'contact@mainspring.com',
+    },
+    {
+      name: 'phone',
+      title: 'Phone',
+      type: 'string',
+      placeholder: '+1 555-555-5555',
+    },
+    {
+      name: 'map',
+      title: 'Map Image',
+      type: 'figure',
+    },
+    {
+      name: 'satellite',
+      title: 'Satellite Image',
+      type: 'figure',
     },
   ],
 }

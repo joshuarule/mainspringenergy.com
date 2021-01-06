@@ -13,6 +13,9 @@ import vision from './documents/vision'
 import careers from './documents/careers'
 import company from './documents/company'
 import jobs from './documents/jobs'
+import privacy from './documents/privacy'
+import terms from './documents/terms'
+import patents from './documents/patents'
 // components
 import contentBlocks from './components/contentBlocks.js'
 import cta from './components/callToAction.js'
@@ -28,10 +31,13 @@ import imageGrid from './components/imageGrid.js'
 import blockQuote from './components/blockQuote.js'
 import link from './components/link.js'
 import address from './components/address.js'
+import whitePaper from './components/whitePaper.js'
+import fileSrc from './components/fileSrc.js'
 import { home_solutions } from './documents/home/components.js'
 import {
   solutions_specs,
   solutions_specs_media,
+  solutions_downloads,
 } from './documents/solutions/components.js'
 import { vision_sources } from './documents/vision/components.js'
 // import {  } from './documents/careers/components.js'
@@ -40,6 +46,9 @@ export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
     // document specific
+    privacy,
+    patents,
+    terms,
     home,
     home_solutions,
     person,
@@ -67,5 +76,8 @@ export default createSchema({
     imageGrid,
     blockQuote,
     link,
+    whitePaper,
+    fileSrc,
+    solutions_downloads,
   ]),
 })

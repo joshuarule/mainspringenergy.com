@@ -2,6 +2,10 @@ export const solutions_specs = {
   name: 'solutions_specs',
   title: 'Product Specs',
   type: 'object',
+  options: {
+    collapsible: true,
+    collapsed: true,
+  },
   fields: [
     {
       name: 'title',
@@ -19,14 +23,9 @@ export const solutions_specs = {
       type: 'solutions_specs_media',
     },
     {
-      name: 'description',
-      title: 'Description',
-      type: 'text',
-    },
-    {
-      name: 'subtext',
-      title: 'Subtext',
-      type: 'text',
+      name: 'list',
+      title: 'Specification List',
+      type: 'list',
     },
   ],
 }
@@ -35,11 +34,20 @@ export const solutions_specs_media = {
   name: 'solutions_specs_media',
   title: 'Section Media',
   type: 'object',
+  options: {
+    collapsible: true,
+    collapsed: true,
+  },
   fields: [
     {
       name: 'title',
       title: 'Title',
       type: 'string',
+    },
+    {
+      name: 'description',
+      title: 'Description',
+      type: 'text',
     },
     {
       name: 'image',
@@ -48,9 +56,32 @@ export const solutions_specs_media = {
     },
     {
       name: 'specs',
-      title: 'Specification List',
+      title: 'Specification Bullets',
       type: 'array',
       of: [{ type: 'string' }],
+    },
+  ],
+}
+
+export const solutions_downloads = {
+  name: 'solutions_downloads',
+  title: 'Downloads',
+  type: 'object',
+  options: {
+    collapsible: true,
+    collapsed: true,
+  },
+  fields: [
+    {
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+    },
+    {
+      name: 'items',
+      title: 'Downloads',
+      type: 'array',
+      of: [{ type: 'whitePaper' }],
     },
   ],
 }
