@@ -3,15 +3,16 @@ export default {
   title: 'Careers',
   __experimental_actions: ['update', 'publish'],
   type: 'document',
+  preview: {
+    select: {
+      'title': 'seo.title'
+    }
+  },
   fields: [
     {
-      name: 'careers',
-      title: 'Careers',
-      type: 'string',
-    },
-    {
-      name: 'sectionBlah',
-      type: 'sectionBlah',
+      name: 'seo',
+      title: 'SEO',
+      type: 'seo',
     },
   ],
 }

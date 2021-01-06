@@ -3,18 +3,21 @@ export default {
   title: 'Solutions',
   __experimental_actions: ['update', 'publish'],
   type: 'document',
+  preview: {
+    select: {
+      'title': 'seo.title'
+    }
+  },
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
+      name: 'seo',
+      title: 'SEO',
+      type: 'seo',
     },
     {
       name: 'productSpecs',
       title: 'Product Specs',
       type: 'object',
-      // collapsible: true,
-      // collapsed: true,
       fields: [
         {
           name: 'title',
