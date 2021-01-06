@@ -1,7 +1,7 @@
 import React from 'react'
-import Columns from '../components/Columns'
-import Layout from '../components/layout'
-import { LinkPrimary } from '../components/link'
+import Columns from '../components/columns.js'
+import Layout from '../components/layout.js'
+import { LinkPrimary } from '../components/link.js'
 
 import heroImage from '../assets/images/technology-hero.png'
 
