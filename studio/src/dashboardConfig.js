@@ -30,7 +30,7 @@ export default {
         data: [
           {
             title: "GitHub repo",
-            value: "https://github.com/joshuarule/mainspring.com",
+            value: "https://github.com/joshuarule/mainspringenergy.com",
             category: "Code",
           },
           {
