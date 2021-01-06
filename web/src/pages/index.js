@@ -15,7 +15,7 @@ const IndexPage = () => (
         className="container text-white flex flex-col justify-center relative"
         style={{ height: '85vh' }}
       >
-        <div class="flex-1"></div>
+        <div className="flex-1"></div>
         <div className="relative z-10 flex-1">
           <h1 className="mb-e">
             Onsite power generation for{' '}

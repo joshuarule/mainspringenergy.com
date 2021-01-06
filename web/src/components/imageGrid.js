@@ -4,8 +4,11 @@ import { Link } from 'gatsby'
 export default function ImageGrid({ items, columns }) {
   return (
     <div className={`lg:grid lg:grid-cols-${columns} gap-1`}>
-      {items.map(item => (
-        <div className="md-max:mb-b relative aspect-w-16 aspect-h-9">
+      {items.map((item, i) => (
+        <div
+          key={`item-${i}`}
+          className="md-max:mb-b relative aspect-w-16 aspect-h-9"
+        >
           <img
             src={item.image.src}
             alt={item.image.alt}
