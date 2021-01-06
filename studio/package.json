@@ -7,9 +7,13 @@
   "author": "Joshua Rule Dobson <joshua@joshuarule.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "start": "sanity start",
-    "test": "sanity check",
-    "build": "sanity build"
+    "dev": "sanity start",
+    "start": "npm run dev",
+    "format": "prettier-eslint --write \"**/*.js\" \"!node_modules/**\"",
+    "build": "sanity build",
+    "graphql-deploy": "sanity graphql deploy --playground",
+    "lint": "eslint .",
+    "test": "sanity check"
   },
   "keywords": [
     "sanity"
