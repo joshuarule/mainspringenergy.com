@@ -1,87 +1,113 @@
 export const solutions_specs = {
-  name: 'solutions_specs',
-  title: 'Product Specs',
-  type: 'object',
+  name: "solutions_specs",
+  title: "Product Specs",
+  type: "object",
   options: {
     collapsible: true,
     collapsed: true,
   },
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
+      name: "title",
+      title: "Title",
+      type: "string",
     },
     {
-      name: 'subtitle',
-      title: 'Subtitle',
-      type: 'string',
+      name: "subtitle",
+      title: "Subtitle",
+      type: "string",
     },
     {
-      name: 'solutions_specs_media',
-      title: 'Section Media',
-      type: 'solutions_specs_media',
+      name: "solutions_specs_media",
+      title: "Section Media",
+      type: "solutions_specs_media",
     },
     {
-      name: 'list',
-      title: 'Specification List',
-      type: 'list',
+      name: "list",
+      title: "Specification List",
+      type: "list",
     },
   ],
-}
+};
 
 export const solutions_specs_media = {
-  name: 'solutions_specs_media',
-  title: 'Section Media',
-  type: 'object',
+  name: "solutions_specs_media",
+  title: "Section Media",
+  type: "object",
   options: {
     collapsible: true,
     collapsed: true,
   },
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
+      name: "title",
+      title: "Title",
+      type: "string",
     },
     {
-      name: 'description',
-      title: 'Description',
-      type: 'text',
+      name: "description",
+      title: "Description",
+      type: "text",
     },
     {
-      name: 'image',
-      title: 'Image',
-      type: 'figure',
+      name: "image",
+      title: "Image",
+      type: "figure",
     },
     {
-      name: 'specs',
-      title: 'Specification Bullets',
-      type: 'array',
-      of: [{ type: 'string' }],
+      name: "specs",
+      title: "Specification Bullets",
+      type: "array",
+      of: [{ type: "string" }],
     },
   ],
-}
+};
 
 export const solutions_downloads = {
-  name: 'solutions_downloads',
-  title: 'Downloads',
-  type: 'object',
+  name: "solutions_downloads",
+  title: "Downloads",
+  type: "object",
   options: {
     collapsible: true,
     collapsed: true,
   },
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
+      name: "title",
+      title: "Title",
+      type: "string",
     },
     {
-      name: 'items',
-      title: 'Downloads',
-      type: 'array',
-      of: [{ type: 'whitePaper' }],
+      name: "items",
+      title: "Downloads",
+      type: "array",
+      of: [{ type: "whitePaper" }],
     },
   ],
-}
+};
+
+export const solutions_primary = {
+  name: "solutions_primary",
+  title: "Primary Section",
+  type: "object",
+  options: {
+    collapsible: true,
+    collapsed: true,
+  },
+  fields: [
+    {
+      title: "Section Title",
+      name: "title",
+      type: "sectionTitle",
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+    },
+    {
+      title: "Content Blocks",
+      name: "body",
+      type: "contentBlocks",
+    },
+  ],
+};

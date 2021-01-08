@@ -2,8 +2,20 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 export default function ImageGrid({ items, columns }) {
+  let columnClass
+  switch (columns) {
+    case '4':
+      columnClass = 'lg:grid-cols-4'
+      break
+    case '3':
+      columnClass = 'lg:grid-cols-3'
+      break
+    default:
+      columnClass = 'lg:grid-cols-2'
+      break
+  }
   return (
-    <div className={`lg:grid lg:grid-cols-${columns} gap-1`}>
+    <div className={`lg:grid ${columnClass} gap-1`}>
       {items.map((item, i) => (
         <div
           key={`item-${i}`}

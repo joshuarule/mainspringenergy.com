@@ -1,10 +1,10 @@
 export default {
-  name: "imageGrid",
-  title: "Image Grid",
+  name: "textColumns",
+  title: "Text Columns",
   type: "object",
   fields: [
     {
-      name: "columns",
+      name: "columnAmount",
       title: "Number of Columns",
       type: "string",
       options: {
@@ -14,12 +14,10 @@ export default {
       },
     },
     {
-      name: "items",
-      title: "Images",
+      name: "columns",
+      title: "Columns",
       type: "array",
-      layout: "grid",
-      of: [{ type: "gridImage" }],
-      validation: (Rule) => Rule.required().min(2),
+      of: [{ type: "textColumn" }],
     },
   ],
 };

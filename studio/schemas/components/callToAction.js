@@ -1,56 +1,34 @@
 export default {
-  name: 'cta',
-  title: 'Call to Action',
-  type: 'object',
+  name: "cta",
+  title: "Call to Action",
+  type: "object",
   options: {
     collapsible: true,
     collapsed: true,
   },
   fields: [
-    // {
-    //   name: 'options',
-    //   title: 'Options',
-    //   type: 'object',
-    //   options: {
-    //     collapsible: true,
-    //     collapsible: true,
-    //   },
-    //   fields: [
-    //     {
-    //       name: 'swap',
-    //       title: 'Image on Left',
-    //       type: 'boolean',
-    //       options: {
-    //         layout: 'checkbox',
-    //       },
-    //     },
-    //     {
-    //       name: 'size',
-    //       title: 'Larger Image',
-    //       type: 'boolean',
-    //       options: {
-    //         layout: 'checkbox',
-    //       },
-    //     },
-    //   ],
-    // },
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
+      name: "options",
+      title: "Options",
+      type: "cta_options",
     },
     {
-      name: 'image',
-      title: 'Image',
-      type: 'figure',
+      name: "title",
+      title: "Title",
+      type: "string",
     },
     {
-      name: 'text',
-      title: 'Description',
-      type: 'array',
+      name: "image",
+      title: "Image",
+      type: "figure",
+    },
+    {
+      name: "text",
+      title: "Description",
+      type: "array",
       of: [
         {
-          type: 'block',
+          type: "block",
           styles: [],
           marks: {
             decorators: [],
@@ -59,9 +37,9 @@ export default {
       ],
     },
     {
-      name: 'link',
-      title: 'Link',
-      type: 'link',
+      name: "link",
+      title: "Link",
+      type: "link",
     },
   ],
-}
+};

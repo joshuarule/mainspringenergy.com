@@ -31,9 +31,7 @@
   position: relative;
   z-index: 3000;
   height: 0 !important;
-}
 
-.header-wrapper {
   @screen sm-only {
     display: flex;
     flex-direction: column;

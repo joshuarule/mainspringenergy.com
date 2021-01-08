@@ -33,13 +33,19 @@ import link from "./components/link.js";
 import address from "./components/address.js";
 import whitePaper from "./components/whitePaper.js";
 import fileSrc from "./components/fileSrc.js";
-import { home_solutions } from "./documents/home/components.js";
+import sectionTitle from "./components/sectionTitle.js";
+import textColumns from "./components/textColumns.js";
+import textColumn from "./components/textColumn.js";
+import richTextObj from "./components/richText.js";
 import {
   solutions_specs,
   solutions_specs_media,
   solutions_downloads,
+  solutions_primary,
 } from "./documents/solutions/components.js";
 import { vision_sources } from "./documents/vision/components.js";
+import gridImage from "./components/gridImage.js";
+import cta_options from "./components/cta_options.js";
 // import {  } from './documents/careers/components.js'
 
 export default createSchema({
@@ -50,11 +56,12 @@ export default createSchema({
     patents,
     terms,
     home,
-    home_solutions,
     person,
     solutions,
     solutions_specs,
+    solutions_downloads,
     solutions_specs_media,
+    solutions_primary,
     technology,
     vision,
     vision_sources,
@@ -65,6 +72,7 @@ export default createSchema({
     address,
     contentBlocks,
     cta,
+    cta_options,
     hero,
     gallery,
     video,
@@ -78,6 +86,10 @@ export default createSchema({
     link,
     whitePaper,
     fileSrc,
-    solutions_downloads,
+    sectionTitle,
+    gridImage,
+    textColumns,
+    textColumn,
+    richTextObj,
   ]),
 });
