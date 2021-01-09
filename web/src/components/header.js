@@ -62,7 +62,8 @@ const Header = ({ theme = 'light' }) => {
     }
   }, [isMenuOpen, escFunction])
 
-  const themeClass = theme == 'light' ? 'theme-light' : 'theme-dark'
+  const themeClass = theme === 'light' ? 'theme-light' : 'theme-dark'
+  console.log(dimensions)
 
   return (
     <header
