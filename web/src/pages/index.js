@@ -1,13 +1,11 @@
 import React from 'react'
-import Cta, { CtaThird } from '../components/cta'
-import ImageGrid from '../components/imageGrid'
-
-import Layout from '../components/layout'
-import { LinkPrimary } from '../components/link'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import SEO from '../components/seo'
-
-import { useStaticQuery, graphql } from 'gatsby'
+import Cta, { CtaThird } from '../components/cta'
+import ImageGrid from '../components/imageGrid'
+import Layout from '../components/layout'
+import { LinkPrimary } from '../components/link'
 
 const IndexPage = () => {
   const {

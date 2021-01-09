@@ -16,5 +16,8 @@
   "devDependencies": {
     "@sanity/cli": "^2.1.4",
     "lerna": "^3.13.1"
+  },
+  "dependencies": {
+    "gatsby-transformer-json": "^2.9.0"
   }
 }
