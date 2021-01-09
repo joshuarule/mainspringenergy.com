@@ -27,7 +27,7 @@ export default () => {
     <div className="container">
       {categories &&
         categories.map(category => {
-          return <p>{category}</p>
+          return <p key={category}>{category}</p>
         })}
     </div>
   )

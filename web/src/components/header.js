@@ -35,16 +35,16 @@ const Header = ({ theme = 'light' }) => {
   const headerBarRef = useRef(null)
   const breakpoint = useCurrentBreakpoint()
 
-  const [dimensions, setDimensions] = useState({})
+  // const [dimensions, setDimensions] = useState({})
   const [isMenuOpen, toggleMenuOpen] = useState(false)
   const isWindowSmall = breakpoint.width < 640
 
-  useLayoutEffect(() => {
-    const ref = isWindowSmall ? headerBarRef : headerRef
-    if (ref.current) {
-      setDimensions(ref.current.getBoundingClientRect())
-    }
-  }, [breakpoint, isWindowSmall])
+  // useLayoutEffect(() => {
+  //   const ref = isWindowSmall ? headerBarRef : headerRef
+  //   if (ref.current) {
+  //     setDimensions(ref.current.getBoundingClientRect())
+  //   }
+  // }, [breakpoint, isWindowSmall])
 
   // Adds esc button to close open menu
   const escFunction = useCallback((event, isMenuOpen) => {
@@ -63,7 +63,7 @@ const Header = ({ theme = 'light' }) => {
   }, [isMenuOpen, escFunction])
 
   const themeClass = theme === 'light' ? 'theme-light' : 'theme-dark'
-  console.log(dimensions)
+  // console.log(dimensions)
 
   return (
     <header
