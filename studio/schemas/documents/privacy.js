@@ -14,5 +14,10 @@ export default {
       title: 'SEO',
       type: 'seo',
     },
+    {
+      name: "body",
+      title: "Content Blocks",
+      type: "contentBlocks",
+    },
   ],
 }

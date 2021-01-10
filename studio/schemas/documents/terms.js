@@ -14,5 +14,10 @@ export default {
       title: 'SEO',
       type: 'seo',
     },
+    { // looks like just an RTF to me on the whole page ???
+      name: "body",
+      title: "Content Blocks",
+      type: "contentBlocks",
+    },
   ],
 }
