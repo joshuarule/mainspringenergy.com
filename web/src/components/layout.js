@@ -2,8 +2,8 @@ import React from 'react'
 import Headroom from 'react-headroom'
 import PropTypes from 'prop-types'
 
-import Nav from './header'
-import Footer from './footer'
+import Nav from './Header'
+import Footer from './Footer'
 
 const Layout = ({ children, className = null, navTheme }) => {
   // const data = useStaticQuery(graphql`

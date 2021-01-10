@@ -9,7 +9,7 @@ import React, {
 import { Link } from 'gatsby'
 
 import { useCurrentBreakpoint } from '../hooks/useCurrentBreakpoint'
-import Icon from './icon'
+import Icon from './Icon'
 
 const navLinks = [
   {

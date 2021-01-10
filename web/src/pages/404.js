@@ -2,7 +2,7 @@ import { Link } from 'gatsby'
 import React from 'react'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import SEO from '../components/Seo'
 
 const NotFoundPage = () => (
   <Layout className="flex flex-cols">

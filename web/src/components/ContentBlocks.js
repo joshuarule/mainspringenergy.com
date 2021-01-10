@@ -8,7 +8,6 @@ import Cta from './Cta'
 export default function ContentBlocks({ blocks }) {
   return blocks
     ? blocks.map(block => {
-        console.log(block)
         switch (block._type) {
           case 'sectionTitle':
             return <SectionTitle {...block} />

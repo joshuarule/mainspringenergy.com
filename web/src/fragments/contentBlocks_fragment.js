@@ -13,6 +13,12 @@ export const CTA_FIELDS = graphql`
     }
     body {
       _type
+      list
+      children {
+        text
+        marks
+        _type
+      }
     }
     title
     image {

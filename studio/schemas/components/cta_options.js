@@ -9,7 +9,7 @@ export default {
   fields: [
     {
       name: "swap",
-      title: "Image on Left",
+      title: "Image on Right",
       type: "boolean",
       options: {
         layout: "checkbox",
@@ -17,7 +17,7 @@ export default {
     },
     {
       name: "size",
-      title: "Larger Image",
+      title: "Large Image (2/3 of row)",
       type: "boolean",
       options: {
         layout: "checkbox",

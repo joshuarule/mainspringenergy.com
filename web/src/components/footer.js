@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import Icon from './icon'
+import Icon from './Icon'
 
 export default function footer() {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Icon from './icon'
+import Icon from './Icon'
 
 export const LinkPrimary = ({ children, ...rest }) => (
   <Link {...rest}>

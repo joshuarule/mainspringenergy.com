@@ -2,9 +2,8 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import SEO from '../components/seo'
-import Cta, { CtaThird } from '../components/Cta'
-import ImageGrid from '../components/imageGrid'
+import SEO from '../components/Seo'
+import Cta from '../components/Cta'
 import ContentBlocks from '../components/ContentBlocks'
 import Layout from '../components/layout'
 import { LinkPrimary } from '../components/link'
@@ -60,8 +59,7 @@ const IndexPage = () => {
       }
     }
   `)
-  console.log(cta)
-  debugger
+
   return (
     <Layout navTheme="dark">
       <SEO title={seo.title} description={seo.description} image={seo.image} />
@@ -93,28 +91,6 @@ const IndexPage = () => {
       <div className="container">
         <ContentBlocks blocks={body.blocks} />
       </div>
-      {/* <section className="container mb-g">
-        <CtaThird
-          title="Linear Generator Technology Designed From First Principles"
-          description="A fundamentally new power generation technology designed for high
-        efficiency, low cost, and ultimate flexibility."
-          linkUrl="/"
-          linkLabel="Read all about it"
-          imgSrc="https://placehold.it/1920x1080"
-          imgAlt="Alt text of the image"
-        />
-      </section>
-      <section className="container mb-g">
-        <CtaThird
-          title="Working at Mainspring"
-          description="Mainspring is solving essential problems every day with a diverse, talented team of individuals who share our vision to address the growing threat of climate change and the need for affordable electricity for all."
-          linkUrl="/jobs"
-          reverse
-          linkLabel="Opportunies"
-          imgSrc="https://placehold.it/1920x1080"
-          imgAlt="Alt text of the image"
-        />
-      </section> */}
     </Layout>
   )
 }
