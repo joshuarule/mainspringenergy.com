@@ -23,5 +23,15 @@ export default {
         layout: "checkbox",
       },
     },
+    {
+      name: "textAlign",
+      title: "Align Text to Image",
+      type: "string",
+      options: {
+        layout: "radio",
+        direction: "horizontal",
+        list: ["top", "center", "bottom"],
+      },
+    },
   ],
 };

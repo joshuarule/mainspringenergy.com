@@ -1,17 +1,17 @@
 export default {
   name: "sectionTitle",
-  type: "object",
   title: "Section Title",
+  type: "object",
   fields: [
     {
       name: "title",
-      type: "string",
       title: "Title",
+      type: "string",
     },
     {
       name: "subtitle",
-      type: "string",
       title: "Subtitle",
+      type: "string",
     },
     {
       name: "link",

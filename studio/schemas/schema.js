@@ -8,10 +8,20 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import home from "./documents/home/index.js";
 import person from "./documents/person.js";
 import solutions from "./documents/solutions";
+import {
+  solutions_specs,
+  solutions_specs_media,
+  solutions_downloads,
+  solutions_primary,
+} from "./documents/solutions/components.js";
 import technology from "./documents/technology";
+import { technology_primarySection } from "./documents/technology/components.js";
 import vision from "./documents/vision";
+import { vision_sources } from "./documents/vision/components.js";
 import careers from "./documents/careers";
+// import {  } from './documents/careers/components.js';
 import company from "./documents/company";
+import { company_hero } from "./documents/company/components.js";
 import jobs from "./documents/jobs";
 import privacy from "./documents/privacy";
 import terms from "./documents/terms";
@@ -37,16 +47,8 @@ import sectionTitle from "./components/sectionTitle.js";
 import textColumns from "./components/textColumns.js";
 import textColumn from "./components/textColumn.js";
 import richTextObj from "./components/richText.js";
-import {
-  solutions_specs,
-  solutions_specs_media,
-  solutions_downloads,
-  solutions_primary,
-} from "./documents/solutions/components.js";
-import { vision_sources } from "./documents/vision/components.js";
 import gridImage from "./components/gridImage.js";
 import cta_options from "./components/cta_options.js";
-// import {  } from './documents/careers/components.js'
 
 export default createSchema({
   name: "default",
@@ -63,10 +65,12 @@ export default createSchema({
     solutions_specs_media,
     solutions_primary,
     technology,
+    technology_primarySection,
+    company,
+    company_hero,
     vision,
     vision_sources,
     careers,
-    company,
     jobs,
     // components
     address,
