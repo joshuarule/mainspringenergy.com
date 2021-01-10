@@ -1,0 +1,9 @@
+.gridImage--hasLink {
+  &:hover .gatsby-image-wrapper {
+    transform: scale(1.1);
+  }
+
+  & .gatsby-image-wrapper {
+    transition: transform 0.2s ease-in-out;
+  }
+}

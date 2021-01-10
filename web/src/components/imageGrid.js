@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 
-export default function ImageGrid({ items, columns }) {
+export default function ImageGrid({ images, columns }) {
+  if (!images || !images.length) return null
   let columnClass
   switch (columns) {
     case '4':
@@ -15,27 +17,30 @@ export default function ImageGrid({ items, columns }) {
       break
   }
   return (
-    <div className={`lg:grid ${columnClass} gap-1`}>
-      {items.map((item, i) => (
+    <div className={`lg:grid ${columnClass} gap-1 mb-g`}>
+      {images.map((image, i) => (
         <div
-          key={`item-${i}`}
-          className="md-max:mb-b relative aspect-w-16 aspect-h-9"
+          key={`image-${i}`}
+          className={`gridImage ${
+            image.path ? 'gridImage--hasLink' : ''
+          } overflow-hidden md-max:mb-b relative aspect-w-16 aspect-h-9`}
         >
-          <img
-            src={item.image.src}
-            alt={item.image.alt}
+          <Img
             className="object-cover w-full h-full"
+            style={{ position: 'absolute' }}
+            fluid={image.image.src.asset.fluid}
+            alt={image.image.alt}
           />
-          {item.title && (
+          {image.title && (
             <div className="bg-gradient-to-t from-black-40 to-transparent absolute fill left-0 right-0 bottom-0 top-0">
               <h3 className="absolute bottom-0 left-0 p-c text-white">
-                {item.title}
+                {image.title}
               </h3>
             </div>
           )}
-          {item.url && (
+          {image.path && (
             <Link
-              to={item.url}
+              to={image.path}
               className="absolute left-0 right-0 bottom-0 top-0"
             />
           )}

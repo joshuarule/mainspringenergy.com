@@ -1,28 +1,42 @@
 import { LinkPrimary } from './link'
 import React from 'react'
+import Img from 'gatsby-image'
 
 export default function Cta({
   className = '',
   title,
-  imgSrc,
-  imgAlt,
-  description,
-  linkUrl,
-  linkLabel = 'Learn more',
+  image,
+  body,
+  link,
+  options,
   ...rest
 }) {
   return (
-    <section {...rest} className={`grid grid-cols-2 items-center ${className}`}>
+    <section
+      {...rest}
+      className={`
+        grid grid-cols-2 items-center mb-g ${className}
+      `}
+    >
       {/* 3/2 */}
-      <div>
-        <img src={imgSrc} alt={imgAlt} />
+      <div className={`md-max:mb-b relative aspect-w-16 aspect-h-9`}>
+        {image && (
+          <Img
+            className="object-cover w-full h-full"
+            style={{ position: 'absolute' }}
+            fluid={image.src.asset.fluid}
+            alt={image.alt}
+          />
+        )}
       </div>
-      <div>
+      <div className={`${options && options.swap ? 'lg:order-first' : ''}`}>
         <h2 className="f-h3 mb-e">{title}</h2>
-        <p className="mb-e">{description}</p>
-        <LinkPrimary className="f-b1 font-bold" to={linkUrl}>
-          {linkLabel}
-        </LinkPrimary>
+        {/* <p className="mb-e">{body}</p> */}
+        {link && link.path && (
+          <LinkPrimary className="f-b1 font-bold" to={link.path}>
+            {link.label}
+          </LinkPrimary>
+        )}
       </div>
     </section>
   )

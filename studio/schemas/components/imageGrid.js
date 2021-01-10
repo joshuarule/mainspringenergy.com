@@ -14,7 +14,7 @@ export default {
       },
     },
     {
-      name: "items",
+      name: "images",
       title: "Images",
       type: "array",
       layout: "grid",
