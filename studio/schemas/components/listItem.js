@@ -1,25 +1,25 @@
 export default {
-  name: 'listItem',
-  title: 'List Item',
-  type: 'object',
+  name: "listItem",
+  title: "List Item",
+  type: "object",
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
+      name: "title",
+      title: "Title",
+      type: "string",
     },
     {
-      name: 'subtitle',
-      title: 'Subtitle',
-      type: 'string',
+      name: "subtitle",
+      title: "Subtitle",
+      type: "string",
     },
     {
-      title: 'Body',
-      name: 'body',
-      type: 'array',
+      title: "Body",
+      name: "body",
+      type: "array",
       of: [
         {
-          type: 'block',
+          type: "block",
           styles: [],
           marks: {
             decorators: [],
@@ -28,9 +28,9 @@ export default {
       ],
     },
     {
-      name: 'cta',
-      title: 'Link',
-      type: 'link',
+      name: "link",
+      title: "Link",
+      type: "link",
     },
   ],
-}
+};

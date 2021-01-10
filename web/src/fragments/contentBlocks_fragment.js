@@ -1,4 +1,4 @@
-// import { graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 export const CTA_FIELDS = graphql`
   fragment ctaFields on SanityCta {
@@ -29,6 +29,23 @@ export const CTA_FIELDS = graphql`
             ...GatsbySanityImageFluid
           }
         }
+      }
+    }
+  }
+`
+
+export const LIST_FIELDS = graphql`
+  fragment listFields on SanityListItem {
+    title
+    subtitle
+    link {
+      path
+      label
+    }
+    body {
+      children {
+        text
+        marks
       }
     }
   }

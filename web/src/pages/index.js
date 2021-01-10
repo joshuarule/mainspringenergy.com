@@ -6,7 +6,7 @@ import SEO from '../components/Seo'
 import Cta from '../components/Cta'
 import ContentBlocks from '../components/ContentBlocks'
 import Layout from '../components/layout'
-import { LinkPrimary } from '../components/link'
+import { LinkPrimary } from '../components/Link'
 
 const IndexPage = () => {
   const {

@@ -1,36 +1,23 @@
 import React from 'react'
-import Columns from '../components/columns.js'
+import { graphql, useStaticQuery } from 'gatsby'
 import Layout from '../components/layout.js'
-import { LinkPrimary } from '../components/link.js'
+import { LinkPrimary } from '../components/Link.js'
 import List from '../components/List.js'
 
 import heroImage from '../assets/images/technology-hero.png'
 
-export default function technology() {
+export default () => {
   const {
-    sanityTechnology: { seo, hero },
+    sanityTechnology: { seo, primarySection },
   } = useStaticQuery(graphql`
-    query HomeQuery {
-      sanityHome {
-        hero {
-          link {
-            label
-            path
-          }
-          gallery {
-            images {
-              alt
-              src {
-                asset {
-                  fluid {
-                    ...GatsbySanityImageFluid
-                  }
-                }
-              }
+    query TechnologyQuery {
+      sanityTechnology {
+        primarySection {
+          list {
+            items {
+              ...listFields
             }
           }
-          subtitle
-          title
         }
         seo {
           title
@@ -95,7 +82,24 @@ export default function technology() {
       />
       <div className="bg-navy py-e">
         <div className="container">
-          <Columns
+          <div className="md:grid md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid-span-1">
+              <h2 className="f-h3 mb-c border-t-6 border-transparent text-white pt-c">
+                Technology Features
+              </h2>
+              <p className="f-b1 mb-c">
+                Breakthrough design and adaptive control software enable an
+                unprecedented combination of features and benefits.
+              </p>
+              <LinkPrimary to="/test">Product specifications</LinkPrimary>
+            </div>
+            <List
+              items={primarySection.list.items}
+              className="md:col-span-1 lg:col-span-2 lg:grid lg:grid-cols-2"
+            />
+          </div>
+        </div>
+        {/* <Columns
             amount={3}
             items={[
               {
@@ -154,7 +158,7 @@ export default function technology() {
               },
             ]}
           />
-        </div>
+        </div> */}
       </div>
     </Layout>
   )

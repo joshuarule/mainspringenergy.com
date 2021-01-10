@@ -4,7 +4,7 @@ import Img from 'gatsby-image'
 
 import RichText from './RichText'
 
-export default function Cta({
+export default ({
   className = '',
   title,
   image,
@@ -12,7 +12,7 @@ export default function Cta({
   link,
   options,
   ...rest
-}) {
+}) => {
   let textAlign = 'items-center'
   if (options) {
     switch (options.textAlign) {
@@ -21,6 +21,8 @@ export default function Cta({
         break
       case 'bottom':
         textAlign = 'items-end'
+        break
+      default:
         break
     }
   }
