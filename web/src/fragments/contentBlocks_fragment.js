@@ -43,9 +43,12 @@ export const LIST_FIELDS = graphql`
       label
     }
     body {
+      _type
+      list
       children {
         text
         marks
+        _type
       }
     }
   }

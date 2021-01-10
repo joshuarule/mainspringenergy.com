@@ -155,7 +155,7 @@
   .grid,
   .lg\:grid,
   .md\:grid {
-    gap: var(--gap);
+    grid-column-gap: var(--gap);
   }
 
   .font-bold {

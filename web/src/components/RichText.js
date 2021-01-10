@@ -7,7 +7,7 @@ const highlight = props => {
   )
 }
 
-export default ({ content, className = 'mb-e' }) => {
+export default ({ content, className }) => {
   return (
     <BlockContent
       className={className}

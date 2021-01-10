@@ -13,6 +13,12 @@ export default () => {
     query TechnologyQuery {
       sanityTechnology {
         primarySection {
+          title
+          subtitle
+          link {
+            path
+            label
+          }
           list {
             items {
               ...listFields
@@ -85,13 +91,12 @@ export default () => {
           <div className="md:grid md:grid-cols-2 lg:grid-cols-3">
             <div className="grid-span-1">
               <h2 className="f-h3 mb-c border-t-6 border-transparent text-white pt-c">
-                Technology Features
+                {primarySection.title}
               </h2>
-              <p className="f-b1 mb-c">
-                Breakthrough design and adaptive control software enable an
-                unprecedented combination of features and benefits.
-              </p>
-              <LinkPrimary to="/test">Product specifications</LinkPrimary>
+              <p className="f-b1 mb-c">{primarySection.subtitle}</p>
+              <LinkPrimary to={primarySection.link.path}>
+                {primarySection.link.label}
+              </LinkPrimary>
             </div>
             <List
               items={primarySection.list.items}
@@ -99,66 +104,6 @@ export default () => {
             />
           </div>
         </div>
-        {/* <Columns
-            amount={3}
-            items={[
-              {
-                content: (
-                  <>
-                    <h2 className="f-h3 mb-c border-t-6 border-transparent text-white pt-c">
-                      Technology Features
-                    </h2>
-                    <p className="f-b1 mb-c">
-                      Breakthrough design and adaptive control software enable
-                      an unprecedented combination of features and benefits.
-                    </p>
-                    <LinkPrimary to="/test">Product specifications</LinkPrimary>
-                  </>
-                ),
-              },
-              {
-                content: (
-                  <List
-                    items={[
-                      {
-                        title: 'Title',
-                        subtitle: 'Subtitle',
-                        description: 'Description paragraph',
-                      },
-                      {
-                        title: 'Title 2',
-                        subtitle: 'Subtitle 2',
-                        description: 'Description paragraph',
-                      },
-                    ]}
-                  />
-                ),
-              },
-              {
-                content: (
-                  <List
-                    items={[
-                      {
-                        title: 'Title',
-                        subtitle: 'Subtitle',
-                        description: 'Description paragraph',
-                        cta: {
-                          label: 'Go Here',
-                          url: '/',
-                        },
-                      },
-                      {
-                        title: 'Title 2',
-                        subtitle: 'Subtitle 2',
-                        description: 'Description paragraph',
-                      },
-                    ]}
-                  />
-                ),
-              },
-            ]}
-          />
-        </div> */}
       </div>
     </Layout>
   )
