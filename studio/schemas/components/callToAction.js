@@ -23,7 +23,7 @@ export default {
       type: "figure",
     },
     {
-      name: "text",
+      name: "body",
       title: "Description",
       type: "array",
       of: [

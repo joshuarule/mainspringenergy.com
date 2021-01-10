@@ -2,10 +2,56 @@ import React from 'react'
 import Columns from '../components/columns.js'
 import Layout from '../components/layout.js'
 import { LinkPrimary } from '../components/link.js'
+import List from '../components/List.js'
 
 import heroImage from '../assets/images/technology-hero.png'
 
 export default function technology() {
+  const {
+    sanityTechnology: { seo, hero },
+  } = useStaticQuery(graphql`
+    query HomeQuery {
+      sanityHome {
+        hero {
+          link {
+            label
+            path
+          }
+          gallery {
+            images {
+              alt
+              src {
+                asset {
+                  fluid {
+                    ...GatsbySanityImageFluid
+                  }
+                }
+              }
+            }
+          }
+          subtitle
+          title
+        }
+        seo {
+          title
+          description
+          image {
+            alt
+            src {
+              asset {
+                fixed {
+                  width
+                  height
+                  src
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <Layout navTheme="dark">
       <div
@@ -113,20 +159,3 @@ export default function technology() {
     </Layout>
   )
 }
-
-const List = ({ items }) => (
-  <ul>
-    {items.map(item => (
-      <li className="mb-f border-t-6 border-seaGreen text-white pt-c">
-        <h3>{item.title}</h3>
-        <h5 className="mb-c">{item.subtitle}</h5>
-        <p>{item.description}</p>
-        {item.cta && (
-          <LinkPrimary className="mt-c block" to={item.cta.url}>
-            {item.cta.label}
-          </LinkPrimary>
-        )}
-      </li>
-    ))}
-  </ul>
-)

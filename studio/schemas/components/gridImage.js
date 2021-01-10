@@ -18,9 +18,10 @@ export default {
       type: "string",
     },
     {
-      name: "url",
-      title: "url",
-      description: "URL to send user to on image click",
+      name: "path",
+      title: "Path",
+      placeholder: "/vision",
+      description: "Path or Url to send user to on image click",
       type: "string",
     },
   ],
