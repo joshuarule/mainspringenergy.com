@@ -15,17 +15,7 @@ export default function ContentBlocks({ blocks }) {
           case 'sectionTitle':
             return <SectionTitle {...block} />
           case 'imageGrid':
-            return (
-              <ImageGrid
-                className="mb-g"
-                {...block}
-                // style={{
-                //   maxWidth: '1280px',
-                //   marginLeft: 'auto',
-                //   marginRight: 'auto',
-                // }}
-              />
-            )
+            return <ImageGrid className="mb-g" {...block} />
           case 'blockquote':
             return <Blockquote {...block} />
           case 'cta':
