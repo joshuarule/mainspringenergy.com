@@ -65,18 +65,19 @@ const IndexPage = () => {
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       <div className="bg-navy">
         <div
-          className="container text-white flex flex-col justify-center relative"
+          className="container text-white flex flex-col justify-end relative"
           style={{ height: '85vh' }}
         >
-          <div className="flex-1"></div>
-          <div className="relative z-10 flex-1">
-            <h1 className="mb-e">{hero.title}</h1>
-            <LinkPrimary
-              to={hero.link.path}
-              className="f-b1 font-bold link--light"
-            >
-              {hero.link.label}
-            </LinkPrimary>
+          <div className="relative z-10 md:grid md:grid-cols-2 h-3/4 items-center">
+            <div>
+              <h1 className="mb-e">{hero.title}</h1>
+              <LinkPrimary
+                to={hero.link.path}
+                className="f-b1 font-bold link--light"
+              >
+                {hero.link.label}
+              </LinkPrimary>
+            </div>
           </div>
           {/* Gallery min height 720 */}
           <Img
@@ -87,7 +88,7 @@ const IndexPage = () => {
           />
         </div>
       </div>
-      <Cta className="-mt-f mb-g container" {...cta} />
+      <Cta aspect="auto" className="mt-e lg:-mt-e mb-g container" {...cta} />
       <div className="container">
         <ContentBlocks blocks={body.blocks} />
       </div>

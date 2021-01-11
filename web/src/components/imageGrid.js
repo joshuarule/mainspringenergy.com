@@ -2,7 +2,12 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
-export default function ImageGrid({ images, columns }) {
+export default function ImageGrid({
+  images,
+  columns,
+  style = {},
+  className = 'mb-g',
+}) {
   if (!images || !images.length) return null
   let columnClass
   switch (columns) {
@@ -17,7 +22,10 @@ export default function ImageGrid({ images, columns }) {
       break
   }
   return (
-    <div className={`lg:grid ${columnClass} gap-1 mb-g`}>
+    <div
+      className={`lg:grid ${columnClass} gap-1 ${className}`}
+      style={{ ...style }}
+    >
       {images.map((image, i) => (
         <div
           key={`image-${i}`}

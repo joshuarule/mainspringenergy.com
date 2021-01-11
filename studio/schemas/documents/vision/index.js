@@ -1,29 +1,38 @@
 export default {
-  name: 'vision',
-  title: 'Vision',
-  type: 'document',
-  __experimental_actions: ['update', 'publish'],
+  name: "vision",
+  title: "Vision",
+  type: "document",
+  __experimental_actions: ["update", "publish"],
   preview: {
     select: {
-      title: 'seo.title',
+      title: "seo.title",
     },
   },
   fields: [
     {
-      name: 'seo',
-      title: 'SEO',
-      type: 'seo',
+      name: "seo",
+      title: "SEO",
+      type: "seo",
     },
     {
-      title: 'body',
-      name: 'body',
-      type: 'array',
-      of: [{ type: 'block' }],
+      name: "hero",
+      title: "Hero",
+      type: "hero",
     },
     {
-      name: 'vision_sources',
-      title: 'Sources',
-      type: 'vision_sources',
+      name: "title",
+      title: "Title",
+      type: "string",
+    },
+    {
+      title: "Content Blocks",
+      name: "contentBlocks",
+      type: "contentBlocks",
+    },
+    {
+      name: "vision_sources",
+      title: "Sources",
+      type: "vision_sources",
     },
   ],
-}
+};

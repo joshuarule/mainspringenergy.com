@@ -1,9 +1,10 @@
-import { ImQuotesLeft } from "react-icons/md";
+import { FaQuoteRight } from "react-icons/fa";
+
 export default {
   name: "blockquote",
   title: "Blockquote",
   type: "object",
-  icon: ImQuotesLeft,
+  icon: FaQuoteRight,
   fields: [
     {
       name: "text",

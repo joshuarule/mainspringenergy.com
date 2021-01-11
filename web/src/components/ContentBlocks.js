@@ -6,6 +6,7 @@ import Blockquote from './Blockquote'
 import Cta from './Cta'
 import Figure from './Figure'
 import { LinkFull } from './Link'
+import RichText from './RichText'
 
 export default function ContentBlocks({ blocks }) {
   return blocks
@@ -14,13 +15,25 @@ export default function ContentBlocks({ blocks }) {
           case 'sectionTitle':
             return <SectionTitle {...block} />
           case 'imageGrid':
-            return <ImageGrid {...block} />
+            return (
+              <ImageGrid
+                className="mb-g"
+                {...block}
+                // style={{
+                //   maxWidth: '1280px',
+                //   marginLeft: 'auto',
+                //   marginRight: 'auto',
+                // }}
+              />
+            )
           case 'blockquote':
             return <Blockquote {...block} />
           case 'cta':
             return <Cta {...block} />
           case 'figure':
             return <Figure src={block.src} alt={block.alt} className="mb-e" />
+          case 'richTextObj':
+            return <RichText content={block.richText} className="mb-e" />
           case 'link':
             return (
               <LinkFull to={block.path} className="f-h3 mb-e block">

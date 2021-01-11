@@ -1,3 +1,7 @@
+import { FaQuoteRight } from "react-icons/fa";
+import { MdTextFields } from "react-icons/md";
+import { BiLinkAlt } from "react-icons/bi";
+console.log(MdTextFields);
 export default {
   name: "contentBlocks",
   title: "Content Blocks",
@@ -17,10 +21,10 @@ export default {
         { type: "video" },
         { type: "cta" },
         { type: "list" },
-        { type: "blockquote" },
+        { type: "blockquote", icon: FaQuoteRight },
         { type: "textColumns" },
-        { type: "link", title: "Link - Full Width" },
-        { type: "richTextObj" },
+        { type: "link", title: "Link - Full Width", icon: BiLinkAlt },
+        { type: "richTextObj", icon: MdTextFields },
       ],
     },
   ],

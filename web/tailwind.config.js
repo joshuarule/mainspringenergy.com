@@ -14,6 +14,13 @@ module.exports = {
         heavy: ['CamphorStd-Heavy', ...defaultTheme.fontFamily.sans],
         thin: ['CamphorStd-Thin', ...defaultTheme.fontFamily.sans],
       },
+      maxWidth: {
+        'prose-50': '50ch',
+      },
+      height: {
+        'screen-80': '80vh',
+        'screen-50': '50vh',
+      },
     },
     screens: {
       sm: '320px',

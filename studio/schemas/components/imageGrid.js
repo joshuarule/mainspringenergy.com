@@ -2,6 +2,21 @@ export default {
   name: "imageGrid",
   title: "Image Grid",
   type: "object",
+  preview: {
+    select: {
+      title: "images[0].image.alt",
+      subtitle: "images",
+      media: "images[0].image.src",
+    },
+    prepare(selection) {
+      const { title, media, subtitle } = selection;
+      return {
+        title: "Image Grid",
+        media,
+        subtitle: `${subtitle.length} - images`,
+      };
+    },
+  },
   fields: [
     {
       name: "columns",

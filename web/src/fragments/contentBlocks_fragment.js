@@ -67,6 +67,19 @@ export const SEO_FIELDS = graphql`
       ... on SanityCta {
         ...ctaFields
       }
+      ... on SanityRichTextObj {
+        _type
+        richText {
+          list
+          style
+          children {
+            text
+            marks
+            _type
+          }
+          _type
+        }
+      }
       ... on SanityFigure {
         _type
         alt
@@ -102,9 +115,6 @@ export const SEO_FIELDS = graphql`
         path
       }
       ... on SanityList {
-        _type
-      }
-      ... on SanityRichTextObj {
         _type
       }
       ... on SanitySectionTitle {

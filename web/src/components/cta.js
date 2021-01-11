@@ -11,6 +11,7 @@ export default ({
   body,
   link,
   options,
+  aspect,
   ...rest
 }) => {
   let textAlign = 'items-center'
@@ -43,34 +44,51 @@ export default ({
       {/* 3/2 */}
       <div
         className={`
-          ${options && options.border ? 'border-t-6 border-primary pt-c' : ''}
+          ${options && options.border ? 'border-t-6 border-brand pt-c' : ''}
           ${textColSize}
           mb-e
         `}
       >
-        <h2 className="f-h3 mb-e">{title}</h2>
-        {body && <RichText content={body} />}
-        {link && link.path && (
-          <LinkPrimary className="f-b1 font-bold" to={link.path}>
-            {link.label}
-          </LinkPrimary>
-        )}
+        <div className="md:max-w-prose lg:max-w-prose-50">
+          <h2 className="f-h3 mb-e">{title}</h2>
+          {body && <RichText content={body} className="mb-e" />}
+          {link && link.path && (
+            <LinkPrimary className="f-b1 font-bold" to={link.path}>
+              {link.label}
+            </LinkPrimary>
+          )}
+        </div>
       </div>
-      <div
-        className={`md-max:mb-b relative aspect-w-16 aspect-h-9 
-        ${options && options.swap ? '' : 'lg:order-first'}
-        ${imageColSize}
-        `}
-      >
-        {image && (
+
+      {aspect === 'auto' ? (
+        image && (
           <Img
-            className="object-cover w-full h-full"
-            style={{ position: 'absolute' }}
+            className={`
+              w-full md-max:mb-b
+              ${imageColSize}
+              ${options && options.swap ? '' : 'lg:order-first'}
+            `}
             fluid={image.src.asset.fluid}
             alt={image.alt}
           />
-        )}
-      </div>
+        )
+      ) : (
+        <div
+          className={`md-max:mb-b relative aspect-w-16 aspect-h-9 
+            ${options && options.swap ? '' : 'lg:order-first'}
+            ${imageColSize}
+            `}
+        >
+          {image && (
+            <Img
+              className="object-cover w-full h-full"
+              style={{ position: 'absolute' }}
+              fluid={image.src.asset.fluid}
+              alt={image.alt}
+            />
+          )}
+        </div>
+      )}
     </section>
   )
 }

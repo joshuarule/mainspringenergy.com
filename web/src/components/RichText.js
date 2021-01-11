@@ -10,7 +10,7 @@ const highlight = props => {
 export default ({ content, className }) => {
   return (
     <BlockContent
-      className={className}
+      className={`richText ${className}`}
       blocks={content}
       renderContainerOnSingleChild={true}
       serializers={{

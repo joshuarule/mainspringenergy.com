@@ -5,6 +5,12 @@ export default {
   options: {
     collapsible: true,
   },
+  preview: {
+    select: {
+      title: "image.alt",
+      media: "image.src",
+    },
+  },
   fields: [
     {
       name: "image",
