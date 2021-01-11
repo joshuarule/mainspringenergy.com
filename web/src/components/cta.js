@@ -36,13 +36,29 @@ export default ({
     <section
       {...rest}
       className={`
-        grid grid-cols-12 mb-g ${className}
+        lg:grid lg:grid-cols-12 mb-g ${className}
         ${textAlign}
       `}
     >
       {/* 3/2 */}
       <div
+        className={`
+          ${options && options.border ? 'border-t-6 border-primary pt-c' : ''}
+          ${textColSize}
+          mb-e
+        `}
+      >
+        <h2 className="f-h3 mb-e">{title}</h2>
+        {body && <RichText content={body} />}
+        {link && link.path && (
+          <LinkPrimary className="f-b1 font-bold" to={link.path}>
+            {link.label}
+          </LinkPrimary>
+        )}
+      </div>
+      <div
         className={`md-max:mb-b relative aspect-w-16 aspect-h-9 
+        ${options && options.swap ? '' : 'lg:order-first'}
         ${imageColSize}
         `}
       >
@@ -53,21 +69,6 @@ export default ({
             fluid={image.src.asset.fluid}
             alt={image.alt}
           />
-        )}
-      </div>
-      <div
-        className={`
-            ${options && options.border ? 'border-t-6 border-primary pt-c' : ''}
-            ${options && options.swap ? 'lg:order-first' : ''}
-            ${textColSize}
-          `}
-      >
-        <h2 className="f-h3 mb-e">{title}</h2>
-        {body && <RichText content={body} />}
-        {link && link.path && (
-          <LinkPrimary className="f-b1 font-bold" to={link.path}>
-            {link.label}
-          </LinkPrimary>
         )}
       </div>
     </section>

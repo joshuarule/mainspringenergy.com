@@ -1,17 +1,33 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
+
+import SEO from '../components/Seo'
 import Layout from '../components/layout.js'
 import { LinkPrimary } from '../components/Link.js'
 import List from '../components/List.js'
+import ContentBlocks from '../components/ContentBlocks'
 
 import heroImage from '../assets/images/technology-hero.png'
 
 export default () => {
   const {
-    sanityTechnology: { seo, primarySection },
+    sanityTechnology: { seo, primarySection, body, heroVideo },
   } = useStaticQuery(graphql`
     query TechnologyQuery {
       sanityTechnology {
+        heroVideo {
+          posterImage {
+            src {
+              asset {
+                fluid {
+                  ...GatsbySanityImageFluid
+                }
+              }
+            }
+            alt
+          }
+        }
         primarySection {
           title
           subtitle
@@ -24,6 +40,9 @@ export default () => {
               ...listFields
             }
           }
+        }
+        body {
+          ...blocks
         }
         seo {
           title
@@ -47,6 +66,7 @@ export default () => {
 
   return (
     <Layout navTheme="dark">
+      <SEO title={seo.title} description={seo.description} image={seo.image} />
       <div
         className="bg-gradient-to-t from-techGradientFrom to-techGradientTo relative"
         style={{ minHeight: '600px', height: '90vh' }}
@@ -66,16 +86,22 @@ export default () => {
           {/* add margin of header height */}
           <div className="w-full md:w-2/3 mt-g">
             <div className="aspect-w-16 aspect-h-9 relative">
-              <img
+              <Img
+                className="object-cover w-full h-full"
+                style={{ position: 'absolute' }}
+                fluid={heroVideo.posterImage.src.asset.fluid}
+                alt={heroVideo.posterImage.alt}
+              />
+              {/* <img
                 src="https://placehold.it/1920x1080"
                 alt="alt text"
                 className="object-cover w-full h-full"
-              />
-              <div className="absolute w-full h-full flex items-center justify-center">
+              /> */}
+              {/* <div className="absolute w-full h-full flex items-center justify-center">
                 <button className="h-20 w-20 rounded-full bg-seaGreen flex items-center justify-center">
                   play
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -86,7 +112,7 @@ export default () => {
         className="block w-full relative z-1"
         style={{ marginTop: '-35vh' }}
       />
-      <div className="bg-navy py-e">
+      <div className="bg-navy pt-f pb-c mb-e">
         <div className="container">
           <div className="md:grid md:grid-cols-2 lg:grid-cols-3">
             <div className="grid-span-1">
@@ -104,6 +130,9 @@ export default () => {
             />
           </div>
         </div>
+      </div>
+      <div className="container">
+        <ContentBlocks blocks={body.blocks} />
       </div>
     </Layout>
   )

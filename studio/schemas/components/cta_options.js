@@ -24,13 +24,21 @@ export default {
       },
     },
     {
+      name: "border",
+      title: "Top Border",
+      type: "boolean",
+      options: {
+        layout: "checkbox",
+      },
+    },
+    {
       name: "textAlign",
       title: "Align Text to Image",
       type: "string",
       options: {
         layout: "radio",
         direction: "horizontal",
-        list: ["top", "center", "bottom"],
+        list: ["top", "center"],
       },
     },
   ],

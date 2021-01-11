@@ -7,3 +7,9 @@ export const LinkPrimary = ({ children, ...rest }) => (
     {children} <Icon name="chevron" className="inline-block" />
   </Link>
 )
+
+export const LinkFull = ({ children, ...rest }) => (
+  <Link {...rest}>
+    {children} <Icon name="chevron" className="inline-block" />
+  </Link>
+)

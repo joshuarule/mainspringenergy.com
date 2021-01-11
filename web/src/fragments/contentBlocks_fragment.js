@@ -10,6 +10,8 @@ export const CTA_FIELDS = graphql`
     options {
       swap
       size
+      border
+      textAlign
     }
     body {
       _type
@@ -67,6 +69,14 @@ export const SEO_FIELDS = graphql`
       }
       ... on SanityFigure {
         _type
+        alt
+        src {
+          asset {
+            fluid {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
       }
       ... on SanityImageGrid {
         _type
@@ -88,6 +98,8 @@ export const SEO_FIELDS = graphql`
       }
       ... on SanityLink {
         _type
+        label
+        path
       }
       ... on SanityList {
         _type
