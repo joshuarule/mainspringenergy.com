@@ -2,7 +2,7 @@
   --menu-out-transition-time: 0.15s;
   --menu-in-transition-time: 0.35s;
 }
-
+/* purgecss start ignore */
 .headroom {
   background-color: transparent;
   will-change: transform;
@@ -63,6 +63,7 @@
     color: inherit;
   }
 }
+/* purgecss end ignore */
 
 .header-menuButton {
   @extend .button--clean;
@@ -202,9 +203,11 @@
   .theme-dark & {
     color: var(--c-white);
   }
+  /* purgecss start ignore */
   .headroom--scrolled & {
     color: var(--c-black);
   }
+  /* purgecss end ignore */
 }
 
 .header-nav-item-icon {
