@@ -15,9 +15,9 @@ export default {
       type: 'seo',
     },
     { // looks like just an RTF to me on the whole page ???
-      name: "body",
-      title: "Content Blocks",
-      type: "contentBlocks",
+      name: "termsTextColumns",
+      title: "Terms Text Columns",
+      type: "textColumns",
     },
   ],
 }

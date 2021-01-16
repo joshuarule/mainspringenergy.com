@@ -13,15 +13,15 @@ export const company_hero = {
         type: "figure",
       },
       {
-        title: 'Body',
-        name: 'body',
+        title: 'Hero Body',
+        name: 'heroBody',
         type: 'array',
         of: [
           {
             type: 'block',
             styles: [],
             marks: {
-              decorators: [],
+              decorators: [{title: 'Strong', value: 'strong'}],
             },
           },
         ],
