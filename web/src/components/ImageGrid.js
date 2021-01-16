@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 export default function ImageGrid({
   images,
   columns,
+  options,
   style = {},
   className = 'mb-g',
 }) {
@@ -23,7 +24,9 @@ export default function ImageGrid({
   }
   return (
     <div
-      className={`lg:grid ${columnClass} gap-1 ${className}`}
+      className={`lg:grid ${columnClass} gap-1 ${className} ${
+        options && options.fullWidth ? 'w-edge' : ''
+      }`}
       style={{ ...style }}
     >
       {images.map((image, i) => (

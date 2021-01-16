@@ -63,6 +63,9 @@ export const SEO_FIELDS = graphql`
         _type
         author
         text
+        options {
+          offset
+        }
       }
       ... on SanityCta {
         ...ctaFields
@@ -94,6 +97,9 @@ export const SEO_FIELDS = graphql`
       ... on SanityImageGrid {
         _type
         columns
+        options {
+          fullWidth
+        }
         images {
           title
           path

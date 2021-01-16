@@ -38,7 +38,7 @@ import listItem from "./components/listItem.js";
 import settings from "./documents/settings/index.js";
 import seo from "./components/seo.js";
 import imageGrid from "./components/imageGrid.js";
-import blockQuote from "./components/blockquote.js";
+import blockquote from "./components/blockquote.js";
 import link from "./components/link.js";
 import address from "./components/address.js";
 import whitePaper from "./components/whitePaper.js";
@@ -48,7 +48,10 @@ import textColumns from "./components/textColumns.js";
 import textColumn from "./components/textColumn.js";
 import richTextObj from "./components/richText.js";
 import gridImage from "./components/gridImage.js";
+// options
 import cta_options from "./components/cta_options.js";
+import imageBlock_options from "./components/imageBlock_options.js";
+import blockquote_options from "./components/blockquote_options.js";
 
 export default createSchema({
   name: "default",
@@ -75,6 +78,7 @@ export default createSchema({
     // components
     address,
     contentBlocks,
+    imageBlock_options,
     cta,
     cta_options,
     hero,
@@ -86,7 +90,8 @@ export default createSchema({
     settings,
     seo,
     imageGrid,
-    blockQuote,
+    blockquote,
+    blockquote_options,
     link,
     whitePaper,
     fileSrc,

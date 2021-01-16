@@ -161,4 +161,16 @@
   .font-bold {
     font-weight: 300 !important;
   }
+
+  .richText {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      margin-bottom: 1em;
+    }
+  }
 }

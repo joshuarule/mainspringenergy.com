@@ -19,6 +19,11 @@ export default {
   },
   fields: [
     {
+      name: "options",
+      title: "Options",
+      type: "imageBlockOptions",
+    },
+    {
       name: "columns",
       title: "Number of Columns",
       type: "string",

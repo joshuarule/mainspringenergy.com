@@ -72,9 +72,11 @@ export default () => {
     <Layout navTheme="dark">
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       <Hero images={hero.gallery.images} className={'h-screen-50 mb-f'} />
-      <div className="container w-1/2" style={{ maxWidth: '960px' }}>
-        <h2 className="mb-e border-t-6 border-brand pt-c">{title}</h2>
-        <ContentBlocks blocks={contentBlocks.blocks} />
+      <div className="container lg:grid lg:grid-cols-12">
+        <div className="col-start-4 col-span-6">
+          <h2 className="mb-e border-t-6 border-brand pt-c">{title}</h2>
+          <ContentBlocks blocks={contentBlocks.blocks} />
+        </div>
       </div>
     </Layout>
   )

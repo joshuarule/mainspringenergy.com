@@ -13,8 +13,24 @@ import heroImage from '../assets/images/technology-hero.png'
 export default () => {
   const {
     sanityTechnology: { seo, primarySection, body, heroVideo },
+    heroTop,
+    heroBottom,
   } = useStaticQuery(graphql`
     query TechnologyQuery {
+      heroTop: file(relativePath: { eq: "ms_tech_hero--top.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 2000, quality: 80) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      heroBottom: file(relativePath: { eq: "ms_tech_hero--bottom.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 2000, quality: 80) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
       sanityTechnology {
         heroVideo {
           posterImage {
@@ -63,13 +79,13 @@ export default () => {
       }
     }
   `)
-
+  console.log(heroTop)
   return (
     <Layout navTheme="dark">
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       <div
         className="bg-gradient-to-t from-techGradientFrom to-techGradientTo relative"
-        style={{ minHeight: '600px', height: '90vh' }}
+        style={{ minHeight: '600px', height: '75vh' }}
       >
         {/* noise */}
         <div
@@ -84,7 +100,7 @@ export default () => {
           // style={{ height: '50vh' }}
         >
           {/* add margin of header height */}
-          <div className="w-full md:w-2/3 mt-g">
+          <div className="w-full md:w-2/3 mt-e">
             <div className="aspect-w-16 aspect-h-9 relative">
               <Img
                 className="object-cover w-full h-full"
@@ -105,13 +121,17 @@ export default () => {
             </div>
           </div>
         </div>
+        <div className="absolute bottom-0 w-full">
+          <Img fluid={heroTop.childImageSharp.fluid} fadeIn={false} />
+        </div>
       </div>
-      <img
+      <Img fluid={heroBottom.childImageSharp.fluid} fadeIn={false} />
+      {/* <img
         src={heroImage}
         alt="alt text"
         className="block w-full relative z-1"
         style={{ marginTop: '-35vh' }}
-      />
+      /> */}
       <div className="bg-navy pt-f pb-c mb-e">
         <div className="container">
           <div className="md:grid md:grid-cols-2 lg:grid-cols-3">

@@ -7,6 +7,11 @@ export default {
   icon: FaQuoteRight,
   fields: [
     {
+      name: "options",
+      title: "Options",
+      type: "blockquoteOptions",
+    },
+    {
       name: "text",
       title: "Quote Text",
       type: "text",
