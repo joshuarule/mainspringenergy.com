@@ -15,9 +15,9 @@ export default {
       type: 'seo',
     },
     {
-      name: "body",
-      title: "Content Blocks",
-      type: "contentBlocks",
+      name: "privacyStatement",
+      title: "Privacy Statement",
+      type: "textColumns",
     },
   ],
 }
