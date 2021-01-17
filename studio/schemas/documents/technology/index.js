@@ -30,7 +30,7 @@ export default {
     },
     {
       name: 'body',
-      title: 'Content Blocks',
+      title: 'Body',
       type: 'contentBlocks',
     },
   ],
