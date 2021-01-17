@@ -19,11 +19,6 @@ export default {
   },
   fields: [
     {
-      name: "options",
-      title: "Options",
-      type: "imageBlockOptions",
-    },
-    {
       name: "columns",
       title: "Number of Columns",
       type: "string",
@@ -40,6 +35,19 @@ export default {
       layout: "grid",
       of: [{ type: "gridImage" }],
       validation: (Rule) => Rule.required().min(2),
+    },
+    {
+      name: "caption",
+      title: "Caption",
+      type: "richTextObj",
+      options: {
+        collapsible: true,
+      },
+    },
+    {
+      name: "options",
+      title: "Options",
+      type: "imageBlockOptions",
     },
   ],
 };

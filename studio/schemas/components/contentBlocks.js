@@ -1,7 +1,7 @@
 import { FaQuoteRight } from "react-icons/fa";
 import { MdTextFields } from "react-icons/md";
 import { BiLinkAlt } from "react-icons/bi";
-console.log(MdTextFields);
+
 export default {
   name: "contentBlocks",
   title: "Content Blocks",

@@ -79,7 +79,7 @@ export default () => {
       }
     }
   `)
-  console.log(heroTop)
+
   return (
     <Layout navTheme="dark">
       <SEO title={seo.title} description={seo.description} image={seo.image} />

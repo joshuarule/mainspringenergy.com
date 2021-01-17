@@ -20,7 +20,7 @@ const Hero = ({ images, title, subtitle, link, className = '' }) => {
 
 export default () => {
   const {
-    sanityVision: { seo, hero, title, contentBlocks },
+    sanityVision: { seo, hero, title, contentBlocks, vision_sources },
   } = useStaticQuery(graphql`
     query VisionQuery {
       sanityVision {
@@ -35,7 +35,7 @@ export default () => {
               alt
               src {
                 asset {
-                  fluid {
+                  fluid(maxWidth: 2000) {
                     ...GatsbySanityImageFluid
                   }
                 }
@@ -47,6 +47,10 @@ export default () => {
         }
         contentBlocks {
           ...blocks
+        }
+        vision_sources {
+          title
+          sourceList
         }
         seo {
           title
@@ -72,10 +76,20 @@ export default () => {
     <Layout navTheme="dark">
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       <Hero images={hero.gallery.images} className={'h-screen-50 mb-f'} />
-      <div className="container lg:grid lg:grid-cols-12">
+      <div className="container lg:grid lg:grid-cols-12 mb-f">
         <div className="col-start-4 col-span-6">
           <h2 className="mb-e border-t-6 border-brand pt-c">{title}</h2>
           <ContentBlocks blocks={contentBlocks.blocks} />
+          {vision_sources && (
+            <div className="richText border-t-2 pt-2 mt-f f-b2">
+              <h5>{vision_sources.title}</h5>
+              <ol>
+                {vision_sources.sourceList.map(item => (
+                  <li>{item}</li>
+                ))}
+              </ol>
+            </div>
+          )}
         </div>
       </div>
     </Layout>

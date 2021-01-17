@@ -15,15 +15,15 @@ export default function ContentBlocks({ blocks }) {
           case 'sectionTitle':
             return <SectionTitle {...block} />
           case 'imageGrid':
-            return <ImageGrid className="mb-g" {...block} />
+            return <ImageGrid {...block} className="my-f" />
           case 'blockquote':
             return <Blockquote {...block} />
           case 'cta':
             return <Cta {...block} />
           case 'figure':
-            return <Figure src={block.src} alt={block.alt} className="mb-e" />
+            return <Figure src={block.src} alt={block.alt} className="my-f" />
           case 'richTextObj':
-            return <RichText content={block.richText} className="mb-e" />
+            return <RichText content={block._rawRichText} className="f-b1" />
           case 'link':
             return (
               <LinkFull to={block.path} className="f-h3 mb-e block">

@@ -126,7 +126,10 @@
     @apply text-h3;
     @apply font-heavy;
   }
-  h4,
+  h4 {
+    @apply text-b1;
+    @apply font-heavy;
+  }
   .f-b1 {
     @apply text-b1;
     @apply font-light;
@@ -171,6 +174,19 @@
     h6,
     p {
       margin-bottom: 1em;
+    }
+
+    h3 {
+      @apply my-f;
+    }
+    ul,
+    ol {
+      list-style: initial;
+      margin-left: 1em;
+      @apply list-outside;
+    }
+    ol {
+      list-style: decimal;
     }
   }
 }

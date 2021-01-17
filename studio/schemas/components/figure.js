@@ -7,11 +7,6 @@ export default {
   },
   fields: [
     {
-      name: "options",
-      title: "Options",
-      type: "imageBlockOptions",
-    },
-    {
       name: "src",
       title: "source",
       type: "image",
@@ -22,6 +17,19 @@ export default {
       description: "Describe the image",
       placeholder: "exterior of mainspring headquarters",
       type: "string",
+    },
+    {
+      name: "caption",
+      title: "Caption",
+      type: "richTextObj",
+      options: {
+        collapsible: true,
+      },
+    },
+    {
+      name: "options",
+      title: "Options",
+      type: "imageBlockOptions",
     },
   ],
 };

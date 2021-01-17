@@ -72,6 +72,7 @@ export const SEO_FIELDS = graphql`
       }
       ... on SanityRichTextObj {
         _type
+        _rawRichText
         richText {
           list
           style
@@ -99,6 +100,18 @@ export const SEO_FIELDS = graphql`
         columns
         options {
           fullWidth
+        }
+        caption {
+          richText {
+            list
+            style
+            children {
+              text
+              marks
+              _type
+            }
+            _type
+          }
         }
         images {
           title

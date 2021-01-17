@@ -7,15 +7,25 @@ const highlight = props => {
   )
 }
 
+const serializers = {
+  list: props => {
+    const { type } = props
+    const bullet = type === 'bullet'
+    if (bullet) {
+      return <ul>{props.children}</ul>
+    }
+    return <ol>{props.children}</ol>
+  },
+  listItem: props => <li>{props.children}</li>,
+}
+
 export default ({ content, className }) => {
   return (
     <BlockContent
       className={`richText ${className}`}
       blocks={content}
       renderContainerOnSingleChild={true}
-      serializers={{
-        marks: { highlight },
-      }}
+      serializers={serializers}
     />
   )
 }
