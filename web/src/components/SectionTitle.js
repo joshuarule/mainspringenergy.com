@@ -8,12 +8,15 @@ export default function SectionTitle({
   col_1,
   col_2,
   border,
+  className = '',
 }) {
   return (
     <div
-      className={`lg:grid lg:grid-cols-3 mb-d ${
+      className={`lg:grid lg:grid-cols-3 my-d ${
         border ? 'border-t-6 border-brand' : ''
-      }`}
+      }
+      ${className}
+      `}
     >
       <div>
         <h1 className="f-h3">{title}</h1>
@@ -23,7 +26,8 @@ export default function SectionTitle({
         )}
       </div>
       {col_1 && <p>{col_1}</p>}
-      {col_1 && <p>{col_1}</p>}{/* col_2 ??? */}
+      {col_1 && <p>{col_1}</p>}
+      {/* col_2 ??? */}
     </div>
   )
 }

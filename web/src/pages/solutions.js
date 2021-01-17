@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import SEO from '../components/Seo'
 import ContentBlocks from '../components/ContentBlocks'
+import SectionTitle from '../components/SectionTitle'
 
 export default () => {
   const {
@@ -46,18 +47,18 @@ export default () => {
           body {
             ...blocks
           }
-        }    
+        }
         body {
           ...blocks
         }
       }
     }
   `)
-console.log(seo);
+  console.log(seo)
   return (
     <Layout>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
-      <div>
+      <div className="container mb-g">
         <h1 className="mb-e">{hero.title}</h1>
         <p className="mb-e">{hero.subtitle}</p>
         <div>
@@ -72,10 +73,20 @@ console.log(seo);
             )
           })}
         </div>
-        {/* solutions_primary */}
+      </div>
+      {/* solutions_primary */}
+      <div className="bg-navy py-e">
         <div className="container">
-          <ContentBlocks blocks={body.blocks} />
+          <SectionTitle
+            {...solutions_primary.title}
+            className="mt-0 mb-e text-white"
+          />
+          <ContentBlocks blocks={solutions_primary.body.blocks} />
         </div>
+      </div>
+
+      <div className="container">
+        <ContentBlocks blocks={body.blocks} />
       </div>
     </Layout>
   )

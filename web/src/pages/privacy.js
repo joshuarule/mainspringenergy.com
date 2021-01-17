@@ -3,8 +3,7 @@ import Layout from '../components/layout'
 import { useStaticQuery, graphql } from 'gatsby'
 import SEO from '../components/Seo'
 
-
-const privacy = () => {
+const Privacy = () => {
   const {
     sanityPrivacy: { seo, privacyStatement },
   } = useStaticQuery(graphql`
@@ -35,4 +34,4 @@ const privacy = () => {
     </Layout>
   )
 }
-export default privacy
+export default Privacy
