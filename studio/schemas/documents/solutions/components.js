@@ -105,7 +105,7 @@ export const solutions_primary = {
       },
     },
     {
-      title: "Content Blocks",
+      title: "Primary Section Body",
       name: "body",
       type: "contentBlocks",
     },

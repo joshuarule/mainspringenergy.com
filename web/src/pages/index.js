@@ -42,20 +42,7 @@ const IndexPage = () => {
           ...blocks
         }
         seo {
-          title
-          description
-          image {
-            alt
-            src {
-              asset {
-                fixed {
-                  width
-                  height
-                  src
-                }
-              }
-            }
-          }
+          ...seoFields
         }
       }
     }
