@@ -108,6 +108,7 @@ export const SEO_FIELDS = graphql`
           fullWidth
           marginTop
           marginBottom
+          logos
         }
         caption {
           richText {

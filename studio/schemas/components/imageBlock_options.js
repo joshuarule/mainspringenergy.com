@@ -14,6 +14,12 @@ export default {
       description: "Extend horizontally past container to edges of browser",
     },
     {
+      name: "logos",
+      type: "boolean",
+      title: "Logos",
+      description: "Is this a list of logos",
+    },
+    {
       name: "marginTop",
       type: "boolean",
       title: "Top Margin",
