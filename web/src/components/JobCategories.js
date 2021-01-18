@@ -43,10 +43,10 @@ export default () => {
         .then(response => response.json())
         .then(data => {
           jobsData = data
+          console.log(jobsData)
         })
     }
-    console.log(jobsData)
-    console.log(setCategories(parseCategories(jobsData)))
+    // console.log(setCategories(parseCategories(jobsData)))
     // setCategories(parseCategories(jobsData))
   }, [])
 
