@@ -3,8 +3,8 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/Seo'
 
-const SecondPage = () => (
-  <Layout>
+const SecondPage = ({ location }) => (
+  <Layout location={location}>
     <SEO title="Sink" />
     <section className="mb-d">
       <h1>Typography</h1>
