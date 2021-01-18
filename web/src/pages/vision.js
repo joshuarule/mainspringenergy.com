@@ -53,20 +53,7 @@ export default ({ location }) => {
           sourceList
         }
         seo {
-          title
-          description
-          image {
-            alt
-            src {
-              asset {
-                fixed {
-                  width
-                  height
-                  src
-                }
-              }
-            }
-          }
+          ...seoFields
         }
       }
     }
