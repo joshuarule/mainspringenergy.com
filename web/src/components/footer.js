@@ -39,11 +39,11 @@ export default function footer() {
         <div className="col-span-3">
           <h4 className="font-bold mb-b">Company</h4>
           <ul className="list-none p-0 m-0">
-            <li>
+            {/* <li>
               <Link className="link--clean mb-b block" to="/newsroom">
                 Newsroom
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link className="link--clean mb-b block" to="/company">
                 Company

@@ -18,7 +18,7 @@ const Hero = ({ images, title, subtitle, link, className = '' }) => {
   )
 }
 
-export default () => {
+export default ({ location }) => {
   const {
     sanityVision: { seo, hero, title, contentBlocks, vision_sources },
   } = useStaticQuery(graphql`
@@ -73,7 +73,7 @@ export default () => {
   `)
 
   return (
-    <Layout navTheme="dark">
+    <Layout navTheme="dark" location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       <Hero images={hero.gallery.images} className={'h-screen-50 mb-f'} />
       <div className="container lg:grid lg:grid-cols-12 mb-f">

@@ -19,14 +19,14 @@ export default function SectionTitle({
       `}
     >
       <div>
-        <h1 className="f-h3">{title}</h1>
+        <h1 className="f-h2">{title}</h1>
         {subtitle && <p>{subtitle}</p>}
         {link && link.path && link.label && (
           <LinkPrimary to={link.path}>{link.label}</LinkPrimary>
         )}
       </div>
-      {col_1 && <p>{col_1}</p>}
-      {col_1 && <p>{col_1}</p>}
+      {col_1 && <p className="f-b1 text-iron">{col_1}</p>}
+      {col_2 && <p className="f-b1 text-iron">{col_2}</p>}
       {/* col_2 ??? */}
     </div>
   )

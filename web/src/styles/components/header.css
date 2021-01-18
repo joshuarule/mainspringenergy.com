@@ -17,7 +17,9 @@
 }
 .headroom--scrolled {
   background-color: var(--c-porcelain);
-  transition: transform 200ms ease-in-out, background-color 200ms ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.5) 2px 0px 15px 1px;
+  transition: transform 200ms ease-in-out, background-color 200ms ease-in-out,
+    box-shadow 200ms ease-in-out;
 }
 .headroom--unpinned {
   position: fixed;

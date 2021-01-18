@@ -2,3 +2,6 @@
 @import './components/header.css';
 @import './components/gridImage.css';
 @import './components/slider.css';
+
+@import './pages/home.css';
+@import './pages/technology.css';

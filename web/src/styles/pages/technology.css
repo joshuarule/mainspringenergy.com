@@ -1,0 +1,12 @@
+.page-technology {
+  .theme--dark {
+    li > h5 {
+      @apply f-h3;
+      @apply font-thin;
+    }
+  }
+
+  .linkFull {
+    color: var(--c-seaGreen);
+  }
+}

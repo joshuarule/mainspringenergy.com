@@ -5,7 +5,8 @@ import PropTypes from 'prop-types'
 import Nav from './Header'
 import Footer from './Footer'
 
-const Layout = ({ children, className = null, navTheme }) => {
+const Layout = ({ children, className = null, navTheme, location }) => {
+  console.log(location)
   // const data = useStaticQuery(graphql`
   //   query SiteTitleQuery {
   //     site {
@@ -16,8 +17,11 @@ const Layout = ({ children, className = null, navTheme }) => {
   //   }
   // `)
 
+  const pathname =
+    location.pathname === '/' ? 'home' : location.pathname.slice(1)
+
   return (
-    <div className="overflow-x-hidden">
+    <div className={`overflow-x-hidden page-${pathname}`}>
       <Headroom>
         <Nav theme={navTheme} />
       </Headroom>

@@ -1,6 +1,6 @@
-import React from "react"
-import Layout from "../components/layout"
+import React from 'react'
+import Layout from '../components/layout'
 
-export default function patents() {
-  return <Layout>Patents.js</Layout>
+export default function patents({ location }) {
+  return <Layout location={location}>Patents.js</Layout>
 }

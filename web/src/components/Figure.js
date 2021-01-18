@@ -2,9 +2,12 @@ import React from 'react'
 import Img from 'gatsby-image'
 import RichText from './RichText'
 
-export default ({ src, alt, className = '', caption }) => {
+export default ({ src, alt, className = '', caption, options }) => {
+  console.log('figure', options)
   return (
-    <figure className={className}>
+    <figure
+      className={`${className} ${options && options.fullWidth ? 'w-edge' : ''}`}
+    >
       <Img fluid={src.asset.fluid} alt={alt} />
       {caption && (
         <figcaption>

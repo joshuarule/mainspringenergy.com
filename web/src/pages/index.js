@@ -9,7 +9,7 @@ import ContentBlocks from '../components/ContentBlocks'
 import Layout from '../components/layout'
 import { LinkPrimary } from '../components/Link'
 
-const IndexPage = () => {
+const IndexPage = ({ location }) => {
   const {
     sanityHome: { seo, hero, body, cta },
   } = useStaticQuery(graphql`
@@ -61,7 +61,7 @@ const IndexPage = () => {
   }
 
   return (
-    <Layout navTheme="dark">
+    <Layout navTheme="dark" location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       <div className="bg-navy relative">
         <div
@@ -74,6 +74,7 @@ const IndexPage = () => {
               <LinkPrimary
                 to={hero.link.path}
                 className="f-b1 font-bold link--light"
+                style={{ fontSize: '18px', letterSpacing: '0.6px' }}
               >
                 {hero.link.label}
               </LinkPrimary>
@@ -102,7 +103,7 @@ const IndexPage = () => {
           </div>
         </div>
       </div>
-      <Cta aspect="auto" className="mt-e lg:-mt-e mb-g container" {...cta} />
+      <Cta aspect="auto" className="mt-e lg:-mt-f mb-g container" {...cta} />
 
       <div className="container">
         <ContentBlocks blocks={body.blocks} />

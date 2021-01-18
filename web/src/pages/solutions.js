@@ -6,8 +6,9 @@ import Layout from '../components/layout'
 import SEO from '../components/Seo'
 import ContentBlocks from '../components/ContentBlocks'
 import SectionTitle from '../components/SectionTitle'
+import { LinkPrimary } from '../components/Link'
 
-export default () => {
+export default ({ location }) => {
   const {
     sanitySolutions: { seo, hero, body, solutions_primary },
   } = useStaticQuery(graphql`
@@ -54,33 +55,41 @@ export default () => {
       }
     }
   `)
-  console.log(seo)
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       <div className="container mb-g">
-        <h1 className="mb-e">{hero.title}</h1>
-        <p className="mb-e">{hero.subtitle}</p>
-        <div>
-          {hero.gallery.images.map((image, i) => {
-            return (
+        <div className={`lg:grid lg:grid-cols-2 mb-g lg:mt-g items-center`}>
+          <div className={`md-max:mb-b relative aspect-w-3 aspect-h-2 `}>
+            {hero.gallery && hero.gallery.images[0] && (
               <Img
-                key={image.alt}
-                className="object-fit w-full h-full"
-                fluid={image.src.asset.fluid}
-                alt={image.alt}
+                className="object-cover w-full h-full"
+                style={{ position: 'absolute' }}
+                fluid={hero.gallery.images[0].src.asset.fluid}
+                alt={hero.gallery.images[0].alt}
               />
-            )
-          })}
+            )}
+          </div>
+          <div className={`mb-e lg:mb-0`}>
+            <div className="md:max-w-prose">
+              <h2 className="f-h2 mb-e">{hero.title}</h2>
+              {hero.subtitle && (
+                <p className="lg:max-w-prose-50 f-b1">{hero.subtitle}</p>
+              )}
+              {hero.link && hero.link.path && (
+                <LinkPrimary className="f-b1 font-bold" to={hero.link.path}>
+                  {hero.link.label}
+                </LinkPrimary>
+              )}
+            </div>
+          </div>
         </div>
       </div>
+
       {/* solutions_primary */}
-      <div className="bg-navy py-e">
+      <div className="bg-navy py-e theme--dark">
         <div className="container">
-          <SectionTitle
-            {...solutions_primary.title}
-            className="mt-0 mb-e text-white"
-          />
+          <SectionTitle {...solutions_primary.title} className="mt-0 mb-e" />
           <ContentBlocks blocks={solutions_primary.body.blocks} />
         </div>
       </div>

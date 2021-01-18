@@ -190,3 +190,28 @@
     }
   }
 }
+
+.theme--dark {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--c-white);
+  }
+  p,
+  ul,
+  ol {
+    color: var(--c-smoke);
+  }
+
+  a {
+    color: var(--c-freshBlue);
+  }
+
+  /* changes any border color to seaGreen */
+  [class*='border']:not('border-transparent') {
+    border-color: var(--c-seaGreen);
+  }
+}

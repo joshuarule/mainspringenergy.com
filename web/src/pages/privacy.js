@@ -3,7 +3,7 @@ import Layout from '../components/layout'
 import { useStaticQuery, graphql } from 'gatsby'
 import SEO from '../components/Seo'
 
-const Privacy = () => {
+const Privacy = ({ location }) => {
   const {
     sanityPrivacy: { seo, privacyStatement },
   } = useStaticQuery(graphql`
@@ -26,9 +26,9 @@ const Privacy = () => {
       }
     }
   `)
-  console.log(privacyStatement)
+
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       <div>privacy statement here...</div>
     </Layout>

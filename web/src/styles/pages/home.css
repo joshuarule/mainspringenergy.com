@@ -1,0 +1,5 @@
+.page-home {
+  .blockquote {
+    @apply my-g;
+  }
+}

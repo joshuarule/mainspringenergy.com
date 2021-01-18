@@ -13,6 +13,7 @@ export const CTA_FIELDS = graphql`
       border
       textAlign
     }
+    _rawBody
     body {
       _type
       list
@@ -87,9 +88,14 @@ export const SEO_FIELDS = graphql`
       ... on SanityFigure {
         _type
         alt
+        options {
+          fullWidth
+          marginTop
+          marginBottom
+        }
         src {
           asset {
-            fluid {
+            fluid(maxWidth: 2000) {
               ...GatsbySanityImageFluid
             }
           }
@@ -100,6 +106,8 @@ export const SEO_FIELDS = graphql`
         columns
         options {
           fullWidth
+          marginTop
+          marginBottom
         }
         caption {
           richText {

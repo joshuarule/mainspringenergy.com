@@ -9,6 +9,7 @@ export default ({
   title,
   image,
   body,
+  _rawBody,
   link,
   options,
   aspect,
@@ -37,7 +38,7 @@ export default ({
     <section
       {...rest}
       className={`
-        lg:grid lg:grid-cols-12 mb-g ${className}
+        lg:grid lg:grid-cols-12 my-g ${className}
         ${textAlign}
       `}
     >
@@ -46,12 +47,12 @@ export default ({
         className={`
           ${options && options.border ? 'border-t-6 border-brand pt-c' : ''}
           ${textColSize}
-          mb-e
+          mb-e lg:mb-0
         `}
       >
         <div className="md:max-w-prose lg:max-w-prose-50">
-          <h2 className="f-h3 mb-e">{title}</h2>
-          {body && <RichText content={body} className="mb-e" />}
+          <h2 className="f-h3 mb-d">{title}</h2>
+          {body && <RichText content={_rawBody} className="mb-e f-b1" />}
           {link && link.path && (
             <LinkPrimary className="f-b1 font-bold" to={link.path}>
               {link.label}

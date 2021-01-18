@@ -4,8 +4,8 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/Seo'
 
-const NotFoundPage = () => (
-  <Layout className="flex flex-cols">
+const NotFoundPage = ({ location }) => (
+  <Layout location={location} className="flex flex-cols">
     <SEO title="404: Not found" />
     <div className="container flex flex-1 items-center">
       <h1 className="f-h2 text-seaGreen">

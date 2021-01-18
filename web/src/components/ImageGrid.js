@@ -40,7 +40,11 @@ export default function ImageGrid({
   return (
     <Container
       fullWidth={options && options.fullWidth}
-      className={`mb-f ${className}`}
+      className={`imageGrid
+        ${className}
+        ${options && options.marginTop ? 'mt-f' : ''} 
+        ${options && options.marginBottom ? 'mb-f' : ''}
+      `}
       style={{ ...style }}
     >
       <div className={`lg:grid ${columnClass} gap-1 `}>
