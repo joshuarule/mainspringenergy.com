@@ -43,19 +43,17 @@ export default () => {
         .then(response => response.json())
         .then(data => {
           jobsData = data
-          console.log(jobsData)
+          setCategories(parseCategories(jobsData))
         })
     }
-    // console.log(setCategories(parseCategories(jobsData)))
-    // setCategories(parseCategories(jobsData))
   }, [])
 
   return (
     <div className="container">
-      {/* {categories &&
+      {categories &&
         categories.map(category => {
           return <p key={category}>{category}</p>
-        })} */}
+        })}
     </div>
   )
 }
