@@ -6,17 +6,6 @@ import Nav from './Header'
 import Footer from './Footer'
 
 const Layout = ({ children, className = null, navTheme, location }) => {
-  console.log(location)
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
-
   const pathname =
     location.pathname === '/' ? 'home' : location.pathname.slice(1)
 
