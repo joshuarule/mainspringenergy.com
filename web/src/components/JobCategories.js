@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import slugify from 'slugify'
 
 const parseCategories = jobs => {
   const categories = []
@@ -35,8 +36,10 @@ export default () => {
       }
     `)
     jobsData = jobs
+    if (!categories) {
+      setCategories(parseCategories(jobsData))
+    }
   }
-
   useEffect(() => {
     if (process.env.NODE_ENV !== 'development') {
       fetch('/.netlify/functions/jobs')
@@ -49,11 +52,16 @@ export default () => {
   }, [])
 
   return (
-    <div className="container">
-      {categories &&
-        categories.map(category => {
-          return <p key={category}>{category}</p>
+    categories && (
+      <select id="jobCategories" className="border-2 rounded-md">
+        {categories.map(category => {
+          return (
+            <option value={slugify(category)} key={category}>
+              {category}
+            </option>
+          )
         })}
-    </div>
+      </select>
+    )
   )
 }
