@@ -6,17 +6,7 @@ export default function careers({ location }) {
   return (
     <Layout location={location}>
       <div className="container mt-g">
-        <h1 className="mb-g">We're Growing. Grow With Us</h1>
-        <div className="grid grid-cols-2">
-          <div>
-            <h3 className="mb-d">Open Roles</h3>
-            <p>paragraph text</p>
-          </div>
-          <div>
-            <h3 className="mb-d">Job Category</h3>
-            <JobCategories />
-          </div>
-        </div>
+        <a href="/roles">All Roles</a>
       </div>
     </Layout>
   )

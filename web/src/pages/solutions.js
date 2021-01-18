@@ -10,7 +10,14 @@ import { LinkPrimary } from '../components/Link'
 
 export default ({ location }) => {
   const {
-    sanitySolutions: { seo, hero, body, solutions_primary, solutions_specs, solutions_specs_media },
+    sanitySolutions: {
+      seo,
+      hero,
+      body,
+      solutions_primary,
+      solutions_specs,
+      solutions_specs_media,
+    },
   } = useStaticQuery(graphql`
     query SolutionsQuery {
       sanitySolutions {
@@ -91,6 +98,8 @@ export default ({ location }) => {
       }
     }
   `)
+
+  console.log(body.blocks)
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
@@ -136,7 +145,7 @@ export default ({ location }) => {
       <div className="container">
         <h1>{solutions_specs.title}</h1>
         <p>{solutions_specs.subtitle}</p> {/* not showing up */}
-        {/* <h1>{solutions_specs_media.title}</h1> */}
+        <h1>{solutions_specs.solutions_specs_media.title}</h1>
       </div>
     </Layout>
   )

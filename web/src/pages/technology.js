@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
+import ReactPlayer from 'react-player'
 
 import SEO from '../components/Seo'
 import Layout from '../components/layout.js'
 import { LinkPrimary } from '../components/Link.js'
 import List from '../components/List.js'
 import ContentBlocks from '../components/ContentBlocks'
+import heroVideomp4 from '../assets/video/Mainspring_2020_Overview_Final_720p_compressed.mp4'
+import heroVideowebm from '../assets/video/Mainspring_2020_Overview_Final_720p_compressed.webm'
+import Icon from '../components/Icon'
 
 export default ({ location }) => {
   const {
@@ -65,6 +69,12 @@ export default ({ location }) => {
     }
   `)
 
+  const [isPlaying, togglePlayback] = useState(false)
+
+  const handlePlayPause = () => {
+    togglePlayback(!isPlaying)
+  }
+
   return (
     <Layout navTheme="dark" location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
@@ -83,23 +93,32 @@ export default ({ location }) => {
         <div className="container text-white flex justify-center items-top h-full pt-g">
           {/* add margin of header height */}
           <div className="w-full md:w-2/3 mt-e">
-            <div className="aspect-w-16 aspect-h-9 relative">
-              <Img
+            <div className="aspect-w-16 aspect-h-9 relative z-10">
+              <ReactPlayer
+                url={[heroVideomp4, heroVideowebm]}
+                playing={isPlaying}
+                width="100%"
+                height="100%"
+              />
+              {/* <Img
                 className="object-cover w-full h-full"
                 style={{ position: 'absolute' }}
                 fluid={heroVideo.posterImage.src.asset.fluid}
                 alt={heroVideo.posterImage.alt}
-              />
-              {/* <img
-                src="https://placehold.it/1920x1080"
-                alt="alt text"
-                className="object-cover w-full h-full"
               /> */}
-              {/* <div className="absolute w-full h-full flex items-center justify-center">
-                <button className="h-20 w-20 rounded-full bg-seaGreen flex items-center justify-center">
-                  play
-                </button>
-              </div> */}
+
+              <button
+                onClick={handlePlayPause}
+                className="absolute w-full h-full flex p-c justify-end items-end"
+              >
+                {!isPlaying && (
+                  <span className="h-20 w-20 rounded-full bg-seaGreen flex items-center justify-center">
+                    {/* <Icon name="play" /> */}
+                    ▶️
+                  </span>
+                )}
+              </button>
+              {/* </div> */}
             </div>
           </div>
         </div>

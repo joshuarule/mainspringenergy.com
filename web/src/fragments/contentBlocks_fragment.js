@@ -158,6 +158,8 @@ export const SEO_FIELDS = graphql`
       }
       ... on SanityTextColumns {
         _type
+        columnAmount
+        _rawColumns
       }
     }
   }

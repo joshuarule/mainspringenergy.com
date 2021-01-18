@@ -6,9 +6,12 @@ import RichText from './RichText'
 export default ({ items, className }) => {
   return (
     <ul className={className}>
-      {items.map(item => {
+      {items.map((item, i) => {
         return (
-          <li className="mb-f border-t-6 border-seaGreen text-white pt-c">
+          <li
+            key={`item-${i}`}
+            className="mb-f border-t-6 border-seaGreen text-white pt-c"
+          >
             <h3>{item.title}</h3>
             <h5 className="mb-e">{item.subtitle}</h5>
             {item.body && <RichText content={item.body} />}

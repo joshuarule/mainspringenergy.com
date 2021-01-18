@@ -11,21 +11,22 @@ import RichText from './RichText'
 
 export default function ContentBlocks({ blocks }) {
   return blocks
-    ? blocks.map(block => {
+    ? blocks.map((block, i) => {
         switch (block._type) {
           case 'sectionTitle':
-            return <SectionTitle {...block} />
+            return <SectionTitle key={`block-${i}`} {...block} />
           case 'imageGrid':
-            return <ImageGrid {...block} />
+            return <ImageGrid key={`block-${i}`} {...block} />
           case 'blockquote':
-            return <Blockquote {...block} />
+            return <Blockquote key={`block-${i}`} {...block} />
           case 'textColumns':
-            return <TextColumns {...block} />
+            return <TextColumns key={`block-${i}`} {...block} />
           case 'cta':
-            return <Cta {...block} />
+            return <Cta key={`block-${i}`} {...block} />
           case 'figure':
             return (
               <Figure
+                key={`block-${i}`}
                 src={block.src}
                 alt={block.alt}
                 options={block.options}
@@ -33,10 +34,20 @@ export default function ContentBlocks({ blocks }) {
               />
             )
           case 'richTextObj':
-            return <RichText content={block._rawRichText} className="f-b1" />
+            return (
+              <RichText
+                key={`block-${i}`}
+                content={block._rawRichText}
+                className="f-b1"
+              />
+            )
           case 'link':
             return (
-              <LinkFull to={block.path} className="linkFull f-h3 mb-e block">
+              <LinkFull
+                key={`block-${i}`}
+                to={block.path}
+                className="linkFull f-h3 mb-e block"
+              >
                 {block.label}
               </LinkFull>
             )
