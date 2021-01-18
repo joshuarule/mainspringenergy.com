@@ -39,7 +39,7 @@ export default () => {
 
   useEffect(() => {
     if (process.env.NODE_ENV !== 'development') {
-      fetch('/api/jobs')
+      fetch('/.netlify/functions/jobs')
         .then(response => response.json())
         .then(data => {
           jobsData = data
