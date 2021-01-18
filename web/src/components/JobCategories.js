@@ -45,15 +45,17 @@ export default () => {
           jobsData = data
         })
     }
-    setCategories(parseCategories(jobsData))
+    console.log(jobsData)
+    console.log(setCategories(parseCategories(jobsData)))
+    // setCategories(parseCategories(jobsData))
   }, [])
 
   return (
     <div className="container">
-      {categories &&
+      {/* {categories &&
         categories.map(category => {
           return <p key={category}>{category}</p>
-        })}
+        })} */}
     </div>
   )
 }
