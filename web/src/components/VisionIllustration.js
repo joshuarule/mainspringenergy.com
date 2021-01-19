@@ -31,10 +31,7 @@ export default function VisionIllustration() {
                 className="text-smoke"
               />
               <ul className="f-h3 text-smoke">
-                <li className="mb-c">
-                  Commercial &<br />
-                  Industrial
-                </li>
+                <li className="mb-c">Buildings</li>
                 <li className="mb-c">Grid Distribution</li>
                 <li className="mb-c">Microgrids</li>
               </ul>

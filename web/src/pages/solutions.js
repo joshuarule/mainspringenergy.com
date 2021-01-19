@@ -93,14 +93,23 @@ export default ({ location }) => {
             description
             subtitle
             title
-            _rawImage
+            image {
+              alt
+              src {
+                asset {
+                  fluid {
+                    ...GatsbySanityImageFluid
+                  }
+                }
+              }
+            }
           }
         }
       }
     }
-    `)
-    
-  console.log({solutions_downloads})
+  `)
+
+  console.log({ solutions_downloads })
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
@@ -109,19 +118,19 @@ export default ({ location }) => {
           <div className={`md-max:mb-b relative aspect-w-3 aspect-h-2 `}>
             {hero.gallery && hero.gallery.images[0] && (
               <Img
-              className="object-cover w-full h-full"
-              style={{ position: 'absolute' }}
-              fluid={hero.gallery.images[0].src.asset.fluid}
-              alt={hero.gallery.images[0].alt}
+                className="object-cover w-full h-full"
+                style={{ position: 'absolute' }}
+                fluid={hero.gallery.images[0].src.asset.fluid}
+                alt={hero.gallery.images[0].alt}
               />
-              )}
+            )}
           </div>
           <div className={`mb-e lg:mb-0`}>
             <div className="md:max-w-prose">
               <h2 className="f-h2 mb-e">{hero.title}</h2>
               {hero.subtitle && (
                 <p className="lg:max-w-prose-50 f-b1">{hero.subtitle}</p>
-                )}
+              )}
               {hero.link && hero.link.path && (
                 <LinkPrimary className="f-b1 font-bold" to={hero.link.path}>
                   {hero.link.label}
@@ -169,12 +178,9 @@ export default ({ location }) => {
           {solutions_downloads.items.map(item => (
             <li>
               <h1>{item.title}</h1>
-              {/* image(s) below... */}
-              {/* <div>
-                {item._rawImage}
-              </div> */}
-              <p>{item.subtitle}</p>              
-              <p>{item.description}</p>              
+              <Img fluid={item.image.src.asset.fluid} alt={item.image.alt} />
+              <p>{item.subtitle}</p>
+              <p>{item.description}</p>
             </li>
           ))}
         </ul>
