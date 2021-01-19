@@ -11,7 +11,7 @@ export default ({ categories, onChange }) => {
       >
         {categories.map(category => {
           return (
-            <option value={slugify(category)} key={category}>
+            <option value={category} key={category}>
               {category}
             </option>
           )

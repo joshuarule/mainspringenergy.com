@@ -18,7 +18,7 @@ const parseCategories = jobs => {
     if (!categories[jobCategory]) {
       categories[jobCategory] = []
     }
-    categories[jobCategory].push(job)
+    categories[jobCategory].push(job.title[0])
   })
   return categories
 }
@@ -46,6 +46,7 @@ export default ({ location }) => {
       allJobsMockJson {
         nodes {
           newton_department
+          title
         }
       }
       sanityRoles {
@@ -69,9 +70,10 @@ export default ({ location }) => {
   // current category
 
   // on change update jobs by category
-
-  console.log(categories)
-  debugger
+  const [category, setCategory] = useState('Product Development')
+  const handleOnchange = e => {
+    setCategory(e.target.value)
+  }
 
   return (
     <Layout location={location}>
@@ -85,8 +87,17 @@ export default ({ location }) => {
           </div>
           <div className="col-span-2">
             <h3 className="mb-d">Job Category</h3>
-            <JobCategories categories={categories} />
-            {/* <Jobs category={'productDevelopment'} data={} */}
+            <JobCategories
+              categories={Object.keys(categories)}
+              onChange={handleOnchange}
+            />
+            {categories && categories[category] && (
+              <ul className="mt-d">
+                {categories[category].map(title => (
+                  <li className="f-b1 mb-a">{title}</li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       </div>
