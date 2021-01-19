@@ -1,10 +1,53 @@
 import React from 'react'
-import Layout from '../components/layout'
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
-export default function company({ location }) {
+import Layout from '../components/layout'
+import SEO from '../components/Seo'
+
+export default ({ location }) => {
+  const {
+    sanityCompany: {
+      seo,
+      hero,
+    },
+  } = useStaticQuery(graphql`
+    query CompanyQuery {
+      sanityCompany {
+        seo {
+          ...seoFields
+        }
+        hero {
+          heroImage {
+            alt
+            src {
+              asset {
+                fluid {
+                  ...GatsbySanityImageFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+  console.log(hero)
   return (
     <Layout location={location}>
-      <div className="container">company.js</div>
+      <SEO title={seo.title} description={seo.description} image={seo.image} />
+      {/* image in, but needs to be below header */}
+      <Img
+        className="container"
+        fluid={hero.heroImage.src.asset.fluid}
+        alt={hero.heroImage.alt}
+      />
     </Layout>
   )
 }
+
+
+
+
+
+// TODO: take a look at heroImage..is there going to be more than 1???
