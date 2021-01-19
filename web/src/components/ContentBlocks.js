@@ -8,6 +8,7 @@ import Cta from './Cta'
 import Figure from './Figure'
 import { LinkFull } from './Link'
 import RichText from './RichText'
+import DynamicBlock from './DynamicBlock'
 
 export default function ContentBlocks({ blocks }) {
   return blocks
@@ -23,6 +24,8 @@ export default function ContentBlocks({ blocks }) {
             return <TextColumns key={`block-${i}`} {...block} />
           case 'cta':
             return <Cta key={`block-${i}`} {...block} />
+          case 'dynamicBlock':
+            return DynamicBlock[block.name]()
           case 'figure':
             return (
               <Figure

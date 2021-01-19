@@ -11,7 +11,6 @@ export default ({
   imgStyle = {},
   options,
 }) => {
-  console.log('figure', options)
   return (
     <figure
       style={style}

@@ -54,6 +54,7 @@ import textColumns from "./components/textColumns.js";
 import textColumn from "./components/textColumn.js";
 import richTextObj from "./components/richText.js";
 import gridImage from "./components/gridImage.js";
+import dynamicBlock from "./components/dynamicBlock.js";
 // options
 import cta_options from "./components/cta_options.js";
 import imageBlock_options from "./components/imageBlock_options.js";
@@ -86,6 +87,7 @@ export default createSchema({
     // components
     address,
     contentBlocks,
+    dynamicBlock,
     imageBlock_options,
     cta,
     cta_options,

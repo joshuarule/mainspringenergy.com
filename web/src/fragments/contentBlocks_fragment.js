@@ -162,6 +162,10 @@ export const SEO_FIELDS = graphql`
         columnAmount
         _rawColumns
       }
+      ... on SanityDynamicBlock {
+        _type
+        name
+      }
     }
   }
 `
