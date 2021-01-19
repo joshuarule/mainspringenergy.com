@@ -7,12 +7,14 @@ import SEO from '../components/Seo'
 import Layout from '../components/layout.js'
 import { LinkPrimary } from '../components/Link.js'
 import List from '../components/List.js'
-import ContentBlocks from '../components/ContentBlocks'
+import Figure from '../components/Figure'
+import { LinkFull } from '../components/Link'
+import SectionTitle from '../components/SectionTitle'
 import Icon from '../components/Icon'
 
 export default ({ location }) => {
   const {
-    sanityTechnology: { seo, primarySection, body, heroVideo },
+    sanityTechnology: { seo, primarySection, heroVideo, secondarySection },
     heroTop,
     heroBottom,
   } = useStaticQuery(graphql`
@@ -57,8 +59,27 @@ export default ({ location }) => {
             }
           }
         }
-        body {
-          ...blocks
+        secondarySection {
+          image {
+            alt
+            options {
+              fullWidth
+              marginTop
+              marginBottom
+            }
+            src {
+              asset {
+                fluid(maxWidth: 2000) {
+                  ...GatsbySanityImageFluid
+                }
+              }
+            }
+          }
+          link {
+            label
+            path
+          }
+          _rawTitle
         }
         seo {
           ...seoFields
@@ -153,7 +174,24 @@ export default ({ location }) => {
         </div>
       </div>
       <div className="container">
-        <ContentBlocks blocks={body.blocks} />
+        <SectionTitle
+          {...secondarySection._rawTitle}
+          smallTitle={true}
+          className="mb-f"
+        />
+        <Figure
+          className="lg:ml-g"
+          src={secondarySection.image.src}
+          alt={secondarySection.image.alt}
+          options={secondarySection.image.options}
+          style={{ width: 'calc(100vw - (100vw - 1280px) / 2)' }}
+        />
+        <LinkFull
+          className="linkFull f-h3 mb-e block"
+          to={secondarySection.link.path}
+        >
+          {secondarySection.link.label}
+        </LinkFull>
       </div>
     </Layout>
   )

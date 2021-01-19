@@ -28,7 +28,11 @@ const parseCategories = jobs => {
         jobs: [],
       }
     }
-    categories[slug].jobs.push({ title: job.title[0], id })
+    categories[slug].jobs.push({
+      title: job.title[0],
+      id,
+      url: job.link[0]._.href,
+    })
   })
   return categories
 }
@@ -49,7 +53,11 @@ export default ({ location }) => {
         .then(response => response.json())
         .then(data => {
           jobsData = data
-          setCategories(parseCategories(jobsData))
+          const parsedCategories = parseCategories(jobsData)
+          setCategories(parsedCategories)
+          if (!searchParams) {
+            cat = Object.keys(parsedCategories)[0]
+          }
         })
     }
   }, [])
@@ -64,6 +72,11 @@ export default ({ location }) => {
           newton_department
           title
           newton_jobId
+          link {
+            _ {
+              href
+            }
+          }
         }
       }
       sanityRoles {
@@ -80,7 +93,11 @@ export default ({ location }) => {
   // grabs mock data from file in dev
   if (process.env.NODE_ENV === 'development') {
     if (!categories) {
-      setCategories(parseCategories(allJobsMockJson.nodes))
+      const parsedData = parseCategories(allJobsMockJson.nodes)
+      setCategories(parsedData)
+      if (!cat) {
+        cat = Object.keys(parsedData)[0]
+      }
     }
   }
 
@@ -89,9 +106,10 @@ export default ({ location }) => {
   // on change update jobs by category
   const [category, setCategory] = useState(cat)
   const handleOnchange = e => {
+    // set url params
     setCategory(e.target.value)
   }
-
+  console.log(category)
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
@@ -113,7 +131,9 @@ export default ({ location }) => {
               <ul className="mt-d">
                 {categories[category].jobs.map(job => (
                   <li className="f-b1 mb-a">
-                    <Link to={`/role?id=${job.id}`}>{job.title}</Link>
+                    <a target="_blank" href={job.url}>
+                      {job.title}
+                    </a>
                   </li>
                 ))}
               </ul>

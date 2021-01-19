@@ -49,7 +49,7 @@ export default function ImageGrid({
     >
       <div className={`md:grid ${columnClass} lg:gap-1 `}>
         {images.map((image, i) =>
-          options.logos ? (
+          options && options.logos ? (
             <div
               key={`image-${i}`}
               className={`gridImage md:mb-e lg:mb-0 flex relative aspect-w-16 aspect-h-9 rounded-lg`}

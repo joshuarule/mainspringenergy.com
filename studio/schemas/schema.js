@@ -15,7 +15,10 @@ import {
   solutions_primary,
 } from "./documents/solutions/components.js";
 import technology from "./documents/technology";
-import { technology_primarySection } from "./documents/technology/components.js";
+import {
+  technology_primarySection,
+  technology_secondarySection,
+} from "./documents/technology/components.js";
 import vision from "./documents/vision";
 import {
   vision_sources,
@@ -73,6 +76,7 @@ export default createSchema({
     solutions_primary,
     technology,
     technology_primarySection,
+    technology_secondarySection,
     company,
     company_hero,
     vision,

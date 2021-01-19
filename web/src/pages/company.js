@@ -7,10 +7,7 @@ import SEO from '../components/Seo'
 
 export default ({ location }) => {
   const {
-    sanityCompany: {
-      seo,
-      hero,
-    },
+    sanityCompany: { seo, hero },
   } = useStaticQuery(graphql`
     query CompanyQuery {
       sanityCompany {
@@ -38,16 +35,12 @@ export default ({ location }) => {
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       {/* image in, but needs to be below header */}
       <Img
-        className="container"
+        className="container mt-g"
         fluid={hero.heroImage.src.asset.fluid}
         alt={hero.heroImage.alt}
       />
     </Layout>
   )
 }
-
-
-
-
 
 // TODO: take a look at heroImage..is there going to be more than 1???
