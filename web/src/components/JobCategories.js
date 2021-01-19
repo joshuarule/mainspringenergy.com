@@ -1,18 +1,21 @@
 import React from 'react'
 import slugify from 'slugify'
 
-export default ({ categories, onChange }) => {
+export default ({ categories, onChange, currentItem }) => {
+  const keys = Object.keys(categories)
   return (
     categories && (
       <select
         onChange={e => onChange(e)}
         id="jobCategories"
         className="border-2 rounded-md"
+        value={currentItem}
       >
-        {categories.map(category => {
+        {keys.map(category => {
+          const label = categories[category].name
           return (
             <option value={category} key={category}>
-              {category}
+              {label}
             </option>
           )
         })}

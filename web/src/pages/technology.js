@@ -8,8 +8,6 @@ import Layout from '../components/layout.js'
 import { LinkPrimary } from '../components/Link.js'
 import List from '../components/List.js'
 import ContentBlocks from '../components/ContentBlocks'
-import heroVideomp4 from '../assets/video/Mainspring_2020_Overview_Final_720p_compressed.mp4'
-import heroVideowebm from '../assets/video/Mainspring_2020_Overview_Final_720p_compressed.webm'
 import Icon from '../components/Icon'
 
 export default ({ location }) => {
@@ -70,9 +68,11 @@ export default ({ location }) => {
   `)
 
   const [isPlaying, togglePlayback] = useState(false)
+  const [hasPlayed, setHasPlayed] = useState(false)
 
   const handlePlayPause = () => {
     togglePlayback(!isPlaying)
+    !hasPlayed && setHasPlayed(true)
   }
 
   return (
@@ -100,13 +100,14 @@ export default ({ location }) => {
                 width="100%"
                 height="100%"
                 controls={true}
+                onEnded={() => setHasPlayed(false)}
               />
-              <div>
-                <button
-                  onClick={handlePlayPause}
-                  className="absolute w-full h-full flex p-c justify-center items-center"
-                >
-                  {!isPlaying && (
+              {!hasPlayed && (
+                <div>
+                  <button
+                    onClick={handlePlayPause}
+                    className="absolute w-full h-full flex p-c justify-center items-center"
+                  >
                     <>
                       <Img
                         className="object-cover w-full h-full"
@@ -119,9 +120,9 @@ export default ({ location }) => {
                         className="text-seaGreen hover:text-freshBlue absolute"
                       />
                     </>
-                  )}
-                </button>
-              </div>
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
