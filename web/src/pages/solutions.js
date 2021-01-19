@@ -18,7 +18,7 @@ export default ({ location }) => {
       solutions_specs,
       solutions_specs_media,
     },
-  } = useStaticQuery(graphql`
+   } = useStaticQuery(graphql`
     query SolutionsQuery {
       sanitySolutions {
         seo {
@@ -81,6 +81,9 @@ export default ({ location }) => {
             items {
               title
               subtitle
+              body {
+                ...blocks
+              }
             }
           }
         }
@@ -98,8 +101,6 @@ export default ({ location }) => {
       }
     }
   `)
-
-  console.log(body.blocks)
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
@@ -144,8 +145,22 @@ export default ({ location }) => {
       </div>
       <div className="container">
         <h1>{solutions_specs.title}</h1>
-        <p>{solutions_specs.subtitle}</p> {/* not showing up */}
+        <p>{solutions_specs.subtitle}</p>
         <h1>{solutions_specs.solutions_specs_media.title}</h1>
+        {/* spec list */}
+        <div>
+          <ul>
+            {solutions_specs.list.items.map(item => (
+              <li>
+                <h1>{item.title}</h1>
+                <p>{item.body}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/* <div>{solutions_specs.solutions_specs_media.image}  image not showing */}
+        <p>{solutions_specs.solutions_specs_media.description}</p>
+        <p>{solutions_specs.list.items.title}</p>
       </div>
     </Layout>
   )
