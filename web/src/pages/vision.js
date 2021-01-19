@@ -50,7 +50,10 @@ export default ({ location }) => {
         }
         vision_sources {
           title
-          sourceList
+          sourceList {
+            title
+            url
+          }
         }
         seo {
           ...seoFields
@@ -68,11 +71,17 @@ export default ({ location }) => {
           <h2 className="mb-e border-t-6 border-brand pt-c">{title}</h2>
           <ContentBlocks blocks={contentBlocks.blocks} />
           {vision_sources && (
-            <div className="richText border-t-2 pt-2 mt-f f-b2">
+            <div className="richText border-t border-smoke pt-2 mt-f f-b2">
               <h5>{vision_sources.title}</h5>
               <ol>
                 {vision_sources.sourceList.map(item => (
-                  <li>{item}</li>
+                  <li>
+                    {item.url && (
+                      <a href={item.url} className="f-b2 ml-a">
+                        More Info
+                      </a>
+                    )}
+                  </li>
                 ))}
               </ol>
             </div>

@@ -95,10 +95,11 @@ export default ({ location }) => {
           <div className="w-full md:w-2/3 mt-e">
             <div className="aspect-w-16 aspect-h-9 relative z-10">
               <ReactPlayer
-                url={[heroVideomp4, heroVideowebm]}
+                url="https://www.youtube.com/watch?v=bSPRT1JAXj4"
                 playing={isPlaying}
                 width="100%"
                 height="100%"
+                controls={true}
               />
               {/* <Img
                 className="object-cover w-full h-full"
@@ -107,17 +108,16 @@ export default ({ location }) => {
                 alt={heroVideo.posterImage.alt}
               /> */}
 
-              <button
+              {/* <button
                 onClick={handlePlayPause}
                 className="absolute w-full h-full flex p-c justify-end items-end"
               >
                 {!isPlaying && (
                   <span className="h-20 w-20 rounded-full bg-seaGreen flex items-center justify-center">
-                    {/* <Icon name="play" /> */}
                     ▶️
                   </span>
                 )}
-              </button>
+              </button> */}
               {/* </div> */}
             </div>
           </div>

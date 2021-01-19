@@ -17,15 +17,18 @@ import {
 import technology from "./documents/technology";
 import { technology_primarySection } from "./documents/technology/components.js";
 import vision from "./documents/vision";
-import { vision_sources } from "./documents/vision/components.js";
+import {
+  vision_sources,
+  vision_sources_item,
+} from "./documents/vision/components.js";
 import careers from "./documents/careers";
 // import {  } from './documents/careers/components.js';
 import company from "./documents/company";
 import { company_hero } from "./documents/company/components.js";
-import jobs from "./documents/jobs";
 import privacy from "./documents/privacy";
 import terms from "./documents/terms";
 import patents from "./documents/patents";
+import roles from "./documents/roles";
 // components
 import contentBlocks from "./components/contentBlocks.js";
 import cta from "./components/callToAction.js";
@@ -57,6 +60,7 @@ export default createSchema({
   name: "default",
   types: schemaTypes.concat([
     // document specific
+    roles,
     privacy,
     patents,
     terms,
@@ -73,8 +77,8 @@ export default createSchema({
     company_hero,
     vision,
     vision_sources,
+    vision_sources_item,
     careers,
-    jobs,
     // components
     address,
     contentBlocks,

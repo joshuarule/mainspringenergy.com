@@ -1,20 +1,88 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+
+import SEO from '../components/Seo'
 import Layout from '../components/layout'
 import JobCategories from '../components/JobCategories'
+import RichText from '../components/RichText'
 
-export default function careers({ location }) {
+const parseCategories = jobs => {
+  const categories = []
+  jobs.forEach(job => {
+    const jobCategory =
+      job[
+        process.env.NODE_ENV === 'development'
+          ? 'newton_department'
+          : 'newton:department'
+      ][0]
+    if (categories.indexOf(jobCategory) === -1) {
+      categories.push(jobCategory)
+    }
+  })
+  return categories
+}
+
+export default ({ location }) => {
+  const [categories, setCategories] = useState(false)
+  let jobsData
+
+  useEffect(() => {
+    if (process.env.NODE_ENV !== 'development') {
+      fetch('/.netlify/functions/jobs')
+        .then(response => response.json())
+        .then(data => {
+          jobsData = data
+          setCategories(parseCategories(jobsData))
+        })
+    }
+  }, [])
+
+  const {
+    sanityRoles: { seo, body },
+    allJobsMockJson,
+  } = useStaticQuery(graphql`
+    query rolesQuery {
+      allJobsMockJson {
+        nodes {
+          newton_department
+        }
+      }
+      sanityRoles {
+        body {
+          _rawRichText
+        }
+        seo {
+          ...seoFields
+        }
+      }
+    }
+  `)
+
+  // grabs mock data from file in dev
+  if (process.env.NODE_ENV === 'development') {
+    if (!categories) {
+      setCategories(parseCategories(allJobsMockJson.nodes))
+    }
+  }
+
+  // current category
+
+  // on change update jobs by category
+
   return (
     <Layout location={location}>
+      <SEO title={seo.title} description={seo.description} image={seo.image} />
       <div className="container mt-g">
         <h1 className="mb-g">We're Growing. Grow With Us</h1>
-        <div className="grid grid-cols-2">
-          <div>
+        <div className="grid grid-cols-3">
+          <div className="">
             <h3 className="mb-d">Open Roles</h3>
-            <p>paragraph text</p>
+            <RichText content={body._rawRichText} />
           </div>
-          <div>
+          <div className="col-span-2">
             <h3 className="mb-d">Job Category</h3>
-            <JobCategories />
+            <JobCategories categories={categories} />
+            {/* <Jobs category={'productDevelopment'} data={} */}
           </div>
         </div>
       </div>

@@ -1,83 +1,83 @@
-import S from '@sanity/desk-tool/structure-builder'
-import { FiSettings } from 'react-icons/fi'
+import S from "@sanity/desk-tool/structure-builder";
+import { FiSettings } from "react-icons/fi";
 
 export default () =>
   S.list()
-    .title('Content')
+    .title("Content")
     .items([
       S.listItem()
-        .title('Pages')
+        .title("Pages")
         .child(
           S.list()
-            .title('Pages')
+            .title("Pages")
             .showIcons(false)
             .items([
               S.listItem()
-                .title('Home')
-                .child(S.document().schemaType('home').documentId('home')),
+                .title("Home")
+                .child(S.document().schemaType("home").documentId("home")),
               S.listItem()
-                .title('Solutions')
+                .title("Solutions")
                 .child(
-                  S.document().schemaType('solutions').documentId('solutions')
+                  S.document().schemaType("solutions").documentId("solutions")
                 ),
               S.listItem()
-                .title('Technology')
+                .title("Technology")
                 .child(
-                  S.document().schemaType('technology').documentId('technology')
+                  S.document().schemaType("technology").documentId("technology")
                 ),
               S.listItem()
-                .title('Vision')
-                .child(S.document().schemaType('vision').documentId('vision')),
+                .title("Vision")
+                .child(S.document().schemaType("vision").documentId("vision")),
               S.listItem()
-                .title('Careers')
+                .title("Careers")
                 .child(
-                  S.document().schemaType('careers').documentId('careers')
+                  S.document().schemaType("careers").documentId("careers")
                 ),
               S.listItem()
-                .title('Company')
+                .title("Company")
                 .child(
-                  S.document().schemaType('company').documentId('company')
+                  S.document().schemaType("company").documentId("company")
                 ),
               S.listItem()
-                .title('Jobs')
-                .child(S.document().schemaType('jobs').documentId('jobs')),
+                .title("Roles")
+                .child(S.document().schemaType("roles").documentId("roles")),
               S.listItem()
-                .title('Privacy')
+                .title("Privacy")
                 .child(
-                  S.document().schemaType('privacy').documentId('privacy')
+                  S.document().schemaType("privacy").documentId("privacy")
                 ),
               S.listItem()
-                .title('Patents')
+                .title("Patents")
                 .child(
-                  S.document().schemaType('patents').documentId('patents')
+                  S.document().schemaType("patents").documentId("patents")
                 ),
               S.listItem()
-                .title('Terms')
-                .child(S.document().schemaType('terms').documentId('terms')),
+                .title("Terms")
+                .child(S.document().schemaType("terms").documentId("terms")),
             ])
         ),
       S.divider(),
       ...S.documentTypeListItems().filter(
-        listItem =>
+        (listItem) =>
           ![
-            'home',
-            'solutions',
-            'technology',
-            'vision',
-            'careers',
-            'jobs',
-            'roles',
-            'company',
-            'jobs',
-            'settings',
-            'terms',
-            'privacy',
-            'patents',
+            "home",
+            "solutions",
+            "technology",
+            "vision",
+            "careers",
+            "roles",
+            "roles",
+            "company",
+            "jobs",
+            "settings",
+            "terms",
+            "privacy",
+            "patents",
           ].includes(listItem.getId())
       ),
       S.divider(),
       S.listItem()
-        .title('Settings')
+        .title("Settings")
         .icon(FiSettings)
-        .child(S.document().schemaType('settings').documentId('settings')),
-    ])
+        .child(S.document().schemaType("settings").documentId("settings")),
+    ]);
