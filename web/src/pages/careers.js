@@ -1,12 +1,11 @@
 import React from 'react'
 import Layout from '../components/layout'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import SEO from '../components/Seo'
-import JobCategories from '../components/JobCategories'
 
-export default function careers({ location }) {
+export default ({ location }) => {
   const {
-    sanityCareers: { seo, sanityCareers },
+    sanityCareers: { seo, title },
   } = useStaticQuery(graphql`
     query CareersQuery {
       sanityCareers {
@@ -21,8 +20,8 @@ export default function careers({ location }) {
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       <div className="container mt-g">
-        {/* TODO: not breaking, but not showing up... */}
-        <p>{sanityCareers.title}</p> 
+        <p>{title}</p>
+        <Link to="/roles">Roles</Link>
       </div>
     </Layout>
   )
