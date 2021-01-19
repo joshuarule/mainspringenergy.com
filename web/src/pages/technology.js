@@ -124,7 +124,7 @@ export default ({ location }) => {
                 onEnded={() => setHasPlayed(false)}
               />
               {!hasPlayed && (
-                <div>
+                <div className="group">
                   <button
                     onClick={handlePlayPause}
                     className="absolute w-full h-full flex p-c justify-center items-center"
@@ -138,7 +138,7 @@ export default ({ location }) => {
                       />
                       <Icon
                         name="play"
-                        className="text-seaGreen hover:text-freshBlue absolute"
+                        className="text-seaGreen group-hover:text-seaGreenDark transition-colors absolute"
                       />
                     </>
                   </button>

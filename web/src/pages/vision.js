@@ -76,6 +76,7 @@ export default ({ location }) => {
               <ol>
                 {vision_sources.sourceList.map(item => (
                   <li>
+                    {item.title}
                     {item.url && (
                       <a href={item.url} className="f-b2 ml-a">
                         More Info

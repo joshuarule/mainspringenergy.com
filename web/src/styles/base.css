@@ -20,6 +20,7 @@
   /* Primary */
   --c-navy: #2b2c58;
   --c-seaGreen: #30758f;
+  --c-seaGreen--dark: #265e73;
   --c-freshBlue: #08b2e3;
 
   /* Secondary */
@@ -42,6 +43,8 @@
   --c-smoke: #c5c7c4;
   --c-fog: #e6e6e6;
   --c-white: #ffffff;
+
+  --c-footerBg: #f9f4ec;
 
   --f-h1--size: 32px;
   --f-h1--lineHeight: 40px;

@@ -17,7 +17,7 @@ export default function ContentBlocks({ blocks }) {
           case 'sectionTitle':
             return <SectionTitle key={`block-${i}`} {...block} />
           case 'imageGrid':
-            return <ImageGrid key={`block-${i}`} {...block} />
+            return <ImageGrid key={`block-${i}`} {...block} className="my-e" />
           case 'blockquote':
             return <Blockquote key={`block-${i}`} {...block} />
           case 'textColumns':
