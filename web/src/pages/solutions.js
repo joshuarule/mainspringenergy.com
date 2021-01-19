@@ -7,6 +7,7 @@ import SEO from '../components/Seo'
 import ContentBlocks from '../components/ContentBlocks'
 import SectionTitle from '../components/SectionTitle'
 import { LinkPrimary } from '../components/Link'
+import RichText from '../components/RichText'
 
 export default ({ location }) => {
   const {
@@ -18,7 +19,7 @@ export default ({ location }) => {
       solutions_specs,
       solutions_specs_media,
     },
-   } = useStaticQuery(graphql`
+  } = useStaticQuery(graphql`
     query SolutionsQuery {
       sanitySolutions {
         seo {
@@ -81,9 +82,7 @@ export default ({ location }) => {
             items {
               title
               subtitle
-              body {
-                ...blocks
-              }
+              _rawBody
             }
           }
         }
@@ -101,6 +100,8 @@ export default ({ location }) => {
       }
     }
   `)
+
+  console.log(solutions_specs)
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
@@ -153,7 +154,7 @@ export default ({ location }) => {
             {solutions_specs.list.items.map(item => (
               <li>
                 <h1>{item.title}</h1>
-                <p>{item.body}</p>
+                <RichText content={item._rawBody} />
               </li>
             ))}
           </ul>

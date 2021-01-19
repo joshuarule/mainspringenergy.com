@@ -52,7 +52,7 @@ export default function ImageGrid({
           options.logos ? (
             <div
               key={`image-${i}`}
-              className={`gridImage mb-e flex relative aspect-w-16 aspect-h-9 rounded-lg`}
+              className={`gridImage md:mb-e lg:mb-0 flex relative aspect-w-16 aspect-h-9 rounded-lg`}
               style={{ backgroundColor: 'rgba(0,0,0,.03)' }}
             >
               <Img

@@ -7,7 +7,7 @@ import JobCategories from '../components/JobCategories'
 import RichText from '../components/RichText'
 
 const parseCategories = jobs => {
-  const categories = []
+  const categories = {}
   jobs.forEach(job => {
     const jobCategory =
       job[
@@ -15,9 +15,10 @@ const parseCategories = jobs => {
           ? 'newton_department'
           : 'newton:department'
       ][0]
-    if (categories.indexOf(jobCategory) === -1) {
-      categories.push(jobCategory)
+    if (!categories[jobCategory]) {
+      categories[jobCategory] = []
     }
+    categories[jobCategory].push(job)
   })
   return categories
 }
@@ -68,6 +69,9 @@ export default ({ location }) => {
   // current category
 
   // on change update jobs by category
+
+  console.log(categories)
+  debugger
 
   return (
     <Layout location={location}>
