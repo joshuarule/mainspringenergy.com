@@ -2,6 +2,9 @@ import React from 'react'
 import Layout from '../components/layout'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import SEO from '../components/Seo'
+import ContentBlocks from '../components/ContentBlocks'
+import { Body } from 'node-fetch'
+
 
 export default ({ location }) => {
   const {
@@ -13,6 +16,9 @@ export default ({ location }) => {
           ...seoFields
         }
         title
+        body {
+          ...blocks
+        }
       }
     }
   `)
@@ -21,7 +27,8 @@ export default ({ location }) => {
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       <div className="container mt-g">
         <p>{title}</p>
-        <Link to="/roles">Roles</Link>
+        {/* <ContentBlocks blocks={sanityCareers.body} /> */}
+        {/* just need to figure out the body/content blocks here */}
       </div>
     </Layout>
   )
