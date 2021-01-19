@@ -1,4 +1,4 @@
-import VisionIllustration from './visionIllustration'
+import VisionIllustration from './VisionIllustration'
 
 const DynamicBlock = {
   visionIllustration: VisionIllustration,
