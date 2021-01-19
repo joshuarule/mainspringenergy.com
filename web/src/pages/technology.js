@@ -101,24 +101,27 @@ export default ({ location }) => {
                 height="100%"
                 controls={true}
               />
-              {/* <Img
-                className="object-cover w-full h-full"
-                style={{ position: 'absolute' }}
-                fluid={heroVideo.posterImage.src.asset.fluid}
-                alt={heroVideo.posterImage.alt}
-              /> */}
-
-              {/* <button
-                onClick={handlePlayPause}
-                className="absolute w-full h-full flex p-c justify-end items-end"
-              >
-                {!isPlaying && (
-                  <span className="h-20 w-20 rounded-full bg-seaGreen flex items-center justify-center">
-                    ▶️
-                  </span>
-                )}
-              </button> */}
-              {/* </div> */}
+              <div>
+                <button
+                  onClick={handlePlayPause}
+                  className="absolute w-full h-full flex p-c justify-center items-center"
+                >
+                  {!isPlaying && (
+                    <>
+                      <Img
+                        className="object-cover w-full h-full"
+                        style={{ position: 'absolute' }}
+                        fluid={heroVideo.posterImage.src.asset.fluid}
+                        alt={heroVideo.posterImage.alt}
+                      />
+                      <Icon
+                        name="play"
+                        className="text-seaGreen hover:text-freshBlue absolute"
+                      />
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
           </div>
         </div>
