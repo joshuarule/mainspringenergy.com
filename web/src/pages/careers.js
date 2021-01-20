@@ -3,8 +3,6 @@ import Layout from '../components/layout'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import SEO from '../components/Seo'
 import ContentBlocks from '../components/ContentBlocks'
-import { Body } from 'node-fetch'
-
 
 export default ({ location }) => {
   const {

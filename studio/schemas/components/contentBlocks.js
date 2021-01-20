@@ -25,6 +25,7 @@ export default {
         { type: "textColumns" },
         { type: "link", title: "Link - Full Width", icon: BiLinkAlt },
         { type: "richTextObj", icon: MdTextFields },
+        { type: "dynamicBlock" },
       ],
     },
   ],

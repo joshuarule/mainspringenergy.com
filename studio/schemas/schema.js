@@ -16,7 +16,10 @@ import {
   solutions_form,
 } from "./documents/solutions/components.js";
 import technology from "./documents/technology";
-import { technology_primarySection } from "./documents/technology/components.js";
+import {
+  technology_primarySection,
+  technology_secondarySection,
+} from "./documents/technology/components.js";
 import vision from "./documents/vision";
 import {
   vision_sources,
@@ -52,6 +55,7 @@ import textColumns from "./components/textColumns.js";
 import textColumn from "./components/textColumn.js";
 import richTextObj from "./components/richText.js";
 import gridImage from "./components/gridImage.js";
+import dynamicBlock from "./components/dynamicBlock.js";
 // options
 import cta_options from "./components/cta_options.js";
 import imageBlock_options from "./components/imageBlock_options.js";
@@ -75,6 +79,7 @@ export default createSchema({
     solutions_form,
     technology,
     technology_primarySection,
+    technology_secondarySection,
     company,
     company_hero,
     vision,
@@ -84,6 +89,7 @@ export default createSchema({
     // components
     address,
     contentBlocks,
+    dynamicBlock,
     imageBlock_options,
     cta,
     cta_options,

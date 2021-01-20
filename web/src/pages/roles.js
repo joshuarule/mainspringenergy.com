@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
+import slugify from 'slugify'
 
 import SEO from '../components/Seo'
 import Layout from '../components/layout'
@@ -15,15 +16,34 @@ const parseCategories = jobs => {
           ? 'newton_department'
           : 'newton:department'
       ][0]
-    if (!categories[jobCategory]) {
-      categories[jobCategory] = []
+    const id =
+      job[
+        process.env.NODE_ENV === 'development' ? 'newton_jobId' : 'newton:jobId'
+      ][0]
+    const slug = slugify(jobCategory, { lower: true })
+
+    if (!categories[slug]) {
+      categories[slug] = {
+        name: jobCategory,
+        jobs: [],
+      }
     }
-    categories[jobCategory].push(job.title[0])
+    categories[slug].jobs.push({
+      title: job.title[0],
+      id,
+      url: job.link[0]._.href,
+    })
   })
   return categories
 }
 
 export default ({ location }) => {
+  const searchParams = new URLSearchParams(location.search)
+  let cat = false
+  if (searchParams) {
+    cat = searchParams.get('category')
+  }
+
   const [categories, setCategories] = useState(false)
   let jobsData
 
@@ -33,7 +53,11 @@ export default ({ location }) => {
         .then(response => response.json())
         .then(data => {
           jobsData = data
-          setCategories(parseCategories(jobsData))
+          const parsedCategories = parseCategories(jobsData)
+          setCategories(parsedCategories)
+          if (!searchParams) {
+            cat = Object.keys(parsedCategories)[0]
+          }
         })
     }
   }, [])
@@ -47,6 +71,12 @@ export default ({ location }) => {
         nodes {
           newton_department
           title
+          newton_jobId
+          link {
+            _ {
+              href
+            }
+          }
         }
       }
       sanityRoles {
@@ -63,18 +93,23 @@ export default ({ location }) => {
   // grabs mock data from file in dev
   if (process.env.NODE_ENV === 'development') {
     if (!categories) {
-      setCategories(parseCategories(allJobsMockJson.nodes))
+      const parsedData = parseCategories(allJobsMockJson.nodes)
+      setCategories(parsedData)
+      if (!cat) {
+        cat = Object.keys(parsedData)[0]
+      }
     }
   }
 
   // current category
 
   // on change update jobs by category
-  const [category, setCategory] = useState('Product Development')
+  const [category, setCategory] = useState(cat)
   const handleOnchange = e => {
+    // set url params
     setCategory(e.target.value)
   }
-
+  console.log(category)
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
@@ -88,13 +123,18 @@ export default ({ location }) => {
           <div className="col-span-2">
             <h3 className="mb-d">Job Category</h3>
             <JobCategories
-              categories={Object.keys(categories)}
+              categories={categories}
               onChange={handleOnchange}
+              currentItem={category}
             />
             {categories && categories[category] && (
               <ul className="mt-d">
-                {categories[category].map(title => (
-                  <li className="f-b1 mb-a">{title}</li>
+                {categories[category].jobs.map(job => (
+                  <li className="f-b1 mb-a">
+                    <a target="_blank" href={job.url}>
+                      {job.title}
+                    </a>
+                  </li>
                 ))}
               </ul>
             )}

@@ -114,7 +114,6 @@ export default ({ location }) => {
     }
   `)
 
-  console.log({ solutions_form })
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />

@@ -43,7 +43,7 @@ export default ({ location }) => {
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       {/* image in, but needs to be below header */}
       <Img
-        className="container"
+        className="container mt-g"
         fluid={hero.heroImage.src.asset.fluid}
         alt={hero.heroImage.alt}
       />
@@ -51,9 +51,5 @@ export default ({ location }) => {
     </Layout>
   )
 }
-
-
-
-
 
 // TODO: take a look at heroImage..is there going to be more than 1???

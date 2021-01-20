@@ -8,6 +8,7 @@ import Cta from './Cta'
 import Figure from './Figure'
 import { LinkFull } from './Link'
 import RichText from './RichText'
+import DynamicBlock from './DynamicBlock'
 
 export default function ContentBlocks({ blocks }) {
   return blocks
@@ -16,13 +17,15 @@ export default function ContentBlocks({ blocks }) {
           case 'sectionTitle':
             return <SectionTitle key={`block-${i}`} {...block} />
           case 'imageGrid':
-            return <ImageGrid key={`block-${i}`} {...block} />
+            return <ImageGrid key={`block-${i}`} {...block} className="my-e" />
           case 'blockquote':
             return <Blockquote key={`block-${i}`} {...block} />
           case 'textColumns':
             return <TextColumns key={`block-${i}`} {...block} />
           case 'cta':
             return <Cta key={`block-${i}`} {...block} />
+          case 'dynamicBlock':
+            return DynamicBlock[block.name]()
           case 'figure':
             return (
               <Figure

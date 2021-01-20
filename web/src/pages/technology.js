@@ -7,14 +7,14 @@ import SEO from '../components/Seo'
 import Layout from '../components/layout.js'
 import { LinkPrimary } from '../components/Link.js'
 import List from '../components/List.js'
-import ContentBlocks from '../components/ContentBlocks'
-import heroVideomp4 from '../assets/video/Mainspring_2020_Overview_Final_720p_compressed.mp4'
-import heroVideowebm from '../assets/video/Mainspring_2020_Overview_Final_720p_compressed.webm'
+import Figure from '../components/Figure'
+import { LinkFull } from '../components/Link'
+import SectionTitle from '../components/SectionTitle'
 import Icon from '../components/Icon'
 
 export default ({ location }) => {
   const {
-    sanityTechnology: { seo, primarySection, body, heroVideo },
+    sanityTechnology: { seo, primarySection, heroVideo, secondarySection },
     heroTop,
     heroBottom,
   } = useStaticQuery(graphql`
@@ -59,8 +59,27 @@ export default ({ location }) => {
             }
           }
         }
-        body {
-          ...blocks
+        secondarySection {
+          image {
+            alt
+            options {
+              fullWidth
+              marginTop
+              marginBottom
+            }
+            src {
+              asset {
+                fluid(maxWidth: 2000) {
+                  ...GatsbySanityImageFluid
+                }
+              }
+            }
+          }
+          link {
+            label
+            path
+          }
+          _rawTitle
         }
         seo {
           ...seoFields
@@ -70,9 +89,11 @@ export default ({ location }) => {
   `)
 
   const [isPlaying, togglePlayback] = useState(false)
+  const [hasPlayed, setHasPlayed] = useState(false)
 
   const handlePlayPause = () => {
     togglePlayback(!isPlaying)
+    !hasPlayed && setHasPlayed(true)
   }
 
   return (
@@ -100,13 +121,14 @@ export default ({ location }) => {
                 width="100%"
                 height="100%"
                 controls={true}
+                onEnded={() => setHasPlayed(false)}
               />
-              <div>
-                <button
-                  onClick={handlePlayPause}
-                  className="absolute w-full h-full flex p-c justify-center items-center"
-                >
-                  {!isPlaying && (
+              {!hasPlayed && (
+                <div className="group">
+                  <button
+                    onClick={handlePlayPause}
+                    className="absolute w-full h-full flex p-c justify-center items-center"
+                  >
                     <>
                       <Img
                         className="object-cover w-full h-full"
@@ -116,12 +138,12 @@ export default ({ location }) => {
                       />
                       <Icon
                         name="play"
-                        className="text-seaGreen hover:text-freshBlue absolute"
+                        className="text-seaGreen group-hover:text-seaGreenDark transition-colors absolute"
                       />
                     </>
-                  )}
-                </button>
-              </div>
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -152,7 +174,24 @@ export default ({ location }) => {
         </div>
       </div>
       <div className="container">
-        <ContentBlocks blocks={body.blocks} />
+        <SectionTitle
+          {...secondarySection._rawTitle}
+          smallTitle={true}
+          className="mb-f"
+        />
+        <Figure
+          className="lg:ml-g"
+          src={secondarySection.image.src}
+          alt={secondarySection.image.alt}
+          options={secondarySection.image.options}
+          style={{ width: 'calc(100vw - (100vw - 1280px) / 2)' }}
+        />
+        <LinkFull
+          className="linkFull f-h3 mb-e block"
+          to={secondarySection.link.path}
+        >
+          {secondarySection.link.label}
+        </LinkFull>
       </div>
     </Layout>
   )

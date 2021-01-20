@@ -5,7 +5,7 @@ import Icon from './Icon'
 
 export default function footer() {
   return (
-    <footer className="bg-ivory pt-d pb-f">
+    <footer className="bg-footerBg pt-d pb-g">
       <div className="container grid grid-cols-12">
         <div className="col-span-2">
           <Icon
