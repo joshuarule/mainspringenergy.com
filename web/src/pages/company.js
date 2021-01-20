@@ -4,12 +4,14 @@ import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 import SEO from '../components/Seo'
+import ContentBlocks from '../components/ContentBlocks'
 
 export default ({ location }) => {
   const {
     sanityCompany: {
       seo,
       hero,
+      body,
     },
   } = useStaticQuery(graphql`
     query CompanyQuery {
@@ -29,10 +31,13 @@ export default ({ location }) => {
             }
           }
         }
+        body {
+          ...blocks
+        }
       }
     }
   `)
-  console.log(hero)
+  console.log(body)
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
@@ -42,6 +47,7 @@ export default ({ location }) => {
         fluid={hero.heroImage.src.asset.fluid}
         alt={hero.heroImage.alt}
       />
+      <ContentBlocks blocks={body.blocks} />
     </Layout>
   )
 }

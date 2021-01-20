@@ -8,7 +8,7 @@ import { Body } from 'node-fetch'
 
 export default ({ location }) => {
   const {
-    sanityCareers: { seo, title },
+    sanityCareers: { seo, title, body },
   } = useStaticQuery(graphql`
     query CareersQuery {
       sanityCareers {
@@ -27,7 +27,7 @@ export default ({ location }) => {
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       <div className="container mt-g">
         <p>{title}</p>
-        {/* <ContentBlocks blocks={sanityCareers.body} /> */}
+        <ContentBlocks blocks={body.blocks} />
         {/* just need to figure out the body/content blocks here */}
       </div>
     </Layout>
