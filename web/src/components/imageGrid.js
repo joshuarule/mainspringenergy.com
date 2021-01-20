@@ -56,7 +56,7 @@ export default function ImageGrid({
               style={{ backgroundColor: 'rgba(0,0,0,.03)' }}
             >
               <Img
-                className="w-full h-full"
+                className="w-full h-full absolute"
                 style={{
                   position: 'absolute',
                 }}

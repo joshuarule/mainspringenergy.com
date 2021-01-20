@@ -144,6 +144,7 @@ export const SEO_FIELDS = graphql`
       }
       ... on SanityList {
         _type
+        _rawItems
       }
       ... on SanitySectionTitle {
         _type

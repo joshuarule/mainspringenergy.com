@@ -9,6 +9,7 @@ import Figure from './Figure'
 import { LinkFull } from './Link'
 import RichText from './RichText'
 import DynamicBlock from './DynamicBlock'
+import List from './List'
 
 export default function ContentBlocks({ blocks }) {
   return blocks
@@ -36,6 +37,8 @@ export default function ContentBlocks({ blocks }) {
                 className="my-f"
               />
             )
+          case 'list':
+            return <List items={block._rawItems} classname="mb-e" />
           case 'richTextObj':
             return (
               <RichText
