@@ -19,6 +19,7 @@ export default ({ location }) => {
       solutions_specs,
       solutions_specs_media,
       solutions_downloads,
+      solutions_form,
     },
   } = useStaticQuery(graphql`
     query SolutionsQuery {
@@ -105,11 +106,14 @@ export default ({ location }) => {
             }
           }
         }
+        solutions_form {
+          title
+          subtitle
+        }
       }
     }
   `)
 
-  console.log({ solutions_downloads })
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
@@ -184,6 +188,10 @@ export default ({ location }) => {
             </li>
           ))}
         </ul>
+      </div>
+      {/* solutions_form */}
+      <div className="container">
+        <SectionTitle {...solutions_form.title} className="mt-0 mb-e" />
       </div>
     </Layout>
   )

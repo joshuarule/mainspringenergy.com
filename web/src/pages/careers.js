@@ -25,8 +25,8 @@ export default ({ location }) => {
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       <div className="container mt-g">
         <p>{title}</p>
-        <Link to="/roles">All Roles</Link>
         <ContentBlocks blocks={body.blocks} />
+        {/* just need to figure out the body/content blocks here */}
       </div>
     </Layout>
   )

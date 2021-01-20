@@ -111,3 +111,13 @@ export const solutions_primary = {
     },
   ],
 };
+
+export const solutions_form = {
+  name: "solutions_form",
+  title: "Solutions Form",
+  type: "sectionTitle",
+  options: {
+    collapsible: true,
+    collapsed: true,
+  }, 
+};

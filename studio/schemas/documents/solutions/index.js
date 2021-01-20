@@ -28,6 +28,10 @@ export default {
       name: "body",
       title: "Body",
       type: "contentBlocks",
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
     },
     {
       name: "solutions_specs",
@@ -38,6 +42,11 @@ export default {
       name: "solutions_downloads",
       title: "Downloads",
       type: "solutions_downloads",
+    },
+    {
+      name: "solutions_form",
+      title: "Solutions Form",
+      type: "solutions_form",
     },
   ],
 };

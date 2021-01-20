@@ -13,6 +13,7 @@ import {
   solutions_specs_media,
   solutions_downloads,
   solutions_primary,
+  solutions_form,
 } from "./documents/solutions/components.js";
 import technology from "./documents/technology";
 import {
@@ -75,6 +76,7 @@ export default createSchema({
     solutions_downloads,
     solutions_specs_media,
     solutions_primary,
+    solutions_form,
     technology,
     technology_primarySection,
     technology_secondarySection,
