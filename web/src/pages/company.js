@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -60,6 +60,8 @@ export default ({ location }) => {
       }
     }
   `)
+  const [activeProfile, setActiveProfile] = useState(false)
+
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
@@ -88,7 +90,8 @@ export default ({ location }) => {
         </nav>
         <ul className="grid grid-cols-4">
           {/* filter people by category */}
-          {people.nodes.map(person => {
+          <Profile person={people.nodes[2]} />
+          {people.nodes.map((person, i) => {
             let positionStyles = {}
             if (person.image.hotspot) {
               positionStyles = {
@@ -98,7 +101,7 @@ export default ({ location }) => {
               }
             }
             return (
-              <li className="person mb-f relative">
+              <li className={`person mb-f relative order-${i}`}>
                 <div style={{ maxWidth: '211px' }}>
                   <div className="aspect-h-1 aspect-w-1 relative rounded-full overflow-hidden mb-d">
                     <Img
@@ -132,5 +135,35 @@ export default ({ location }) => {
         {/* this info / images gets quried from the sanitySettings */}
       </div>
     </Layout>
+  )
+}
+
+const Profile = ({ person }) => {
+  let positionStyles = {}
+  if (person.image.hotspot) {
+    positionStyles = {
+      objectPosition: `${person.image.hotspot.x * 100}% ${
+        person.image.hotspot.y * 100
+      }%`,
+    }
+  }
+  return (
+    <div className="col-span-4 order-0 bg-tan w-edge">
+      <div className="container grid grid-cols-2">
+        <div className="aspect-h-1 aspect-w-1 relative mb-d">
+          <Img
+            fluid={person.image.asset.fluid}
+            style={{
+              position: 'absolute',
+            }}
+            imgStyle={{
+              height: 'auto',
+              ...positionStyles,
+            }}
+            className="absolute"
+          />
+        </div>
+      </div>
+    </div>
   )
 }

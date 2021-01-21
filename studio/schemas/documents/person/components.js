@@ -16,3 +16,10 @@ export const person_image = {
   ],
   validation: (Rule) => Rule.required(),
 };
+
+export const person_category = {
+  title: "Type",
+  name: "personCategory",
+  type: "reference",
+  to: [{ type: "personTypes" }],
+};
