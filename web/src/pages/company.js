@@ -6,12 +6,13 @@ import Layout from '../components/Layout'
 import SEO from '../components/Seo'
 import ContentBlocks from '../components/ContentBlocks'
 import SectionTitle from '../components/SectionTitle'
+import ImageGrid from '../components/ImageGrid'
 
 export default ({ location }) => {
   const {
     people,
     types,
-    sanityCompany: { seo, hero, body, company_investors },
+    sanityCompany: { seo, hero, body, investors },
   } = useStaticQuery(graphql`
     query CompanyQuery {
       types: allSanityPersonTypes {
@@ -38,6 +39,17 @@ export default ({ location }) => {
           _rawText
         }
       }
+      sanitySettings {
+        map {
+          src {
+            asset {
+              fluid {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
+        }
+      }
       sanityCompany {
         seo {
           ...seoFields
@@ -57,9 +69,26 @@ export default ({ location }) => {
         body {
           ...blocks
         }
-        company_investors {
+        investors {
           title
-          investors
+          logos {
+            columns
+            options {
+              logos
+            }
+            images {
+              image {
+                alt
+                src {
+                  asset {
+                    fluid {
+                      ...GatsbySanityImageFluid
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -134,12 +163,15 @@ export default ({ location }) => {
           })}
         </ul>
       </div>
+      <div className="bg-footerBg">
+        <div className="container pt-e pb-g">
+          <h1 className="mb-e">{investors.title}</h1>
+          <ImageGrid {...investors.logos} />
+        </div>
+      </div>
       <div className="container">
         <SectionTitle title="Contact" />
         {/* this info / images gets quried from the sanitySettings */}
-      </div>
-      <div className="container">
-        <h1>{company_investors.title}</h1>
       </div>
     </Layout>
   )
