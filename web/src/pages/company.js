@@ -13,6 +13,7 @@ export default ({ location }) => {
     people,
     types,
     sanityCompany: { seo, hero, body, investors },
+    sanitySettings: { map, satellite, email, address }
   } = useStaticQuery(graphql`
     query CompanyQuery {
       types: allSanityPersonTypes {
@@ -40,7 +41,26 @@ export default ({ location }) => {
         }
       }
       sanitySettings {
+        email
+        address {
+          city
+          state
+          street
+          street2
+          zip
+        }
         map {
+          alt
+          src {
+            asset {
+              fluid {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
+        }
+        satellite {
+          alt
           src {
             asset {
               fluid {
@@ -94,11 +114,12 @@ export default ({ location }) => {
     }
   `)
   const [activeProfile, setActiveProfile] = useState(false)
+  
+  console.log({map})
 
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
-      {/* image in, but needs to be below header */}
       <Img
         className="container mt-g"
         fluid={hero.heroImage.src.asset.fluid}
@@ -172,6 +193,18 @@ export default ({ location }) => {
       <div className="container">
         <SectionTitle title="Contact" />
         {/* this info / images gets quried from the sanitySettings */}
+        <p>{email}</p>
+        <br />
+        <p>{address.street}</p>
+        <p>{[address.city, ", ", address.state, " ", address.zip]}</p>
+        <Img 
+          fluid={map.src.asset.fluid}
+          alt={map.alt}
+        />
+        <Img 
+          fluid={satellite.src.asset.fluid}
+          alt={satellite.alt}
+        />
       </div>
     </Layout>
   )

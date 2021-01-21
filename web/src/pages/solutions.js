@@ -171,8 +171,11 @@ export default ({ location }) => {
             ))}
           </ul>
         </div>
-        {/* <div>{solutions_specs.solutions_specs_media.image}  image not showing */}
         <p>{solutions_specs.solutions_specs_media.description}</p>
+        <Img
+          fluid={solutions_specs.solutions_specs_media.image}
+          alt={solutions_specs.solutions_specs_media.alt}
+        />
         <p>{solutions_specs.list.items.title}</p>
       </div>
       {/* specs_downloads */}
