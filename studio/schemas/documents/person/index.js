@@ -22,17 +22,10 @@ export default {
       type: "string",
     },
     {
-      name: "category",
+      name: "personCategories",
       type: "array",
       validation: (Rule) => Rule.unique().required(),
-      of: [
-        {
-          title: "Type",
-          name: "type",
-          type: "reference",
-          to: [{ type: "personTypes" }],
-        },
-      ],
+      of: [{ type: "personCategory" }],
     },
     // https://stackoverflow.com/questions/58567054/how-can-i-validate-the-dimensions-of-an-uploaded-image-in-sanity
     {

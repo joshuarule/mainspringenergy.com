@@ -1,23 +1,23 @@
 export default {
-  name: 'company',
-  title: 'Company',
-  __experimental_actions: ['update', 'publish'],
-  type: 'document',
+  name: "company",
+  title: "Company",
+  __experimental_actions: ["update", "publish"],
+  type: "document",
   preview: {
     select: {
-      'title': 'seo.title'
-    }
+      title: "seo.title",
+    },
   },
   fields: [
     {
-      name: 'seo',
-      title: 'SEO',
-      type: 'seo',
+      name: "seo",
+      title: "SEO",
+      type: "seo",
     },
     {
-      name: 'hero',
-      title: 'Hero',
-      type: 'company_hero',
+      name: "hero",
+      title: "Hero",
+      type: "company_hero",
     },
     {
       name: "body",
@@ -30,4 +30,4 @@ export default {
       type: "company_investors",
     },
   ],
-}
+};

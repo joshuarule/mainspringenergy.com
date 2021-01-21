@@ -7,7 +7,10 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 // documents
 import home from "./documents/home/index.js";
 import person from "./documents/person/index.js";
-import { person_image } from "./documents/person/components.js";
+import {
+  person_image,
+  person_category,
+} from "./documents/person/components.js";
 import personTypes from "./documents/personTypes.js";
 import solutions from "./documents/solutions";
 import {
@@ -75,6 +78,7 @@ export default createSchema({
     person,
     person_image,
     personTypes,
+    person_category,
     solutions,
     solutions_specs,
     solutions_downloads,
