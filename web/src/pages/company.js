@@ -254,7 +254,7 @@ export default ({ location }) => {
       </div>
       <div className="container lg:grid lg:grid-cols-3 my-g">
         <div>
-          <SectionTitle title="Contact" border={true} className="mt-0 pt-a" />
+          <SectionTitle title="Contact" border={true} className="mt-0" />
           <p className="f-b1 mb-d">
             <a className="text-iron" href={`mailto:${email}`}>
               {email}

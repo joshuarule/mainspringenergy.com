@@ -83,7 +83,7 @@ module.exports = {
       steel: 'var(--c-steel)',
       smoke: 'var(--c-smoke)',
       fog: 'var(--c-fog)',
-      white: 'var(--c-white)',
+      white: 'var(--c-ivory)',
       footerBg: 'var(--c-footerBg)',
       techGradientFrom: '#4C8CF6',
       techGradientTo: '#2B2C58',

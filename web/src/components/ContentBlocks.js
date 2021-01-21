@@ -16,9 +16,13 @@ export default function ContentBlocks({ blocks }) {
     ? blocks.map((block, i) => {
         switch (block._type) {
           case 'sectionTitle':
-            return <SectionTitle key={`block-${i}`} {...block} />
+            return (
+              <SectionTitle key={`block-${i}`} {...block} className="mb-f" />
+            )
           case 'imageGrid':
-            return <ImageGrid key={`block-${i}`} {...block} className="my-e" />
+            return (
+              <ImageGrid key={`block-${i}`} {...block} className="mt-e mb-g" />
+            )
           case 'blockquote':
             return <Blockquote key={`block-${i}`} {...block} />
           case 'textColumns':

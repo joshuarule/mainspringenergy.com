@@ -17,7 +17,6 @@ export default ({ location }) => {
       body,
       solutions_primary,
       solutions_specs,
-      solutions_specs_media,
       solutions_downloads,
       solutions_form,
     },
@@ -156,28 +155,45 @@ export default ({ location }) => {
       <div className="container">
         <ContentBlocks blocks={body.blocks} />
       </div>
-      <div className="container">
-        <h1>{solutions_specs.title}</h1>
-        <p>{solutions_specs.subtitle}</p>
-        <h1>{solutions_specs.solutions_specs_media.title}</h1>
-        {/* spec list */}
-        <div>
-          <ul>
-            {solutions_specs.list.items.map(item => (
-              <li>
-                <h1>{item.title}</h1>
-                <RichText content={item._rawBody} />
-              </li>
-            ))}
-          </ul>
+      <section className="bg-tan py-e">
+        <div className="container">
+          <div className="mb-f">
+            <h1 className="f-h2">{solutions_specs.title}</h1>
+            <p className="f-b1">{solutions_specs.subtitle}</p>
+          </div>
+          <div className="grid grid-cols-3 mb-g text-seaGreen items-center">
+            <div>
+              <h1 className="f-h3 mb-e">
+                {solutions_specs.solutions_specs_media.title}
+              </h1>
+              <ul className="mb-g">
+                {solutions_specs.solutions_specs_media.specs.map(spec => (
+                  <p className="f-h3 font-thin">{spec}</p>
+                ))}
+              </ul>
+              <p>{solutions_specs.solutions_specs_media.description}</p>
+            </div>
+            <div className="lg:col-span-2">
+              <Img
+                fluid={
+                  solutions_specs.solutions_specs_media.image.src.asset.fluid
+                }
+                alt={solutions_specs.solutions_specs_media.alt}
+              />
+            </div>
+          </div>
+          <div>
+            <ul className="lg:grid lg:grid-cols-6">
+              {solutions_specs.list.items.map(item => (
+                <li className="border-t-6 border-steel pt-a">
+                  <h5 className="f-b1 font-bold">{item.title}</h5>
+                  <RichText content={item._rawBody} className="text-steel" />
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <p>{solutions_specs.solutions_specs_media.description}</p>
-        <Img
-          fluid={solutions_specs.solutions_specs_media.image.src.asset.fluid}
-          alt={solutions_specs.solutions_specs_media.alt}
-        />
-        <p>{solutions_specs.list.items.title}</p>
-      </div>
+      </section>
       {/* specs_downloads */}
       <div className="container">
         <h1>{solutions_downloads.title}</h1>

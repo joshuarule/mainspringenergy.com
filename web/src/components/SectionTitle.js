@@ -14,7 +14,7 @@ export default function SectionTitle({
   return (
     <div
       className={`lg:grid lg:grid-cols-3 my-d ${
-        border ? 'border-t-6 border-brand' : ''
+        border ? 'border-t-6 border-brand pt-a' : ''
       }
       ${className}
       `}
