@@ -79,6 +79,9 @@ export default ({ location }) => {
           ...seoFields
         }
         hero {
+          title
+          textCol1
+          textCol2
           heroImage {
             alt
             src {
@@ -118,6 +121,7 @@ export default ({ location }) => {
     }
   `)
   const [activeProfile, setActiveProfile] = useState(false)
+  const [activeFilter, setActiveFilter] = useState(types.nodes[0].type)
   const profileRef = useRef()
 
   useEffect(() => {
@@ -133,24 +137,56 @@ export default ({ location }) => {
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
-      <Img
-        className="container mt-g"
-        fluid={hero.heroImage.src.asset.fluid}
-        alt={hero.heroImage.alt}
-      />
-      <div className="bg-navy">
+      <div className="container mb-g lg:pt-f">
+        <div className={`mb-g lg:mt-g items-center`}>
+          <div className={`lg:mb-f relative lg:mx-f`}>
+            {hero.heroImage && (
+              <Img
+                className="container mt-g"
+                fluid={hero.heroImage.src.asset.fluid}
+                alt={hero.heroImage.alt}
+              />
+            )}
+          </div>
+          <div className={`mb-e lg:mb-0 lg:grid lg:grid-cols-12`}>
+            <div className="col-start-4 col-span-8">
+              <div className="max-prose-50 pr-g">
+                <h2 className="f-h2 mb-e">{hero.title}</h2>
+              </div>
+              <div className="lg:grid lg:grid-cols-2 text-iron">
+                <p className="f-b1">{hero.textCol1}</p>
+                <p className="f-b1">{hero.textCol2}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-navy theme--dark pt-e pb-e">
         <div className="container">
           <ContentBlocks blocks={body.blocks} />
         </div>
       </div>
-      <div className="container">
+      <div className="container" ref={profileRef}>
         <SectionTitle title="Leadership" />
-        {/* filter */}
         <nav>
           <ul class="flex my-f border-b border-smoke">
             {types.nodes.map(type => (
-              <li className="mr-e f-b1 border-b-5 border-brand pb-a ">
-                {type.type}
+              <li
+                className={`mr-e f-b1 border-b-5 pb-a ${
+                  activeFilter === type.type
+                    ? 'border-brand'
+                    : 'border-transparent'
+                }`}
+              >
+                <button
+                  onClick={() => {
+                    setActiveFilter(type.type)
+                    setActiveProfile(false)
+                  }}
+                >
+                  {type.type}
+                </button>
               </li>
             ))}
           </ul>
@@ -158,7 +194,6 @@ export default ({ location }) => {
         <ul className="grid grid-cols-4">
           {activeProfile && (
             <Profile
-              forwardRef={profileRef}
               person={activeProfile.person}
               index={activeProfile.index}
               onClose={() => setActiveProfile(false)}
@@ -168,7 +203,7 @@ export default ({ location }) => {
             .filter(person =>
               person.personCategories
                 .map(category => category.type)
-                .find(category => category === 'Executive Team')
+                .find(category => category === activeFilter)
             )
             .map((person, i) => {
               let positionStyles = {}
@@ -217,12 +252,19 @@ export default ({ location }) => {
           <ImageGrid {...investors.logos} />
         </div>
       </div>
-      <div className="container">
-        <SectionTitle title="Contact" />
-        <p>{email}</p>
-        <br />
-        <p>{address.street}</p>
-        <p>{[address.city, ', ', address.state, ' ', address.zip]}</p>
+      <div className="container lg:grid lg:grid-cols-3 my-g">
+        <div>
+          <SectionTitle title="Contact" border={true} className="mt-0 pt-a" />
+          <p className="f-b1 mb-d">
+            <a className="text-iron" href={`mailto:${email}`}>
+              {email}
+            </a>
+          </p>
+          <p className="f-b1 text-iron">{address.street}</p>
+          <p className="f-b1 text-iron">
+            {[address.city, ', ', address.state, ' ', address.zip]}
+          </p>
+        </div>
         <Img fluid={map.src.asset.fluid} alt={map.alt} />
         <Img fluid={satellite.src.asset.fluid} alt={satellite.alt} />
       </div>
@@ -230,7 +272,7 @@ export default ({ location }) => {
   )
 }
 
-const Profile = ({ person, index, onClose, forwardRef }) => {
+const Profile = ({ person, onClose }) => {
   // Math Option
   // console.log(Math.floor(index / 4) * 4)
   let positionStyles = {}
@@ -243,7 +285,6 @@ const Profile = ({ person, index, onClose, forwardRef }) => {
   }
   return (
     <div
-      ref={forwardRef}
       style={{ height: '500px' }}
       className={`col-span-4 order-0 w-edge bg-footerBg mb-f`}
     >

@@ -13,18 +13,19 @@ export const company_hero = {
       type: "figure",
     },
     {
-      title: "Hero Body",
-      name: "heroBody",
-      type: "array",
-      of: [
-        {
-          type: "block",
-          styles: [],
-          marks: {
-            decorators: [{ title: "Strong", value: "strong" }],
-          },
-        },
-      ],
+      name: "title",
+      title: "Title",
+      type: "string",
+    },
+    {
+      name: "textCol1",
+      title: "Text Column 1",
+      type: "text",
+    },
+    {
+      name: "textCol2",
+      title: "Text Column 2",
+      type: "text",
     },
   ],
 };

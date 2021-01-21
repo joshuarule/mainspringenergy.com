@@ -173,7 +173,7 @@ export default ({ location }) => {
         </div>
         <p>{solutions_specs.solutions_specs_media.description}</p>
         <Img
-          fluid={solutions_specs.solutions_specs_media.image}
+          fluid={solutions_specs.solutions_specs_media.image.src.asset.fluid}
           alt={solutions_specs.solutions_specs_media.alt}
         />
         <p>{solutions_specs.list.items.title}</p>
