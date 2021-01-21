@@ -15,11 +15,6 @@ export default {
       type: 'seo',
     },
     {
-      name: "title",
-      title: "Title",
-      type: "string",
-    },
-    {
       name: "body",
       title: "Content Blocks",
       type: "contentBlocks",
