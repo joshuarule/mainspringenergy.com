@@ -2,11 +2,10 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import SEO from '../components/Seo'
 import ContentBlocks from '../components/ContentBlocks'
 import SectionTitle from '../components/SectionTitle'
-import autoprefixer from 'autoprefixer'
 
 export default ({ location }) => {
   const {
