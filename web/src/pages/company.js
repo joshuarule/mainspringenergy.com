@@ -11,7 +11,7 @@ export default ({ location }) => {
   const {
     people,
     types,
-    sanityCompany: { seo, hero, body },
+    sanityCompany: { seo, hero, body, company_investors },
   } = useStaticQuery(graphql`
     query CompanyQuery {
       types: allSanityPersonTypes {
@@ -56,6 +56,10 @@ export default ({ location }) => {
         }
         body {
           ...blocks
+        }
+        company_investors {
+          title
+          investors
         }
       }
     }
@@ -130,6 +134,9 @@ export default ({ location }) => {
       <div className="container">
         <SectionTitle title="Contact" />
         {/* this info / images gets quried from the sanitySettings */}
+      </div>
+      <div className="container">
+        <h1>{company_investors.title}</h1>
       </div>
     </Layout>
   )

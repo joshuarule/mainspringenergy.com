@@ -28,3 +28,26 @@ export const company_hero = {
       },
     ],
   };
+
+  export const company_investors = {
+    name: "company_investors",
+    title: "Company Investors",
+    type: "object",
+    options: {
+      collapsible: true,
+      collapsed: true,
+    },
+    fields: [
+      {
+        name: "title",
+        title: "Title",
+        type: "string",
+      },
+      {
+        name: 'investors',
+        title: 'Investors Image Grid',
+        type: 'array',
+        of: [{ type: 'imageGrid' }],
+      },
+    ],
+  };

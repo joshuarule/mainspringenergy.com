@@ -30,7 +30,7 @@ import {
 import careers from "./documents/careers";
 // import {  } from './documents/careers/components.js';
 import company from "./documents/company";
-import { company_hero } from "./documents/company/components.js";
+import { company_hero, company_investors } from "./documents/company/components.js";
 import privacy from "./documents/privacy";
 import terms from "./documents/terms";
 import patents from "./documents/patents";
@@ -86,6 +86,7 @@ export default createSchema({
     technology_secondarySection,
     company,
     company_hero,
+    company_investors,
     vision,
     vision_sources,
     vision_sources_item,

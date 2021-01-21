@@ -24,5 +24,10 @@ export default {
       title: "Content Blocks",
       type: "contentBlocks",
     },
+    {
+      name: "investors",
+      title: "Investors Section",
+      type: "company_investors",
+    },
   ],
 }
