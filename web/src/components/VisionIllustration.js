@@ -1,7 +1,20 @@
 import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 import Icon from './Icon'
 
 export default function VisionIllustration() {
+  const { illustration } = useStaticQuery(graphql`
+    query IllustrationQuery {
+      illustration: file(relativePath: { eq: "ms_vision_imageF.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 2000, quality: 80) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
   return (
     <div className="w-edge my-e">
       <div className="container">
@@ -20,7 +33,10 @@ export default function VisionIllustration() {
             />
           </div>
           <div className="col-span-6">
-            <img src="https://placehold.it/1920x1080" alt="test" />
+            <Img
+              fluid={illustration.childImageSharp.fluid}
+              alt={'Mainspring generator'}
+            />
           </div>
           <div className="col-span-3">
             <div className="col-span-3 flex items-center justify-between">

@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import SEO from '../components/Seo'
 import ContentBlocks from '../components/ContentBlocks'
 
-const Hero = ({ images, title, subtitle, link, className = '' }) => {
+const Hero = ({ images, className = '' }) => {
   return (
     <div className={className}>
       {images && (
