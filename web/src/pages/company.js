@@ -137,17 +137,20 @@ export default ({ location }) => {
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
-      <div className="container mb-g lg:pt-f">
-        <div className={`mb-g lg:mt-g items-center`}>
-          <div className={`lg:mb-f relative lg:mx-f`}>
-            {hero.heroImage && (
+      <div className="container">
+        <div className="mb-g lg:pt-f">
+          {/* <div className={`mb-g lg:mt-g items-center`}> */}
+          {/* <div className={`lg:mb-f relative lg:mx-f`}> */}
+          {hero.heroImage && (
+            <div className="lg:mb-f lg:mx-f`">
               <Img
-                className="container mt-g"
+                className="mt-g"
                 fluid={hero.heroImage.src.asset.fluid}
                 alt={hero.heroImage.alt}
               />
-            )}
-          </div>
+            </div>
+          )}
+          {/* </div> */}
           <div className={`mb-e lg:mb-0 lg:grid lg:grid-cols-12`}>
             <div className="col-start-4 col-span-8">
               <div className="max-prose-50 pr-g">
@@ -160,6 +163,7 @@ export default ({ location }) => {
             </div>
           </div>
         </div>
+        {/* </div> */}
       </div>
 
       <div className="bg-navy theme--dark pt-e pb-e">
