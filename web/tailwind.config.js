@@ -92,6 +92,7 @@ module.exports = {
       h1: ['var(--f-h1--size)', 'var(--f-h1--lineHeight)'],
       h2: ['var(--f-h2--size)', 'var(--f-h2--lineHeight)'],
       h3: ['var(--f-h3--size)', 'var(--f-h3--lineHeight)'],
+      b0: ['var(--f-b0--size)', 'var(--f-b0--lineHeight)'],
       b1: ['var(--f-b1--size)', 'var(--f-b1--lineHeight)'],
       b2: ['var(--f-b2--size)', 'var(--f-b2--lineHeight)'],
     },

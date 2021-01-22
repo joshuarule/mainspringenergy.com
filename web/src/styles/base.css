@@ -73,6 +73,8 @@
 
     --f-h1--size: 40px;
     --f-h1--lineHeight: 46px;
+    --f-b0--size: 20px;
+    --f-b0--lineHeight: 20px;
     --f-b2--size: 14px;
     --f-b2--lineHeight: 18px;
   }
@@ -135,6 +137,10 @@
   }
   .f-b1 {
     @apply text-b1;
+    @apply font-light;
+  }
+  .f-b0 {
+    @apply text-b0;
     @apply font-light;
   }
   h5,

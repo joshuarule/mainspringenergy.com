@@ -10,7 +10,7 @@ export default function Blockquote({ cite, text, author, options }) {
             <blockquote className="mb-e" cite={cite}>
               <p className="f-h3">{text}</p>
             </blockquote>
-            <figcaption className="f-b1">{author}</figcaption>
+            <figcaption className="f-b0">{author}</figcaption>
           </div>
         </figure>
       </div>
@@ -21,7 +21,7 @@ export default function Blockquote({ cite, text, author, options }) {
         <blockquote className="mb-e" cite={cite}>
           <p className="f-h3">{text}</p>
         </blockquote>
-        <figcaption className="f-b1">{author}</figcaption>
+        <figcaption className="f-b0">{author}</figcaption>
       </div>
     </figure>
   )
