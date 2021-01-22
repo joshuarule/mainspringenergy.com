@@ -16,7 +16,7 @@ export default function Blockquote({ cite, text, author, options }) {
       </div>
     </div>
   ) : (
-    <figure className="blockquote border-t-6 border-smoke text-seaGreen pt-c lg:grid lg:grid-cols-3 my-f">
+    <figure className="blockquote border-t-6 border-smoke text-seaGreen pt-c lg:grid lg:grid-cols-3 mt-f mb-g">
       <div className="col-span-2">
         <blockquote className="mb-e" cite={cite}>
           <p className="f-h3">{text}</p>

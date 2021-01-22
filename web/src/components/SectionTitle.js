@@ -3,7 +3,7 @@ import { LinkPrimary } from './Link'
 
 export default function SectionTitle({
   title,
-  smallTitle,
+  options,
   subtitle,
   link,
   col_1,
@@ -13,21 +13,26 @@ export default function SectionTitle({
 }) {
   return (
     <div
-      className={`lg:grid lg:grid-cols-3 my-d ${
-        border ? 'border-t-6 border-brand pt-a' : ''
-      }
+      className={`lg:grid lg:grid-cols-3
+      ${options && options.topMargin ? 'mt-0' : 'mt-e'}
+      ${options && options.bottomMargin ? 'mb-0' : 'mb-f'}
+      ${border ? 'border-t-6 border-brand pt-c' : ''}
       ${className}
       `}
     >
       <div>
-        <h1 className={`${smallTitle ? 'f-h3' : 'f-h2'}`}>{title}</h1>
-        {subtitle && <p>{subtitle}</p>}
+        <h1
+          className={`${options && options.smallTitleSize ? 'f-h3' : 'f-h2'}`}
+        >
+          {title}
+        </h1>
+        {subtitle && <p className="mt-c">{subtitle}</p>}
         {link && link.path && link.label && (
           <LinkPrimary to={link.path}>{link.label}</LinkPrimary>
         )}
       </div>
-      {col_1 && <p className="f-b1 text-iron">{col_1}</p>}
-      {col_2 && <p className="f-b1 text-iron">{col_2}</p>}
+      {col_1 && <p className="f-b2 text-iron">{col_1}</p>}
+      {col_2 && <p className="f-b2 text-iron">{col_2}</p>}
     </div>
   )
 }

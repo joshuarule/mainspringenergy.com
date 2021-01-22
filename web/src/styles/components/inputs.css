@@ -1,0 +1,15 @@
+.input {
+  @apply shadow-sm;
+  @apply py-b;
+  @apply px-b;
+  @apply focus:ring-seaGreen;
+  @apply border;
+  @apply focus:border-seaGreen;
+  @apply block;
+  @apply w-full;
+  @apply border-smoke;
+  @apply rounded-sm;
+
+  @apply f-b1;
+  @apply font-thin;
+}

@@ -176,7 +176,7 @@ export default ({ location }) => {
       <div className="container">
         <SectionTitle
           {...secondarySection._rawTitle}
-          smallTitle={true}
+          options={{ smallTitleSize: true }}
           className="mb-f"
         />
         <Figure

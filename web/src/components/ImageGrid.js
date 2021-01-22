@@ -47,7 +47,7 @@ export default function ImageGrid({
       `}
       style={{ ...style }}
     >
-      <div className={`md:grid ${columnClass} lg:gap-1 `}>
+      <div className={`md:grid ${columnClass} lg:gap-1 lg:gap-y-e`}>
         {images.map((image, i) =>
           options && options.logos ? (
             <div
@@ -86,10 +86,11 @@ export default function ImageGrid({
                 alt={image.image.alt}
               />
               {image.title && (
-                <div className="bg-gradient-to-t from-black-40 to-transparent absolute fill left-0 right-0 bottom-0 top-0">
+                <div className="flex items-end absolute fill left-0 right-0 bottom-0 top-0">
                   <h3 className="absolute bottom-0 left-0 p-c text-white">
                     {image.title}
                   </h3>
+                  <div className="flex-1 h-1/3 bg-gradient-to-t from-black-40 to-transparent"></div>
                 </div>
               )}
               {image.path && (

@@ -154,6 +154,12 @@ export const SEO_FIELDS = graphql`
           label
           path
         }
+        options {
+          smallTitleSize
+          topMargin
+          bottomMargin
+          border
+        }
         col_1
         col_2
         border

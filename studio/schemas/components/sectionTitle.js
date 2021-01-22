@@ -34,5 +34,10 @@ export default {
       type: "boolean",
       title: "Top border",
     },
+    {
+      name: "options",
+      type: "sectionTitleOptions",
+      title: "Top border",
+    },
   ],
 };

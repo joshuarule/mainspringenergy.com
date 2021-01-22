@@ -254,7 +254,12 @@ export default ({ location }) => {
       </div>
       <div id="contact" className="container lg:grid lg:grid-cols-3 my-g">
         <div>
-          <SectionTitle title="Contact" border={true} className="mt-0" />
+          <SectionTitle
+            title="Contact"
+            border={true}
+            options={{ topMargin: true, bottomMargin: true }}
+            className="mb-d"
+          />
           <p className="f-b1 mb-d">
             <a className="text-iron" href={`mailto:${email}`}>
               {email}

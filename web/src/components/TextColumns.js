@@ -15,14 +15,15 @@ export default function TextColumns({ columnAmount, _rawColumns }) {
       break
   }
   return (
-    <div className={`grid ${columnClass}`}>
+    <div className={`grid ${columnClass} mt-b mb-e`}>
       {_rawColumns.map(column => (
-        <div className="mb-e">
-          {column.title && (
-            <h3 className="text-seaGreen mb-d">{column.title}</h3>
-          )}
+        <div className="">
+          {column.title && <h3 className="mb-d">{column.title}</h3>}
           {column.richText && (
-            <RichText content={column.richText} className="f-b1" />
+            <RichText
+              content={column.richText}
+              className="f-b1 max-prose-50 lg:pr-f"
+            />
           )}
         </div>
       ))}

@@ -1,3 +1,10 @@
+.page-company {
+  .imageGrid .gridImage {
+    border: 1px solid var(--c-fog);
+    background-color: var(--c-porcelain) !important;
+  }
+}
+
 .page-company .theme--dark {
   ul {
     @apply mt-f;

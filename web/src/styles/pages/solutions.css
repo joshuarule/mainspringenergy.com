@@ -1,7 +1,5 @@
 .page-solutions {
-  .theme--dark {
-    .border-brand {
-      border-color: var(--c-seaGreen);
-    }
+  .border-brand {
+    border-color: var(--c-seaGreen);
   }
 }

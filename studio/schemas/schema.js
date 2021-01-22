@@ -33,7 +33,10 @@ import {
 import careers from "./documents/careers";
 // import {  } from './documents/careers/components.js';
 import company from "./documents/company";
-import { company_hero, company_investors } from "./documents/company/components.js";
+import {
+  company_hero,
+  company_investors,
+} from "./documents/company/components.js";
 import privacy from "./documents/privacy";
 import terms from "./documents/terms";
 import patents from "./documents/patents";
@@ -56,6 +59,7 @@ import address from "./components/address.js";
 import whitePaper from "./components/whitePaper.js";
 import fileSrc from "./components/fileSrc.js";
 import sectionTitle from "./components/sectionTitle.js";
+import sectionTitleOptions from "./components/sectionTitleOptions.js";
 import textColumns from "./components/textColumns.js";
 import textColumn from "./components/textColumn.js";
 import richTextObj from "./components/richText.js";
@@ -65,6 +69,7 @@ import dynamicBlock from "./components/dynamicBlock.js";
 import cta_options from "./components/cta_options.js";
 import imageBlock_options from "./components/imageBlock_options.js";
 import blockquote_options from "./components/blockquote_options.js";
+import heroRichText from "./components/heroRichText.js";
 
 export default createSchema({
   name: "default",
@@ -117,6 +122,8 @@ export default createSchema({
     whitePaper,
     fileSrc,
     sectionTitle,
+    sectionTitleOptions,
+    heroRichText,
     gridImage,
     textColumns,
     textColumn,

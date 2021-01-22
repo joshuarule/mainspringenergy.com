@@ -17,13 +17,13 @@ export default function footer() {
         <div className="col-span-3">
           <h4 className="font-bold mb-b">Contact Us</h4>
           <a
-            className="text-steel text-steel"
+            className="text-steel text-steel hover:text-seaGreen"
             href="mailto:info@mainspringenergy.com"
           >
             info@mainspringenergy.com
           </a>
           <a
-            className="text-steel mb-d block text-steel"
+            className="text-steel mb-d block text-steel hover:text-seaGreen"
             href="https://maps.google.com"
           >
             <address>
@@ -32,11 +32,11 @@ export default function footer() {
             </address>
           </a>
           <div className="mb-d text-steel">
-            <Link className="text-steel" to="/privacy">
+            <Link className="text-steel hover:text-seaGreen" to="/privacy">
               Privacy Policy
             </Link>{' '}
             | {''}
-            <Link className="text-steel" to="/terms">
+            <Link className="text-steel hover:text-seaGreen" to="/terms">
               Term of Use
             </Link>
           </div>
@@ -46,13 +46,27 @@ export default function footer() {
           <h4 className="font-bold mb-b">Company</h4>
           <ul className="list-none p-0 m-0">
             <li>
-              <Link className="text-steel mb-b block" to="/company">
+              <Link
+                className="text-steel mb-b block hover:text-seaGreen hover:text-seaGreen"
+                to="/company"
+              >
                 Company
               </Link>
             </li>
             <li>
-              <Link className="text-steel mb-b block" to="/careers">
+              <Link
+                className="text-steel mb-b block hover:text-seaGreen hover:text-seaGreen"
+                to="/careers"
+              >
                 Careers
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-steel mb-b block hover:text-seaGreen hover:text-seaGreen"
+                to="/company#contact"
+              >
+                Contact
               </Link>
             </li>
           </ul>
@@ -61,10 +75,13 @@ export default function footer() {
           <h4 className="font-bold mb-b">Follow Us</h4>
           <ul className="list-none p-0 m-0">
             <li>
-              <Link className="text-steel mb-b block" to="/newsroom">
+              <Link
+                className="text-steel mb-b block hover:text-seaGreen"
+                to="/newsroom"
+              >
                 <Icon
                   name="linkedIn"
-                  className="inline-block mr-b text-steel"
+                  className="inline-block mr-b"
                   style={{ marginTop: '-2px' }}
                 />
                 LinkedIn
