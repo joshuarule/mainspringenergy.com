@@ -121,6 +121,8 @@ export default ({ location }) => {
       }
     }
   `)
+  const [activeProfile, setActiveProfile] = useState(false)
+  const profileRef = useRef()
 
   // scroll on profile change
   useEffect(() => {
@@ -129,7 +131,6 @@ export default ({ location }) => {
         behavior: 'smooth',
       })
     }
-    console.log('useEffect')
   }, [activeProfile, profileRef])
 
   // creates object of arrays for people
@@ -143,11 +144,9 @@ export default ({ location }) => {
     })
   )
 
-  const [activeProfile, setActiveProfile] = useState(false)
   const [activeFilter, setActiveFilter] = useState(
     Object.keys(peopleByCategory)[0]
   )
-  const profileRef = useRef()
 
   return (
     <Layout location={location}>

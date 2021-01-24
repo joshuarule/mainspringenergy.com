@@ -2,4 +2,9 @@
   .blockquote:not(.blockquote--offset) {
     display: block;
   }
+
+  .linkFull {
+    @apply text-seaGreen;
+    @apply f-b1;
+  }
 }

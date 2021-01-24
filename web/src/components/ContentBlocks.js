@@ -54,7 +54,7 @@ export default function ContentBlocks({ blocks }) {
               <LinkFull
                 key={`block-${i}`}
                 to={block.path}
-                className="linkFull f-h3 mb-e block"
+                className="linkFull f-h3 mb-e block mt-e"
               >
                 {block.label}
               </LinkFull>

@@ -19,8 +19,8 @@ export const LinkFull = ({ children, ...rest }) => (
     <Icon
       name="chevron"
       className="inline-block"
-      width="11"
-      height="16"
+      width=".6em"
+      height=".75em"
       style={{ marginTop: '-1px' }}
     />
   </Link>
