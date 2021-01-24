@@ -15,6 +15,7 @@ const Privacy = ({ location }) => {
         }
         privacyStatement {
           columnAmount
+          _rawColumns
           columns {
             richText {
               children {
@@ -31,7 +32,9 @@ const Privacy = ({ location }) => {
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
-      <TextColumns {...privacyStatement} />
+      <div className="container mt-g">
+        <TextColumns {...privacyStatement} />
+      </div>
     </Layout>
   )
 }
