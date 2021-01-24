@@ -241,7 +241,7 @@ export default ({ location }) => {
           ))}
         </ul>
       </div>
-      <div className="container">
+      <div id="customer-inquiries" className="container">
         <SectionTitle {...solutions_form} className="mt-0 mb-e" />
         <CustomerInquiry />
       </div>

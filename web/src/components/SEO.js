@@ -16,6 +16,19 @@ function SEO({ description, lang, meta, title, image }) {
       query settingsQuery {
         sanitySettings {
           email
+          seo {
+            title
+            description
+            image {
+              src {
+                asset {
+                  fixed(width: 1200, height: 630) {
+                    src
+                  }
+                }
+              }
+            }
+          }
         }
       }
     `
