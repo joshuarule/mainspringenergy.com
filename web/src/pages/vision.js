@@ -78,7 +78,7 @@ export default ({ location }) => {
                   <li>
                     {item.title}
                     {item.url && (
-                      <a href={item.url} className="f-b2 ml-a">
+                      <a href={item.url} className="f-b2 ml-a text-seaGreen">
                         More Info
                       </a>
                     )}
