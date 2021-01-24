@@ -17,12 +17,13 @@ export default ({ location }) => {
     sanitySettings: { map, satellite, email, address },
   } = useStaticQuery(graphql`
     query CompanyQuery {
-      types: allSanityPersonTypes {
+      types: allSanityPersonTypes(sort: { fields: order }) {
         nodes {
           type
+          order
         }
       }
-      people: allSanityPerson {
+      people: allSanityPerson(sort: { fields: order }) {
         nodes {
           name
           personCategories {
@@ -120,12 +121,9 @@ export default ({ location }) => {
       }
     }
   `)
-  const [activeProfile, setActiveProfile] = useState(false)
-  const [activeFilter, setActiveFilter] = useState(types.nodes[0].type)
-  const profileRef = useRef()
 
+  // scroll on profile change
   useEffect(() => {
-    console.log(profileRef)
     if (activeProfile && profileRef.current) {
       profileRef.current.scrollIntoView({
         behavior: 'smooth',
@@ -134,13 +132,28 @@ export default ({ location }) => {
     console.log('useEffect')
   }, [activeProfile, profileRef])
 
+  // creates object of arrays for people
+  const peopleByCategory = {}
+  people.nodes.forEach(person =>
+    person.personCategories.forEach(category => {
+      if (!peopleByCategory[category.type]) {
+        peopleByCategory[category.type] = []
+      }
+      peopleByCategory[category.type].push(person)
+    })
+  )
+
+  const [activeProfile, setActiveProfile] = useState(false)
+  const [activeFilter, setActiveFilter] = useState(
+    Object.keys(peopleByCategory)[0]
+  )
+  const profileRef = useRef()
+
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       <div className="container">
         <div className="mb-g lg:pt-f">
-          {/* <div className={`mb-g lg:mt-g items-center`}> */}
-          {/* <div className={`lg:mb-f relative lg:mx-f`}> */}
           {hero.heroImage && (
             <div className="lg:mb-f lg:mx-f`">
               <Img
@@ -150,7 +163,6 @@ export default ({ location }) => {
               />
             </div>
           )}
-          {/* </div> */}
           <div className={`mb-e lg:mb-0 lg:grid lg:grid-cols-12`}>
             <div className="col-start-4 col-span-8">
               <div className="max-prose-50 pr-g">
@@ -163,36 +175,40 @@ export default ({ location }) => {
             </div>
           </div>
         </div>
-        {/* </div> */}
       </div>
 
-      <div className="bg-navy theme--dark pt-e pb-e">
+      <div id="core-values" className="bg-navy theme--dark pt-e pb-e">
         <div className="container">
           <ContentBlocks blocks={body.blocks} />
         </div>
       </div>
       <div className="container" ref={profileRef}>
         <SectionTitle title="Leadership" />
-        <nav>
-          <ul class="flex my-f border-b border-smoke">
-            {types.nodes.map(type => (
-              <li
-                className={`mr-e f-b1 border-b-5 pb-a ${
-                  activeFilter === type.type
-                    ? 'border-brand'
-                    : 'border-transparent'
-                }`}
-              >
-                <button
-                  onClick={() => {
-                    setActiveFilter(type.type)
-                    setActiveProfile(false)
-                  }}
+        <nav className="border-b border-smoke my-f">
+          <ul class="flex">
+            {types.nodes
+              .filter(type => {
+                return peopleByCategory[type.type]
+              })
+              .map(type => (
+                <li
+                  style={{ marginBottom: '-1px' }}
+                  className={`mr-e f-b1 border-b-5 pb-a ${
+                    activeFilter === type.type
+                      ? 'border-brand'
+                      : 'border-transparent'
+                  }`}
                 >
-                  {type.type}
-                </button>
-              </li>
-            ))}
+                  <button
+                    onClick={() => {
+                      setActiveFilter(type.type)
+                      setActiveProfile(false)
+                    }}
+                  >
+                    {type.type}
+                  </button>
+                </li>
+              ))}
           </ul>
         </nav>
         <ul className="grid grid-cols-4">
@@ -203,51 +219,46 @@ export default ({ location }) => {
               onClose={() => setActiveProfile(false)}
             />
           )}
-          {people.nodes
-            .filter(person =>
-              person.personCategories
-                .map(category => category.type)
-                .find(category => category === activeFilter)
-            )
-            .map((person, i) => {
-              let positionStyles = {}
-              if (person.image.hotspot) {
-                positionStyles = {
-                  objectPosition: `${person.image.hotspot.x * 100}% ${
-                    person.image.hotspot.y * 100
-                  }%`,
-                }
+
+          {peopleByCategory[activeFilter].map((person, i) => {
+            let positionStyles = {}
+            if (person.image.hotspot) {
+              positionStyles = {
+                objectPosition: `${person.image.hotspot.x * 100}% ${
+                  person.image.hotspot.y * 100
+                }%`,
               }
-              return (
-                <li
-                  className={`person mb-f relative order-${i} ${
-                    activeProfile.index === i ? 'opacity-20' : ''
-                  }`}
-                >
-                  <div style={{ maxWidth: '211px' }}>
-                    <div className="aspect-h-1 aspect-w-1 relative rounded-full overflow-hidden mb-d">
-                      <Img
-                        fluid={person.image.asset.fluid}
-                        style={{
-                          position: 'absolute',
-                        }}
-                        imgStyle={{
-                          height: 'auto',
-                          ...positionStyles,
-                        }}
-                        className={`absolute`}
-                      />
-                    </div>
+            }
+            return (
+              <li
+                className={`person mb-f relative order-${i} ${
+                  activeProfile.index === i ? 'opacity-20' : ''
+                }`}
+              >
+                <div style={{ maxWidth: '211px' }}>
+                  <div className="aspect-h-1 aspect-w-1 relative rounded-full overflow-hidden mb-d">
+                    <Img
+                      fluid={person.image.asset.fluid}
+                      style={{
+                        position: 'absolute',
+                      }}
+                      imgStyle={{
+                        height: 'auto',
+                        ...positionStyles,
+                      }}
+                      className={`absolute`}
+                    />
                   </div>
-                  <h4>{person.name}</h4>
-                  <p className="f-b1">{person.title}</p>
-                  <button
-                    onClick={() => setActiveProfile({ person, index: i })}
-                    className="absolute block w-full top-0 right-0 bottom-0 left-0"
-                  ></button>
-                </li>
-              )
-            })}
+                </div>
+                <h4>{person.name}</h4>
+                <p className="f-b1">{person.title}</p>
+                <button
+                  onClick={() => setActiveProfile({ person, index: i })}
+                  className="absolute block w-full top-0 right-0 bottom-0 left-0"
+                ></button>
+              </li>
+            )
+          })}
         </ul>
       </div>
       <div className="bg-footerBg">

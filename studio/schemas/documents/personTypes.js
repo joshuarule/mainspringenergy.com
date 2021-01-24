@@ -8,5 +8,11 @@ export default {
       name: "type",
       title: "Type",
     },
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
+      hidden: true,
+    },
   ],
 };

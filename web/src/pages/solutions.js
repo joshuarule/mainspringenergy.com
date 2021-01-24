@@ -231,6 +231,7 @@ export default ({ location }) => {
                   to={item.src.src.asset.url}
                   className="f-b1 text-freshBlue"
                   target="_blank"
+                  download="filename"
                 >
                   Download
                 </LinkPrimary>
@@ -263,7 +264,7 @@ export default ({ location }) => {
             </div>
             <div>
               <label htmlFor="email" className="block mb-a font-bold">
-                Phone (optional)
+                Phone
               </label>
               <input type="tel" className="input mb-d" />
             </div>

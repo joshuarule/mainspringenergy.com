@@ -7,10 +7,30 @@ export default {
   preview: {
     select: {
       title: "name",
+      type1: "personCategories.0.type",
+      type2: "personCategories.1.type",
+      type3: "personCategories.2.type",
       media: "image",
+    },
+    prepare(selection) {
+      const { title, media, type1, type2, type3 } = selection;
+
+      return {
+        title,
+        media,
+        subtitle: `${type1}${type2 ? `, ${type2}` : ""}${
+          type3 ? `, ${type3}` : ""
+        }`,
+      };
     },
   },
   fields: [
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
+      hidden: true,
+    },
     {
       name: "name",
       title: "Name of Person",

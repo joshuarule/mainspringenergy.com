@@ -26,9 +26,11 @@ export default function SectionTitle({
         >
           {title}
         </h1>
-        {subtitle && <p className="mt-c">{subtitle}</p>}
+        {subtitle && <p className="mt-c mb-c">{subtitle}</p>}
         {link && link.path && link.label && (
-          <LinkPrimary to={link.path}>{link.label}</LinkPrimary>
+          <LinkPrimary to={link.path} className="mt-d f-b1">
+            {link.label}
+          </LinkPrimary>
         )}
       </div>
       {col_1 && <p className="f-b2 text-iron">{col_1}</p>}

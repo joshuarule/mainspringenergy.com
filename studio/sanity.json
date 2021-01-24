@@ -14,11 +14,14 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "autocomplete-tags",
-    "dashboard-widget-netlify"
+    "dashboard-widget-netlify",
+    "order-documents"
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"]
+      "plugins": [
+        "@sanity/vision"
+      ]
     }
   },
   "parts": [
