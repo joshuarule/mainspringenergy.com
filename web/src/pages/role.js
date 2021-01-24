@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import SEO from '../components/SEO'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 
 export default ({ location }) => {
   const {

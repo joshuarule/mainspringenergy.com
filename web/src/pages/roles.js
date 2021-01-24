@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import slugify from 'slugify'
 
 import SEO from '../components/SEO'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import JobCategories from '../components/JobCategories'
 import RichText from '../components/RichText'
 
