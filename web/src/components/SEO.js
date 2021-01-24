@@ -11,25 +11,11 @@ import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
 function SEO({ description, lang, meta, title, image }) {
-  // TODO: grab settings from
   const { sanitySettings: siteData } = useStaticQuery(
     graphql`
-      query {
+      query settingsQuery {
         sanitySettings {
           email
-          seo {
-            title
-            description
-            image {
-              src {
-                asset {
-                  fixed(width: 1200, height: 630) {
-                    src
-                  }
-                }
-              }
-            }
-          }
         }
       }
     `
@@ -56,7 +42,7 @@ function SEO({ description, lang, meta, title, image }) {
         },
         {
           property: `og:image`,
-          content: siteData.seo.image.src.asset.fixed.src,
+          content: image || siteData.seo.image.src.asset.fixed.src,
         },
         {
           property: `og:description`,

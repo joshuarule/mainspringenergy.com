@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet'
 import React, {
   useState,
-  useLayoutEffect,
+  // useLayoutEffect,
   useCallback,
   useEffect,
   useRef,

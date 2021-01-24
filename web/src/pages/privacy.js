@@ -1,7 +1,8 @@
 import React from 'react'
 import Layout from '../components/layout'
 import { useStaticQuery, graphql } from 'gatsby'
-import SEO from '../components/Seo'
+import SEO from '../components/SEO'
+import TextColumns from '../components/TextColumns'
 
 const Privacy = ({ location }) => {
   const {
@@ -30,7 +31,7 @@ const Privacy = ({ location }) => {
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
-      <div>privacy statement here...</div>
+      <TextColumns {...privacyStatement} />
     </Layout>
   )
 }

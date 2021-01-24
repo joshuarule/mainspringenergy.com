@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Slider from 'react-slick'
 
 import Layout from '../components/layout'
-import SEO from '../components/Seo'
+import SEO from '../components/SEO'
 import ContentBlocks from '../components/ContentBlocks'
 import RichText from '../components/RichText'
 import { LinkPrimary } from '../components/Link'

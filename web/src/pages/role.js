@@ -1,10 +1,21 @@
 import React from 'react'
-
-import SEO from '../components/Seo'
+import { useStaticQuery, graphql } from 'gatsby'
+import SEO from '../components/SEO'
 import Layout from '../components/layout'
-import RichText from '../components/RichText'
 
 export default ({ location }) => {
+  const {
+    sanityRole: { seo },
+  } = useStaticQuery(graphql`
+    query RoleQuery {
+      sanityRole {
+        seo {
+          ...seoFields
+        }
+      }
+    }
+  `)
+
   let id
   const searchParams = new URLSearchParams(location.search)
   if (searchParams) {
@@ -14,7 +25,13 @@ export default ({ location }) => {
   }
   return (
     <Layout location={location}>
-      {/* <SEO title={seo.title} description={seo.description} image={seo.image} /> */}
+      {seo && (
+        <SEO
+          title={seo.title}
+          description={seo.description}
+          image={seo.image}
+        />
+      )}
       <div className="container mt-g">{id}</div>
     </Layout>
   )

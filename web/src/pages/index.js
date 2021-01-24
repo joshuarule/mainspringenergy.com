@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Slider from 'react-slick'
 
-import SEO from '../components/Seo'
+import SEO from '../components/SEO'
 import Cta from '../components/Cta'
 import ContentBlocks from '../components/ContentBlocks'
 import Layout from '../components/layout'

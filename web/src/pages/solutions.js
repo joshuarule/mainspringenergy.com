@@ -3,11 +3,12 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
-import SEO from '../components/Seo'
+import SEO from '../components/SEO'
 import ContentBlocks from '../components/ContentBlocks'
 import SectionTitle from '../components/SectionTitle'
 import { LinkPrimary } from '../components/Link'
 import RichText from '../components/RichText'
+import CustomerInquiry from '../components/CustomerInquiry'
 
 export default ({ location }) => {
   const {
@@ -242,85 +243,7 @@ export default ({ location }) => {
       </div>
       <div className="container">
         <SectionTitle {...solutions_form} className="mt-0 mb-e" />
-        <form action="submit" className="lg:grid lg:grid-cols-3 mb-g">
-          <div className="col-start-2 col-span-2 lg:grid lg:grid-cols-2">
-            <div>
-              <label htmlFor="firstName" className="block mb-a font-bold">
-                First Name
-              </label>
-              <input type="text" className="input mb-d" />
-            </div>
-            <div>
-              <label htmlFor="lastName" className="block mb-a font-bold">
-                Last Name
-              </label>
-              <input type="text" className="input mb-d" />
-            </div>
-            <div>
-              <label htmlFor="email" className="block mb-a font-bold">
-                Email
-              </label>
-              <input type="email" className="input mb-d" />
-            </div>
-            <div>
-              <label htmlFor="email" className="block mb-a font-bold">
-                Phone
-              </label>
-              <input type="tel" className="input mb-d" />
-            </div>
-            <div>
-              <label htmlFor="company" className="block mb-a font-bold">
-                Company
-              </label>
-              <input type="text" className="input mb-d" />
-            </div>
-            <div>
-              <label htmlFor="jobTitle" className="block mb-a font-bold">
-                Title
-              </label>
-              <input type="text" className="input mb-d" />
-            </div>
-            <div>
-              <label htmlFor="peakDemand" className="block mb-a font-bold">
-                Facility Peak Demand (kW)
-              </label>
-              <input type="text" className="input mb-d" />
-              {/* <select name="peakDemand" id="peakDemand">
-                <option value="200">200</option>
-                <option value="200">300</option>
-                <option value="200">400</option>
-              </select> */}
-            </div>
-            <div>
-              <label htmlFor="annualEnergy" className="block mb-a font-bold">
-                Facility Annual Energy (kWh)
-              </label>
-              <input type="text" className="input mb-d" />
-            </div>
-            <div className="lg:col-span-2 mb-d">
-              <label htmlFor="message" className="block mb-a font-bold">
-                Message
-              </label>
-              <textarea
-                style={{ resize: 'none' }}
-                rows="5"
-                className="input"
-              ></textarea>
-            </div>
-            <div>
-              <button
-                style={{ color: '#fff', paddingTop: '13px' }}
-                className="bg-seaGreen f-b1 pb-c px-f rounded-md flex items-center hover:bg-seaGreenDark"
-                onCLick={e => {
-                  e.preventDefault()
-                  alert('send form')
-                }}
-              >
-                Send
-              </button>
-            </div>
-          </div>
-        </form>
+        <CustomerInquiry />
       </div>
     </Layout>
   )

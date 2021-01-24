@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
-import SEO from '../components/Seo'
+import SEO from '../components/SEO'
 import ContentBlocks from '../components/ContentBlocks'
 
 const Hero = ({ images, className = '' }) => {

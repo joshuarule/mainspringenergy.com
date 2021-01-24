@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { graphql, useStaticQuery, Link } from 'gatsby'
+import React, { useState, useEffect, useRef } from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 import slugify from 'slugify'
 
-import SEO from '../components/Seo'
+import SEO from '../components/SEO'
 import Layout from '../components/layout'
 import JobCategories from '../components/JobCategories'
 import RichText from '../components/RichText'
@@ -39,15 +39,15 @@ const parseCategories = jobs => {
 
 export default ({ location }) => {
   const searchParams = new URLSearchParams(location.search)
-  let cat = false
+  let cat = useRef(false)
   if (searchParams) {
-    cat = searchParams.get('category')
+    cat.current = searchParams.get('category')
   }
 
   const [categories, setCategories] = useState(false)
-  let jobsData
 
   useEffect(() => {
+    let jobsData
     if (process.env.NODE_ENV !== 'development') {
       fetch('/.netlify/functions/jobs')
         .then(response => response.json())
@@ -56,11 +56,11 @@ export default ({ location }) => {
           const parsedCategories = parseCategories(jobsData)
           setCategories(parsedCategories)
           if (!searchParams) {
-            cat = Object.keys(parsedCategories)[0]
+            cat.current = Object.keys(parsedCategories)[0]
           }
         })
     }
-  }, [])
+  }, [searchParams])
 
   const {
     sanityRoles: { seo, body },
@@ -95,8 +95,8 @@ export default ({ location }) => {
     if (!categories) {
       const parsedData = parseCategories(allJobsMockJson.nodes)
       setCategories(parsedData)
-      if (!cat) {
-        cat = Object.keys(parsedData)[0]
+      if (!cat.current) {
+        cat.current = Object.keys(parsedData)[0]
       }
     }
   }
@@ -104,12 +104,12 @@ export default ({ location }) => {
   // current category
 
   // on change update jobs by category
-  const [category, setCategory] = useState(cat)
+  const [category, setCategory] = useState(cat.current)
   const handleOnchange = e => {
     // set url params
     setCategory(e.target.value)
   }
-  console.log(category)
+
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
@@ -131,7 +131,7 @@ export default ({ location }) => {
               <ul className="mt-d">
                 {categories[category].jobs.map(job => (
                   <li className="f-b1 mb-a">
-                    <a target="_blank" href={job.url}>
+                    <a target="_blank" rel={'noreferrer'} href={job.url}>
                       {job.title}
                     </a>
                   </li>

@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
 import Layout from '../components/Layout'
-import SEO from '../components/Seo'
+import SEO from '../components/SEO'
 import ContentBlocks from '../components/ContentBlocks'
 import SectionTitle from '../components/SectionTitle'
 import ImageGrid from '../components/ImageGrid'
@@ -254,7 +254,9 @@ export default ({ location }) => {
                 <button
                   onClick={() => setActiveProfile({ person, index: i })}
                   className="absolute block w-full top-0 right-0 bottom-0 left-0"
-                ></button>
+                >
+                  <span className="sr">view profile</span>
+                </button>
               </li>
             )
           })}

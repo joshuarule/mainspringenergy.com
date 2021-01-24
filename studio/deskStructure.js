@@ -42,6 +42,9 @@ export default () =>
                 .title("Roles")
                 .child(S.document().schemaType("roles").documentId("roles")),
               S.listItem()
+                .title("Role")
+                .child(S.document().schemaType("role").documentId("role")),
+              S.listItem()
                 .title("Privacy")
                 .child(
                   S.document().schemaType("privacy").documentId("privacy")
@@ -67,6 +70,7 @@ export default () =>
             "careers",
             "roles",
             "roles",
+            "role",
             "company",
             "jobs",
             "settings",

@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import ReactPlayer from 'react-player'
 
-import SEO from '../components/Seo'
+import SEO from '../components/SEO'
 import Layout from '../components/Layout.js'
 import { LinkPrimary } from '../components/Link.js'
 import List from '../components/List.js'

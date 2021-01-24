@@ -41,6 +41,7 @@ import privacy from "./documents/privacy";
 import terms from "./documents/terms";
 import patents from "./documents/patents";
 import roles from "./documents/roles";
+import role from "./documents/role";
 // components
 import contentBlocks from "./components/contentBlocks.js";
 import cta from "./components/callToAction.js";
@@ -76,6 +77,7 @@ export default createSchema({
   types: schemaTypes.concat([
     // document specific
     roles,
+    role,
     privacy,
     patents,
     terms,

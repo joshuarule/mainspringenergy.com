@@ -1,12 +1,11 @@
 import React from 'react'
-import slugify from 'slugify'
 
 export default ({ categories, onChange, currentItem }) => {
   const keys = Object.keys(categories)
   return (
     categories && (
       <select
-        onChange={e => onChange(e)}
+        onBlur={e => onChange(e)}
         id="jobCategories"
         className="border-2 rounded-md"
         value={currentItem}

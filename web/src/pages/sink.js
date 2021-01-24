@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Layout from '../components/layout'
-import SEO from '../components/Seo'
+import SEO from '../components/SEO'
 
 const SecondPage = ({ location }) => (
   <Layout location={location}>
