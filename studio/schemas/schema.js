@@ -42,6 +42,7 @@ import terms from "./documents/terms";
 import patents from "./documents/patents";
 import roles from "./documents/roles";
 import role from "./documents/role";
+import articles from "./documents/articles";
 // components
 import contentBlocks from "./components/contentBlocks.js";
 import cta from "./components/callToAction.js";
@@ -76,6 +77,7 @@ export default createSchema({
   name: "default",
   types: schemaTypes.concat([
     // document specific
+    articles,
     roles,
     role,
     privacy,

@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
-function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
-}
+// function encode(data) {
+//   return Object.keys(data)
+//     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+//     .join('&')
+// }
 
 export default () => {
   const [formData, setFormData] = useState({
@@ -23,7 +23,6 @@ export default () => {
       'form-name': event.target.getAttribute('name'),
       ...formData,
     }
-    console.log(body)
     fetch('/.netlify/functions/processInquiry', {
       method: 'POST',
       // headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

@@ -8,11 +8,13 @@ import ContentBlocks from '../components/ContentBlocks'
 import SectionTitle from '../components/SectionTitle'
 import ImageGrid from '../components/ImageGrid'
 import RichText from '../components/RichText'
+import { LinkExtPrimary } from '../components/Link'
 
 export default ({ location }) => {
   const {
     people,
     types,
+    articles,
     sanityCompany: { seo, hero, body, investors },
     sanitySettings: { map, satellite, email, address },
   } = useStaticQuery(graphql`
@@ -72,6 +74,23 @@ export default ({ location }) => {
                 ...GatsbySanityImageFluid
               }
             }
+          }
+        }
+      }
+      articles: allSanityArticles(sort: { fields: date }) {
+        nodes {
+          date(formatString: "MMMM Do, YYYY")
+          url
+          title
+          image {
+            src {
+              asset {
+                fluid {
+                  ...GatsbySanityImageFluid
+                }
+              }
+            }
+            alt
           }
         }
       }
@@ -179,6 +198,47 @@ export default ({ location }) => {
       <div id="core-values" className="bg-navy theme--dark pt-e pb-e">
         <div className="container">
           <ContentBlocks blocks={body.blocks} />
+        </div>
+      </div>
+
+      {/* Recent News */}
+      <div id="recent-news" className="bg-footerBg pt-f pb-e">
+        <div className="container">
+          <SectionTitle
+            title="Recent News"
+            className="mt-0 mb-d"
+            options={{ bottomMargin: true, topMargin: true }}
+          />
+          {articles && (
+            <div className="lg:grid grid-cols-2">
+              {articles.nodes.map(article => (
+                <aside className="mb-d md:flex">
+                  <div className="flex-1">
+                    <div
+                      className={`md-max:mb-b mr-d relative aspect-w-16 aspect-h-9`}
+                    >
+                      <Img
+                        style={{ position: 'absolute' }}
+                        fluid={article.image.src.asset.fluid}
+                        alt={article.image.alt}
+                      />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <datetime className="text-steel">{article.date}</datetime>
+                    <h1 className="f-b1 text-iron mb-e">{article.title}</h1>
+                    <LinkExtPrimary
+                      href={article.url}
+                      newTab={true}
+                      className="text-seaGreen"
+                    >
+                      Read press release
+                    </LinkExtPrimary>
+                  </div>
+                </aside>
+              ))}
+            </div>
+          )}
         </div>
       </div>
       <div className="container" ref={profileRef}>
