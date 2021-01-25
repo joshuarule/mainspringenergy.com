@@ -77,10 +77,10 @@ const Header = ({ theme = 'light' }) => {
       <div ref={headerRef} className="header-wrapper">
         <div
           ref={headerBarRef}
-          className={`${themeClass} container header-bar w-full md:grid md:grid-cols-12 items-center`}
+          className={`${themeClass} container header-bar sm-only:flex md:grid md:grid-cols-12 items-center`}
           style={{ height: '64px' }}
         >
-          <div className="flex justify-between items-center md:col-span-4">
+          <div className="flex-1 flex justify-between items-center md:col-span-4">
             <Link
               to="/"
               className="header-logo block"
@@ -94,7 +94,10 @@ const Header = ({ theme = 'light' }) => {
                 aria-haspopup="true"
                 aria-expanded={isMenuOpen}
                 aria-controls="mainNav"
-                className={`header-menuButton ${isMenuOpen ? 'isActive' : ''}`}
+                className={`header-menuButton flex-0 
+                  ${isMenuOpen ? 'isActive' : ''}
+                  ${themeClass}
+                `}
                 onClick={() => toggleMenuOpen(!isMenuOpen)}
               >
                 <div
@@ -112,7 +115,7 @@ const Header = ({ theme = 'light' }) => {
               </button>
             )}
           </div>
-          <nav className="header-nav sm-only:w-full md:col-span-8">
+          <nav className="header-nav sm-only:absolute sm-only:w-full md:col-span-8">
             <ul
               id="mainNav"
               aria-labelledby="menuButton"
@@ -125,7 +128,7 @@ const Header = ({ theme = 'light' }) => {
                     to={link.url}
                     role="menuitem"
                     activeClassName="link--active"
-                    className={`f-b1 font-bold py-2`}
+                    className={`text-h1 font-thin md:text-b1 md:font-normal py-2`}
                   >
                     <span>{link.label}</span>
                   </Link>

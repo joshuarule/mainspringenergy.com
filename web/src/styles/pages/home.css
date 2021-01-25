@@ -1,5 +1,26 @@
 .page-home {
+  .hero {
+    height: 100vh;
+
+    @screen lg {
+      height: 85vh;
+    }
+  }
+
   .blockquote {
     @apply my-g;
+  }
+
+  .home-cta {
+    @screen sm-only {
+      display: flex;
+      flex-direction: column;
+
+      > div:last-child {
+        order: -1;
+        /* margin-top: calc(var(--unit-g) * -1); */
+        margin-bottom: var(--unit-d);
+      }
+    }
   }
 }

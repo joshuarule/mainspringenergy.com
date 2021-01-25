@@ -54,3 +54,23 @@
     display: flex !important;
   }
 }
+
+.slider--diamond {
+  right: 0;
+  position: absolute;
+  height: 130vw;
+  width: 130vw;
+
+  .slick-slider {
+    transform: translate(45%, -80%) rotate(-45deg);
+  }
+
+  @screen lg {
+    height: 85vw;
+    width: 85vw;
+
+    .slick-slider {
+      transform: translate(30%, -30%) rotate(-45deg);
+    }
+  }
+}

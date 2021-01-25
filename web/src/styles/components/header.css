@@ -70,18 +70,18 @@
 .header-menuButton {
   @extend .button--clean;
   color: currentColor;
-  width: 20px;
-  height: 16px;
+  width: 26px;
+  height: 20px;
   position: relative;
   cursor: pointer;
 
   &:before {
     content: '';
     position: absolute;
-    top: -16px;
-    left: -16px;
-    bottom: -16px;
-    right: -16px;
+    top: -20px;
+    left: -20px;
+    bottom: -20px;
+    right: -20px;
   }
 }
 .header-menuButton-line {
@@ -94,6 +94,10 @@
   transition: transform 0.25s cubic-bezier(0.215, 0.61, 0.355, 1),
     background-color 0.25s;
   will-change: transform, background-color;
+
+  .theme-dark & {
+    background-color: var(--c-white);
+  }
 }
 
 .header-menuButton-lineInterior {
@@ -128,9 +132,16 @@
 
   @screen sm-only {
     display: flex;
-    flex: 1;
+    align-items: center;
     opacity: 0;
     visibility: hidden;
+    position: fixed;
+    z-index: -1;
+    background-color: var(--c-white);
+    top: 0;
+    height: 100vh;
+    left: 0;
+    right: 0;
 
     transition: opacity var(--menu-out-transition-time),
       visibility var(--menu-out-transition-time);
@@ -151,6 +162,9 @@
     }
 
     ul {
+      width: 100%;
+      padding: var(--unit-d);
+      display: flex;
       flex-direction: column;
     }
   }
@@ -195,11 +209,16 @@
 
 .header-nav-item > a {
   color: var(--c-black);
-  border-bottom: 4px solid transparent;
-  transition: border-color 0.5s, color 0.2s ease-in-out;
+
+  @screen lg {
+    border-bottom: 4px solid transparent;
+    transition: border-color 0.5s, color 0.2s ease-in-out;
+  }
 
   &.link--active {
-    border-bottom-color: var(--c-brand);
+    @screen lg {
+      border-bottom-color: var(--c-brand);
+    }
   }
 
   .theme-dark & {
@@ -208,6 +227,16 @@
   /* purgecss start ignore */
   .headroom--scrolled & {
     color: var(--c-black);
+  }
+
+  .menu-is-open & {
+    display: block;
+    color: var(--c-black);
+    padding: var(--unit-e) 0;
+
+    &.link--active {
+      color: var(--c-seaGreen);
+    }
   }
   /* purgecss end ignore */
 }
