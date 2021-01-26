@@ -128,7 +128,7 @@ const Header = ({ theme = 'light' }) => {
                     to={link.url}
                     role="menuitem"
                     activeClassName="link--active"
-                    className={`text-h1 font-thin md:text-b1 md:font-normal py-2`}
+                    className={`text-h1 font-thin md:text-b1 md:font-bold py-2`}
                   >
                     <span>{link.label}</span>
                   </Link>

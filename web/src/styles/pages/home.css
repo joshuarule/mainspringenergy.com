@@ -3,7 +3,7 @@
     height: 100vh;
 
     @screen lg {
-      height: 85vh;
+      height: 97vh;
     }
   }
 
@@ -18,7 +18,6 @@
 
       > div:last-child {
         order: -1;
-        /* margin-top: calc(var(--unit-g) * -1); */
         margin-bottom: var(--unit-d);
       }
     }

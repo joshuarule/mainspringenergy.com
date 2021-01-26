@@ -65,8 +65,8 @@ const IndexPage = ({ location }) => {
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       <div className="bg-navy relative">
         <div className="hero container text-white flex flex-col justify-end">
-          <div className="z-10 md:grid md:grid-cols-2 mb-e h-1/3 md:h-3/4 md:items-center">
-            <div>
+          <div className="z-10 md:grid md:grid-cols-3 lg:grid-cols-2 mb-e h-1/3 md:h-3/5 md:items-center">
+            <div className="md:col-span-2 lg:col-span-1">
               <h1 className="mb-e">{hero.title}</h1>
               <LinkPrimary
                 to={hero.link.path}
@@ -78,20 +78,20 @@ const IndexPage = ({ location }) => {
             </div>
           </div>
           {/* Gallery min height 720 */}
-          <div className="slider--diamond slider-container flex p-f">
-            <Slider {...settings} className="flex object-fit w-full h-full">
-              {hero.gallery.images.map(image => {
-                return (
-                  <Img
-                    key={image.alt}
-                    className="object-fit w-full h-full"
-                    fluid={image.src.asset.fluid}
-                    alt={image.alt}
-                  />
-                )
-              })}
-            </Slider>
-          </div>
+        </div>
+        <div className="slider--diamond slider-container">
+          <Slider {...settings} className="flex object-fit w-full h-full">
+            {hero.gallery.images.map(image => {
+              return (
+                <Img
+                  key={image.alt}
+                  // className="object-fit w-full h-full"
+                  fluid={image.src.asset.fluid}
+                  alt={image.alt}
+                />
+              )
+            })}
+          </Slider>
         </div>
       </div>
       <Cta aspect="auto" className="home-cta -mt-f mb-g container" {...cta} />

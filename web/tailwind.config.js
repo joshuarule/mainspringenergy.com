@@ -109,6 +109,7 @@ module.exports = {
   variants: {},
   plugins: [require('@tailwindcss/aspect-ratio')],
   corePlugins: {
+    fontWeight: false,
     container: false,
   },
 }
