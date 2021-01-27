@@ -56,11 +56,11 @@
 }
 
 .slider--diamond {
-  right: 0;
-  top: 0;
+  right: -12vw;
+  top: 5vh;
   position: absolute;
-  height: 90vw;
-  width: 90vw;
+  height: 100vw;
+  width: 100vw;
 
   .slick-slider {
     transform: translateY(-50%) rotate(-45deg);
@@ -68,7 +68,9 @@
   }
 
   @screen lg {
-    height: 85vh;
-    width: 85vh;
+    right: 0;
+    top: -11vh;
+    height: 90vh;
+    width: 90vh;
   }
 }

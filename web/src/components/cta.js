@@ -37,22 +37,24 @@ export default ({
   return (
     <section
       {...rest}
-      className={`
-        lg:grid lg:grid-cols-12 my-g ${className}
+      className={`cta 
+        md:grid md:grid-cols-1 lg:grid-cols-12 mb-f lg:mb-g ${className}
         ${textAlign}
       `}
     >
       {/* 3/2 */}
       <div
-        className={`
+        className={`cta-copy
+          mb-e md:mb-f lg:mb-0
           ${options && options.border ? 'border-t-6 border-brand pt-c' : ''}
           ${textColSize}
-          mb-e lg:mb-0
         `}
       >
         <div className="md:max-w-prose lg:max-w-prose-50">
-          <h2 className="f-h3 mb-d">{title}</h2>
-          {body && <RichText content={_rawBody} className="mb-e f-b1" />}
+          <h2 className="f-h3 mb-e">{title}</h2>
+          {body && (
+            <RichText content={_rawBody} className="mb-d md:mb-e f-b1" />
+          )}
           {link && link.path && (
             <LinkPrimary className="f-b1 font-bold" to={link.path}>
               {link.label}
@@ -99,33 +101,3 @@ export const CtaText = ({ url, children, ...rest }) => (
     {children}
   </LinkPrimary>
 )
-
-// export const CtaThird = ({
-//   className = '',
-//   reverse = false,
-//   title,
-//   imgSrc,
-//   imgAlt,
-//   description,
-//   linkUrl,
-//   linkLabel = 'Learn more',
-//   ...rest
-// }) => (
-//   <div className={`${className} grid lg:grid-cols-12 mb-g`} {...rest}>
-//     <div className={`border-t-6 pt-c border-brand lg:col-span-4`}>
-//       <h1 className="f-h3 mb-e">{title}</h1>
-//       <p className="f-b1 mb-e">{description}</p>
-//       <LinkPrimary className="f-b1 font-bold" to={linkUrl}>
-//         {linkLabel}
-//       </LinkPrimary>
-//     </div>
-
-//     <div
-//       className={`md-max:mb-b relative aspect-w-16 aspect-h-9 lg:col-span-8 ${
-//         reverse ? 'lg:order-first' : ''
-//       }`}
-//     >
-//       <img src={imgSrc} alt={imgAlt} className="object-cover w-full h-full" />
-//     </div>
-//   </div>
-// )

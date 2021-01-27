@@ -18,9 +18,7 @@ export default function ContentBlocks({ blocks }) {
           case 'sectionTitle':
             return <SectionTitle key={`block-${i}`} {...block} className="" />
           case 'imageGrid':
-            return (
-              <ImageGrid key={`block-${i}`} {...block} className="mt-d mb-g" />
-            )
+            return <ImageGrid key={`block-${i}`} {...block} className="" />
           case 'blockquote':
             return <Blockquote key={`block-${i}`} {...block} />
           case 'textColumns':
@@ -40,7 +38,7 @@ export default function ContentBlocks({ blocks }) {
               />
             )
           case 'list':
-            return <List items={block._rawItems} classname="mb-e" />
+            return <List items={block._rawItems} classname="" />
           case 'richTextObj':
             return (
               <RichText
@@ -54,7 +52,7 @@ export default function ContentBlocks({ blocks }) {
               <LinkFull
                 key={`block-${i}`}
                 to={block.path}
-                className="linkFull f-h3 mb-e block mt-e"
+                className="linkFull f-h3 block"
               >
                 {block.label}
               </LinkFull>

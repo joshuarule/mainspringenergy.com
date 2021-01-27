@@ -1,6 +1,6 @@
 :root {
   --bp-sm: 320px;
-  --bp-md: 640px;
+  --bp-md: 768px;
   --bp-lg: 1280px;
 
   --gap: 32px;
@@ -61,13 +61,13 @@
   --bg-default: var(--c-porcelain);
 }
 
-@media (min-width: 640px) {
+@media (min-width: var(--bp-md)) {
   :root {
     --unit-g: 108px;
   }
 }
 
-@media (min-width: 1240px) {
+@media (min-width: var(--bp-lg)) {
   :root {
     --unit-g: 120px;
 
@@ -116,38 +116,25 @@
     @apply m-0;
   }
 
-  h1,
-  .f-h1 {
-    @apply text-h1;
-    @apply font-heavy;
+  h1 {
+    @apply f-h1;
   }
-  h2,
-  .f-h2 {
-    @apply text-h2;
-    @apply font-heavy;
+
+  h2 {
+    @apply f-h2;
   }
-  h3,
-  .f-h3 {
-    @apply text-h3;
-    @apply font-heavy;
+
+  h3 {
+    @apply f-h3;
   }
+
   h4 {
-    @apply text-b1;
+    @apply f-b1;
     @apply font-heavy;
   }
-  .f-b1 {
-    @apply text-b1;
-    @apply font-light;
-  }
-  .f-b0 {
-    @apply text-b0;
-    @apply font-light;
-  }
-  h5,
-  .f-b2 {
-    @apply text-b2;
-    @apply font-light;
-    color: var(--c-iron);
+
+  h5 {
+    @apply f-b2;
   }
 
   blockquote p:before {

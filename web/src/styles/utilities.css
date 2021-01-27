@@ -36,5 +36,34 @@
       margin-left: -50vw;
       margin-right: -50vw;
     }
+
+    .f-h1 {
+      @apply text-h1;
+      @apply font-heavy;
+    }
+
+    .f-h2 {
+      @apply text-h2;
+      @apply font-heavy;
+    }
+
+    .f-h3 {
+      @apply text-h3;
+      @apply font-heavy;
+    }
+
+    .f-b0 {
+      @apply text-b0;
+      @apply font-light;
+    }
+    .f-b1 {
+      @apply text-b1;
+      @apply font-light;
+    }
+    .f-b2 {
+      @apply text-b2;
+      @apply font-light;
+      color: var(--c-iron);
+    }
   }
 }

@@ -11,13 +11,15 @@ export default function SectionTitle({
   border,
   className = '',
 }) {
+  // FIX TOP MARGIN
   return (
     <div
-      className={`lg:grid lg:grid-cols-3
-      ${options && options.topMargin ? 'mt-0' : 'mt-e'}
-      ${options && options.bottomMargin ? 'mb-0' : 'mb-f'}
-      ${border ? 'border-t-6 border-brand pt-c' : ''}
-      ${className}
+      className={`
+        lg:grid lg:grid-cols-3
+        ${options && options.topMargin ? 'mt-0' : ''}
+        ${options && options.bottomMargin ? 'mb-0' : 'mb-e lg:mb-f'}
+        ${border ? 'border-t-6 border-brand pt-c' : ''}
+        ${className}
       `}
     >
       <div>

@@ -3,23 +3,23 @@
     height: 100vh;
 
     @screen lg {
-      height: 97vh;
+      height: 90vh;
     }
   }
 
-  .blockquote {
-    @apply my-g;
-  }
-
   .home-cta {
+    > div:last-child {
+      order: -1;
+      margin-bottom: var(--unit-e);
+    }
+
+    .cta-copy {
+      margin-bottom: 0;
+    }
+
     @screen sm-only {
       display: flex;
       flex-direction: column;
-
-      > div:last-child {
-        order: -1;
-        margin-bottom: var(--unit-d);
-      }
     }
   }
 }

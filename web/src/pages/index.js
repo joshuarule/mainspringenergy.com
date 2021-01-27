@@ -50,8 +50,8 @@ const IndexPage = ({ location }) => {
 
   const settings = {
     infinite: true,
-    speed: 2000,
-    autoplaySpeed: 3000,
+    speed: 750,
+    autoplaySpeed: 4000,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
@@ -67,7 +67,7 @@ const IndexPage = ({ location }) => {
         <div className="hero container text-white flex flex-col justify-end">
           <div className="z-10 md:grid md:grid-cols-3 lg:grid-cols-2 mb-e h-1/3 md:h-3/5 md:items-center">
             <div className="md:col-span-2 lg:col-span-1">
-              <h1 className="mb-e">{hero.title}</h1>
+              <h1 className="mb-e f-h3 md:f-h1 max-w-2/3">{hero.title}</h1>
               <LinkPrimary
                 to={hero.link.path}
                 className="f-b1 font-bold link--light"
@@ -85,7 +85,6 @@ const IndexPage = ({ location }) => {
               return (
                 <Img
                   key={image.alt}
-                  // className="object-fit w-full h-full"
                   fluid={image.src.asset.fluid}
                   alt={image.alt}
                 />

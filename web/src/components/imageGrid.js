@@ -42,12 +42,11 @@ export default function ImageGrid({
       fullWidth={options && options.fullWidth}
       className={`imageGrid
         ${className}
-        ${options && options.marginTop ? 'mt-f' : ''} 
-        ${options && options.marginBottom ? 'mb-f' : ''}
+        ${options && options.marginBottom ? 'mb-f md:mb-g' : ''}
       `}
       style={{ ...style }}
     >
-      <div className={`md:grid ${columnClass} lg:gap-1 lg:gap-y-e`}>
+      <div className={`lg:grid ${columnClass} lg:gap-1 lg:gap-y-e`}>
         {images.map((image, i) =>
           options && options.logos ? (
             <div

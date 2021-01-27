@@ -6,15 +6,15 @@ import Icon from './Icon'
 export default function footer() {
   return (
     <footer className="bg-footerBg pt-d pb-g ">
-      <div className="container grid grid-cols-12">
-        <div className="col-span-2">
+      <div className="container grid grid-cols-1 md:grid-cols-12 gap-y-d">
+        <div className="md:col-span-3 lg:col-span-2">
           <Icon
             name="mark"
-            className="text-steel"
+            className="text-iron sm-only:mb-e"
             style={{ width: '60px', height: 'auto' }}
           />
         </div>
-        <div className="col-span-3">
+        <div className="md:col-span-6 lg:col-span-3">
           <h4 className="font-bold mb-b">Contact Us</h4>
           <a
             className="text-steel text-steel hover:text-seaGreen"
@@ -23,7 +23,7 @@ export default function footer() {
             info@mainspringenergy.com
           </a>
           <a
-            className="text-steel mb-d block text-steel hover:text-seaGreen"
+            className="text-steel block text-steel hover:text-seaGreen"
             href="https://maps.google.com"
           >
             <address>
@@ -31,18 +31,8 @@ export default function footer() {
               Menlo Park, CA 94025
             </address>
           </a>
-          <div className="mb-d text-steel">
-            <Link className="text-steel hover:text-seaGreen" to="/privacy">
-              Privacy Policy
-            </Link>{' '}
-            | {''}
-            <Link className="text-steel hover:text-seaGreen" to="/terms">
-              Term of Use
-            </Link>
-          </div>
-          <span className="text-steel">© Mainspring Energy, Inc. 2021</span>
         </div>
-        <div className="col-span-3">
+        <div className="md:col-span-3">
           <h4 className="font-bold mb-b">Company</h4>
           <ul className="list-none p-0 m-0">
             <li>
@@ -71,7 +61,7 @@ export default function footer() {
             </li>
           </ul>
         </div>
-        <div className="col-span-4">
+        <div className="md:col-span-3 md:order-1 lg:order-none lg:col-span-4">
           <h4 className="font-bold mb-b">Follow Us</h4>
           <ul className="list-none p-0 m-0">
             <li>
@@ -88,6 +78,16 @@ export default function footer() {
               </Link>
             </li>
           </ul>
+        </div>
+        <div className="mb-d text-smoke md:col-span-6 md:col-start-4 lg:col-start-3 lg:col-span-3 order-0">
+          <Link className="text-smoke hover:text-seaGreen" to="/privacy">
+            Privacy Policy
+          </Link>{' '}
+          | {''}
+          <Link className="text-smoke hover:text-seaGreen" to="/terms">
+            Term of Use
+          </Link>
+          <p className="text-smoke mt-c">© Mainspring Energy, Inc. 2021</p>
         </div>
       </div>
     </footer>

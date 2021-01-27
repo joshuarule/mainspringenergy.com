@@ -56,13 +56,23 @@
 }
 
 .header-logo {
+  max-width: 189px;
   color: var(--c-black);
+
   .theme-dark & {
     color: var(--c-white);
   }
 
   .headroom--scrolled & {
     color: inherit;
+  }
+
+  .menu-is-open & {
+    color: var(--c-black);
+  }
+
+  @screen lg {
+    max-width: 246px;
   }
 }
 /* purgecss end ignore */
@@ -98,6 +108,10 @@
   .theme-dark & {
     background-color: var(--c-white);
   }
+
+  .menu-is-open & {
+    background-color: var(--c-black);
+  }
 }
 
 .header-menuButton-lineInterior {
@@ -130,7 +144,7 @@
 .header-nav {
   /* background-color: var(--c-white); */
 
-  @screen sm-only {
+  @screen md-max {
     display: flex;
     align-items: center;
     opacity: 0;

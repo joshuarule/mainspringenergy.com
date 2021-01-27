@@ -37,7 +37,7 @@ const Header = ({ theme = 'light' }) => {
 
   // const [dimensions, setDimensions] = useState({})
   const [isMenuOpen, toggleMenuOpen] = useState(false)
-  const isWindowSmall = breakpoint.width < 640
+  const isWindowSmall = breakpoint.width < 769
 
   // useLayoutEffect(() => {
   //   const ref = isWindowSmall ? headerBarRef : headerRef
@@ -77,15 +77,11 @@ const Header = ({ theme = 'light' }) => {
       <div ref={headerRef} className="header-wrapper">
         <div
           ref={headerBarRef}
-          className={`${themeClass} container header-bar sm-only:flex md:grid md:grid-cols-12 items-center`}
+          className={`${themeClass} container header-bar md-max:flex lg:grid lg:grid-cols-12 items-center`}
           style={{ height: '64px' }}
         >
-          <div className="flex-1 flex justify-between items-center md:col-span-4">
-            <Link
-              to="/"
-              className="header-logo block"
-              style={{ maxWidth: '246px' }}
-            >
+          <div className="flex-1 flex justify-between items-center lg:col-span-4">
+            <Link to="/" className="header-logo block">
               <Icon name="logo" className={`w-full h-auto`} />
             </Link>
             {isWindowSmall && (
@@ -115,7 +111,7 @@ const Header = ({ theme = 'light' }) => {
               </button>
             )}
           </div>
-          <nav className="header-nav sm-only:absolute sm-only:w-full md:col-span-8">
+          <nav className="header-nav md-max:absolute md-max:w-full lg:col-span-8">
             <ul
               id="mainNav"
               aria-labelledby="menuButton"
@@ -128,7 +124,7 @@ const Header = ({ theme = 'light' }) => {
                     to={link.url}
                     role="menuitem"
                     activeClassName="link--active"
-                    className={`text-h1 font-thin md:text-b1 md:font-bold py-2`}
+                    className={`text-h1 font-thin lg:text-b1 lg:font-bold py-2`}
                   >
                     <span>{link.label}</span>
                   </Link>

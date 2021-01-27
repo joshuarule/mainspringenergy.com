@@ -8,7 +8,7 @@ export default function Blockquote({ cite, text, author, options }) {
         <figure className="lg:col-span-3 border-t-6 border-smoke text-seaGreen pt-c mb-g">
           <div className="w-full">
             <blockquote className="mb-e" cite={cite}>
-              <p className="f-h3">{text}</p>
+              <p className="f-b1 font-bold md:f-h3">{text}</p>
             </blockquote>
             <figcaption className="f-b0">{author}</figcaption>
           </div>
@@ -16,10 +16,10 @@ export default function Blockquote({ cite, text, author, options }) {
       </div>
     </div>
   ) : (
-    <figure className="blockquote border-t-6 border-smoke text-seaGreen pt-c lg:grid lg:grid-cols-3 mt-f mb-g">
+    <figure className="blockquote border-t-6 border-smoke text-seaGreen pt-c lg:grid lg:grid-cols-3 mb-f md:mb-g">
       <div className="col-span-2">
         <blockquote className="mb-e" cite={cite}>
-          <p className="f-h3">{text}</p>
+          <p className="f-b1 font-bold md:f-h3">{text}</p>
         </blockquote>
         <figcaption className="f-b0">{author}</figcaption>
       </div>

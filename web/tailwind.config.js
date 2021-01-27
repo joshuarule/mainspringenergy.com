@@ -24,10 +24,10 @@ module.exports = {
     },
     screens: {
       sm: '320px',
-      'sm-only': { max: '639px' },
-      md: '640px',
+      'sm-only': { max: '767px' },
+      md: '768px',
       'md-max': { max: '1239px' },
-      'md-only': { min: '640', max: '1239px' },
+      'md-only': { min: '768', max: '1239px' },
       lg: '1240px',
     },
     spacing: {
