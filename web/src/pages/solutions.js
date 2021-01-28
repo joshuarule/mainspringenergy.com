@@ -131,9 +131,11 @@ export default ({ location }) => {
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
-      <div className="container mb-g">
-        <div className={`lg:grid lg:grid-cols-2 mb-g lg:mt-g items-center`}>
-          <div className={`md-max:mb-b relative aspect-w-3 aspect-h-2 `}>
+      <div className="container mb-g pt-g">
+        <div
+          className={`lg:grid lg:grid-cols-2 mb-f lg:mb-g mt-g items-center`}
+        >
+          <div className={`md-max:mb-e relative aspect-w-3 aspect-h-2 `}>
             {hero.gallery && hero.gallery.images[0] && (
               <Img
                 className="object-cover w-full h-full"
@@ -160,7 +162,7 @@ export default ({ location }) => {
       </div>
 
       {/* solutions_primary */}
-      <div className="bg-navy py-e theme--dark">
+      <div className="bg-navy py-e theme--dark mb-e">
         <div className="container">
           <SectionTitle {...solutions_primary.title} className="mt-0 mb-e" />
           <ContentBlocks blocks={solutions_primary.body.blocks} />
@@ -170,23 +172,27 @@ export default ({ location }) => {
       <div className="container">
         <ContentBlocks blocks={body.blocks} />
       </div>
-      <section className="bg-footerBg py-e">
+      <section className="bg-footerBg py-e mb-e">
         <div className="container">
           <div className="mb-f">
-            <h1 className="f-h2 ">{solutions_specs.title}</h1>
-            <p className="f-b1 ">{solutions_specs.subtitle}</p>
+            <h1 className="f-h2 mb-e">{solutions_specs.title}</h1>
+            <p className="f-b1 font-regular">{solutions_specs.subtitle}</p>
           </div>
-          <div className="grid grid-cols-3 mb-g text-seaGreen items-center">
-            <div>
-              <h1 className="f-h3 mb-e">
+          <div className="lg:grid lg:grid-cols-3 mb-g text-seaGreen items-center">
+            <div className="lg:pr-f">
+              <h1 className="f-h3 mb-e md:max-w-sm lg:max-w-full">
                 {solutions_specs.solutions_specs_media.title}
               </h1>
-              <ul className="mb-g">
-                {solutions_specs.solutions_specs_media.specs.map(spec => (
-                  <p className="f-h3 font-thin">{spec}</p>
-                ))}
-              </ul>
-              <p>{solutions_specs.solutions_specs_media.description}</p>
+              <div className="md:grid md:grid-cols-2 lg:block">
+                <ul className="mb-f lg:mb-g">
+                  {solutions_specs.solutions_specs_media.specs.map(spec => (
+                    <p className="f-h3 font-thin mb-a">{spec}</p>
+                  ))}
+                </ul>
+                <p className="md-max:mb-f f-b1">
+                  {solutions_specs.solutions_specs_media.description}
+                </p>
+              </div>
             </div>
             <div className="lg:col-span-2">
               <Img
@@ -198,9 +204,12 @@ export default ({ location }) => {
             </div>
           </div>
           <div>
-            <ul className="lg:grid lg:grid-cols-6">
+            <ul className="md:grid md:grid-cols-2 lg:grid-cols-6">
               {solutions_specs.list.items.map(item => (
-                <li className="border-t-6 border-steel pt-a">
+                <li
+                  className="border-t-6 border-steel pt-a"
+                  style={{ minHeight: '132px' }}
+                >
                   <h5 className="f-b1 font-bold">{item.title}</h5>
                   <RichText content={item._rawBody} className="text-steel" />
                 </li>
@@ -211,10 +220,10 @@ export default ({ location }) => {
       </section>
       {/* specs_downloads */}
       <div className="container mb-f">
-        <SectionTitle title={solutions_downloads.title} className="mb-f" />
-        <ul className="lg:grid lg:grid-cols-3">
+        <SectionTitle title={solutions_downloads.title} />
+        <ul className="md:grid md:grid-cols-2 lg:grid-cols-3">
           {solutions_downloads.items.map(item => (
-            <li className="mb-d">
+            <li className="mb-f">
               <div className="lg:grid lg:grid-cols-4">
                 <div className="lg:col-span-3 mb-d">
                   <Img
@@ -241,8 +250,8 @@ export default ({ location }) => {
           ))}
         </ul>
       </div>
-      <div id="customer-inquiries" className="container">
-        <SectionTitle {...solutions_form} className="mt-0 mb-e" />
+      <div id="customer-inquiries" className="container mb-g md:mb-f">
+        <SectionTitle {...solutions_form} />
         <CustomerInquiry />
       </div>
     </Layout>

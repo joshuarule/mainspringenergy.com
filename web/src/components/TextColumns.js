@@ -15,9 +15,9 @@ export default function TextColumns({ columnAmount, _rawColumns }) {
       break
   }
   return (
-    <div className={`grid ${columnClass} mt-b mb-e`}>
+    <div className={`textColumns grid ${columnClass}`}>
       {_rawColumns.map(column => (
-        <div className="">
+        <div className="textColumn md-max:mb-f">
           {column.title && <h3 className="mb-d">{column.title}</h3>}
           {column.richText && (
             <RichText

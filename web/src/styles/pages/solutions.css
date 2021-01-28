@@ -2,4 +2,7 @@
   .border-brand {
     border-color: var(--c-seaGreen);
   }
+  .textColumn > h3 {
+    color: var(--c-seaGreen);
+  }
 }

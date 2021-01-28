@@ -2,6 +2,10 @@ export default {
   name: "sectionTitleOptions",
   title: "Options",
   type: "object",
+  options: {
+    collapsible: true,
+    collapsed: true,
+  },
   fields: [
     {
       name: "border",

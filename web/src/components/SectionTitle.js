@@ -14,29 +14,36 @@ export default function SectionTitle({
   // FIX TOP MARGIN
   return (
     <div
-      className={`
+      className={`sectionTitle
         lg:grid lg:grid-cols-3
         ${options && options.topMargin ? 'mt-0' : ''}
-        ${options && options.bottomMargin ? 'mb-0' : 'mb-e lg:mb-f'}
+        ${options && options.bottomMargin ? 'mb-0' : 'mb-f'}
         ${border ? 'border-t-6 border-brand pt-c' : ''}
         ${className}
       `}
     >
       <div>
         <h1
-          className={`${options && options.smallTitleSize ? 'f-h3' : 'f-h2'}`}
+          className={`
+            ${options && options.smallTitleSize ? 'f-h3' : 'f-h2'}
+            md-max:mb-e
+          `}
         >
           {title}
         </h1>
-        {subtitle && <p className="mt-c mb-c">{subtitle}</p>}
+        {subtitle && (
+          <p className="sectionTitle-subtitle mt-c mb-c max-w-prose">
+            {subtitle}
+          </p>
+        )}
         {link && link.path && link.label && (
           <LinkPrimary to={link.path} className="mt-d f-b1">
             {link.label}
           </LinkPrimary>
         )}
       </div>
-      {col_1 && <p className="f-b2 text-iron">{col_1}</p>}
-      {col_2 && <p className="f-b2 text-iron">{col_2}</p>}
+      {col_1 && <p className="f-b2 text-iron md-max:mb-d">{col_1}</p>}
+      {col_2 && <p className="f-b2 text-iron md-max:mb-d">{col_2}</p>}
     </div>
   )
 }

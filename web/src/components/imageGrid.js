@@ -43,15 +43,16 @@ export default function ImageGrid({
       className={`imageGrid
         ${className}
         ${options && options.marginBottom ? 'mb-f md:mb-g' : ''}
+        mb-f
       `}
       style={{ ...style }}
     >
-      <div className={`lg:grid ${columnClass} lg:gap-1 lg:gap-y-e`}>
+      <div className={`md:grid ${columnClass} lg:gap-1 lg:gap-y-e`}>
         {images.map((image, i) =>
           options && options.logos ? (
             <div
               key={`image-${i}`}
-              className={`gridImage md:mb-e lg:mb-0 flex relative aspect-w-16 aspect-h-9 rounded-lg`}
+              className={`gridImage mb-c md:mb-e lg:mb-0 flex relative aspect-w-16 aspect-h-9 rounded-lg`}
               style={{ backgroundColor: 'rgba(0,0,0,.03)' }}
             >
               <Img

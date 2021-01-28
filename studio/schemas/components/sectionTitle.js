@@ -37,7 +37,7 @@ export default {
     {
       name: "options",
       type: "sectionTitleOptions",
-      title: "Top border",
+      title: "Options",
     },
   ],
 };

@@ -53,6 +53,8 @@
   --f-h3--size: 24px;
   --f-h3--lineHeight: 28px;
 
+  --f-b0--size: 20px;
+  --f-b0--lineHeight: 20px;
   --f-b1--size: 16px;
   --f-b1--lineHeight: 20px;
   --f-b2--size: 16px;
@@ -118,14 +120,17 @@
 
   h1 {
     @apply f-h1;
+    @apply font-heavy;
   }
 
   h2 {
     @apply f-h2;
+    @apply font-heavy;
   }
 
   h3 {
     @apply f-h3;
+    @apply font-heavy;
   }
 
   h4 {
@@ -135,6 +140,7 @@
 
   h5 {
     @apply f-b2;
+    @apply font-heavy;
   }
 
   blockquote p:before {
@@ -157,9 +163,9 @@
     grid-column-gap: var(--gap);
   }
 
-  .font-bold {
+  /* .font-bold {
     font-weight: 300 !important;
-  }
+  } */
 
   .richText {
     h1,
@@ -170,6 +176,9 @@
     h6,
     p {
       margin-bottom: 1em;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     h3 {
