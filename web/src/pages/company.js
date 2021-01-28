@@ -171,7 +171,7 @@ export default ({ location }) => {
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       <div className="container">
-        <div className="mb-g md-max:mt-f pt-f">
+        <div className="mb-g mt-f pt-f">
           {hero.heroImage && (
             <div className="mb-e lg:mb-f lg:mx-f`">
               <Img
