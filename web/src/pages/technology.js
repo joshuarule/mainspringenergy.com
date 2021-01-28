@@ -100,8 +100,8 @@ export default ({ location }) => {
     <Layout navTheme="dark" location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       <div
-        className="bg-gradient-to-t from-techGradientFrom to-techGradientTo relative"
-        style={{ minHeight: '800px', height: '75vh' }}
+        className="hero bg-gradient-to-t from-techGradientFrom to-techGradientTo relative"
+        // style={{ minHeight: '800px', height: '75vh' }}
       >
         {/* noise */}
         <div
@@ -127,7 +127,7 @@ export default ({ location }) => {
                 <div className="group">
                   <button
                     onClick={handlePlayPause}
-                    className="absolute w-full h-full flex p-c justify-center items-center"
+                    className="player-play absolute w-full h-full flex p-c justify-center items-center"
                   >
                     <>
                       <Img
@@ -155,14 +155,14 @@ export default ({ location }) => {
       <div className="bg-navy pt-f pb-f mb-e theme--dark">
         <div className="container">
           <div className="md:grid md:grid-cols-2 lg:grid-cols-3">
-            <div className="grid-span-1">
-              <h2 className="f-h3 mb-c border-t-6 border-transparent text-white pt-c">
+            <div className="grid-span-1 md-max:mb-e">
+              <h2 className="f-h3 mb-c lg:border-t-6 border-transparent text-white lg:pt-c">
                 {primarySection.title}
               </h2>
               <h5 className="f-h3 mb-c font-regular font-thin text-white">
                 {primarySection.subtitle}
               </h5>
-              <LinkPrimary to={primarySection.link.path} className="f-b1">
+              <LinkPrimary to={primarySection.link.path} className="f-b1 ">
                 {primarySection.link.label}
               </LinkPrimary>
             </div>
@@ -187,7 +187,7 @@ export default ({ location }) => {
           style={{ width: 'calc(100vw - (100vw - 1280px) / 2)' }}
         />
         <LinkFull
-          className="linkFull f-h3 mb-e block"
+          className="linkFull f-h3 mb-e block font-bold"
           to={secondarySection.link.path}
         >
           {secondarySection.link.label}

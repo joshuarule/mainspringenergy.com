@@ -1,6 +1,30 @@
 .page-technology {
+  .hero {
+    height: 55vh;
+    min-height: 440px;
+
+    @screen md {
+      height: 50vh;
+    }
+
+    @screen lg {
+      height: 75vh;
+      min-height: 800px;
+    }
+
+    .container {
+      @screen md {
+        padding-top: 100px;
+      }
+
+      @screen lg {
+        padding-top: 120px;
+      }
+    }
+  }
+
   .theme--dark {
-    li > h5 {
+    li h5 {
       @apply f-h3;
       @apply font-thin;
     }

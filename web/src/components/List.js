@@ -12,8 +12,12 @@ export default ({ items, className }) => {
             key={`item-${i}`}
             className="mb-f border-t-6 border-seaGreen text-white pt-c"
           >
-            <h3>{item.title}</h3>
-            <h5 className="mb-e">{item.subtitle}</h5>
+            <div className="mb-e">
+              <h3>{item.title}</h3>
+              {item.subtitle && (
+                <h5 className="mt-a font-thin">{item.subtitle}</h5>
+              )}
+            </div>
             {item.body && <RichText content={item.body} />}
             {item.cta && (
               <LinkPrimary className="mt-c block" to={item.cta.url}>

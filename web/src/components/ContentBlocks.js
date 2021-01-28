@@ -52,7 +52,7 @@ export default function ContentBlocks({ blocks }) {
               <LinkFull
                 key={`block-${i}`}
                 to={block.path}
-                className="linkFull f-h3 block"
+                className="linkFull f-h3 font-bold block"
               >
                 {block.label}
               </LinkFull>
