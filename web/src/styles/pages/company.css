@@ -41,3 +41,9 @@
     }
   }
 }
+
+.profile {
+  @screen lg {
+    height: 500px;
+  }
+}

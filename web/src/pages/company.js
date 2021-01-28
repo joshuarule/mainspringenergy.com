@@ -171,9 +171,9 @@ export default ({ location }) => {
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       <div className="container">
-        <div className="mb-g lg:pt-f">
+        <div className="mb-g md-max:mt-f pt-f">
           {hero.heroImage && (
-            <div className="lg:mb-f lg:mx-f`">
+            <div className="mb-e lg:mb-f lg:mx-f`">
               <Img
                 className="mt-g"
                 fluid={hero.heroImage.src.asset.fluid}
@@ -187,7 +187,7 @@ export default ({ location }) => {
                 <h2 className="f-h2 mb-e">{hero.title}</h2>
               </div>
               <div className="lg:grid lg:grid-cols-2 text-iron">
-                <p className="f-b1">{hero.textCol1}</p>
+                <p className="f-b1 md-max:mb-d">{hero.textCol1}</p>
                 <p className="f-b1">{hero.textCol2}</p>
               </div>
             </div>
@@ -202,7 +202,7 @@ export default ({ location }) => {
       </div>
 
       {/* Recent News */}
-      <div id="recent-news" className="bg-footerBg pt-f pb-e">
+      <div id="recent-news" className="bg-footerBg pt-f pb-e mb-f">
         <div className="container">
           <SectionTitle
             title="Recent News"
@@ -212,10 +212,10 @@ export default ({ location }) => {
           {articles && (
             <div className="lg:grid grid-cols-2">
               {articles.nodes.map(article => (
-                <aside className="mb-d md:flex">
+                <aside className="mb-f md:mb-e md:flex">
                   <div className="flex-1">
                     <div
-                      className={`md-max:mb-b mr-d relative aspect-w-16 aspect-h-9`}
+                      className={`md-max:mb-d md:mr-d relative aspect-w-16 aspect-h-9`}
                     >
                       <Img
                         style={{ position: 'absolute' }}
@@ -225,8 +225,12 @@ export default ({ location }) => {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <datetime className="text-steel">{article.date}</datetime>
-                    <h1 className="f-b1 text-iron mb-e">{article.title}</h1>
+                    <datetime className="text-steel mb-a block">
+                      {article.date}
+                    </datetime>
+                    <h1 className="f-b1 text-iron font-light mb-e">
+                      {article.title}
+                    </h1>
                     <LinkExtPrimary
                       href={article.url}
                       newTab={true}
@@ -270,7 +274,7 @@ export default ({ location }) => {
               ))}
           </ul>
         </nav>
-        <ul className="grid grid-cols-4">
+        <ul className="md:grid md:grid-cols-2 lg:grid-cols-4">
           {activeProfile && (
             <Profile
               person={activeProfile.person}
@@ -328,8 +332,11 @@ export default ({ location }) => {
           <ImageGrid {...investors.logos} />
         </div>
       </div>
-      <div id="contact" className="container lg:grid lg:grid-cols-3 my-g">
-        <div>
+      <div
+        id="contact"
+        className="container lg:grid lg:grid-cols-3 mt-e lg:mt-g mb-g"
+      >
+        <div className="mb-d md:mb-f">
           <SectionTitle
             title="Contact"
             border={true}
@@ -346,8 +353,14 @@ export default ({ location }) => {
             {[address.city, ', ', address.state, ' ', address.zip]}
           </p>
         </div>
-        <Img fluid={map.src.asset.fluid} alt={map.alt} />
-        <Img fluid={satellite.src.asset.fluid} alt={satellite.alt} />
+        <div className="lg:col-span-2 md:grid md:grid-cols-2 md:gap-c">
+          <Img
+            fluid={map.src.asset.fluid}
+            alt={map.alt}
+            className="sm-only:mb-d"
+          />
+          <Img fluid={satellite.src.asset.fluid} alt={satellite.alt} />
+        </div>
       </div>
     </Layout>
   )
@@ -366,10 +379,9 @@ const Profile = ({ person, onClose }) => {
   }
   return (
     <div
-      style={{ height: '500px' }}
-      className={`col-span-4 order-0 w-edge bg-footerBg mb-f`}
+      className={`profile md:col-span-2 lg:col-span-4 order-0 w-edge bg-footerBg mb-f`}
     >
-      <div className="container grid grid-cols-12 relative py-f">
+      <div className="container lg:grid lg:grid-cols-12 relative py-f">
         <div className="col-start-3 col-span-3">
           <div className="aspect-h-1 aspect-w-1 relative mb-d mr-e">
             <Img
@@ -388,8 +400,8 @@ const Profile = ({ person, onClose }) => {
           <p className="mb-e">{person.title}</p>
           <RichText content={person._rawText} className="f-b1" />
         </div>
-        <div className="relative col-span-2">
-          <button className="absolute top-0 right-0" onClick={onClose}>
+        <div className="absolute top-0 right-0 lg:relative col-span-2">
+          <button className="absolute top-0 right-0 p-d" onClick={onClose}>
             Close
           </button>
         </div>
