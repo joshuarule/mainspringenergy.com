@@ -6,5 +6,7 @@
   .linkFull {
     @apply text-seaGreen;
     @apply f-b1;
+    @apply font-regular;
+    @apply mt-e;
   }
 }

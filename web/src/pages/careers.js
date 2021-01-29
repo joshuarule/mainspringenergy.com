@@ -8,10 +8,12 @@ import SEO from '../components/SEO'
 import ContentBlocks from '../components/ContentBlocks'
 import RichText from '../components/RichText'
 import { LinkPrimary } from '../components/Link'
+import SectionTitle from '../components/SectionTitle'
+import ImageGrid from '../components/ImageGrid'
 
 export default ({ location }) => {
   const {
-    sanityCareers: { seo, body, hero },
+    sanityCareers: { seo, body, hero, secondarySection },
   } = useStaticQuery(graphql`
     query CareersQuery {
       sanityCareers {
@@ -43,17 +45,27 @@ export default ({ location }) => {
         body {
           ...blocks
         }
+        secondarySection {
+          imageGrid {
+            ...imageGridFields
+          }
+          _rawDescription
+          title
+          link {
+            label
+            path
+          }
+        }
       }
     }
   `)
+
+  console.log(secondarySection.imageGrid)
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       <div className="relative">
-        <div
-          className="container text-white flex flex-col justify-end"
-          style={{ height: '85vh' }}
-        >
+        <div className="hero container text-white flex flex-col justify-end">
           <div className="z-10 md:grid md:grid-cols-12 h-2/3 items-center">
             <div className="col-span-5">
               <h1 className="mb-e text-black">{hero.title}</h1>
@@ -71,16 +83,12 @@ export default ({ location }) => {
             </div>
           </div>
           {/* Gallery min height 720 */}
-          <div
-            className="slider-container flex right-0 absolute p-f"
-            style={{ height: '85vh', width: '85vh' }}
-          >
-            <Slider className="flex object-fit w-full h-full transform -rotate-45 translate-x-1/4 -translate-y-1/4">
+          <div className="slider--diamond slider-container">
+            <Slider className="flex object-fit w-full h-full">
               {hero.gallery.images.map((image, i) => {
                 return (
                   <Img
                     key={image.alt}
-                    className="object-fit w-full h-full"
                     fluid={image.src.asset.fluid}
                     alt={image.alt}
                   />
@@ -93,6 +101,35 @@ export default ({ location }) => {
       <div className="container mb-f">
         <ContentBlocks blocks={body.blocks} />
       </div>
+      <section className="container mb-f">
+        <SectionTitle
+          title={secondarySection.title}
+          options={{ border: true, smallTitleSize: true }}
+          className="border-seaGreen"
+        />
+        <div className="md:grid md:grid-cols-3">
+          <ImageGrid
+            {...secondarySection.imageGrid}
+            className="md:col-span-2"
+            gridClasses="gap-b"
+          />
+          <div>
+            <RichText
+              content={secondarySection._rawDescription.richText}
+              className="f-b1 text-iron mb-d"
+            />
+            <div className="select mb-d text-steel f-b1 w-2/3">
+              <select className="py-c px-c border rounded-md border-steel">
+                <option value="none">Select a category</option>
+                <option value="category">Categories to be filled</option>
+              </select>
+            </div>
+            <LinkPrimary path={secondarySection.link.path} className="block">
+              {secondarySection.link.label}
+            </LinkPrimary>
+          </div>
+        </div>
+      </section>
     </Layout>
   )
 }

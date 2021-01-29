@@ -1,7 +1,11 @@
 import React from 'react'
 import RichText from './RichText'
 
-export default function TextColumns({ columnAmount, _rawColumns }) {
+export default function TextColumns({
+  columnAmount,
+  _rawColumns,
+  className = '',
+}) {
   let columnClass
   switch (columnAmount) {
     case '4':
@@ -15,7 +19,7 @@ export default function TextColumns({ columnAmount, _rawColumns }) {
       break
   }
   return (
-    <div className={`textColumns grid ${columnClass}`}>
+    <div className={`textColumns grid ${columnClass} ${className}`}>
       {_rawColumns.map(column => (
         <div className="textColumn md-max:mb-f">
           {column.title && <h3 className="mb-d">{column.title}</h3>}

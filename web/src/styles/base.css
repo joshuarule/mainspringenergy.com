@@ -182,8 +182,10 @@
     }
 
     h3 {
-      @apply my-f;
+      @apply mt-f;
+      @apply mb-e;
     }
+
     ul,
     ol {
       list-style: initial;
@@ -194,6 +196,51 @@
       list-style: decimal;
     }
   }
+}
+
+.richText + .imageGrid {
+  @apply mt-e;
+}
+
+select {
+  outline: none;
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+
+  &:focus {
+    outline: none;
+    @apply border-seaGreen;
+  }
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  display: grid;
+  align-items: center;
+  grid-template-areas: 'select';
+}
+
+select,
+.select:after {
+  grid-area: select;
+}
+
+.select:after {
+  justify-self: end;
+  content: '';
+  margin-right: 0.75em;
+  width: 0.5em;
+  height: 0.35em;
+  background-color: currentColor;
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
 }
 
 .sr {

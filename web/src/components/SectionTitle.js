@@ -17,8 +17,12 @@ export default function SectionTitle({
       className={`sectionTitle
         lg:grid lg:grid-cols-3
         ${options && options.topMargin ? 'mt-0' : ''}
-        ${options && options.bottomMargin ? 'mb-0' : 'mb-f'}
-        ${border ? 'border-t-6 border-brand pt-c' : ''}
+        ${options && options.bottomMargin ? 'mb-d' : 'mb-f'}
+        ${
+          border || (options && options.border)
+            ? `border-t-6 border-brand pt-c`
+            : ''
+        }
         ${className}
       `}
     >

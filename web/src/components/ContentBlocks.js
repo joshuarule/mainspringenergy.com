@@ -22,7 +22,9 @@ export default function ContentBlocks({ blocks }) {
           case 'blockquote':
             return <Blockquote key={`block-${i}`} {...block} />
           case 'textColumns':
-            return <TextColumns key={`block-${i}`} {...block} />
+            return (
+              <TextColumns key={`block-${i}`} {...block} className="mb-f" />
+            )
           case 'cta':
             return <Cta key={`block-${i}`} {...block} />
           case 'dynamicBlock':

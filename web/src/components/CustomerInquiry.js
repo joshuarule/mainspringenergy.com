@@ -8,10 +8,10 @@ import React, { useState } from 'react'
 
 export default () => {
   const [formData, setFormData] = useState({
-    firstName: 'Josh',
-    lastName: 'Dobson',
-    email: 'joshua@joshuarule.com',
-    company: 'JoshuaRule',
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
   })
   const handleChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -54,6 +54,7 @@ export default () => {
             First Name
           </label>
           <input
+            placeholder="Jane"
             value={formData.firstName}
             onChange={handleChange}
             type="text"
@@ -67,6 +68,7 @@ export default () => {
             Last Name
           </label>
           <input
+            placeholder="Doe"
             value={formData.lastName}
             onChange={handleChange}
             type="text"

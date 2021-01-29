@@ -1,5 +1,43 @@
 import { graphql } from 'gatsby'
 
+export const IMAGE_GRID_FIELDS = graphql`
+  fragment imageGridFields on SanityImageGrid {
+    columns
+    options {
+      fullWidth
+      marginTop
+      marginBottom
+      logos
+    }
+    caption {
+      richText {
+        list
+        style
+        children {
+          text
+          marks
+          _type
+        }
+        _type
+      }
+    }
+    images {
+      title
+      path
+      image {
+        alt
+        src {
+          asset {
+            fluid {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
 export const CTA_FIELDS = graphql`
   fragment ctaFields on SanityCta {
     _type
@@ -103,39 +141,7 @@ export const SEO_FIELDS = graphql`
       }
       ... on SanityImageGrid {
         _type
-        columns
-        options {
-          fullWidth
-          marginTop
-          marginBottom
-          logos
-        }
-        caption {
-          richText {
-            list
-            style
-            children {
-              text
-              marks
-              _type
-            }
-            _type
-          }
-        }
-        images {
-          title
-          path
-          image {
-            alt
-            src {
-              asset {
-                fluid {
-                  ...GatsbySanityImageFluid
-                }
-              }
-            }
-          }
-        }
+        ...imageGridFields
       }
       ... on SanityLink {
         _type

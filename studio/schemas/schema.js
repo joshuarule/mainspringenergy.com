@@ -31,7 +31,7 @@ import {
   vision_sources_item,
 } from "./documents/vision/components.js";
 import careers from "./documents/careers";
-// import {  } from './documents/careers/components.js';
+import { career_opportunities } from "./documents/careers/components.js";
 import company from "./documents/company";
 import {
   company_hero,
@@ -104,6 +104,7 @@ export default createSchema({
     vision_sources,
     vision_sources_item,
     careers,
+    career_opportunities,
     // components
     address,
     contentBlocks,

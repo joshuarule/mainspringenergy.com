@@ -73,9 +73,7 @@ export default ({ location }) => {
               alt
               src {
                 asset {
-                  fluid {
-                    ...GatsbySanityImageFluid
-                  }
+                  url
                 }
               }
             }
@@ -98,7 +96,7 @@ export default ({ location }) => {
               alt
               src {
                 asset {
-                  fluid {
+                  fluid(maxWidth: 1600) {
                     ...GatsbySanityImageFluid
                   }
                 }
@@ -129,9 +127,9 @@ export default ({ location }) => {
   `)
 
   return (
-    <Layout location={location}>
+    <Layout location={location} className="lg:pt-e">
       <SEO title={seo.title} description={seo.description} image={seo.image} />
-      <div className="container mb-g pt-g">
+      <div className="container pb-g pt-g">
         <div
           className={`lg:grid lg:grid-cols-2 mb-f lg:mb-g mt-g items-center`}
         >
@@ -172,13 +170,13 @@ export default ({ location }) => {
       <div className="container">
         <ContentBlocks blocks={body.blocks} />
       </div>
-      <section className="bg-footerBg py-e mb-e">
+      <section className="bg-footerBg py-e mb-e" id="specs">
         <div className="container">
-          <div className="mb-f">
+          <div className="mb-e">
             <h1 className="f-h2 mb-e">{solutions_specs.title}</h1>
             <p className="f-b1 font-regular">{solutions_specs.subtitle}</p>
           </div>
-          <div className="lg:grid lg:grid-cols-3 mb-g text-seaGreen items-center">
+          <div className="lg:grid lg:grid-cols-3 mb-g lg:pb-g text-seaGreen items-center">
             <div className="lg:pr-f">
               <h1 className="f-h3 mb-e md:max-w-sm lg:max-w-full">
                 {solutions_specs.solutions_specs_media.title}
@@ -195,11 +193,9 @@ export default ({ location }) => {
               </div>
             </div>
             <div className="lg:col-span-2">
-              <Img
-                fluid={
-                  solutions_specs.solutions_specs_media.image.src.asset.fluid
-                }
-                alt={solutions_specs.solutions_specs_media.alt}
+              <img
+                src={solutions_specs.solutions_specs_media.image.src.asset.url}
+                alt={solutions_specs.solutions_specs_media.image.alt}
               />
             </div>
           </div>

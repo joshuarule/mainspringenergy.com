@@ -22,6 +22,7 @@ export default function ImageGrid({
   options,
   style = {},
   caption,
+  gridClasses = '',
   className = '',
 }) {
   if (!images || !images.length) return null
@@ -47,9 +48,14 @@ export default function ImageGrid({
       `}
       style={{ ...style }}
     >
-      <div className={`md:grid ${columnClass} lg:gap-1 lg:gap-y-e`}>
-        {images.map((image, i) =>
-          options && options.logos ? (
+      <div
+        className={`md:grid ${columnClass} ${
+          gridClasses ? gridClasses : 'lg:gap-1 lg:gap-y-e '
+        } `}
+      >
+        {images.map((image, i) => {
+          if (!image.image) return null
+          return options && options.logos ? (
             <div
               key={`image-${i}`}
               className={`gridImage mb-c md:mb-e lg:mb-0 flex relative aspect-w-16 aspect-h-9 rounded-lg`}
@@ -101,7 +107,7 @@ export default function ImageGrid({
               )}
             </div>
           )
-        )}
+        })}
       </div>
 
       {caption && (

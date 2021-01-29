@@ -24,5 +24,10 @@ export default {
       title: "Content Blocks",
       type: "contentBlocks",
     },
+    {
+      name: "secondarySection",
+      title: "Secondary Section",
+      type: "career_opportunities",
+    },
   ],
 };

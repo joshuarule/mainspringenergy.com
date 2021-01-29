@@ -1,6 +1,7 @@
 import { LinkPrimary } from './Link'
 import React from 'react'
 import Img from 'gatsby-image'
+import slugify from 'slugify'
 
 import RichText from './RichText'
 
@@ -37,6 +38,7 @@ export default ({
   return (
     <section
       {...rest}
+      id={slugify(title)}
       className={`cta 
         md:grid md:grid-cols-1 lg:grid-cols-12 mb-f lg:mb-g ${className}
         ${textAlign}
@@ -52,9 +54,7 @@ export default ({
       >
         <div className="md:max-w-prose lg:max-w-prose-50">
           <h2 className="f-h3 mb-e">{title}</h2>
-          {body && (
-            <RichText content={_rawBody} className="mb-d md:mb-e f-b1" />
-          )}
+          {body && <RichText content={_rawBody} className="f-b1" />}
           {link && link.path && (
             <LinkPrimary className="f-b1 font-bold" to={link.path}>
               {link.label}
