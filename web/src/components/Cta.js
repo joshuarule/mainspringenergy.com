@@ -56,7 +56,7 @@ export default ({
           <h2 className="f-h3 mb-e">{title}</h2>
           {body && <RichText content={_rawBody} className="f-b1" />}
           {link && link.path && (
-            <LinkPrimary className="f-b1 font-bold" to={link.path}>
+            <LinkPrimary className="f-b1 font-bold block mt-e" to={link.path}>
               {link.label}
             </LinkPrimary>
           )}
