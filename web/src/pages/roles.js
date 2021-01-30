@@ -40,8 +40,11 @@ const parseCategories = jobs => {
 export default ({ location }) => {
   const searchParams = new URLSearchParams(location.search)
   let cat = useRef(false)
-  if (searchParams) {
+  console.log(searchParams)
+  if (searchParams && searchParams.get('category')) {
     cat.current = searchParams.get('category')
+  } else {
+    cat.current = 'all-roles'
   }
 
   const [categories, setCategories] = useState(false)
@@ -55,9 +58,6 @@ export default ({ location }) => {
           jobsData = data
           const parsedCategories = parseCategories(jobsData)
           setCategories(parsedCategories)
-          if (!searchParams) {
-            cat.current = Object.keys(parsedCategories)[0]
-          }
         })
     }
   }, [searchParams])
@@ -95,9 +95,6 @@ export default ({ location }) => {
     if (!categories) {
       const parsedData = parseCategories(allJobsMockJson.nodes)
       setCategories(parsedData)
-      if (!cat.current) {
-        cat.current = Object.keys(parsedData)[0]
-      }
     }
   }
 
@@ -111,7 +108,7 @@ export default ({ location }) => {
   }
 
   let currentJobs = []
-  console.log(category)
+
   if (category === 'all-roles') {
     Object.keys(categories).forEach(key =>
       currentJobs.push(...categories[key].jobs)
@@ -119,8 +116,6 @@ export default ({ location }) => {
   } else {
     currentJobs.push(...categories[category].jobs)
   }
-
-  console.log(currentJobs)
 
   return (
     <Layout location={location} className="pt-g">
@@ -140,8 +135,8 @@ export default ({ location }) => {
             />
             {categories && (
               <ul className="mt-d">
-                {currentJobs.map(job => (
-                  <li className="f-b1 mb-a">
+                {currentJobs.map((job, i) => (
+                  <li key={`job-${i}`} className="f-b1 mb-a">
                     <a target="_blank" rel={'noreferrer'} href={job.url}>
                       {job.title}
                     </a>

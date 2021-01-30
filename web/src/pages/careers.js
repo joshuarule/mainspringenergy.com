@@ -187,7 +187,7 @@ export default ({ location }) => {
                   ))}
               </select>
             </div>
-            <LinkPrimary path={secondarySection.link.path} className="block">
+            <LinkPrimary to={secondarySection.link.path} className="block">
               {secondarySection.link.label}
             </LinkPrimary>
           </div>
