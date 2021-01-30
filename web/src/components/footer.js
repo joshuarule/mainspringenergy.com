@@ -34,23 +34,23 @@ export default function footer() {
         </div>
         <div className="md:col-span-3">
           <h4 className="font-bold mb-b">Company</h4>
-          <li>
-            <Link
-              className="text-steel mb-b block hover:text-seaGreen hover:text-seaGreen"
-              to="/vision"
-            >
-              Our Vision
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="text-steel mb-b block hover:text-seaGreen hover:text-seaGreen"
-              to="/company"
-            >
-              Company
-            </Link>
-          </li>
           <ul className="list-none p-0 m-0">
+            <li>
+              <Link
+                className="text-steel mb-b block hover:text-seaGreen hover:text-seaGreen"
+                to="/vision"
+              >
+                Our Vision
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-steel mb-b block hover:text-seaGreen hover:text-seaGreen"
+                to="/company"
+              >
+                Company
+              </Link>
+            </li>
             <li>
               <Link
                 className="text-steel mb-b block hover:text-seaGreen hover:text-seaGreen"

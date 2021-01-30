@@ -110,11 +110,22 @@ export default ({ location }) => {
     setCategory(e.target.value)
   }
 
+  let currentJobs = []
+  console.log(category)
+  if (category === 'all-roles') {
+    Object.keys(categories).forEach(key =>
+      currentJobs.push(...categories[key].jobs)
+    )
+  } else {
+    currentJobs.push(...categories[category].jobs)
+  }
+
+  console.log(currentJobs)
+
   return (
-    <Layout location={location}>
+    <Layout location={location} className="pt-g">
       <SEO title={seo.title} description={seo.description} image={seo.image} />
-      <div className="container mt-g">
-        <h1 className="mb-g">We're Growing. Grow With Us</h1>
+      <div className="container pt-g mt-g mb-g">
         <div className="grid grid-cols-3">
           <div className="">
             <h3 className="mb-d">Open Roles</h3>
@@ -127,9 +138,9 @@ export default ({ location }) => {
               onChange={handleOnchange}
               currentItem={category}
             />
-            {categories && categories[category] && (
+            {categories && (
               <ul className="mt-d">
-                {categories[category].jobs.map(job => (
+                {currentJobs.map(job => (
                   <li className="f-b1 mb-a">
                     <a target="_blank" rel={'noreferrer'} href={job.url}>
                       {job.title}

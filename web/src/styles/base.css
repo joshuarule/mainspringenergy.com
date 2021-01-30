@@ -180,6 +180,9 @@
         margin-bottom: 0;
       }
     }
+    p {
+      color: var(--c-steel);
+    }
 
     h3 {
       @apply mt-f;

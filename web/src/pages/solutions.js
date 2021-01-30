@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import ContentBlocks from '../components/ContentBlocks'
 import SectionTitle from '../components/SectionTitle'
-import { LinkPrimary } from '../components/Link'
+import { LinkExtPrimary, LinkPrimary } from '../components/Link'
 import RichText from '../components/RichText'
 import CustomerInquiry from '../components/CustomerInquiry'
 
@@ -183,9 +183,13 @@ export default ({ location }) => {
               </h1>
               <div className="md:grid md:grid-cols-2 lg:block">
                 <ul className="mb-f lg:mb-g">
-                  {solutions_specs.solutions_specs_media.specs.map(spec => (
-                    <p className="f-h3 font-thin mb-a">{spec}</p>
-                  ))}
+                  {solutions_specs.solutions_specs_media.specs.map(
+                    (spec, i) => (
+                      <p key={`spec-${i}`} className="f-h3 font-thin mb-a">
+                        {spec}
+                      </p>
+                    )
+                  )}
                 </ul>
                 <p className="md-max:mb-f f-b1">
                   {solutions_specs.solutions_specs_media.description}
@@ -201,8 +205,9 @@ export default ({ location }) => {
           </div>
           <div>
             <ul className="md:grid md:grid-cols-2 lg:grid-cols-6">
-              {solutions_specs.list.items.map(item => (
+              {solutions_specs.list.items.map((item, i) => (
                 <li
+                  key={`spec-list-${i}`}
                   className="border-t-6 border-steel pt-a"
                   style={{ minHeight: '132px' }}
                 >
@@ -218,8 +223,8 @@ export default ({ location }) => {
       <div className="container mb-f">
         <SectionTitle title={solutions_downloads.title} />
         <ul className="md:grid md:grid-cols-2 lg:grid-cols-3">
-          {solutions_downloads.items.map(item => (
-            <li className="mb-f">
+          {solutions_downloads.items.map((item, i) => (
+            <li key={`download-${i}`} className="mb-f">
               <div className="lg:grid lg:grid-cols-4">
                 <div className="lg:col-span-3 mb-d">
                   <Img
@@ -233,14 +238,14 @@ export default ({ location }) => {
                 <h4 className="f-b1 font-bold">{item.title}</h4>
                 <p className="mb-d f-b1">{item.subtitle}</p>
                 <p className="f-b1 text-steel mb-d">{item.description}</p>
-                <LinkPrimary
-                  to={item.src.src.asset.url}
+                <LinkExtPrimary
+                  href={item.src.src.asset.url}
                   className="f-b1 text-freshBlue"
                   target="_blank"
                   download="filename"
                 >
                   Download
-                </LinkPrimary>
+                </LinkExtPrimary>
               </div>
             </li>
           ))}
