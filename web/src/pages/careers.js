@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { navigate } from 'gatsby'
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
@@ -104,7 +104,21 @@ export default ({ location }) => {
       }
     }
   `)
+
   const [categories, setCategories] = useState(false)
+
+  useEffect(() => {
+    let jobsData
+    if (process.env.NODE_ENV !== 'development') {
+      fetch('/.netlify/functions/jobs')
+        .then(response => response.json())
+        .then(data => {
+          jobsData = data
+          const parsedCategories = parseCategories(jobsData)
+          setCategories(parsedCategories)
+        })
+    }
+  }, [])
 
   if (process.env.NODE_ENV === 'development') {
     if (!categories) {
@@ -113,7 +127,6 @@ export default ({ location }) => {
     }
   }
 
-  console.log(categories)
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
