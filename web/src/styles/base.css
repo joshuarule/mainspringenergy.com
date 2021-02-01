@@ -16,6 +16,7 @@
 
   /* Colors */
   --c-brand: #f53d00;
+  --c-brand--dark: #d32d00;
 
   /* Primary */
   --c-navy: #2b2c58;
@@ -90,6 +91,8 @@
 
   body {
     background-color: var(--bg-default);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     color: var(--c-black);
     @apply text-b2;
     @apply font-light;
@@ -121,6 +124,11 @@
   a {
     color: var(--c-brand);
     text-decoration: none;
+
+    &:hover,
+    &:active {
+      color: var(--c-brand--dark);
+    }
   }
 
   h1,
@@ -287,7 +295,12 @@ select,
   }
 
   a {
-    color: var(--c-freshBlue);
+    color: var(--c-seaGreen);
+
+    &:hover,
+    &:active {
+      color: var(--c-seaGreen--dark);
+    }
   }
 
   /* changes any border color to seaGreen */

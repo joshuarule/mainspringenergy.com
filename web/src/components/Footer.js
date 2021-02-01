@@ -1,9 +1,26 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import { Link } from 'gatsby'
 
 import Icon from './Icon'
 
-export default function footer() {
+export default () => {
+  const {
+    footerSettings: { address, email },
+  } = useStaticQuery(graphql`
+    query footerQuery {
+      footerSettings: sanitySettings {
+        address {
+          city
+          state
+          street
+          street2
+          zip
+        }
+        email
+      }
+    }
+  `)
   return (
     <footer className="bg-footerBg pt-d pb-g ">
       <div className="container grid grid-cols-1 md:grid-cols-12 gap-y-d">
@@ -18,17 +35,24 @@ export default function footer() {
           <h4 className="font-bold mb-b">Contact Us</h4>
           <a
             className="text-steel text-steel hover:text-seaGreen"
-            href="mailto:info@mainspringenergy.com"
+            href={`mailto:${email}`}
           >
-            info@mainspringenergy.com
+            {email}
           </a>
           <a
             className="text-steel block text-steel hover:text-seaGreen"
             href="https://maps.google.com"
           >
             <address>
-              3601 Haven Avenue<br></br>
-              Menlo Park, CA 94025
+              {address.street}
+              <br></br>
+              {address.street2 && (
+                <>
+                  {address.street}
+                  <br></br>
+                </>
+              )}
+              {address.city}, {address.state} {address.zip}
             </address>
           </a>
         </div>
@@ -73,9 +97,9 @@ export default function footer() {
           <h4 className="font-bold mb-b">Follow Us</h4>
           <ul className="list-none p-0 m-0">
             <li>
-              <Link
+              <a
                 className="text-steel mb-b block hover:text-seaGreen"
-                to="/newsroom"
+                href="https://www.linkedin.com/company/mainspringenergy"
               >
                 <Icon
                   name="linkedIn"
@@ -83,7 +107,7 @@ export default function footer() {
                   style={{ marginTop: '-2px' }}
                 />
                 LinkedIn
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
