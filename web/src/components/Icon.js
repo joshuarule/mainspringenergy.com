@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { ReactComponent as Logo } from '../assets/icons/logo.svg'
 import { ReactComponent as Chevron } from '../assets/icons/chevron.svg'
 import { ReactComponent as Mark } from '../assets/icons/mark.svg'
