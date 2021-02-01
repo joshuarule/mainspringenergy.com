@@ -9,10 +9,10 @@ import React from 'react'
 
 export const onRenderBody = ({ setPostBodyComponents }) => {
   setPostBodyComponents([
-    <script
-      id="gnewtonjs"
-      type="text/javascript"
-      src="//recruitingbypaycor.com/career/iframe.action?clientId=8a78858b5e748ace015e7d8826af113e"
-    ></script>,
+    // <script
+    //   id="gnewtonjs"
+    //   type="text/javascript"
+    //   src="//recruitingbypaycor.com/career/iframe.action?clientId=8a78858b5e748ace015e7d8826af113e"
+    // ></script>,
   ])
 }
