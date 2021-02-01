@@ -1,6 +1,11 @@
 .page-home {
   .hero {
     height: 100vh;
+    max-height: 680px;
+
+    @screen md {
+      max-height: auto;
+    }
 
     @screen lg {
       height: 90vh;

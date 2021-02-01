@@ -65,7 +65,7 @@ const IndexPage = ({ location }) => {
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       <div className="bg-navy relative">
         <div className="hero container text-white flex flex-col justify-end">
-          <div className="z-10 md:grid md:grid-cols-3 lg:grid-cols-2 mb-e h-1/3 md:h-3/5 md:items-center">
+          <div className="z-10 md:grid md:grid-cols-3 lg:grid-cols-2 mb-g pb-g md:pb-0 md:mb-e md:h-1/3 lg:h-3/5 md:items-center">
             <div className="md:col-span-2 lg:col-span-1">
               <h1 className="mb-e f-h3 md:f-h1 max-w-2/3">{hero.title}</h1>
               <LinkPrimary
