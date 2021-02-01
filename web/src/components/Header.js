@@ -47,7 +47,6 @@ const Header = ({ theme = 'light' }) => {
   //   }
   // }, [breakpoint, isWindowSmall])
 
-  // Adds esc button to close open menu
   const escFunction = useCallback((event, isMenuOpen) => {
     if (event.keyCode === 27 && isMenuOpen) toggleMenuOpen(false)
   }, [])
