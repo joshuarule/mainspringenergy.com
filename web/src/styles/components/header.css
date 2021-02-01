@@ -71,6 +71,11 @@
     color: var(--c-black);
   }
 
+  &:hover,
+  &:active {
+    color: currentColor;
+  }
+
   @screen lg {
     max-width: 246px;
   }

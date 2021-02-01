@@ -109,6 +109,14 @@
     }
   }
 
+  input,
+  select,
+  option,
+  textarea {
+    @apply text-b2;
+    @apply font-light;
+  }
+
   #___gatsby,
   #gatsby-focus-wrapper,
   #gatsby-focus-wrapper > div:first-child {
@@ -228,10 +236,9 @@
 select {
   outline: none;
   appearance: none;
+  -webkit-appearance: none;
   background-color: transparent;
   margin: 0;
-  font-family: inherit;
-  font-size: inherit;
   cursor: inherit;
   line-height: inherit;
 

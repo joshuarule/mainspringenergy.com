@@ -302,19 +302,21 @@ export default ({ location }) => {
                   activeProfile.index === i ? 'opacity-20' : ''
                 }`}
               >
-                <div style={{ maxWidth: '211px' }}>
-                  <div className="aspect-h-1 aspect-w-1 relative rounded-full overflow-hidden mb-d">
-                    <Img
-                      fluid={person.image.asset.fluid}
-                      style={{
-                        position: 'absolute',
-                      }}
-                      imgStyle={{
-                        height: 'auto',
-                        ...positionStyles,
-                      }}
-                      className={`absolute`}
-                    />
+                <div className="flex justify-center md:block">
+                  <div className="flex-1" style={{ maxWidth: '211px' }}>
+                    <div className="aspect-h-1 aspect-w-1 relative rounded-full overflow-hidden mb-d">
+                      <Img
+                        fluid={person.image.asset.fluid}
+                        style={{
+                          position: 'absolute',
+                        }}
+                        imgStyle={{
+                          height: 'auto',
+                          ...positionStyles,
+                        }}
+                        className={`absolute`}
+                      />
+                    </div>
                   </div>
                 </div>
                 <h4 className="group-hover:text-seaGreen">{person.name}</h4>

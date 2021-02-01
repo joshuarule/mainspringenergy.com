@@ -1,8 +1,15 @@
 .page-careers {
   .hero {
-    height: 100vh;
+    min-height: 100vh;
+    padding-top: 125vw;
+
+    @screen md {
+      padding-top: 95vw;
+    }
 
     @screen lg {
+      min-height: initial;
+      padding-top: 0;
       height: 90vh;
     }
   }

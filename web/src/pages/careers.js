@@ -101,10 +101,10 @@ export default ({ location }) => {
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
-      <div className="relative">
+      <div className="relative mb-g lg:mb-0">
         <div className="hero container text-white flex flex-col justify-end">
           <div className="z-10 md:grid md:grid-cols-12 h-2/3 items-center">
-            <div className="col-span-5">
+            <div className="md:col-span-8 lg:col-span-5">
               <h1 className="mb-e text-black">{hero.title}</h1>
               <RichText
                 content={hero.richText._rawRichText}
@@ -155,7 +155,7 @@ export default ({ location }) => {
               content={secondarySection._rawDescription.richText}
               className="f-b1 text-iron mb-d"
             />
-            <div className="select mb-d text-iron f-b1 w-2/3">
+            <div className="select mb-d text-iron f-b1 lg:w-2/3">
               <select
                 onChange={e => {
                   navigate(`/roles?category=${e.target.value}`)
