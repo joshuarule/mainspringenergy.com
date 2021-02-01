@@ -1,6 +1,0 @@
-multipass: true
-plugins:
-  - removeViewBox: false
-  - collapseGroups: false
-  - cleanupIDs: false
-  - mergePaths: false

@@ -1,9 +1,0 @@
-.page-careers {
-  .hero {
-    height: 100vh;
-
-    @screen lg {
-      height: 90vh;
-    }
-  }
-}
