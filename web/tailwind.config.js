@@ -7,12 +7,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        medium: ['CamphorStd-Medium'],
-        regular: ['CamphorStd-Regular'],
-        light: ['CamphorStd-Light'],
-        bold: ['CamphorStd-Bold'],
-        heavy: ['CamphorStd-Heavy'],
-        thin: ['CamphorStd-Thin'],
+        medium: ['CamphorStd-Medium', 'helvetica'],
+        regular: ['CamphorStd-Regular', 'helvetica'],
+        light: ['CamphorStd-Light', 'helvetica'],
+        bold: ['CamphorStd-Bold', 'helvetica'],
+        heavy: ['CamphorStd-Heavy', 'helvetica'],
+        thin: ['CamphorStd-Thin', 'helvetica'],
       },
       maxWidth: {
         'prose-50': '50ch',
