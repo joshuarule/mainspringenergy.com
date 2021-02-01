@@ -1,0 +1,23 @@
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
+
+@import './utilities.css';
+@import './base.css';
+
+@import './typography.css';
+@import './components/header.css';
+@import './components/gridImage.css';
+@import './components/slider.css';
+@import './components/inputs.css';
+@import './components/player.css';
+
+@import './pages/home.css';
+/* @import './pages/careers.css'; */
+@import './pages/technology.css';
+@import './pages/solutions.css';
+@import './pages/vision.css';
+@import './pages/company.css';
+@import './pages/privacy.css';

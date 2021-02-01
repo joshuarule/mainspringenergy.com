@@ -1,0 +1,49 @@
+.page-company {
+  .imageGrid .gridImage {
+    border: 1px solid var(--c-fog);
+    background-color: var(--c-porcelain) !important;
+  }
+}
+
+.page-company .theme--dark {
+  ul {
+    @apply mt-f;
+    @apply md:grid;
+    @apply md:grid-cols-3;
+    grid-column-gap: var(--gap);
+  }
+
+  li {
+    border: none;
+    padding-top: 0;
+
+    &:before {
+      display: block;
+      height: 100px;
+      @apply mb-d;
+    }
+
+    .richText {
+      @apply f-b1;
+    }
+
+    &:nth-child(1):before {
+      content: url('/ms_company_corevalues_1.svg');
+      width: 49px;
+    }
+    &:nth-child(2):before {
+      content: url('/ms_company_corevalues_2.svg');
+      width: 64px;
+    }
+    &:nth-child(3):before {
+      content: url('/ms_company_corevalues_3.svg');
+      width: 64px;
+    }
+  }
+}
+
+.profile {
+  @screen lg {
+    height: 500px;
+  }
+}

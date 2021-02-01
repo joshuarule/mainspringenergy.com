@@ -1,0 +1,47 @@
+.page-technology {
+  .hero {
+    height: 55vh;
+    min-height: 440px;
+
+    @screen md {
+      height: 50vh;
+    }
+
+    @screen lg {
+      height: 75vh;
+      min-height: 800px;
+    }
+
+    .container {
+      @screen md {
+        padding-top: 100px;
+      }
+
+      @screen lg {
+        padding-top: 120px;
+      }
+    }
+  }
+
+  .theme--dark {
+    li h5 {
+      @apply f-h3;
+      @apply font-thin;
+    }
+  }
+
+  .linkFull {
+    color: var(--c-seaGreen);
+  }
+}
+
+.techHero-image {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.75s 0.15s ease-out;
+
+  &.techHero-image--loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
