@@ -8,9 +8,10 @@ import Footer from './Footer'
 const Layout = ({ children, className = null, navTheme, location }) => {
   const pathname =
     location.pathname === '/' ? 'home' : location.pathname.slice(1)
+  const cleanedPathname = pathname.replace(/\//i, '')
 
   return (
-    <div className={`overflow-x-hidden page-${pathname}`}>
+    <div className={`overflow-x-hidden page-${cleanedPathname}`}>
       <Headroom>
         <Nav theme={navTheme} />
       </Headroom>

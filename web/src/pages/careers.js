@@ -12,7 +12,6 @@ import RichText from '../components/RichText'
 import { LinkPrimary } from '../components/Link'
 import SectionTitle from '../components/SectionTitle'
 import ImageGrid from '../components/ImageGrid'
-import '../styles/pages/careers.css'
 
 export default ({ location }) => {
   const {
