@@ -100,6 +100,8 @@ export default () => {
               <a
                 className="text-steel mb-b block hover:text-seaGreen"
                 href="https://www.linkedin.com/company/mainspringenergy"
+                target="_blank"
+                rel="noreferrer"
               >
                 <Icon
                   name="linkedIn"

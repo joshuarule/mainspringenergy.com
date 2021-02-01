@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+// const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   purge: {
@@ -7,12 +7,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        medium: ['CamphorStd-Medium', ...defaultTheme.fontFamily.sans],
-        regular: ['CamphorStd-Regular', ...defaultTheme.fontFamily.sans],
-        light: ['CamphorStd-Light', ...defaultTheme.fontFamily.sans],
-        bold: ['CamphorStd-Bold', ...defaultTheme.fontFamily.sans],
-        heavy: ['CamphorStd-Heavy', ...defaultTheme.fontFamily.sans],
-        thin: ['CamphorStd-Thin', ...defaultTheme.fontFamily.sans],
+        medium: ['CamphorStd-Medium'],
+        regular: ['CamphorStd-Regular'],
+        light: ['CamphorStd-Light'],
+        bold: ['CamphorStd-Bold'],
+        heavy: ['CamphorStd-Heavy'],
+        thin: ['CamphorStd-Thin'],
       },
       maxWidth: {
         'prose-50': '50ch',

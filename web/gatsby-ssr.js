@@ -6,6 +6,7 @@
 
 // You can delete this file if you're not using it
 import React from 'react'
+import './src/styles/global.css'
 
 export const onRenderBody = ({ setPostBodyComponents }) => {
   setPostBodyComponents([
