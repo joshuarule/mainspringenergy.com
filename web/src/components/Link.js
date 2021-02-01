@@ -8,7 +8,9 @@ export const LinkPrimary = ({ children, ...rest }) => (
     <Icon
       name="chevron"
       className="inline-block"
-      style={{ marginTop: '-1px' }}
+      style={{
+        marginTop: '-1px',
+      }}
     />
   </Link>
 )

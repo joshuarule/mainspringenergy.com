@@ -38,6 +38,7 @@ export default function ImageGrid({
       columnClass = 'lg:grid-cols-2'
       break
   }
+
   return (
     <Container
       fullWidth={options && options.fullWidth}
