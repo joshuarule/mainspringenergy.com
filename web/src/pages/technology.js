@@ -98,7 +98,6 @@ export default ({ location }) => {
   }
 
   const imagesLoaded = useRef([])
-  console.log(imagesLoaded.current)
 
   const techImageLoaded = img => {
     imagesLoaded.current.push(img)
@@ -112,10 +111,7 @@ export default ({ location }) => {
   return (
     <Layout navTheme="dark" location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
-      <div
-        className="hero  relative"
-        // style={{ minHeight: '800px', height: '75vh' }}
-      >
+      <div className="hero  relative">
         <div className="absolute left-0 right-0 h-screen top-0 bg-gradient-to-t from-techGradientFrom to-techGradientTo" />
         {/* noise */}
         <div
@@ -161,7 +157,7 @@ export default ({ location }) => {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 w-full">
+        <div className="absolute w-full" style={{ bottom: '-1px' }}>
           <Img
             fluid={heroTop.childImageSharp.fluid}
             className={`techHero-image ${
