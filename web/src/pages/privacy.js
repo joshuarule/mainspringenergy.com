@@ -1,8 +1,9 @@
 import React from 'react'
-import Layout from '../components/Layout'
 import { useStaticQuery, graphql } from 'gatsby'
+
 import SEO from '../components/SEO'
 import List from '../components/List'
+import Layout from '../components/Layout'
 
 const Privacy = ({ location }) => {
   const {

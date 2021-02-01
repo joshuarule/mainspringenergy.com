@@ -1,23 +1,23 @@
 export default {
-  name: 'terms',
-  title: 'Terms',
-  __experimental_actions: ['update', 'publish', 'create'],
-  type: 'document',
+  name: "terms",
+  title: "Terms",
+  __experimental_actions: ["update", "publish"],
+  type: "document",
   preview: {
     select: {
-      title: 'seo.title',
+      title: "seo.title",
     },
   },
   fields: [
     {
-      name: 'seo',
-      title: 'SEO',
-      type: 'seo',
+      name: "seo",
+      title: "SEO",
+      type: "seo",
     },
-    { // looks like just an RTF to me on the whole page ???
-      name: "termsTextColumns",
-      title: "Terms Text Columns",
-      type: "textColumns",
+    {
+      name: "list",
+      title: "Privacy Statement Items",
+      type: "list",
     },
   ],
-}
+};
