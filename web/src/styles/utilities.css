@@ -1,5 +1,12 @@
 @layer utilities {
   @variants responsive {
+    .cols-2 {
+      columns: 2;
+    }
+    .cols-3 {
+      columns: 3;
+    }
+
     .link--clean {
       color: currentColor;
     }

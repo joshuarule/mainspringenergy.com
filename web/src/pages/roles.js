@@ -1,41 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import slugify from 'slugify'
 
 import SEO from '../components/SEO'
 import Layout from '../components/Layout'
-import JobCategories from '../components/JobCategories'
+import JobCategories, { parseCategories } from '../components/JobCategories'
 import RichText from '../components/RichText'
-
-const parseCategories = jobs => {
-  const categories = {}
-  jobs.forEach(job => {
-    const jobCategory =
-      job[
-        process.env.NODE_ENV === 'development'
-          ? 'newton_department'
-          : 'newton:department'
-      ][0]
-    const id =
-      job[
-        process.env.NODE_ENV === 'development' ? 'newton_jobId' : 'newton:jobId'
-      ][0]
-    const slug = slugify(jobCategory, { lower: true })
-
-    if (!categories[slug]) {
-      categories[slug] = {
-        name: jobCategory,
-        jobs: [],
-      }
-    }
-    categories[slug].jobs.push({
-      title: job.title[0],
-      id,
-      url: job.link[0]._.href,
-    })
-  })
-  return categories
-}
 
 export default ({ location }) => {
   const searchParams = new URLSearchParams(location.search)
@@ -51,16 +20,16 @@ export default ({ location }) => {
 
   useEffect(() => {
     let jobsData
-    if (process.env.NODE_ENV !== 'development') {
-      fetch('/.netlify/functions/jobs')
-        .then(response => response.json())
-        .then(data => {
-          jobsData = data
-          const parsedCategories = parseCategories(jobsData)
-          setCategories(parsedCategories)
-        })
-    }
-  }, [searchParams])
+    // if (process.env.NODE_ENV !== 'development') {
+    fetch('/.netlify/functions/jobs')
+      .then(response => response.json())
+      .then(data => {
+        jobsData = data
+        const parsedCategories = parseCategories(jobsData)
+        setCategories(parsedCategories)
+      })
+    // }
+  }, [])
 
   const {
     sanityRoles: { seo, body },
@@ -91,12 +60,12 @@ export default ({ location }) => {
   `)
 
   // grabs mock data from file in dev
-  if (process.env.NODE_ENV === 'development') {
-    if (!categories) {
-      const parsedData = parseCategories(allJobsMockJson.nodes)
-      setCategories(parsedData)
-    }
-  }
+  // if (process.env.NODE_ENV === 'development') {
+  //   if (!categories) {
+  //     const parsedData = parseCategories(allJobsMockJson.nodes)
+  //     setCategories(parsedData)
+  //   }
+  // }
 
   // current category
 

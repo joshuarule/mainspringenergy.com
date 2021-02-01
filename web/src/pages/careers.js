@@ -3,7 +3,7 @@ import { navigate } from 'gatsby'
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
 import Slider from 'react-slick'
-import slugify from 'slugify'
+import { parseCategories } from '../components/JobCategories'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
@@ -12,36 +12,6 @@ import RichText from '../components/RichText'
 import { LinkPrimary } from '../components/Link'
 import SectionTitle from '../components/SectionTitle'
 import ImageGrid from '../components/ImageGrid'
-
-const parseCategories = jobs => {
-  const categories = {}
-  jobs.forEach(job => {
-    const jobCategory =
-      job[
-        process.env.NODE_ENV === 'development'
-          ? 'newton_department'
-          : 'newton:department'
-      ][0]
-    const id =
-      job[
-        process.env.NODE_ENV === 'development' ? 'newton_jobId' : 'newton:jobId'
-      ][0]
-    const slug = slugify(jobCategory, { lower: true })
-
-    if (!categories[slug]) {
-      categories[slug] = {
-        name: jobCategory,
-        jobs: [],
-      }
-    }
-    categories[slug].jobs.push({
-      title: job.title[0],
-      id,
-      url: job.link[0]._.href,
-    })
-  })
-  return categories
-}
 
 export default ({ location }) => {
   const {
@@ -109,23 +79,24 @@ export default ({ location }) => {
 
   useEffect(() => {
     let jobsData
-    if (process.env.NODE_ENV !== 'development') {
-      fetch('/.netlify/functions/jobs')
-        .then(response => response.json())
-        .then(data => {
-          jobsData = data
-          const parsedCategories = parseCategories(jobsData)
-          setCategories(parsedCategories)
-        })
-    }
+    // if (process.env.NODE_ENV !== 'development') {
+    fetch('/.netlify/functions/jobs')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        jobsData = data
+        const parsedCategories = parseCategories(jobsData)
+        setCategories(parsedCategories)
+      })
+    // }
   }, [])
 
-  if (process.env.NODE_ENV === 'development') {
-    if (!categories) {
-      const parsedData = parseCategories(allJobsMockJson.nodes)
-      setCategories(parsedData)
-    }
-  }
+  // if (process.env.NODE_ENV === 'development') {
+  //   if (!categories) {
+  //     const parsedData = parseCategories(allJobsMockJson.nodes)
+  //     setCategories(parsedData)
+  //   }
+  // }
 
   return (
     <Layout location={location}>
@@ -184,12 +155,12 @@ export default ({ location }) => {
               content={secondarySection._rawDescription.richText}
               className="f-b1 text-iron mb-d"
             />
-            <div className="select mb-d text-steel f-b1 w-2/3">
+            <div className="select mb-d text-iron f-b1 w-2/3">
               <select
                 onChange={e => {
                   navigate(`/roles?category=${e.target.value}`)
                 }}
-                className="py-c px-c border rounded-md border-steel"
+                className="py-c px-c border rounded-md border-iron"
               >
                 <option value="none">Select a category</option>
                 {categories &&

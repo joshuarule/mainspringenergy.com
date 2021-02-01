@@ -90,6 +90,7 @@ export default () => {
             Email
           </label>
           <input
+            placeholder="youremail@emaildomain.com"
             value={formData.email}
             onChange={handleChange}
             type="email"

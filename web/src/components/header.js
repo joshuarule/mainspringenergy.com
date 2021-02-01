@@ -37,7 +37,8 @@ const Header = ({ theme = 'light' }) => {
 
   // const [dimensions, setDimensions] = useState({})
   const [isMenuOpen, toggleMenuOpen] = useState(false)
-  const isWindowSmall = breakpoint.width < 769
+  // TODO - connect css and js breakpoint with
+  const isWindowSmall = breakpoint.width < 1240
 
   // useLayoutEffect(() => {
   //   const ref = isWindowSmall ? headerBarRef : headerRef

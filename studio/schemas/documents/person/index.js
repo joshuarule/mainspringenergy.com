@@ -68,5 +68,10 @@ export default {
         },
       ],
     },
+    {
+      name: "externalLink",
+      title: "External Link",
+      type: "externalLink",
+    },
   ],
 };

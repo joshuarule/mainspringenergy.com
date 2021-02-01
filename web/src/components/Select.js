@@ -8,12 +8,12 @@ export default function Select({
   items,
 }) {
   return (
-    <div className={`select text-steel f-b1 ${className}`}>
+    <div className={`select text-iron f-b1 ${className}`}>
       <select
         onChange={onChange}
         value={value}
         name={name}
-        className="py-c px-c border rounded-md border-steel"
+        className="py-c px-c border rounded-md border-iron"
       >
         {items &&
           items.map(item => (

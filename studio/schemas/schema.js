@@ -72,6 +72,7 @@ import cta_options from "./components/cta_options.js";
 import imageBlock_options from "./components/imageBlock_options.js";
 import blockquote_options from "./components/blockquote_options.js";
 import heroRichText from "./components/heroRichText.js";
+import externalLink from "./components/externalLink.js";
 
 export default createSchema({
   name: "default",
@@ -112,6 +113,7 @@ export default createSchema({
     imageBlock_options,
     cta,
     cta_options,
+    externalLink,
     hero,
     gallery,
     video,

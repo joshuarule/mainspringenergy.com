@@ -3,14 +3,14 @@ import React from 'react'
 import { LinkPrimary } from './Link'
 import RichText from './RichText'
 
-export default ({ items, className }) => {
+export default ({ items, className, style = {} }) => {
   return (
-    <ul className={className}>
+    <ul className={`list ${className}`} style={style}>
       {items.map((item, i) => {
         return (
           <li
             key={`item-${i}`}
-            className="mb-f border-t-6 border-seaGreen text-white pt-c"
+            className="mb-f border-t-6 border-seaGreen pt-c"
           >
             <div className="mb-e">
               <h3>{item.title}</h3>

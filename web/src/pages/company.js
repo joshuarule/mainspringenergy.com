@@ -45,6 +45,10 @@ export default ({ location }) => {
           }
           title
           _rawText
+          externalLink {
+            label
+            url
+          }
         }
       }
       sanitySettings {
@@ -294,7 +298,7 @@ export default ({ location }) => {
             }
             return (
               <li
-                className={`person mb-f relative order-${i} group ${
+                className={`person image-transition--zoom mb-f relative order-${i} group ${
                   activeProfile.index === i ? 'opacity-20' : ''
                 }`}
               >
@@ -315,6 +319,16 @@ export default ({ location }) => {
                 </div>
                 <h4 className="group-hover:text-seaGreen">{person.name}</h4>
                 <p className="f-b1 group-hover:text-seaGreen">{person.title}</p>
+                {person.externalLink && (
+                  <a
+                    href={person.externalLink.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-seaGreen font-regular"
+                  >
+                    {person.externalLink.label}
+                  </a>
+                )}
                 <button
                   onClick={() => setActiveProfile({ person, index: i })}
                   className="absolute block w-full top-0 right-0 bottom-0 left-0"

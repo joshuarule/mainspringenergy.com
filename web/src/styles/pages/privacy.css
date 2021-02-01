@@ -1,0 +1,22 @@
+.page-privacy {
+  h3 {
+    @apply f-b2;
+  }
+
+  .list > li {
+    @apply f-b2;
+    @apply mb-e;
+    @apply pt-b;
+    @apply border-smoke;
+
+    div {
+      @apply mb-a;
+    }
+
+    p,
+    ol,
+    ul {
+      @apply f-b2;
+    }
+  }
+}

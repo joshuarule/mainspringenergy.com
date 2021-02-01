@@ -8,7 +8,7 @@
   @apply block;
   @apply w-full;
   @apply border-smoke;
-  @apply rounded-sm;
+  @apply rounded-md;
 
   @apply f-b1;
   @apply font-thin;
