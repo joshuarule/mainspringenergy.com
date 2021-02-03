@@ -211,7 +211,7 @@ export default ({ location }) => {
           style={{ width: 'calc(100vw - (100vw - 1280px) / 2)' }}
         />
         <LinkFull
-          className="linkFull f-h3 mb-e block font-bold"
+          className="linkFull f-h3 mb-f block font-bold"
           to={secondarySection.link.path}
         >
           {secondarySection.link.label}
