@@ -112,8 +112,8 @@ export default ({ location }) => {
               />
               <LinkPrimary
                 to={hero.link.path}
-                className="f-b1 font-bold"
-                style={{ fontSize: '18px', letterSpacing: '0.6px' }}
+                className="f-b1 font-medium"
+                style={{ fontSize: '18px', letterSpacing: '0.3px' }}
               >
                 {hero.link.label}
               </LinkPrimary>
@@ -171,7 +171,10 @@ export default ({ location }) => {
                   ))}
               </select>
             </div>
-            <LinkPrimary to={secondarySection.link.path} className="block">
+            <LinkPrimary
+              to={secondarySection.link.path}
+              className="block font-medium"
+            >
               {secondarySection.link.label}
             </LinkPrimary>
           </div>
