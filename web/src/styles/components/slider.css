@@ -68,7 +68,7 @@
   }
 
   @screen md {
-    right: 7vw;
+    right: 9vw;
     top: -11vh;
     position: absolute;
     height: 90vh;
@@ -85,7 +85,7 @@
 
   @screen lg {
     left: auto;
-    right: 4vh;
+    right: -1vh;
     top: -17vh;
     height: 90vh;
     width: 90vh;

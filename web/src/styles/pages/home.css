@@ -4,7 +4,7 @@
     max-height: 680px;
 
     @screen md {
-      max-height: auto;
+      max-height: none;
     }
 
     @screen lg {
