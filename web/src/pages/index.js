@@ -70,7 +70,7 @@ const IndexPage = ({ location }) => {
               <h1 className="mb-e f-h3 md:f-h1 max-w-2/3">{hero.title}</h1>
               <LinkPrimary
                 to={hero.link.path}
-                className="f-b0 font-bold link--light"
+                className="f-b0 font-bold link--light hover:text-seaGreen"
               >
                 {hero.link.label}
               </LinkPrimary>
