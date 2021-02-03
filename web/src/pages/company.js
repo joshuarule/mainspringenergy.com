@@ -298,7 +298,7 @@ export default ({ location }) => {
             }
             return (
               <li
-                className={`person image-transition--zoom mb-f relative order-${i} group ${
+                className={`person mb-f relative order-${i} group ${
                   activeProfile.index === i ? 'opacity-20' : ''
                 }`}
               >
