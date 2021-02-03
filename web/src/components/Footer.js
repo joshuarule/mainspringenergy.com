@@ -113,15 +113,15 @@ export default () => {
             </li>
           </ul>
         </div>
-        <div className="mb-d text-smoke md:col-span-6 md:col-start-4 lg:col-start-3 lg:col-span-3 order-0">
-          <Link className="text-smoke hover:text-seaGreen" to="/privacy">
+        <div className="mb-d text-grey-500 md:col-span-6 md:col-start-4 lg:col-start-3 lg:col-span-3 order-0">
+          <Link className="text-grey-500 hover:text-seaGreen" to="/privacy">
             Privacy Policy
           </Link>{' '}
           | {''}
-          <Link className="text-smoke hover:text-seaGreen" to="/terms">
+          <Link className="text-grey-500 hover:text-seaGreen" to="/terms">
             Terms of Use
           </Link>
-          <p className="text-smoke mt-c">© Mainspring Energy, Inc. 2021</p>
+          <p className="text-grey-500 mt-c">© Mainspring Energy, Inc. 2021</p>
         </div>
       </div>
     </footer>

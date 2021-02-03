@@ -63,6 +63,7 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       'black-40': 'rgba(0,0,0,.4)',
+      'grey-500': 'var(--c-grey-500)',
       current: 'currentColor',
       brand: 'var(--c-brand)',
       navy: 'var(--c-navy)',
