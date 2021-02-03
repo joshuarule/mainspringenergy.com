@@ -217,6 +217,9 @@
       @apply mt-f;
       @apply mb-e;
     }
+    a {
+      @apply font-medium;
+    }
 
     ul,
     ol {
