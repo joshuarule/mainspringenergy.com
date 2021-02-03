@@ -186,7 +186,10 @@ export default ({ location }) => {
               <h5 className="f-h3 mb-c font-regular font-thin text-white">
                 {primarySection.subtitle}
               </h5>
-              <LinkPrimary to={primarySection.link.path} className="f-b1 ">
+              <LinkPrimary
+                to={primarySection.link.path}
+                className="f-b1 font-medium"
+              >
                 {primarySection.link.label}
               </LinkPrimary>
             </div>
