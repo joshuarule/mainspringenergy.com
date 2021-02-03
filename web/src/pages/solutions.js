@@ -240,7 +240,7 @@ export default ({ location }) => {
                 <p className="f-b1 text-steel mb-d">{item.description}</p>
                 <LinkExtPrimary
                   href={item.src.src.asset.url}
-                  className="f-b1 text-freshBlue"
+                  className="f-b1 text-freshBlue font-medium"
                   target="_blank"
                   download="filename"
                 >
