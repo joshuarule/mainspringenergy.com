@@ -364,10 +364,15 @@ export default ({ location }) => {
               {email}
             </a>
           </p>
-          <p className="f-b1 text-iron">{address.street}</p>
-          <p className="f-b1 text-iron">
-            {[address.city, ', ', address.state, ' ', address.zip]}
-          </p>
+          <a
+            className="text-iron"
+            href={'https://g.page/mainspringenergy?share'}
+          >
+            <p className="f-b1">{address.street}</p>
+            <p className="f-b1">
+              {[address.city, ', ', address.state, ' ', address.zip]}
+            </p>
+          </a>
         </div>
         <div className="lg:col-span-2 md:grid md:grid-cols-2 md:gap-c">
           <Img
