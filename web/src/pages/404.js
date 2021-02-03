@@ -10,7 +10,10 @@ const NotFoundPage = ({ location }) => (
     <div className="container flex flex-1 items-center">
       <h1 className="f-h2 text-seaGreen">
         Sorry, page not found.{' '}
-        <Link to="/" className="link--clean">
+        <Link
+          to="/"
+          className="link--clean text-seaGreen hover:text-seaGreenDark"
+        >
           Return home here. {`>`}
         </Link>
       </h1>
