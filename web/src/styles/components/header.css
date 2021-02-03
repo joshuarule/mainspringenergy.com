@@ -61,10 +61,18 @@
 
   .theme-dark & {
     color: var(--c-white);
+
+    &:hover {
+      color: var(--c-white);
+    }
   }
 
   .headroom--scrolled & {
-    color: inherit;
+    color: var(--c-black);
+
+    &:hover {
+      color: var(--c-black);
+    }
   }
 
   .menu-is-open & {
