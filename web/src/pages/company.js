@@ -111,7 +111,7 @@ export default ({ location }) => {
             src {
               asset {
                 fluid {
-                  ...GatsbySanityImageFluid
+                  ...GatsbySanityImageFluid_noBase64
                 }
               }
             }
