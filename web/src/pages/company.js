@@ -238,7 +238,7 @@ export default ({ location }) => {
                     <LinkExtPrimary
                       href={article.url}
                       newTab={true}
-                      className="text-seaGreen"
+                      className="text-seaGreen font-medium"
                     >
                       Read press release
                     </LinkExtPrimary>
