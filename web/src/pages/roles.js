@@ -95,13 +95,20 @@ export default ({ location }) => {
             />
             {categories && (
               <ul className="mt-d">
-                {currentJobs.map((job, i) => (
-                  <li key={`job-${i}`} className="f-b1 mb-a">
-                    <a target="_blank" rel={'noreferrer'} href={job.url}>
-                      {job.title}
-                    </a>
-                  </li>
-                ))}
+                {currentJobs.map((job, i) => {
+                  const parts = job.url.split('/')
+                  return (
+                    <li key={`job-${i}`} className="f-b1 mb-a">
+                      <a
+                        target="_blank"
+                        rel={'noreferrer'}
+                        href={`role/${parts[parts.length - 1]}`}
+                      >
+                        {job.title}
+                      </a>
+                    </li>
+                  )
+                })}
               </ul>
             )}
           </div>
