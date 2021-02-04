@@ -8,7 +8,7 @@
     }
 
     @screen lg {
-      min-height: initial;
+      min-height: 700px;
       padding-top: 0;
       height: 90vh;
     }
