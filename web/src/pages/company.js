@@ -252,13 +252,14 @@ export default ({ location }) => {
       <div className="container" ref={profileRef}>
         <SectionTitle title="Leadership" />
         <nav className="border-b border-smoke my-f">
-          <ul class="flex">
+          <ul className="flex">
             {types.nodes
               .filter(type => {
                 return peopleByCategory[type.type]
               })
               .map(type => (
                 <li
+                  key={type}
                   style={{ marginBottom: '-1px' }}
                   className={`mr-e f-b1 border-b-5 pb-a ${
                     activeFilter === type.type

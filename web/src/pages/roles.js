@@ -9,7 +9,6 @@ import RichText from '../components/RichText'
 export default ({ location }) => {
   const searchParams = new URLSearchParams(location.search)
   let cat = useRef(false)
-  console.log(searchParams)
   if (searchParams && searchParams.get('category')) {
     cat.current = searchParams.get('category')
   } else {
@@ -59,25 +58,17 @@ export default ({ location }) => {
     }
   `)
 
-  // grabs mock data from file in dev
-  // if (process.env.NODE_ENV === 'development') {
-  //   if (!categories) {
-  //     const parsedData = parseCategories(allJobsMockJson.nodes)
-  //     setCategories(parsedData)
-  //   }
-  // }
-
-  // current category
-
   // on change update jobs by category
   const [category, setCategory] = useState(cat.current)
+
+  if (!categories) return null
+
   const handleOnchange = e => {
-    // set url params
     setCategory(e.target.value)
   }
 
+  // set current jobs based on all or category
   let currentJobs = []
-
   if (category === 'all-roles') {
     Object.keys(categories).forEach(key =>
       currentJobs.push(...categories[key].jobs)

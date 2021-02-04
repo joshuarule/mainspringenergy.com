@@ -91,13 +91,6 @@ export default ({ location }) => {
     // }
   }, [])
 
-  // if (process.env.NODE_ENV === 'development') {
-  //   if (!categories) {
-  //     const parsedData = parseCategories(allJobsMockJson.nodes)
-  //     setCategories(parsedData)
-  //   }
-  // }
-
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
@@ -113,7 +106,7 @@ export default ({ location }) => {
               <LinkPrimary
                 to={hero.link.path}
                 className="f-b1 font-medium"
-                style={{ fontSize: '18px', letterSpacing: '0.3px' }}
+                style={{ fontSize: '18px' }}
               >
                 {hero.link.label}
               </LinkPrimary>

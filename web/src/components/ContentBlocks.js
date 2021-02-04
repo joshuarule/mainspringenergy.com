@@ -40,7 +40,9 @@ export default function ContentBlocks({ blocks }) {
               />
             )
           case 'list':
-            return <List items={block._rawItems} classname="" />
+            return (
+              <List key={`block-${i}`} items={block._rawItems} classname="" />
+            )
           case 'richTextObj':
             return (
               <RichText
