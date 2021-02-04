@@ -7,9 +7,25 @@
   @apply focus:border-seaGreen;
   @apply block;
   @apply w-full;
-  @apply border-smoke;
-  @apply rounded-md;
+  border-color: #ccc;
+  border-radius: 3px;
+  outline: none;
 
   @apply f-b1;
   @apply font-thin;
+}
+
+.select {
+  @apply text-iron;
+  @apply f-b1;
+
+  > select {
+    @apply py-b;
+    @apply px-c;
+    @apply border;
+    border-color: #ccc;
+    border-radius: 3px;
+    @apply focus:ring-seaGreen;
+    @apply focus:border-seaGreen;
+  }
 }

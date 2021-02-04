@@ -8,6 +8,8 @@ export default function SectionTitle({
   link,
   col_1,
   col_2,
+  hide_col_1,
+  hide_col_2,
   border,
   className = '',
 }) {
@@ -46,8 +48,12 @@ export default function SectionTitle({
           </LinkPrimary>
         )}
       </div>
-      {col_1 && <p className="f-b2 text-iron md-max:mb-d">{col_1}</p>}
-      {col_2 && <p className="f-b2 text-iron md-max:mb-d">{col_2}</p>}
+      {col_1 && !hide_col_1 && (
+        <p className="f-b2 text-iron md-max:mb-d">{col_1}</p>
+      )}
+      {col_2 && !hide_col_1 && (
+        <p className="f-b2 text-iron md-max:mb-d">{col_2}</p>
+      )}
     </div>
   )
 }

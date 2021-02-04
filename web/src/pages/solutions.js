@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -125,6 +125,7 @@ export default ({ location }) => {
       }
     }
   `)
+  const [successfulSubmission, setSuccessfulSubmission] = useState(false)
 
   return (
     <Layout location={location} className="lg:pt-e">
@@ -252,8 +253,8 @@ export default ({ location }) => {
         </ul>
       </div>
       <div id="customer-inquiries" className="container mb-g md:mb-f">
-        <SectionTitle {...solutions_form} />
-        <CustomerInquiry />
+        <SectionTitle {...solutions_form} hide_col_1={successfulSubmission} />
+        <CustomerInquiry onSuccess={() => setSuccessfulSubmission(true)} />
       </div>
     </Layout>
   )

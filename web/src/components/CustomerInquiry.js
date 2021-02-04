@@ -8,13 +8,21 @@ function encode(data) {
     .join('&')
 }
 
-export default () => {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    company: '',
-  })
+const FORM_INIT = {
+  firstName: '',
+  lastName: '',
+  phone: '',
+  email: '',
+  company: '',
+  message: '',
+  peakDemand: '',
+  annualEnergy: '',
+  title: '',
+}
+
+export default ({ onSuccess }) => {
+  const [formData, setFormData] = useState(FORM_INIT)
+  const [formResult, setFormResult] = useState(false)
   const handleChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
@@ -32,8 +40,15 @@ export default () => {
         ...body,
       }),
     })
-      .then(() => console.log('success'))
-      .catch(error => alert(error))
+      .then(() => {
+        setFormResult({ result: 'success' })
+        onSuccess()
+        setFormData(FORM_INIT)
+      })
+      .catch(error => {
+        console.error(error)
+        setFormResult({ result: 'error' })
+      })
   }
 
   return (
@@ -43,7 +58,7 @@ export default () => {
       onSubmit={handleSubmit}
       data-netlify="true"
       netlify-honeypot="bot-field"
-      className="lg:grid lg:grid-cols-3 mb-g"
+      className="lg:grid lg:grid-cols-3 mb-g relative"
     >
       <div hidden aria-hidden="true">
         <label>
@@ -56,7 +71,13 @@ export default () => {
         </label>
       </div>
       <input type="hidden" name="customer-inquiry" value="customerInquiry" />
-      <div className="col-start-2 col-span-2 lg:grid lg:grid-cols-2">
+
+      <div
+        className={`
+          ${formResult.result === 'success' ? 'opacity-0' : ''}
+          col-start-2 col-span-2 lg:grid lg:grid-cols-2
+        `}
+      >
         <div>
           <label htmlFor="firstName" className="block mb-a font-bold">
             First Name
@@ -178,7 +199,7 @@ export default () => {
             className="input"
           ></textarea>
         </div>
-        <div>
+        <div className="flex col-span-2 items-center">
           <button
             style={{ color: '#fff', paddingTop: '13px' }}
             className="bg-seaGreen f-b1 pb-c px-f rounded-md flex items-center hover:bg-seaGreenDark"
@@ -186,8 +207,20 @@ export default () => {
           >
             Send
           </button>
+          {formResult && formResult.result === 'error' && (
+            <p className="text-brand f-b1 ml-d">
+              Oops! Something went wrong while submitting the form
+            </p>
+          )}
         </div>
       </div>
+      {formResult.result === 'success' && (
+        <div className="absolute top-0 bottom-0 w-full flex items-center">
+          <p className="f-b0 text-steel">
+            Thank you. Your submission has been received.
+          </p>
+        </div>
+      )}
     </form>
   )
 }

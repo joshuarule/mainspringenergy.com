@@ -8,13 +8,8 @@ export default function Select({
   items,
 }) {
   return (
-    <div className={`select text-iron f-b1 ${className}`}>
-      <select
-        onChange={onChange}
-        value={value}
-        name={name}
-        className="py-c px-c border rounded-md border-iron"
-      >
+    <div className={`select ${className}`}>
+      <select onChange={onChange} value={value} name={name} className="">
         {items &&
           items.map(item => (
             <option key={item.value} value={item.value}>

@@ -148,12 +148,11 @@ export default ({ location }) => {
               content={secondarySection._rawDescription.richText}
               className="f-b1 text-iron mb-d"
             />
-            <div className="select mb-d text-iron f-b1 lg:w-2/3">
+            <div className="select mb-d lg:w-2/3">
               <select
                 onChange={e => {
                   navigate(`/roles?category=${e.target.value}`)
                 }}
-                className="py-c px-c border rounded-md border-iron"
               >
                 <option value="none">Select a category</option>
                 {categories &&

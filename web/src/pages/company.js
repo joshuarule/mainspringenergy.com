@@ -9,6 +9,7 @@ import SectionTitle from '../components/SectionTitle'
 import ImageGrid from '../components/ImageGrid'
 import RichText from '../components/RichText'
 import { LinkExtPrimary } from '../components/Link'
+import Icon from '../components/Icon'
 
 export default ({ location }) => {
   const {
@@ -423,8 +424,9 @@ const Profile = ({ person, onClose }) => {
           <RichText content={person._rawText} className="f-b1" />
         </div>
         <div className="absolute top-0 right-0 lg:relative col-span-2">
-          <button className="absolute top-0 right-0 p-d" onClick={onClose}>
-            Close
+          <button className="absolute -top-d left-0 p-d" onClick={onClose}>
+            <Icon name="close" className="text-steel" />
+            <span className="sr">Close</span>
           </button>
         </div>
       </div>
