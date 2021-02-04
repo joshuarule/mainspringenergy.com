@@ -22,7 +22,7 @@ export default {
     },
     {
       name: "topMargin",
-      title: "Remove Top Margin",
+      title: "Decrease Top Margin",
       type: "boolean",
       options: {
         layout: "checkbox",
@@ -30,7 +30,7 @@ export default {
     },
     {
       name: "bottomMargin",
-      title: "Remove Bottom Margin",
+      title: "Decrease Bottom Margin",
       type: "boolean",
       options: {
         layout: "checkbox",
