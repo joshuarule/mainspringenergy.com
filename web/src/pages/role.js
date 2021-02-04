@@ -20,10 +20,10 @@ export default ({ location }) => {
 
   useEffect(() => {
     const script = document.createElement('script')
-    script.async = 'true'
-    script.defer = 'true'
+    script.setAttribute('defer', 'true')
+    script.setAttribute('async', 'true')
     script.id = 'gnewtonjs'
-    script.type = 'type="text/javascript'
+    script.type = 'text/javascript'
     script.src =
       '//recruitingbypaycor.com/career/iframe.action?clientId=8a78858b5e748ace015e7d8826af113e'
     iframeRef.current.appendChild(script)
