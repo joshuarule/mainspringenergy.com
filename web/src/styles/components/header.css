@@ -59,29 +59,26 @@
   max-width: 189px;
   color: var(--c-black);
 
+  &:hover,
+  &:active {
+    color: var(--c-iron);
+  }
+
   .theme-dark & {
     color: var(--c-white);
 
     &:hover {
-      color: var(--c-white);
+      color: #e8dacd;
     }
   }
 
-  .headroom--scrolled & {
+  .headroom--scrolled &,
+  .menu-is-open & {
     color: var(--c-black);
 
     &:hover {
-      color: var(--c-black);
+      color: var(--c-iron);
     }
-  }
-
-  .menu-is-open & {
-    color: var(--c-black);
-  }
-
-  &:hover,
-  &:active {
-    color: currentColor;
   }
 
   @screen lg {
@@ -243,13 +240,26 @@
   }
 
   &.link--active {
+    &:hover {
+      color: currentColor;
+    }
     @screen lg {
       border-bottom-color: var(--c-brand);
     }
   }
 
+  &:hover,
+  &:active {
+    color: var(--c-iron);
+  }
+
   .theme-dark & {
     color: var(--c-white);
+
+    &:hover,
+    &:active {
+      color: #e8dacd;
+    }
   }
   /* purgecss start ignore */
   .headroom--scrolled & {

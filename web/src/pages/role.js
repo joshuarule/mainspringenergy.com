@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import SEO from '../components/SEO'
 import Layout from '../components/Layout'
@@ -16,6 +16,19 @@ export default ({ location }) => {
     }
   `)
 
+  const iframeRef = useRef()
+
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.async = 'true'
+    script.defer = 'true'
+    script.id = 'gnewtonjs'
+    script.type = 'type="text/javascript'
+    script.src =
+      '//recruitingbypaycor.com/career/iframe.action?clientId=8a78858b5e748ace015e7d8826af113e'
+    iframeRef.current.appendChild(script)
+  }, [])
+
   let id
   const searchParams = new URLSearchParams(location.search)
   if (searchParams) {
@@ -32,7 +45,7 @@ export default ({ location }) => {
           image={seo.image}
         />
       )}
-      <div className="container mt-g">{id}</div>
+      <div ref={iframeRef} className="container mt-g"></div>
     </Layout>
   )
 }
