@@ -118,10 +118,7 @@
     @apply font-light;
   }
 
-  #___gatsby {
-    outline: 1px solid red;
-  }
-
+  /* purgecss start ignore */
   #___gatsby,
   #gatsby-focus-wrapper,
   #gatsby-focus-wrapper > div:first-child {
@@ -129,6 +126,7 @@
     display: flex;
     flex-direction: column;
   }
+  /* purgecss end ignore */
 
   main {
     flex: 1;
