@@ -1,32 +1,35 @@
 export default {
-  name: 'whitePaper',
-  title: 'Download',
-  type: 'object',
+  name: "whitePaper",
+  title: "Download",
+  type: "object",
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
+      name: "title",
+      title: "Title",
+      type: "string",
     },
     {
-      name: 'image',
-      title: 'Preview Image',
-      type: 'figure',
+      name: "image",
+      title: "Preview Image",
+      type: "figure",
     },
     {
-      name: 'subtitle',
-      title: 'Subtitle',
-      type: 'string',
+      name: "subtitle",
+      title: "Subtitle",
+      type: "string",
     },
     {
-      name: 'description',
-      title: 'Description',
-      type: 'text',
+      name: "description",
+      title: "Description",
+      type: "text",
     },
     {
-      name: 'src',
-      title: 'File',
-      type: 'fileSrc',
+      name: "src",
+      title: "File",
+      type: "fileSrc",
+      options: {
+        storeOriginalFilename: true,
+      },
     },
   ],
-}
+};

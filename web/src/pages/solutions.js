@@ -105,7 +105,7 @@ export default ({ location }) => {
             src {
               src {
                 asset {
-                  url
+                  originalFilename
                 }
               }
             }
@@ -220,7 +220,7 @@ export default ({ location }) => {
           </div>
         </div>
       </section>
-      {/* specs_downloads */}
+      {/* solutions_downloads */}
       <div className="container mb-f">
         <SectionTitle title={solutions_downloads.title} />
         <ul className="md:grid md:grid-cols-2 lg:grid-cols-3">
@@ -241,7 +241,7 @@ export default ({ location }) => {
                 <p className="f-b1 text-steel mb-d">{item.description}</p>
                 <LinkExtPrimary
                   href={item.src.src.asset.url}
-                  className="f-b1 text-freshBlue font-medium"
+                  className="f-b1 text-freshBlue hover:text-seaGreen font-medium"
                   target="_blank"
                   download="filename"
                 >

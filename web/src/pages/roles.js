@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+
+import { graphql, useStaticQuery, Link } from 'gatsby'
 
 import SEO from '../components/SEO'
 import Layout from '../components/Layout'
@@ -99,13 +100,9 @@ export default ({ location }) => {
                   const parts = job.url.split('/')
                   return (
                     <li key={`job-${i}`} className="f-b1 mb-a">
-                      <a
-                        target="_blank"
-                        rel={'noreferrer'}
-                        href={`role/${parts[parts.length - 1]}`}
-                      >
+                      <Link to={`role/${parts[parts.length - 1]}`}>
                         {job.title}
-                      </a>
+                      </Link>
                     </li>
                   )
                 })}

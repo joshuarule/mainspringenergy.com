@@ -25,7 +25,7 @@ export const LinkExtPrimary = ({ children, href, className, newTab }) => (
     {children}{' '}
     <Icon
       name="chevron"
-      className="inline-block"
+      className="inline-block hover:text-seaGreenDark"
       style={{ marginTop: '-1px' }}
     />
   </a>
