@@ -57,11 +57,11 @@
 
 .header-logo {
   max-width: 189px;
-  color: var(--c-black);
+  color: var(--c-charcoal);
 
   &:hover,
   &:active {
-    color: var(--c-iron);
+    color: var(--c-steel);
   }
 
   .theme-dark & {
@@ -74,10 +74,10 @@
 
   .headroom--scrolled &,
   .menu-is-open & {
-    color: var(--c-black);
+    color: var(--c-charcoal);
 
     &:hover {
-      color: var(--c-iron);
+      color: var(--c-steel);
     }
   }
 
@@ -120,7 +120,7 @@
   }
 
   .menu-is-open & {
-    background-color: var(--c-black);
+    background-color: var(--c-charcoal);
   }
 }
 
@@ -232,7 +232,7 @@
 }
 
 .header-nav-item > a {
-  color: var(--c-black);
+  color: var(--c-charcoal);
 
   @screen lg {
     border-bottom: 4px solid transparent;
@@ -250,7 +250,7 @@
 
   &:hover,
   &:active {
-    color: var(--c-iron);
+    color: var(--c-steel);
   }
 
   .theme-dark & {
@@ -263,12 +263,17 @@
   }
   /* purgecss start ignore */
   .headroom--scrolled & {
-    color: var(--c-black);
+    color: var(--c-charcoal);
+
+    &:hover,
+    &:active {
+      color: var(--c-steel);
+    }
   }
 
   .menu-is-open & {
     display: block;
-    color: var(--c-black);
+    color: var(--c-charcoal);
     padding: var(--unit-e) 0;
 
     &.link--active {

@@ -27,7 +27,7 @@ export default () => {
         <div className="md:col-span-3 lg:col-span-2">
           <Icon
             name="mark"
-            className="text-iron sm-only:mb-e"
+            className="text-steel sm-only:mb-e"
             style={{ width: '60px', height: 'auto' }}
           />
         </div>

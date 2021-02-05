@@ -16,7 +16,7 @@
 }
 
 .select {
-  @apply text-iron;
+  @apply text-steel;
   @apply f-b1;
 
   > select {

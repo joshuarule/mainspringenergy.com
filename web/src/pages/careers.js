@@ -98,10 +98,10 @@ export default ({ location }) => {
         <div className="hero container text-white flex flex-col justify-end">
           <div className="z-10 md:grid md:grid-cols-12 h-2/3 items-center">
             <div className="md:col-span-8 lg:col-span-5">
-              <h1 className="mb-e text-black">{hero.title}</h1>
+              <h1 className="mb-e text-charcoal">{hero.title}</h1>
               <RichText
                 content={hero.richText._rawRichText}
-                className="text-iron f-b1 mb-e"
+                className="text-steel f-b1 mb-e"
               />
               <LinkPrimary
                 to={hero.link.path}
@@ -146,7 +146,7 @@ export default ({ location }) => {
           <div>
             <RichText
               content={secondarySection._rawDescription.richText}
-              className="f-b1 text-iron mb-d"
+              className="f-b1 text-steel mb-d"
             />
             <div className="select mb-d lg:w-2/3">
               <select

@@ -209,7 +209,7 @@ export default ({ location }) => {
               {solutions_specs.list.items.map((item, i) => (
                 <li
                   key={`spec-list-${i}`}
-                  className="border-t-6 border-steel pt-a"
+                  className="border-t-6 border-smoke pt-a"
                   style={{ minHeight: '132px' }}
                 >
                   <h5 className="f-b1 font-bold">{item.title}</h5>

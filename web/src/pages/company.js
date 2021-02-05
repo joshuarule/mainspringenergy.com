@@ -191,7 +191,7 @@ export default ({ location }) => {
               <div className="max-prose-50 pr-g">
                 <h2 className="f-h2 mb-e">{hero.title}</h2>
               </div>
-              <div className="lg:grid lg:grid-cols-2 text-iron">
+              <div className="lg:grid lg:grid-cols-2 text-steel">
                 <p className="f-b1 md-max:mb-d">{hero.textCol1}</p>
                 <p className="f-b1">{hero.textCol2}</p>
               </div>
@@ -233,7 +233,7 @@ export default ({ location }) => {
                     <datetime className="text-steel mb-a block">
                       {article.date}
                     </datetime>
-                    <h1 className="f-b1 text-iron font-light mb-e">
+                    <h1 className="f-b1 text-steel font-light mb-e">
                       {article.title}
                     </h1>
                     <LinkExtPrimary
@@ -362,12 +362,12 @@ export default ({ location }) => {
             className="mb-d"
           />
           <p className="f-b1 mb-d">
-            <a className="text-iron" href={`mailto:${email}`}>
+            <a className="text-steel" href={`mailto:${email}`}>
               {email}
             </a>
           </p>
           <a
-            className="text-iron"
+            className="text-steel"
             href={'https://g.page/mainspringenergy?share'}
           >
             <p className="f-b1">{address.street}</p>
