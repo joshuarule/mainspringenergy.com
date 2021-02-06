@@ -15,9 +15,7 @@ const Layout = ({ children, className = null, navTheme, location }) => {
       <Headroom>
         <Nav theme={navTheme} />
       </Headroom>
-      <main className={`${className}`} style={{ minHeight: '50vh' }}>
-        {children}
-      </main>
+      <main className={`${className}`}>{children}</main>
       <Footer />
     </div>
   )
