@@ -100,7 +100,7 @@ export default ({ location }) => {
                   const parts = job.url.split('/')
                   return (
                     <li key={`job-${i}`} className="f-b1 mb-a">
-                      <Link to={`role/${parts[parts.length - 1]}`}>
+                      <Link to={`/role/${parts[parts.length - 1]}`}>
                         {job.title}
                       </Link>
                     </li>
