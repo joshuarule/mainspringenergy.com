@@ -106,6 +106,7 @@ export default ({ location }) => {
               src {
                 asset {
                   originalFilename
+                  url
                 }
               }
             }
@@ -224,32 +225,35 @@ export default ({ location }) => {
       <div className="container mb-f">
         <SectionTitle title={solutions_downloads.title} />
         <ul className="md:grid md:grid-cols-2 lg:grid-cols-3">
-          {solutions_downloads.items.map((item, i) => (
-            <li key={`download-${i}`} className="mb-f">
-              <div className="lg:grid lg:grid-cols-4">
-                <div className="lg:col-span-3 mb-d">
-                  <Img
-                    fluid={item.image.src.asset.fluid}
-                    alt={item.image.alt}
-                  />
+          {solutions_downloads.items.map((item, i) => {
+            console.log(item)
+            return (
+              <li key={`download-${i}`} className="mb-f">
+                <div className="lg:grid lg:grid-cols-4">
+                  <div className="lg:col-span-3 mb-d">
+                    <Img
+                      fluid={item.image.src.asset.fluid}
+                      alt={item.image.alt}
+                    />
+                  </div>
                 </div>
-              </div>
 
-              <div className="col-span-4 col-start-1 lg:pr-e">
-                <h4 className="f-b1 font-bold">{item.title}</h4>
-                <p className="mb-d f-b1">{item.subtitle}</p>
-                <p className="f-b1 text-steel mb-d">{item.description}</p>
-                <LinkExtPrimary
-                  href={item.src.src.asset.url}
-                  className="f-b1 text-freshBlue hover:text-seaGreen font-medium"
-                  target="_blank"
-                  download="filename"
-                >
-                  Download
-                </LinkExtPrimary>
-              </div>
-            </li>
-          ))}
+                <div className="col-span-4 col-start-1 lg:pr-e">
+                  <h4 className="f-b1 font-bold">{item.title}</h4>
+                  <p className="mb-d f-b1">{item.subtitle}</p>
+                  <p className="f-b1 text-steel mb-d">{item.description}</p>
+                  <LinkExtPrimary
+                    newTab
+                    href={`${item.src.src.asset.url}?dl=${item.src.src.asset.originalFilename}`}
+                    className="f-b1 text-freshBlue hover:text-seaGreen font-medium"
+                    download
+                  >
+                    Download
+                  </LinkExtPrimary>
+                </div>
+              </li>
+            )
+          })}
         </ul>
       </div>
       <div id="customer-inquiries" className="container mb-g md:mb-f">

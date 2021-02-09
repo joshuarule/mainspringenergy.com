@@ -233,6 +233,7 @@
 
 .header-nav-item > a {
   color: var(--c-charcoal);
+  border-bottom: 4px solid transparent;
 
   @screen lg {
     border-bottom: 4px solid transparent;

@@ -15,11 +15,18 @@ export const LinkPrimary = ({ children, ...rest }) => (
   </Link>
 )
 
-export const LinkExtPrimary = ({ children, href, className, newTab }) => (
+export const LinkExtPrimary = ({
+  children,
+  href,
+  className,
+  newTab,
+  download,
+}) => (
   <a
     href={href}
     className={className}
     target={newTab ? '_blank' : ''}
+    download={download ? 'file' : ''}
     rel="noreferrer"
   >
     {children}{' '}
