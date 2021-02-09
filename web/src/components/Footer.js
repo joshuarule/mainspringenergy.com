@@ -48,7 +48,7 @@ export default () => {
               <br></br>
               {address.street2 && (
                 <>
-                  {address.street}
+                  {address.street2}
                   <br></br>
                 </>
               )}

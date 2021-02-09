@@ -19,9 +19,15 @@ export default {
       type: "figure",
     },
     {
-      name: "url",
+      name: "externalLink",
       title: "External Url",
-      type: "url",
+      type: "externalLink",
     },
   ],
+  initialValue: {
+    url: {
+      _type: "externalLink",
+      label: "Read More",
+    },
+  },
 };

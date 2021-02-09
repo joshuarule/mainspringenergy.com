@@ -85,7 +85,10 @@ export default ({ location }) => {
       articles: allSanityArticles(sort: { fields: date }) {
         nodes {
           date(formatString: "MMMM Do, YYYY")
-          url
+          externalLink {
+            label
+            url
+          }
           title
           image {
             src {
@@ -229,19 +232,21 @@ export default ({ location }) => {
                       />
                     </div>
                   </div>
-                  <div className="flex-1">
-                    <datetime className="text-steel mb-a block">
-                      {article.date}
-                    </datetime>
-                    <h1 className="f-b1 text-steel font-light mb-e">
-                      {article.title}
-                    </h1>
+                  <div className="flex-1 flex flex-col">
+                    <div className="flex-1">
+                      <datetime className="text-steel mb-a block">
+                        {article.date}
+                      </datetime>
+                      <h1 className="f-b1 text-steel font-light mb-e">
+                        {article.title}
+                      </h1>
+                    </div>
                     <LinkExtPrimary
-                      href={article.url}
+                      href={article.externalLink.url}
                       newTab={true}
                       className="text-seaGreen hover:text-seaGreenDark font-medium"
                     >
-                      Read press release
+                      {article.externalLink.label}
                     </LinkExtPrimary>
                   </div>
                 </aside>
