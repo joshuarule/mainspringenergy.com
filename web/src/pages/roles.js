@@ -81,11 +81,11 @@ export default ({ location }) => {
   return (
     <Layout location={location} className="pt-g">
       <SEO title={seo.title} description={seo.description} image={seo.image} />
-      <div className="container pt-g mt-g mb-g">
-        <div className="grid grid-cols-3">
+      <div className="container pt-g mt-d md:mt-g mb-g">
+        <div className="md:grid md:grid-cols-3">
           <div className="">
             <h3 className="mb-d">Open Roles</h3>
-            <RichText content={body._rawRichText} />
+            <RichText content={body._rawRichText} className="mb-f" />
           </div>
           <div className="col-span-2">
             <h3 className="mb-d">Job Category</h3>
@@ -95,11 +95,14 @@ export default ({ location }) => {
               currentItem={category}
             />
             {categories && (
-              <ul className="mt-d">
+              <ul className="mt-e">
                 {currentJobs.map((job, i) => {
                   const parts = job.url.split('/')
                   return (
-                    <li key={`job-${i}`} className="f-b1 mb-a">
+                    <li
+                      key={`job-${i}`}
+                      className="f-b1 text-seaGreen hover:text-seaGreenDark font-medium"
+                    >
                       <Link to={`/role/${parts[parts.length - 1]}`}>
                         {job.title}
                       </Link>
