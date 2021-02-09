@@ -16,11 +16,17 @@ export default function VisionIllustration() {
     }
   `)
   return (
-    <div className="w-edge my-e">
+    <div className="w-edge my-f">
       <div className="container">
-        <div className="grid grid-cols-12 items-center">
-          <div className="col-span-3 flex items-center justify-between">
-            <ul className="f-h3 text-smoke">
+        <div className="text-center md:text-left mb-e">
+          <h4>Flexibility to Enable a Net-Zero Carbon Future</h4>
+          <p className="text-steel">
+            Renewable, Dispatchable, Resilient Capacity to Firm Solar and Wind
+          </p>
+        </div>
+        <div className="md:grid md:grid-cols-12 items-center md:items-start lg:items-center ">
+          <div className="col-span-4 lg:col-span-3 flex flex-col md:flex-row items-center md:items-start lg:items-center justify-between">
+            <ul className="f-h3 font-heavy text-smoke text-center md:text-left">
               <li className="mb-c">Biogas</li>
               <li className="mb-c">Renewable Gas</li>
               <li className="mb-c">Green Hydrogren</li>
@@ -29,24 +35,25 @@ export default function VisionIllustration() {
               name="chevron"
               width="36"
               height="72"
-              className="text-smoke"
+              className="text-smoke transform rotate-90 md:rotate-0 flex-0 md:ml-d"
             />
           </div>
-          <div className="col-span-6">
+          <div className="col-span-4 lg:col-span-6">
             <Img
               fluid={illustration.childImageSharp.fluid}
               alt={'Mainspring generator'}
+              className="my-c md:my-0"
             />
           </div>
-          <div className="col-span-3">
-            <div className="col-span-3 flex items-center justify-between">
+          <div className="col-span-4 lg:col-span-3">
+            <div className="flex flex-col md:flex-row items-center md:items-start lg:items-center justify-between">
               <Icon
                 name="chevron"
                 width="36"
                 height="72"
-                className="text-smoke"
+                className="text-smoke transform rotate-90 md:rotate-0 flex-0 md:mr-d"
               />
-              <ul className="f-h3 text-smoke">
+              <ul className="f-h3 font-heavy text-smoke text-center md:text-left">
                 <li className="mb-c">Buildings</li>
                 <li className="mb-c">Grid Distribution</li>
                 <li className="mb-c">Microgrids</li>
