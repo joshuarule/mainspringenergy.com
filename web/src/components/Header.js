@@ -121,7 +121,7 @@ const Header = ({ theme = 'light' }) => {
               {navLinks.map((link, i) => (
                 <li className="header-nav-item col-span-2" key={`link-${i}`}>
                   <Link
-                    to={link.url}
+                    to={`${link.url}/`}
                     role="menuitem"
                     activeClassName="link--active"
                     className={`text-h1 font-thin lg:text-b1 lg:font-bold py-2`}
