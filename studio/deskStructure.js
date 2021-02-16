@@ -1,5 +1,6 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { FiSettings } from "react-icons/fi";
+import { AiFillAlert } from "react-icons/ai";
 
 export default () =>
   S.list()
@@ -74,11 +75,17 @@ export default () =>
             "company",
             "jobs",
             "settings",
+            "infoBar",
             "terms",
             "privacy",
             "patents",
           ].includes(listItem.getId())
       ),
+      S.divider(),
+      S.listItem()
+        .title("Info Bar")
+        .icon(AiFillAlert)
+        .child(S.document().schemaType("infoBar").documentId("infoBar")),
       S.divider(),
       S.listItem()
         .title("Settings")

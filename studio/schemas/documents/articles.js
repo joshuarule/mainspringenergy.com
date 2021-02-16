@@ -1,7 +1,9 @@
+import { FaNewspaper } from "react-icons/fa";
 export default {
   name: "articles",
   title: "Articles",
   type: "document",
+  icon: FaNewspaper,
   fields: [
     {
       name: "title",

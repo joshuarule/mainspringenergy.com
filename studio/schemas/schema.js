@@ -53,6 +53,7 @@ import video from "./components/video.js";
 import figure from "./components/figure.js";
 import list from "./components/list.js";
 import listItem from "./components/listItem.js";
+import infoBar from "./documents/infoBar.js";
 import settings from "./documents/settings/index.js";
 import { settings_socialNetwork } from "./documents/settings/components.js";
 import seo from "./components/seo.js";
@@ -81,6 +82,7 @@ export default createSchema({
   types: schemaTypes.concat([
     // document specific
     articles,
+    infoBar,
     roles,
     role,
     privacy,

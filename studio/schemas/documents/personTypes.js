@@ -1,6 +1,8 @@
+import { AiFillTags } from "react-icons/ai";
 export default {
   name: "personTypes",
   title: "Person Types",
+  icon: AiFillTags,
   type: "document",
   fields: [
     {
