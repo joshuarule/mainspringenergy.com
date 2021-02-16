@@ -16,19 +16,22 @@
     "autocomplete-tags",
     "dashboard-widget-netlify",
     "order-documents",
-    "inline-svg"
+    "inline-svg",
+    "media-library"
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [
     {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema"
+    },
+    {
+      "implements": "part:@sanity/form-builder/input/image/asset-source",
+      "path": "./assetSource.js"
     },
     {
       "name": "part:@sanity/desk-tool/structure",

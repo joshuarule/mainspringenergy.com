@@ -34,6 +34,7 @@
     "sanity-plugin-autocomplete-tags": "^1.0.1",
     "sanity-plugin-dashboard-widget-netlify": "^1.0.1",
     "sanity-plugin-inline-svg": "^1.0.3",
+    "sanity-plugin-media-library": "^1.0.5",
     "sanity-plugin-order-documents": "^0.0.12"
   },
   "devDependencies": {}
