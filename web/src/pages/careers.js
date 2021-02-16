@@ -103,11 +103,7 @@ export default ({ location }) => {
                 content={hero.richText._rawRichText}
                 className="text-steel f-b1 mb-e"
               />
-              <LinkPrimary
-                to={hero.link.path}
-                className="f-b1 font-medium"
-                style={{ fontSize: '18px' }}
-              >
+              <LinkPrimary to={hero.link.path} className="f-b1 font-medium">
                 {hero.link.label}
               </LinkPrimary>
             </div>
