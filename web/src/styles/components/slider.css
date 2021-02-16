@@ -68,29 +68,32 @@
   position: absolute;
   height: 100vw;
   width: 100vw;
+  outline: 1px solid green;
 
   .slick-slider {
     transform: translateY(-50%) rotate(-45deg);
     transform-origin: center right;
   }
 
-  @screen md {
-    right: 9vw;
-    top: -11vh;
-    position: absolute;
-    height: 90vh;
-    width: 90vh;
+  @media only screen and (min-width: 600px) and (max-width: 767px) {
+    outline: 1px solid yellow;
+    top: -8vh;
+    right: -4vh;
+    height: 80vw;
+    width: 80vw;
   }
 
-  @media only screen and (min-width: 768px) and (max-width: 1080px) {
-    left: 0;
+  @screen md {
+    outline: 1px solid blue;
+    left: 15vh;
     right: auto;
     top: -11vh;
-    height: 90vh;
-    width: 90vh;
+    height: 93vh;
+    width: 93vh;
   }
 
   @screen lg {
+    outline: 1px solid red;
     left: auto;
     right: -1vh;
     top: -17vh;
