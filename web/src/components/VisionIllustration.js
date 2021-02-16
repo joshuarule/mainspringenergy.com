@@ -34,10 +34,10 @@ export default function VisionIllustration() {
               <li className="mb-c">Green Hydrogren</li>
             </ul>
             <Icon
-              name="chevron"
-              width="36"
-              height="72"
-              className="text-smoke transform rotate-90 md:rotate-0 flex-0 md:ml-d"
+              name="chevronHeavy"
+              width="72"
+              height="36"
+              className="text-smoke sm-only:my-d  transform md:-rotate-90 md:translate-y-2/4 lg:translate-y-0 flex-0 md:ml-d"
             />
           </div>
           <div className="col-span-4 lg:col-span-6">
@@ -50,10 +50,10 @@ export default function VisionIllustration() {
           <div className="col-span-4 lg:col-span-3">
             <div className="flex flex-col md:flex-row items-center md:items-start lg:items-center justify-between">
               <Icon
-                name="chevron"
-                width="36"
-                height="72"
-                className="text-smoke transform rotate-90 md:rotate-0 flex-0 md:mr-d"
+                name="chevronHeavy"
+                width="72"
+                height="36"
+                className="text-smoke sm-only:my-d transform md:-rotate-90 md:translate-y-2/4 lg:translate-y-0 flex-0 md:mr-d"
               />
               <ul className="f-h3 font-heavy text-smoke text-center md:text-left">
                 <li className="mb-c">Buildings</li>

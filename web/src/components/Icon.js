@@ -5,6 +5,7 @@ import { ReactComponent as Mark } from '../assets/icons/mark.svg'
 import { ReactComponent as LinkedIn } from '../assets/icons/linkedIn.svg'
 import { ReactComponent as Play } from '../assets/icons/play.svg'
 import { ReactComponent as Close } from '../assets/icons/close.svg'
+import { ReactComponent as ChevronHeavy } from '../assets/icons/chevronHeavy.svg'
 
 const icons = {
   logo: Logo,
@@ -13,6 +14,7 @@ const icons = {
   linkedIn: LinkedIn,
   play: Play,
   close: Close,
+  chevronHeavy: ChevronHeavy,
 }
 
 export default props => {

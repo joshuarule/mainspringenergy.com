@@ -314,6 +314,7 @@ export default ({ location }) => {
                     <div className="aspect-h-1 aspect-w-1 relative rounded-full overflow-hidden mb-d">
                       <Img
                         fluid={person.image.asset.fluid}
+                        alt={person.image.alt}
                         style={{
                           position: 'absolute',
                         }}

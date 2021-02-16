@@ -45,7 +45,7 @@ export default ({ location }) => {
           image={seo.image}
         />
       )}
-      <div ref={iframeRef} className="container mt-g"></div>
+      <div ref={iframeRef} className="container my-g"></div>
     </Layout>
   )
 }
