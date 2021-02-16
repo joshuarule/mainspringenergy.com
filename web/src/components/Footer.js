@@ -6,7 +6,7 @@ import Icon from './Icon'
 
 export default () => {
   const {
-    footerSettings: { address, email },
+    footerSettings: { address, email, socialNetworks },
   } = useStaticQuery(graphql`
     query footerQuery {
       footerSettings: sanitySettings {
@@ -18,6 +18,14 @@ export default () => {
           zip
         }
         email
+        socialNetworks {
+          _key
+          icon
+          url
+          title
+          visible
+          handle
+        }
       }
     }
   `)
@@ -95,23 +103,33 @@ export default () => {
         </div>
         <div className="md:col-span-3 md:order-1 lg:order-none lg:col-span-4">
           <h4 className="font-bold mb-b">Follow Us</h4>
-          <ul className="list-none p-0 m-0">
-            <li>
-              <a
-                className="text-steel mb-b block hover:text-seaGreen"
-                href="https://www.linkedin.com/company/mainspringenergy"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Icon
-                  name="linkedIn"
-                  className="inline-block mr-b"
-                  style={{ marginTop: '-2px' }}
-                />
-                LinkedIn
-              </a>
-            </li>
-          </ul>
+          {socialNetworks.length && (
+            <ul className="list-none p-0 m-0">
+              {socialNetworks
+                .filter(network => network.visible)
+                .map(network => (
+                  <li>
+                    <a
+                      className="text-steel mb-b block hover:text-seaGreen flex items-center"
+                      href={network.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <div
+                        dangerouslySetInnerHTML={{ __html: network.icon }}
+                        className="mr-b"
+                        style={{
+                          width: '16px',
+                          height: '16px',
+                          marginTop: '-2px',
+                        }}
+                      />
+                      {network.title}
+                    </a>
+                  </li>
+                ))}
+            </ul>
+          )}
         </div>
         <div className="mb-d text-grey-500 md:col-span-6 md:col-start-4 lg:col-start-3 lg:col-span-3 order-0">
           <Link className="text-grey-500 hover:text-seaGreen" to="/privacy">

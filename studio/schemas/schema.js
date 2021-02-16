@@ -3,6 +3,7 @@ import createSchema from "part:@sanity/base/schema-creator";
 
 // Then import schema types from any plugins that might expose them
 import schemaTypes from "all:part:@sanity/base/schema-type";
+import svgUploadPreview from "sanity-plugin-inline-svg";
 
 // documents
 import home from "./documents/home/index.js";
@@ -53,6 +54,7 @@ import figure from "./components/figure.js";
 import list from "./components/list.js";
 import listItem from "./components/listItem.js";
 import settings from "./documents/settings/index.js";
+import { settings_socialNetwork } from "./documents/settings/components.js";
 import seo from "./components/seo.js";
 import imageGrid from "./components/imageGrid.js";
 import blockquote from "./components/blockquote.js";
@@ -89,6 +91,8 @@ export default createSchema({
     person_image,
     personTypes,
     person_category,
+    settings,
+    settings_socialNetwork,
     solutions,
     solutions_specs,
     solutions_downloads,
@@ -107,6 +111,7 @@ export default createSchema({
     careers,
     career_opportunities,
     // components
+    svgUploadPreview,
     address,
     contentBlocks,
     dynamicBlock,
@@ -120,7 +125,6 @@ export default createSchema({
     figure,
     list,
     listItem,
-    settings,
     seo,
     imageGrid,
     blockquote,

@@ -15,7 +15,8 @@
     "@sanity/desk-tool",
     "autocomplete-tags",
     "dashboard-widget-netlify",
-    "order-documents"
+    "order-documents",
+    "inline-svg"
   ],
   "env": {
     "development": {
