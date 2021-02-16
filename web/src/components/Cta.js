@@ -5,6 +5,18 @@ import slugify from 'slugify'
 
 import RichText from './RichText'
 
+const AddLinkToImage = ({ children, className = '', link }) => {
+  if (!link) return children
+  return (
+    <div className={`${className} relative`}>
+      {children}
+      <a href={link.path} className="absolute top-0 bottom-0 left-0 right-0">
+        <span className="sr">{link.label}</span>
+      </a>
+    </div>
+  )
+}
+
 export default ({
   className = '',
   title,
@@ -65,22 +77,24 @@ export default ({
 
       {aspect === 'auto' ? (
         image && (
-          <Img
+          <AddLinkToImage
+            link={link}
             className={`
-              w-full md-max:mb-b
-              ${imageColSize}
-              ${options && options.swap ? '' : 'lg:order-first'}
-            `}
-            fluid={image.src.asset.fluid}
-            alt={image.alt}
-          />
+            w-full md-max:mb-b
+            ${imageColSize}
+            ${options && options.swap ? '' : 'lg:order-first'}
+          `}
+          >
+            <Img fluid={image.src.asset.fluid} alt={image.alt} />
+          </AddLinkToImage>
         )
       ) : (
-        <div
+        <AddLinkToImage
+          link={link}
           className={`md-max:mb-b relative aspect-w-16 aspect-h-9 
             ${options && options.swap ? '' : 'lg:order-first'}
             ${imageColSize}
-            `}
+          `}
         >
           {image && (
             <Img
@@ -90,7 +104,7 @@ export default ({
               alt={image.alt}
             />
           )}
-        </div>
+        </AddLinkToImage>
       )}
     </section>
   )
