@@ -8,7 +8,7 @@ export const SEO_FIELDS = graphql`
       alt
       src {
         asset {
-          fixed {
+          fixed(width: 1024, height: 512) {
             width
             height
             src

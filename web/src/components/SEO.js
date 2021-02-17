@@ -35,6 +35,7 @@ function SEO({ description, lang, meta, title, image }) {
   )
 
   const metaDescription = description || siteData.seo.description
+  const metaTitle = title || siteData.seo.title
   const defaultTitle = siteData.seo.title
 
   return (
@@ -42,7 +43,7 @@ function SEO({ description, lang, meta, title, image }) {
       htmlAttributes={{
         lang,
       }}
-      title={title}
+      title={metaTitle}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
         {
@@ -51,11 +52,13 @@ function SEO({ description, lang, meta, title, image }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           property: `og:image`,
-          content: image || siteData.seo.image.src.asset.fixed.src,
+          content:
+            (image && image.src.asset.fixed.src) ||
+            siteData.seo.image.src.asset.fixed.src,
         },
         {
           property: `og:description`,
@@ -75,7 +78,7 @@ function SEO({ description, lang, meta, title, image }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           name: `twitter:description`,
