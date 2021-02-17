@@ -50,7 +50,7 @@ export default ({
   return (
     <section
       {...rest}
-      id={slugify(title)}
+      id={title ? slugify(title) : 'cta'}
       className={`cta 
         md:grid md:grid-cols-1 lg:grid-cols-12 mb-f lg:mb-g ${className}
         ${textAlign}
