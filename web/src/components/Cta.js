@@ -6,7 +6,7 @@ import slugify from 'slugify'
 import RichText from './RichText'
 
 const AddLinkToImage = ({ children, className = '', link }) => {
-  if (!link) return children
+  if (!link) return <div className={className}>{children}</div>
   return (
     <div className={`${className} relative`}>
       {children}
