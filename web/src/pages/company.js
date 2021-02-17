@@ -234,10 +234,10 @@ export default ({ location }) => {
                   </div>
                   <div className="flex-1 flex flex-col">
                     <div className="flex-1">
-                      <datetime className="text-steel mb-a block">
+                      <datetime className="text-smoke-dark mb-a block">
                         {article.date}
                       </datetime>
-                      <h1 className="f-b1 text-steel font-light mb-e">
+                      <h1 className="f-b1 text-steel font-light mb-d">
                         {article.title}
                       </h1>
                     </div>
