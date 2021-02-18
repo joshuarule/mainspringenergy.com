@@ -13,7 +13,7 @@ export default {
     {
       name: "date",
       title: "Published Date",
-      type: "date",
+      type: "datetime",
     },
     {
       name: "image",
