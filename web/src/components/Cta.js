@@ -10,9 +10,9 @@ const AddLinkToImage = ({ children, className = '', link }) => {
   return (
     <div className={`${className} relative`}>
       {children}
-      <a href={link.path} className="absolute top-0 bottom-0 left-0 right-0">
+      <Link to={link.path} className="absolute top-0 bottom-0 left-0 right-0">
         <span className="sr">{link.label}</span>
-      </a>
+      </Link>
     </div>
   )
 }
