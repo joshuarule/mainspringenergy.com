@@ -57,6 +57,7 @@
     "start": "npm run dev",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "dev-ssr": "GATSBY_EXPERIMENTAL_FAST_DEV=true gatsby develop",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
