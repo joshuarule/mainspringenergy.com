@@ -49,7 +49,7 @@ module.exports = {
         projectId: `m8z36hin`,
         dataset: `production`,
         token: process.env.SANITY_TOKEN,
-        watchMode: true,
+        watchMode: process.env.NODE_ENV === 'development' ? true : false,
       },
     },
     {
