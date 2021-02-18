@@ -95,7 +95,7 @@ export const LIST_FIELDS = graphql`
   }
 `
 
-export const SEO_FIELDS = graphql`
+export const CONTENT_BLOCKS = graphql`
   fragment blocks on SanityContentBlocks {
     blocks {
       ... on SanityBlockquote {
