@@ -62,12 +62,31 @@
   }
 }
 
+.slider--diamond,
+.slick-slide {
+  height: 100vw;
+  width: 100vw;
+
+  @media only screen and (min-width: 600px) and (max-width: 767px) {
+    height: 80vw;
+    width: 80vw;
+  }
+
+  @screen md {
+    height: 93vh;
+    width: 93vh;
+  }
+
+  @screen lg {
+    height: 90vh;
+    width: 90vh;
+  }
+}
+
 .slider--diamond {
   right: -12vw;
   top: -3vh;
   position: absolute;
-  height: 100vw;
-  width: 100vw;
 
   .slick-slider {
     transform: translateY(-50%) rotate(-45deg);
@@ -77,23 +96,17 @@
   @media only screen and (min-width: 600px) and (max-width: 767px) {
     top: -8vh;
     right: -4vh;
-    height: 80vw;
-    width: 80vw;
   }
 
   @screen md {
     left: 15vh;
     right: auto;
     top: -11vh;
-    height: 93vh;
-    width: 93vh;
   }
 
   @screen lg {
     left: auto;
     right: -1vh;
     top: -17vh;
-    height: 90vh;
-    width: 90vh;
   }
 }
