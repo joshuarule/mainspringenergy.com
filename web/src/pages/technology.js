@@ -176,7 +176,7 @@ export default ({ location }) => {
         }`}
         onLoad={() => techImageLoaded('second')}
       />
-      <div className="bg-navy pt-f pb-f mb-e theme--dark">
+      <div className="bg-navy relative pt-f pb-f mb-e theme--dark">
         <div className="container">
           <div className="md:grid md:grid-cols-2 lg:grid-cols-3">
             <div className="grid-span-1 md-max:mb-e">
