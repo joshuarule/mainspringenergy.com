@@ -429,8 +429,8 @@ const Profile = ({ person, onClose }) => {
           <p className="mb-e">{person.title}</p>
           <RichText content={person._rawText} className="f-b1" />
         </div>
-        <div className="absolute top-0 right-0 lg:relative col-span-2">
-          <button className="absolute -top-d left-0 p-d" onClick={onClose}>
+        <div className="absolute top-0 right-0 md-max:h-20 md-max:w-20 lg:relative col-span-2">
+          <button className="absolute lg:-top-d left-0 p-d" onClick={onClose}>
             <Icon name="close" className="text-steel" />
             <span className="sr">Close</span>
           </button>
