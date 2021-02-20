@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
 import Layout from '../components/Layout'
+import MotionBar from '../components/MotionBar'
 import SEO from '../components/SEO'
 import ContentBlocks from '../components/ContentBlocks'
 import SectionTitle from '../components/SectionTitle'
@@ -161,6 +162,7 @@ export default ({ location }) => {
   }, [activeProfile, profileRef])
 
   // creates object of arrays for people
+  // this could be faster? useMemo
   const peopleByCategory = {}
   people.nodes.forEach(person =>
     person.personCategories.forEach(category => {
@@ -174,21 +176,18 @@ export default ({ location }) => {
   const [activeFilter, setActiveFilter] = useState(
     Object.keys(peopleByCategory)[0]
   )
+  // delay
+  // ramp fast
 
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
-      <div className="container">
-        <div className="mb-g mt-f pt-f">
-          {hero.heroImage && (
-            <div className="mb-e lg:mb-f lg:mx-f`">
-              <Img
-                className="mt-g"
-                fluid={hero.heroImage.src.asset.fluid}
-                alt={hero.heroImage.alt}
-              />
-            </div>
-          )}
+      <div className="container pt-e">
+        <div className="mb-g mt-g pt-g">
+          <div className="mb-e lg:mb-f lg:mx-f relative">
+            <MotionBar />
+            {/* <MotionBar x={useTransform(x, [0, 1000], [0, 2000])} /> */}
+          </div>
           <div className={`mb-e lg:mb-0 lg:grid lg:grid-cols-12`}>
             <div className="col-start-4 col-span-8">
               <div className="max-prose-50 pr-g">
