@@ -182,8 +182,8 @@ export default ({ location }) => {
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
-      <div className="container pt-e">
-        <div className="mb-g mt-g pt-g">
+      <div className="container lg:pt-e">
+        <div className="mb-g mt-f pt-f">
           <div className="mb-e lg:mb-f lg:mx-f relative">
             <MotionBar />
             {/* <MotionBar x={useTransform(x, [0, 1000], [0, 2000])} /> */}

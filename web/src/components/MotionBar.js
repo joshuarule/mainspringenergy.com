@@ -40,6 +40,7 @@ export default function MotionBar() {
       viewBox="0 0 1047 228"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
+      style={{ width: '100%' }}
     >
       <title>Company Animation</title>
       <defs>
