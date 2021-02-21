@@ -28,7 +28,7 @@ const Layout = ({ children, className = null, navTheme, location }) => {
         }
       `}
       render={({ sanityInfoBar: infoBar }) => {
-        const showInfoBar = isHome && infoBar.visible
+        const showInfoBar = isHome && infoBar.visible === true
         const hasLink = infoBar.link && infoBar.link.path
         return (
           <div className={`overflow-x-hidden page-${cleanedPathname}`}>
