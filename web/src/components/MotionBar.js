@@ -7,6 +7,7 @@ import {
   useMotionValue,
   useSpring,
 } from 'framer-motion'
+import { useCurrentBreakpoint } from '../hooks/useCurrentBreakpoint'
 
 export default function MotionBar() {
   const { scrollY, scrollYProgress } = useViewportScroll()
@@ -32,6 +33,11 @@ export default function MotionBar() {
     }
   }, [scrollY])
 
+  const isMobile = useCurrentBreakpoint().value === 'small'
+
+  const barSize = isMobile ? 24 : 12
+  const mobileIncreaseSize = 24 - 12
+
   // each line is an svg
   return (
     <svg
@@ -45,49 +51,70 @@ export default function MotionBar() {
       <title>Company Animation</title>
       <defs>
         <clipPath id="mask1">
-          <rect x="267" y="0" width="780" height="12" />
+          <rect x="267" y={`0`} width="780" height={barSize} />
         </clipPath>
         <clipPath id="mask2">
-          <rect x="160" y="72" width="780" height="12" />
+          <rect x="160" y="72" width="780" height={barSize} />
         </clipPath>
         <clipPath id="mask3">
-          <rect x="80" y="145" width="780" height="12" />
+          <rect x="80" y="145" width="780" height={barSize} />
         </clipPath>
         <clipPath id="mask4">
-          <rect x="0" y="216" width="780" height="12" />
+          <rect x="0" y="216" width="780" height={barSize} />
         </clipPath>
       </defs>
-      <g clipPath={'url(#mask1)'}>
-        <rect fill="#2F758F" x="267" y="0" width="780" height="12"></rect>
+      <g
+        clipPath={'url(#mask1)'}
+        // style={{ transform: [{ translateY: '-24px' }] }}
+        transform={isMobile ? `translate(0, -${barSize + barSize / 2})` : ''}
+      >
+        <rect fill="#2F758F" x="267" y="0" width="780" height={barSize}></rect>
         <motion.path
           style={{ translateX: x1 }}
-          d="M570,0 C569.25323,0 578.782084,0 598.586563,0 C618.391042,0 638.195521,0 658,0 L658,12 L570,12 L570,0 Z"
+          d={`M570,0 C569.25323,0 578.782084,0 598.586563,0 C618.391042,0 638.195521,0 658,0 L658,${
+            12 + mobileIncreaseSize
+          } L570,${12 + mobileIncreaseSize}L570,0 Z`}
           id="Rectangle"
           fill="#E5D3C3"
         ></motion.path>
       </g>
-      <g clipPath={'url(#mask2)'}>
-        <rect fill="#2F758F" x="160" y="72" width="780" height="12"></rect>
+      <g
+        clipPath={'url(#mask2)'}
+        transform={isMobile ? `translate(0, -${barSize / 2})` : ''}
+      >
+        <rect fill="#2F758F" x="160" y="72" width="780" height={barSize}></rect>
         <motion.path
           style={{ translateX: x2 }}
-          d="M700,72 C701.464762,72 711.730794,72 730.798096,72 C749.865397,72 768.932699,72 788,72 L788,84 L700,84 L700,72 Z"
+          d={`M700,72 C701.464762,72 711.730794,72 730.798096,72 C749.865397,72 768.932699,72 788,72 L788,${
+            84 + mobileIncreaseSize
+          } L700,${84 + mobileIncreaseSize} L700,72 Z`}
           fill="#60B350"
         ></motion.path>
       </g>
-      <g clipPath={'url(#mask3)'}>
-        <rect fill="#2F758F" x="80" y="145" width="780" height="12"></rect>
+      <g
+        clipPath={'url(#mask3)'}
+        transform={isMobile ? `translate(0, ${barSize / 2})` : ''}
+      >
+        <rect fill="#2F758F" x="80" y="145" width="780" height={barSize}></rect>
         <motion.path
           style={{ translateX: x3 }}
-          d="M482,145 C484.391879,145 494.966949,145 513.725212,145 C532.483475,145 551.241737,145 570,145 L570,157 L482,157 L482,145 Z"
+          d={`M482,145 C484.391879,145 494.966949,145 513.725212,145 C532.483475,145 551.241737,145 570,145 L570,${
+            157 + mobileIncreaseSize
+          } L482,${157 + mobileIncreaseSize} L482,145 Z`}
           id="Rectangle-Copy-12"
           fill="#FFE224"
         ></motion.path>
       </g>
-      <g clipPath={'url(#mask4)'}>
-        <rect fill="#2F758F" x="0" y="216" width="780" height="12"></rect>
+      <g
+        clipPath={'url(#mask4)'}
+        transform={isMobile ? `translate(0, ${barSize + barSize / 2})` : ''}
+      >
+        <rect fill="#2F758F" x="0" y="216" width="780" height={barSize}></rect>
         <motion.path
           style={{ translateX: x4 }}
-          d="M281,216 C287.465586,216 299.39856,216 316.79892,216 C334.19928,216 351.59964,216 369,216 L369,228 L281,228 L281,216 Z"
+          d={`M281,216 C287.465586,216 299.39856,216 316.79892,216 C334.19928,216 351.59964,216 369,216 L369,${
+            228 + mobileIncreaseSize
+          } L281,${228 + mobileIncreaseSize} L281,216 Z`}
           id="Rectangle-Copy-13"
           fill="#B2E7F6"
         ></motion.path>

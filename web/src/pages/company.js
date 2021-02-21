@@ -190,7 +190,7 @@ export default ({ location }) => {
           </div>
           <div className={`mb-e lg:mb-0 lg:grid lg:grid-cols-12`}>
             <div className="col-start-4 col-span-8">
-              <div className="max-prose-50 pr-g">
+              <div className="max-prose-50 lg:pr-g">
                 <h2 className="f-h2 mb-e">{hero.title}</h2>
               </div>
               <div className="lg:grid lg:grid-cols-2 text-steel">
