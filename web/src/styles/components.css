@@ -1,5 +1,6 @@
 @import './typography.css';
 @import './components/header.css';
+@import './components/infoBar.css';
 @import './components/gridImage.css';
 @import './components/slider.css';
 @import './components/inputs.css';

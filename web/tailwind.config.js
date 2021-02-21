@@ -70,6 +70,7 @@ module.exports = {
       seaGreen: 'var(--c-seaGreen)',
       seaGreenDark: 'var(--c-seaGreen--dark)',
       freshBlue: 'var(--c-freshBlue)',
+      freshBlueDark: 'var(--c-freshBlue--dark)',
       green: 'var(--c-green)',
       yellow: 'var(--c-yellow)',
       orange: 'var(--c-orange)',
