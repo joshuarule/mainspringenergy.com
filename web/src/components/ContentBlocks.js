@@ -9,6 +9,7 @@ import Figure from './Figure'
 import { LinkFull } from './Link'
 import RichText from './RichText'
 import DynamicBlock from './DynamicBlock'
+import Feature2ColumnText from './Feature2ColumnText'
 import List from './List'
 
 export default function ContentBlocks({ blocks }) {
@@ -27,6 +28,14 @@ export default function ContentBlocks({ blocks }) {
             )
           case 'cta':
             return <Cta key={`block-${i}`} {...block} />
+          case 'feature2ColumnText':
+            return (
+              <Feature2ColumnText
+                key={`block-${i}`}
+                {...block}
+                className="my-h"
+              />
+            )
           case 'dynamicBlock':
             return DynamicBlock[block.name]()
           case 'figure':

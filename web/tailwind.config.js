@@ -59,6 +59,7 @@ module.exports = {
       e: 'var(--unit-e)',
       f: 'var(--unit-f)',
       g: 'var(--unit-g)',
+      h: 'var(--unit-h)',
     },
     colors: {
       transparent: 'transparent',

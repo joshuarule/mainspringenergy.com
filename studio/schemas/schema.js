@@ -46,6 +46,7 @@ import role from "./documents/role";
 import articles from "./documents/articles";
 // components
 import contentBlocks from "./components/contentBlocks.js";
+import feature_2ColumnText from "./components/feature_2colText.js";
 import cta from "./components/callToAction.js";
 import hero from "./components/hero.js";
 import gallery from "./components/gallery.js";
@@ -122,6 +123,7 @@ export default createSchema({
     cta_options,
     externalLink,
     hero,
+    feature_2ColumnText,
     gallery,
     video,
     figure,

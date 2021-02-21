@@ -1,7 +1,7 @@
 :root {
   --bp-sm: 320px;
   --bp-md: 768px;
-  --bp-lg: 1280px;
+  --bp-lg: 1240px;
 
   --gap: 32px;
 
@@ -13,6 +13,7 @@
   --unit-e: calc(var(--unit-1) * 11);
   --unit-f: calc(var(--unit-1) * 21);
   --unit-g: calc(var(--unit-1) * 21);
+  --unit-h: calc(var(--unit-1) * 21);
 
   /* Colors */
   --c-brand: #f53d00;
@@ -67,15 +68,17 @@
   --bg-default: var(--c-porcelain);
 }
 
-@media (min-width: var(--bp-md)) {
+@media (min-width: 768px) {
   :root {
     --unit-g: 108px;
+    --unit-h: 120px;
   }
 }
 
-@media (min-width: var(--bp-lg)) {
+@media (min-width: 1240px) {
   :root {
     --unit-g: 120px;
+    --unit-h: 140px;
 
     --f-h1--size: 40px;
     --f-h1--lineHeight: 46px;

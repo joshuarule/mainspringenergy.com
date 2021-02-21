@@ -109,6 +109,22 @@ export const CONTENT_BLOCKS = graphql`
       ... on SanityCta {
         ...ctaFields
       }
+      ... on SanityFeature2ColumnText {
+        _type
+        _key
+        textCol1
+        textCol2
+        title
+        image {
+          src {
+            asset {
+              fluid(maxWidth: 2000) {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
+        }
+      }
       ... on SanityRichTextObj {
         _type
         _rawRichText

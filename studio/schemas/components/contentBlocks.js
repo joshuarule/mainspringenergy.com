@@ -23,6 +23,7 @@ export default {
         { type: "list" },
         { type: "blockquote", icon: FaQuoteRight },
         { type: "textColumns" },
+        { type: "feature2ColumnText" },
         { type: "link", title: "Link - Full Width", icon: BiLinkAlt },
         { type: "richTextObj", icon: MdTextFields },
         { type: "dynamicBlock" },
