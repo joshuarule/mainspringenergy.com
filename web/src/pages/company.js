@@ -219,23 +219,26 @@ export default ({ location }) => {
           {articles && (
             <div className="lg:grid grid-cols-2">
               {articles.nodes.map(article => (
-                <aside className="mb-f md:mb-e md:flex">
+                <aside className="mb-f md:mb-e md:flex group">
                   <div className="flex-1">
-                    <div
-                      className={`md-max:mb-d md:mr-d relative aspect-w-16 aspect-h-9`}
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href={article.externalLink.url}
+                      className={`md-max:mb-d md:mr-d block relative aspect-w-16 aspect-h-9`}
                     >
                       <Img
                         style={{ position: 'absolute' }}
                         fluid={article.image.src.asset.fluid}
                         alt={article.image.alt}
                       />
-                    </div>
+                    </a>
                   </div>
                   <div className="flex-1 flex flex-col">
                     <div className="flex-1">
-                      <datetime className="text-smoke-dark mb-a block">
+                      <span className="text-iron mb-a block">
                         {article.date}
-                      </datetime>
+                      </span>
                       <h1 className="f-b1 text-steel font-light mb-d">
                         {article.title}
                       </h1>
@@ -243,7 +246,7 @@ export default ({ location }) => {
                     <LinkExtPrimary
                       href={article.externalLink.url}
                       newTab={true}
-                      className="text-seaGreen hover:text-seaGreenDark font-medium"
+                      className="text-seaGreen group-hover:text-seaGreenDark font-medium"
                     >
                       {article.externalLink.label}
                     </LinkExtPrimary>
