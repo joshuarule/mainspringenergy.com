@@ -108,7 +108,7 @@ export default () => {
               {socialNetworks
                 .filter(network => network.visible)
                 .map(network => (
-                  <li>
+                  <li key={network.title}>
                     <a
                       className="text-steel mb-b block hover:text-seaGreen flex items-center"
                       href={network.url}

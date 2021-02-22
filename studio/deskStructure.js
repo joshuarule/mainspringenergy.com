@@ -73,7 +73,6 @@ export default () =>
             "roles",
             "role",
             "company",
-            "jobs",
             "settings",
             "infoBar",
             "terms",

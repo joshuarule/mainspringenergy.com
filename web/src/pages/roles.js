@@ -20,7 +20,6 @@ export default ({ location }) => {
 
   useEffect(() => {
     let jobsData
-    // if (process.env.NODE_ENV !== 'development') {
     fetch('/.netlify/functions/jobs')
       .then(response => response.json())
       .then(data => {
@@ -28,26 +27,12 @@ export default ({ location }) => {
         const parsedCategories = parseCategories(jobsData)
         setCategories(parsedCategories)
       })
-    // }
   }, [])
 
   const {
     sanityRoles: { seo, body },
-    allJobsMockJson,
   } = useStaticQuery(graphql`
     query rolesQuery {
-      allJobsMockJson {
-        nodes {
-          newton_department
-          title
-          newton_jobId
-          link {
-            _ {
-              href
-            }
-          }
-        }
-      }
       sanityRoles {
         body {
           _rawRichText

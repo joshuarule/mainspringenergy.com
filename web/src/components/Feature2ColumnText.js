@@ -23,7 +23,7 @@ export default function TextColumns({
           }}
         />
       </div>
-      <div class="lg:col-span-2">
+      <div className="lg:col-span-2">
         <h2 className="f-h3 mb-e">{title}</h2>
         <div className="lg:grid lg:grid-cols-2">
           <p className="text-steel f-b1 md-max:mb-d">{textCol1}</p>

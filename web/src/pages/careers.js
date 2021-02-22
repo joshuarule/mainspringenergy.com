@@ -16,21 +16,8 @@ import ImageGrid from '../components/ImageGrid'
 export default ({ location }) => {
   const {
     sanityCareers: { seo, body, hero, secondarySection },
-    allJobsMockJson,
   } = useStaticQuery(graphql`
     query CareersQuery {
-      allJobsMockJson {
-        nodes {
-          newton_department
-          title
-          newton_jobId
-          link {
-            _ {
-              href
-            }
-          }
-        }
-      }
       sanityCareers {
         seo {
           ...seoFields
@@ -79,7 +66,6 @@ export default ({ location }) => {
 
   useEffect(() => {
     let jobsData
-    // if (process.env.NODE_ENV !== 'development') {
     fetch('/.netlify/functions/jobs')
       .then(response => response.json())
       .then(data => {
@@ -88,7 +74,6 @@ export default ({ location }) => {
         const parsedCategories = parseCategories(jobsData)
         setCategories(parsedCategories)
       })
-    // }
   }, [])
 
   return (

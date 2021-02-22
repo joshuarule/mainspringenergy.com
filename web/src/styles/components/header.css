@@ -119,7 +119,8 @@
     background-color: var(--c-white);
   }
 
-  .menu-is-open & {
+  .menu-is-open &,
+  .headroom--pinned & {
     background-color: var(--c-charcoal);
   }
 }
@@ -254,6 +255,7 @@
     color: var(--c-steel);
   }
 
+  /* purgecss start ignore */
   .theme-dark & {
     color: var(--c-white);
 
@@ -262,7 +264,6 @@
       color: #e8dacd;
     }
   }
-  /* purgecss start ignore */
   .headroom--scrolled & {
     color: var(--c-charcoal);
 

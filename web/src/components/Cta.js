@@ -5,7 +5,6 @@ import Img from 'gatsby-image'
 import slugify from 'slugify'
 
 import RichText from './RichText'
-import GatsbyImage from 'gatsby-image'
 
 const AddLinkToImage = ({ children, className = '', link }) => {
   if (!link) return <div className={className}>{children}</div>

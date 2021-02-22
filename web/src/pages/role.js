@@ -28,14 +28,6 @@ export default ({ location }) => {
       '//recruitingbypaycor.com/career/iframe.action?clientId=8a78858b5e748ace015e7d8826af113e'
     iframeRef.current.appendChild(script)
   }, [])
-
-  let id
-  const searchParams = new URLSearchParams(location.search)
-  if (searchParams) {
-    id = searchParams.get('id')
-  } else {
-    return '404'
-  }
   return (
     <Layout location={location}>
       {seo && (
