@@ -15,11 +15,12 @@ export default function MotionBar() {
   const x2 = useMotionValue(0)
   const x3 = useMotionValue(0)
   const x4 = useMotionValue(0)
+  const isMobile = useCurrentBreakpoint().value === 'small'
 
   useEffect(() => {
     function updateVelocity() {
       const currentScrollY = scrollY.get()
-      const currentScrollYProgress = scrollYProgress.get()
+      const currentScrollYProgress = scrollYProgress.get() * (isMobile ? 4 : 1)
       x1.set(currentScrollY * (currentScrollYProgress * 22))
       x2.set(currentScrollY * (currentScrollYProgress * 15))
       x3.set(currentScrollY * (currentScrollYProgress * 20))
@@ -32,8 +33,6 @@ export default function MotionBar() {
       unsubscribeScroll()
     }
   }, [scrollY])
-
-  const isMobile = useCurrentBreakpoint().value === 'small'
 
   const barSize = isMobile ? 24 : 12
   const mobileIncreaseSize = 24 - 12
