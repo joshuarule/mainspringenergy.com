@@ -40,9 +40,8 @@ const Layout = ({ children, className = null, navTheme, location }) => {
                     : ''
                 }`}
               >
-                <div className="container flex-1 font-regular my-c">
-                  {infoBar.title}
-                  {hasLink ? <span className="inline-block ml-c"></span> : ''}
+                <div className="container flex-1 font-regular my-c ">
+                  <span className="mr-c">{infoBar.title}</span>
                   {hasLink && (
                     <>
                       <ParseLink

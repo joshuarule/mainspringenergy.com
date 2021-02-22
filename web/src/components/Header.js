@@ -1,11 +1,5 @@
 import { Helmet } from 'react-helmet'
-import React, {
-  useState,
-  // useLayoutEffect,
-  useCallback,
-  useEffect,
-  useRef,
-} from 'react'
+import React, { useState, useCallback, useEffect, useRef } from 'react'
 import { Link } from 'gatsby'
 
 import { useCurrentBreakpoint } from '../hooks/useCurrentBreakpoint'
