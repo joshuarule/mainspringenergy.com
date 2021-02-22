@@ -84,11 +84,11 @@ export default ({ location }) => {
                 {currentJobs.map((job, i) => {
                   const parts = job.url.split('/')
                   return (
-                    <li
-                      key={`job-${i}`}
-                      className="f-b1 text-seaGreen hover:text-seaGreenDark font-medium"
-                    >
-                      <Link to={`/role/${parts[parts.length - 1]}`}>
+                    <li key={`job-${i}`} className="f-b1 font-medium">
+                      <Link
+                        to={`/role/${parts[parts.length - 1]}`}
+                        className="text-seaGreen hover:text-seaGreenDark pb-d"
+                      >
                         {job.title}
                       </Link>
                     </li>
