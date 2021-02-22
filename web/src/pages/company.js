@@ -18,7 +18,7 @@ export default ({ location }) => {
     types,
     articles,
     sanityCompany: { seo, hero, body, investors },
-    sanitySettings: { map, satellite, email, address },
+    sanitySettings: { map, satellite, email, address, mapsLink },
   } = useStaticQuery(graphql`
     query CompanyQuery {
       types: allSanityPersonTypes(sort: { fields: order }) {
@@ -62,6 +62,7 @@ export default ({ location }) => {
           street2
           zip
         }
+        mapsLink
         map {
           alt
           src {
@@ -384,14 +385,19 @@ export default ({ location }) => {
             </p>
           </a>
         </div>
-        <div className="lg:col-span-2 md:grid md:grid-cols-2 md:gap-c">
+        <a
+          href={mapsLink}
+          target="_blank"
+          rel="noreferrer"
+          className="lg:col-span-2 md:grid md:grid-cols-2 md:gap-c"
+        >
           <Img
             fluid={map.src.asset.fluid}
             alt={map.alt}
             className="sm-only:mb-d"
           />
           <Img fluid={satellite.src.asset.fluid} alt={satellite.alt} />
-        </div>
+        </a>
       </div>
     </Layout>
   )

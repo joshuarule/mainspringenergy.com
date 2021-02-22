@@ -28,6 +28,11 @@ export default {
       placeholder: "+1 555-555-5555",
     },
     {
+      name: "mapsLink",
+      title: "Maps Link",
+      type: "url",
+    },
+    {
       name: "map",
       title: "Map Image",
       type: "figure",
