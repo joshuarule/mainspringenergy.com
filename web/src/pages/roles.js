@@ -87,7 +87,7 @@ export default ({ location }) => {
                     <li key={`job-${i}`} className="f-b1 font-medium">
                       <Link
                         to={`/role/${parts[parts.length - 1]}`}
-                        className="text-seaGreen hover:text-seaGreenDark pb-d"
+                        className="text-seaGreen hover:text-seaGreenDark pb-c block"
                       >
                         {job.title}
                       </Link>
