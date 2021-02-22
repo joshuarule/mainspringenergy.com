@@ -63,29 +63,6 @@ export const solutions_specs_media = {
   ],
 };
 
-export const solutions_downloads = {
-  name: "solutions_downloads",
-  title: "Downloads",
-  type: "object",
-  options: {
-    collapsible: true,
-    collapsed: true,
-  },
-  fields: [
-    {
-      name: "title",
-      title: "Title",
-      type: "string",
-    },
-    {
-      name: "items",
-      title: "Downloads",
-      type: "array",
-      of: [{ type: "whitePaper" }],
-    },
-  ],
-};
-
 export const solutions_primary = {
   name: "solutions_primary",
   title: "Primary Section",
@@ -119,5 +96,5 @@ export const solutions_form = {
   options: {
     collapsible: true,
     collapsed: true,
-  }, 
+  },
 };

@@ -41,7 +41,7 @@ export default {
     {
       name: "solutions_downloads",
       title: "Downloads",
-      type: "solutions_downloads",
+      type: "downloads",
     },
     {
       name: "solutions_form",

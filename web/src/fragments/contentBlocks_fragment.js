@@ -75,6 +75,35 @@ export const CTA_FIELDS = graphql`
   }
 `
 
+export const DOWNLOADS_FIELDS = graphql`
+  fragment downloadsFields on SanityDownloads {
+    title
+    items {
+      description
+      subtitle
+      title
+      image {
+        alt
+        src {
+          asset {
+            fluid(maxWidth: 1600) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+      }
+      src {
+        src {
+          asset {
+            originalFilename
+            url
+          }
+        }
+      }
+    }
+  }
+`
+
 export const LIST_FIELDS = graphql`
   fragment listFields on SanityListItem {
     title

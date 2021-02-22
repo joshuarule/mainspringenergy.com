@@ -1,12 +1,5 @@
 import React, { useEffect } from 'react'
-import {
-  motion,
-  useTransform,
-  transform,
-  useViewportScroll,
-  useMotionValue,
-  useSpring,
-} from 'framer-motion'
+import { motion, useViewportScroll, useMotionValue } from 'framer-motion'
 import { useCurrentBreakpoint } from '../hooks/useCurrentBreakpoint'
 
 export default function MotionBar() {

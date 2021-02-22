@@ -12,7 +12,7 @@ export default function TextColumns({
     <section
       className={`feature2ColumnText grid md:grid-cols-2 lg:grid-cols-3 ${className}`}
     >
-      <div className="flex md:pr-d">
+      <div className="flex sm-only:mb-e md:pr-d">
         <Img
           className="w-full h-full"
           fluid={image.src.asset.fluid}

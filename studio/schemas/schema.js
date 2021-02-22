@@ -17,7 +17,6 @@ import solutions from "./documents/solutions";
 import {
   solutions_specs,
   solutions_specs_media,
-  solutions_downloads,
   solutions_primary,
   solutions_form,
 } from "./documents/solutions/components.js";
@@ -77,6 +76,7 @@ import imageBlock_options from "./components/imageBlock_options.js";
 import blockquote_options from "./components/blockquote_options.js";
 import heroRichText from "./components/heroRichText.js";
 import externalLink from "./components/externalLink.js";
+import downloads from "./components/downloads.js";
 
 export default createSchema({
   name: "default",
@@ -98,7 +98,6 @@ export default createSchema({
     settings_socialNetwork,
     solutions,
     solutions_specs,
-    solutions_downloads,
     solutions_specs_media,
     solutions_primary,
     solutions_form,
@@ -121,6 +120,7 @@ export default createSchema({
     imageBlock_options,
     cta,
     cta_options,
+    downloads,
     externalLink,
     hero,
     feature_2ColumnText,

@@ -87,30 +87,7 @@ export default ({ location }) => {
           }
         }
         solutions_downloads {
-          title
-          items {
-            description
-            subtitle
-            title
-            image {
-              alt
-              src {
-                asset {
-                  fluid(maxWidth: 1600) {
-                    ...GatsbySanityImageFluid
-                  }
-                }
-              }
-            }
-            src {
-              src {
-                asset {
-                  originalFilename
-                  url
-                }
-              }
-            }
-          }
+          ...downloadsFields
         }
         solutions_form {
           title

@@ -33,5 +33,10 @@ export default {
       title: "Secondary Section",
       type: "technology_secondarySection",
     },
+    {
+      name: "technology_downloads",
+      title: "Downloads",
+      type: "downloads",
+    },
   ],
 };
