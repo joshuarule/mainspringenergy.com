@@ -299,13 +299,15 @@ select,
   word-wrap: normal;
 }
 
-.theme--dark {
+.theme--dark,
+.theme--dark .richText {
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  .richText--title {
     color: var(--c-white);
   }
   p,

@@ -5,4 +5,8 @@
   .textColumn > h3 {
     color: var(--c-seaGreen);
   }
+
+  .theme--dark .cta {
+    @apply my-h;
+  }
 }

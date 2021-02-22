@@ -139,7 +139,7 @@ export default ({ location }) => {
       </div>
 
       {/* solutions_primary */}
-      <div className="bg-navy py-e theme--dark mb-e">
+      <div className="bg-navy pt-e pb-a theme--dark mb-e">
         <div className="container">
           <SectionTitle {...solutions_primary.title} className="mt-0 mb-e" />
           <ContentBlocks blocks={solutions_primary.body.blocks} />
