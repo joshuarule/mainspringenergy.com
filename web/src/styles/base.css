@@ -201,7 +201,7 @@
     grid-column-gap: var(--gap);
   }
 
-  .richText {
+  .richText:not(.richText-title) {
     h1,
     h2,
     h3,
@@ -214,6 +214,7 @@
         margin-bottom: 0;
       }
     }
+
     p,
     ul,
     ol {
@@ -224,6 +225,7 @@
       @apply mt-f;
       @apply mb-e;
     }
+
     a {
       @apply font-medium;
     }

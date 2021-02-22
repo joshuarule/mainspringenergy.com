@@ -22,6 +22,7 @@ const AddLinkToImage = ({ children, className = '', link }) => {
 export default ({
   className = '',
   title,
+  _rawTitle,
   image,
   body,
   _rawBody,
@@ -67,7 +68,14 @@ export default ({
         `}
       >
         <div className="md:max-w-prose lg:max-w-prose-50">
-          <h2 className="f-h3 mb-e">{title}</h2>
+          {/* <h2 className="f-h3 mb-e">{title}</h2> */}
+          {body && (
+            <RichText
+              content={_rawTitle}
+              className="richText-title f-h3 font-heavy text-black mb-e"
+            />
+          )}
+          {/*  */}
           {body && <RichText content={_rawBody} className="f-b1" />}
           {link && link.path && (
             <LinkPrimary className="f-b1 font-bold block mt-e" to={link.path}>

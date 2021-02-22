@@ -15,7 +15,18 @@ export default {
     {
       name: "title",
       title: "Title",
-      type: "string",
+      type: "array",
+      of: [
+        {
+          type: "block",
+          styles: [],
+          lists: [],
+          marks: {
+            decorators: [],
+            annotations: [],
+          },
+        },
+      ],
     },
     {
       name: "image",
