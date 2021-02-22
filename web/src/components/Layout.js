@@ -40,7 +40,7 @@ const Layout = ({ children, className = null, navTheme, location }) => {
                     : ''
                 }`}
               >
-                <div className="container flex-1 font-regular my-c ">
+                <div className="container flex-1 font-regular my-c f-b1">
                   <span className="mr-c">{infoBar.title}</span>
                   {hasLink && (
                     <>
@@ -50,7 +50,7 @@ const Layout = ({ children, className = null, navTheme, location }) => {
                       >
                         <span className="sr-only">{infoBar.link.label}</span>
                       </ParseLink>
-                      <span className="text-white font-medium">
+                      <span className="text-white font-bold">
                         {infoBar.link.label}
                         <Icon
                           name="chevron"
