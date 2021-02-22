@@ -343,7 +343,7 @@ export default ({ location }) => {
                 )}
                 <button
                   onClick={() => setActiveProfile({ person, index: i })}
-                  className="absolute block w-full top-0 right-0 bottom-0 left-0"
+                  className="absolute block w-full top-0 right-0 bottom-0 left-0 focus:outline-none"
                 >
                   <span className="sr">view profile</span>
                 </button>
