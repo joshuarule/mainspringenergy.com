@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import ContentBlocks from '../components/ContentBlocks'
 import SectionTitle from '../components/SectionTitle'
-import { LinkExtPrimary, LinkPrimary } from '../components/Link'
+import { LinkPrimary } from '../components/Link'
 import RichText from '../components/RichText'
 import CustomerInquiry from '../components/CustomerInquiry'
 import Downloads from '../components/Downloads'
@@ -109,9 +109,9 @@ export default ({ location }) => {
   return (
     <Layout location={location} className="lg:pt-e">
       <SEO title={seo.title} description={seo.description} image={seo.image} />
-      <div className="container pb-f pt-f">
+      <div className="container pb-f pt-f  ">
         <div
-          className={`lg:grid lg:grid-cols-2 mb-f lg:mb-g mt-g items-center`}
+          className={`lg:grid lg:grid-cols-2 mb-f lg:mb-f mt-f items-center`}
         >
           <div className={`md-max:mb-e relative aspect-w-3 aspect-h-2 `}>
             {hero.gallery && hero.gallery.images[0] && (

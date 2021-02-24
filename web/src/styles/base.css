@@ -1,3 +1,4 @@
+/* purgecss start ignore */
 :root {
   --bp-sm: 320px;
   --bp-md: 768px;
@@ -308,9 +309,10 @@ select,
   h4,
   h5,
   h6,
-  .richText--title {
+  .richText-title {
     color: var(--c-white);
   }
+
   p,
   ul,
   ol {
@@ -325,9 +327,13 @@ select,
       color: var(--c-seaGreen--dark);
     }
   }
+  &.richText-title p {
+    color: var(--c-white);
+  }
 
   /* changes any border color to seaGreen */
   [class*='border']:not('border-transparent') {
     border-color: var(--c-seaGreen);
   }
 }
+/* purgecss end ignore */
