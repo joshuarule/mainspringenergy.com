@@ -41,7 +41,7 @@ const Layout = ({ children, className = null, navTheme, location }) => {
                 }`}
               >
                 <div className="container flex-1 font-regular my-c f-b1">
-                  <p className="mr-c f-b1">{infoBar.title}</p>
+                  <span className="mr-c f-b1">{infoBar.title}</span>
                   {hasLink && (
                     <>
                       <ParseLink

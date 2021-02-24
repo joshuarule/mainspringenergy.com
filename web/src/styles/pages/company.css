@@ -1,3 +1,4 @@
+/* purgecss start ignore */
 .page-company {
   .imageGrid .gridImage {
     border: 1px solid var(--c-fog);
@@ -48,3 +49,4 @@
     height: 500px;
   }
 }
+/* purgecss end ignore */
