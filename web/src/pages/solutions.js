@@ -9,6 +9,7 @@ import SectionTitle from '../components/SectionTitle'
 import { LinkExtPrimary, LinkPrimary } from '../components/Link'
 import RichText from '../components/RichText'
 import CustomerInquiry from '../components/CustomerInquiry'
+import Downloads from '../components/Downloads'
 
 export default ({ location }) => {
   const {
@@ -108,7 +109,7 @@ export default ({ location }) => {
   return (
     <Layout location={location} className="lg:pt-e">
       <SEO title={seo.title} description={seo.description} image={seo.image} />
-      <div className="container pb-g pt-g">
+      <div className="container pb-f pt-f">
         <div
           className={`lg:grid lg:grid-cols-2 mb-f lg:mb-g mt-g items-center`}
         >
@@ -201,37 +202,7 @@ export default ({ location }) => {
       {/* solutions_downloads */}
       <div className="container mb-f">
         <SectionTitle title={solutions_downloads.title} />
-        <ul className="md:grid md:grid-cols-2 lg:grid-cols-3">
-          {solutions_downloads.items.map((item, i) => {
-            console.log(item)
-            return (
-              <li key={`download-${i}`} className="mb-f">
-                <div className="lg:grid lg:grid-cols-4">
-                  <div className="lg:col-span-3 mb-d">
-                    <Img
-                      fluid={item.image.src.asset.fluid}
-                      alt={item.image.alt}
-                    />
-                  </div>
-                </div>
-
-                <div className="col-span-4 col-start-1 lg:pr-e">
-                  <h4 className="f-b1 font-bold">{item.title}</h4>
-                  <p className="mb-d f-b1">{item.subtitle}</p>
-                  <p className="f-b1 text-steel mb-d">{item.description}</p>
-                  <LinkExtPrimary
-                    newTab
-                    href={`${item.src.src.asset.url}?dl=${item.src.src.asset.originalFilename}`}
-                    className="f-b1 text-freshBlue hover:text-seaGreen font-medium"
-                    download
-                  >
-                    Download
-                  </LinkExtPrimary>
-                </div>
-              </li>
-            )
-          })}
-        </ul>
+        <Downloads items={solutions_downloads.items} />
       </div>
       <div id="customer-inquiries" className="container mb-g md:mb-f">
         <SectionTitle {...solutions_form} hide_col_1={successfulSubmission} />

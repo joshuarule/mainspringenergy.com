@@ -11,6 +11,7 @@ import Figure from '../components/Figure'
 import { LinkFull, LinkExtPrimary } from '../components/Link'
 import SectionTitle from '../components/SectionTitle'
 import Icon from '../components/Icon'
+import Downloads from '../components/Downloads'
 
 export default ({ location }) => {
   const {
@@ -166,7 +167,7 @@ export default ({ location }) => {
             </div>
           </div>
         </div>
-        <div className="absolute w-full" style={{ bottom: '-1px' }}>
+        <div className="absolute w-full bottom-0">
           <Img
             fluid={heroTop.childImageSharp.fluid}
             className={`techHero-image ${
@@ -233,39 +234,9 @@ export default ({ location }) => {
         <div className="container mb-f">
           <SectionTitle
             title={technology_downloads.title}
-            className="border-t-6 border-brand pt-c"
+            className="border-t-6 border-seaGreen pt-c"
           />
-          <ul className="md:grid md:grid-cols-2 lg:grid-cols-3">
-            {technology_downloads.items.map((item, i) => {
-              console.log(item)
-              return (
-                <li key={`download-${i}`} className="mb-f">
-                  <div className="lg:grid lg:grid-cols-4">
-                    <div className="lg:col-span-3 mb-d">
-                      <Img
-                        fluid={item.image.src.asset.fluid}
-                        alt={item.image.alt}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-span-4 col-start-1 lg:pr-e">
-                    <h4 className="f-b1 font-bold">{item.title}</h4>
-                    <p className="mb-d f-b1">{item.subtitle}</p>
-                    <p className="f-b1 text-steel mb-d">{item.description}</p>
-                    <LinkExtPrimary
-                      newTab
-                      href={`${item.src.src.asset.url}?dl=${item.src.src.asset.originalFilename}`}
-                      className="f-b1 text-freshBlue hover:text-seaGreen font-medium"
-                      download
-                    >
-                      Download
-                    </LinkExtPrimary>
-                  </div>
-                </li>
-              )
-            })}
-          </ul>
+          <Downloads items={technology_downloads.items} />
         </div>
       )}
     </Layout>
