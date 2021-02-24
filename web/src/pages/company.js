@@ -226,7 +226,7 @@ export default ({ location }) => {
                       rel="noreferrer"
                       target="_blank"
                       href={article.externalLink.url}
-                      className={`md-max:mb-d md:mr-d block relative aspect-w-16 aspect-h-9`}
+                      className={`sm-only:mb-d md:mr-d block relative aspect-w-16 aspect-h-9`}
                     >
                       <Img
                         style={{ position: 'absolute' }}
@@ -237,7 +237,7 @@ export default ({ location }) => {
                   </div>
                   <div className="flex-1 flex flex-col">
                     <div className="flex-1">
-                      <span className="text-iron mb-a block">
+                      <span className="text-steel f-b1 mb-a block">
                         {article.date}
                       </span>
                       <h1 className="f-b1 text-steel font-light mb-d">
@@ -288,7 +288,7 @@ export default ({ location }) => {
               ))}
           </ul>
         </nav>
-        <ul className="md:grid md:grid-cols-2 lg:grid-cols-4">
+        <ul className="md:grid md:grid-cols-3 lg:grid-cols-4">
           {activeProfile && (
             <Profile
               person={activeProfile.person}
