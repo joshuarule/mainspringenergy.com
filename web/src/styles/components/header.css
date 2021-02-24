@@ -85,7 +85,6 @@
     max-width: 246px;
   }
 }
-/* purgecss end ignore */
 
 .header-menuButton {
   @extend .button--clean;
@@ -255,7 +254,6 @@
     color: var(--c-steel);
   }
 
-  /* purgecss start ignore */
   .theme-dark & {
     color: var(--c-white);
 
@@ -282,7 +280,6 @@
       color: var(--c-seaGreen);
     }
   }
-  /* purgecss end ignore */
 }
 
 .header-nav-item-icon {
@@ -299,3 +296,5 @@
     margin-right: var(--unit-2);
   }
 }
+
+/* purgecss end ignore */
