@@ -1,3 +1,4 @@
+/* purgecss start ignore */
 .slick-slider {
   position: relative;
 
@@ -111,3 +112,4 @@
     top: -17vh;
   }
 }
+/* purgecss end ignore */
