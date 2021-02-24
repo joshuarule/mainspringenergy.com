@@ -1,3 +1,4 @@
+/* purgecss start ignore */
 .page-home {
   .hero {
     height: 100vh;
@@ -28,3 +29,4 @@
     }
   }
 }
+/* purgecss end ignore */
