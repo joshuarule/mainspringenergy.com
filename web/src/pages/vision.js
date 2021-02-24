@@ -55,7 +55,7 @@ export default ({ location }) => {
       <Hero images={hero.gallery.images} className={'h-screen-50 mb-f'} />
       <div className="container lg:grid lg:grid-cols-12 mb-f">
         <div className="col-start-4 col-span-6">
-          <h2 className="mb-e border-t-6 border-brand pt-c">{title}</h2>
+          <h2 className="mb-e border-t-6 border-seaGreen pt-c">{title}</h2>
           <ContentBlocks blocks={contentBlocks.blocks} />
           {vision_sources && (
             <div className="richText border-t border-smoke pt-2 mt-f f-b2">

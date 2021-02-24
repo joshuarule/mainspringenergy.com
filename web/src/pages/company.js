@@ -272,7 +272,7 @@ export default ({ location }) => {
                   style={{ marginBottom: '-1px' }}
                   className={`mr-e f-b1 border-b-5 pb-a ${
                     activeFilter === type.type
-                      ? 'border-brand'
+                      ? 'border-seaGreen'
                       : 'border-transparent'
                   }`}
                 >

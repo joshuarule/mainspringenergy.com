@@ -62,7 +62,7 @@ export default ({
       <div
         className={`cta-copy
           mb-e md:mb-f lg:mb-0
-          ${options && options.border ? 'border-t-6 border-brand pt-c' : ''}
+          ${options && options.border ? 'border-t-6 border-seaGreen pt-c' : ''}
           ${textColSize}
         `}
       >

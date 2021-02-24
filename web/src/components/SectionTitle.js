@@ -22,7 +22,7 @@ export default function SectionTitle({
         ${options && options.bottomMargin ? 'mb-d' : 'mb-f'}
         ${
           border || (options && options.border)
-            ? `border-t-6 border-brand pt-c`
+            ? `border-t-6 border-seaGreen pt-c`
             : ''
         }
         ${className}
