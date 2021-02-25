@@ -177,8 +177,6 @@ export default ({ location }) => {
   const [activeFilter, setActiveFilter] = useState(
     Object.keys(peopleByCategory)[0]
   )
-  // delay
-  // ramp fast
 
   return (
     <Layout location={location}>
@@ -187,7 +185,6 @@ export default ({ location }) => {
         <div className="mb-g mt-f pt-f">
           <div className="mb-e lg:mb-f lg:mx-f relative">
             <MotionBar />
-            {/* <MotionBar x={useTransform(x, [0, 1000], [0, 2000])} /> */}
           </div>
           <div className={`mb-e lg:mb-0 lg:grid lg:grid-cols-12`}>
             <div className="col-start-4 col-span-8">
@@ -306,6 +303,7 @@ export default ({ location }) => {
                 }%`,
               }
             }
+            const canShowProfile = activeFilter === 'Executive Team'
             return (
               <li
                 className={`person mb-f relative order-${i} group ${
@@ -330,8 +328,20 @@ export default ({ location }) => {
                     </div>
                   </div>
                 </div>
-                <h4 className="group-hover:text-seaGreen">{person.name}</h4>
-                <p className="f-b1 group-hover:text-seaGreen">{person.title}</p>
+                <h4
+                  className={`${
+                    canShowProfile ? 'group-hover:text-seaGreen' : ''
+                  }`}
+                >
+                  {person.name}
+                </h4>
+                <p
+                  className={`f-b1 ${
+                    canShowProfile ? 'group-hover:text-seaGreen' : ''
+                  }`}
+                >
+                  {person.title}
+                </p>
                 {person.externalLink && (
                   <a
                     href={person.externalLink.url}
@@ -345,6 +355,7 @@ export default ({ location }) => {
                 <button
                   onClick={() => setActiveProfile({ person, index: i })}
                   className="absolute block w-full top-0 right-0 bottom-0 left-0 focus:outline-none"
+                  disabled={!canShowProfile}
                 >
                   <span className="sr">view profile</span>
                 </button>

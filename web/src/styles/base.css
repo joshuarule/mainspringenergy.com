@@ -242,6 +242,9 @@
       list-style: decimal;
     }
   }
+  button[disabled] {
+    cursor: default;
+  }
 }
 
 .richText + .imageGrid {
@@ -336,4 +339,5 @@ select,
     border-color: var(--c-seaGreen);
   }
 }
+
 /* purgecss end ignore */

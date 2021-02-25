@@ -13,13 +13,12 @@ const Layout = ({ children, className = null, navTheme, location }) => {
   const pathname = isHome ? 'home' : location.pathname.slice(1)
   const cleanedPathname = pathname.replace(/\//i, '')
   const infoBarRef = useRef()
-  const [infoBarHeight, setInfoBarHeight] = useState(null)
+  const [infoBarHeight, setInfoBarHeight] = useState(0)
   useEffect(() => {
     if (infoBarRef.current) {
       setInfoBarHeight(infoBarRef.current.offsetHeight)
     }
   }, [infoBarRef])
-  console.log(infoBarHeight)
 
   return (
     <StaticQuery
