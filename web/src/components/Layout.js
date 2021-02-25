@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Headroom from 'react-headroom'
 import PropTypes from 'prop-types'
@@ -12,6 +12,14 @@ const Layout = ({ children, className = null, navTheme, location }) => {
   const isHome = location.pathname === '/'
   const pathname = isHome ? 'home' : location.pathname.slice(1)
   const cleanedPathname = pathname.replace(/\//i, '')
+  const infoBarRef = useRef()
+  const [infoBarHeight, setInfoBarHeight] = useState(null)
+  useEffect(() => {
+    if (infoBarRef.current) {
+      setInfoBarHeight(infoBarRef.current.offsetHeight)
+    }
+  }, [infoBarRef])
+  console.log(infoBarHeight)
 
   return (
     <StaticQuery
@@ -30,10 +38,12 @@ const Layout = ({ children, className = null, navTheme, location }) => {
       render={({ sanityInfoBar: infoBar }) => {
         const showInfoBar = isHome && infoBar.visible === true
         const hasLink = infoBar.link && infoBar.link.path
+
         return (
           <div className={`overflow-x-hidden page-${cleanedPathname}`}>
             {showInfoBar && (
               <div
+                ref={infoBarRef}
                 className={`infoBar bg-freshBlue text-white flex items-center relative z-10 transition-colors ${
                   infoBar.link && infoBar.link.path
                     ? 'hover:bg-freshBlueDark'
@@ -65,7 +75,7 @@ const Layout = ({ children, className = null, navTheme, location }) => {
                 </div>
               </div>
             )}
-            <Headroom>
+            <Headroom pinStart={infoBarHeight}>
               <Nav theme={navTheme} />
             </Headroom>
             <main className={`${className}`}>{children}</main>
