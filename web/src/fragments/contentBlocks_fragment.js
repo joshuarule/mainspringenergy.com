@@ -62,6 +62,7 @@ export const CTA_FIELDS = graphql`
       }
     }
     _rawTitle
+    sectionId
     image {
       alt
       src {

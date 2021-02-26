@@ -13,6 +13,12 @@ export default {
       type: "cta_options",
     },
     {
+      name: "sectionId",
+      title: "#SectionHash",
+      type: "string",
+      description: "The value to use for linking to this item on the page",
+    },
+    {
       name: "title",
       title: "Title",
       type: "array",

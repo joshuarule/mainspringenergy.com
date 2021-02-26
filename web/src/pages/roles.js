@@ -66,7 +66,7 @@ export default ({ location }) => {
   return (
     <Layout location={location} className="pt-g">
       <SEO title={seo.title} description={seo.description} image={seo.image} />
-      <div className="container pt-g mt-d md:mt-g mb-g">
+      <div className="container pt-g mt-d md:mt-d mb-g">
         <div className="md:grid md:grid-cols-3">
           <div className="">
             <h3 className="mb-d">Open Roles</h3>

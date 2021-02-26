@@ -28,6 +28,7 @@ export default ({
   link,
   options,
   aspect,
+  sectionId,
   ...rest
 }) => {
   let textAlign = 'items-center'
@@ -52,7 +53,7 @@ export default ({
   return (
     <section
       {...rest}
-      id={title ? slugify(title) : 'cta'}
+      id={sectionId ? slugify(sectionId) : ''}
       className={`cta 
         md:grid md:grid-cols-1 lg:grid-cols-12 mb-f lg:mb-g ${className}
         ${textAlign}
