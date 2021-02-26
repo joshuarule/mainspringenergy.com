@@ -150,13 +150,13 @@ export default ({ location }) => {
       <div className="container">
         <ContentBlocks blocks={body.blocks} />
       </div>
-      <section className="bg-footerBg py-e mb-e" id="specs">
+      <section className="bg-footerBg py-e pb-f mb-e" id="specs">
         <div className="container">
           <div className="mb-e">
             <h1 className="f-h2 mb-e">{solutions_specs.title}</h1>
             <p className="f-b1 font-regular">{solutions_specs.subtitle}</p>
           </div>
-          <div className="lg:grid lg:grid-cols-3 mb-g lg:pb-g text-seaGreen items-center">
+          <div className="lg:grid lg:grid-cols-3 mb-g text-seaGreen items-center">
             <div className="lg:pr-f">
               <h1 className="f-h3 mb-e md:max-w-sm lg:max-w-full">
                 {solutions_specs.solutions_specs_media.title}
