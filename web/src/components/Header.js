@@ -32,14 +32,7 @@ const Header = ({ theme = 'light' }) => {
   // const [dimensions, setDimensions] = useState({})
   const [isMenuOpen, toggleMenuOpen] = useState(false)
   // TODO - connect css and js breakpoint with
-  const isWindowSmall = breakpoint.width < 1240
-
-  // useLayoutEffect(() => {
-  //   const ref = isWindowSmall ? headerBarRef : headerRef
-  //   if (ref.current) {
-  //     setDimensions(ref.current.getBoundingClientRect())
-  //   }
-  // }, [breakpoint, isWindowSmall])
+  const isWindowSmall = breakpoint.width < 1000
 
   const escFunction = useCallback((event, isMenuOpen) => {
     if (event.keyCode === 27 && isMenuOpen) toggleMenuOpen(false)
@@ -57,12 +50,9 @@ const Header = ({ theme = 'light' }) => {
   }, [isMenuOpen, escFunction])
 
   const themeClass = theme === 'light' ? 'theme-light' : 'theme-dark'
-  // console.log(dimensions)
 
   return (
-    <header
-    // style={{ paddingTop: `${dimensions ? `${dimensions.height}px` : ''}` }}
-    >
+    <header>
       <Helmet
         bodyAttributes={{
           class: `${isMenuOpen ? 'menu-is-open' : ''}`,
