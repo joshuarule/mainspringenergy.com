@@ -16,7 +16,9 @@
   .home-cta {
     > div:last-child {
       order: -1;
-      margin-bottom: var(--unit-e);
+      @screen md-max {
+        margin-bottom: var(--unit-e);
+      }
     }
 
     .cta-copy {
