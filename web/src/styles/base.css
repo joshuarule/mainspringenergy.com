@@ -78,7 +78,6 @@
 
 @media (min-width: 1240px) {
   :root {
-    --unit-g: 120px;
     --unit-h: 140px;
 
     --f-h1--size: 40px;
