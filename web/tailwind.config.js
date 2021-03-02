@@ -26,9 +26,9 @@ module.exports = {
       sm: '320px',
       'sm-only': { max: '767px' },
       md: '768px',
-      'md-max': { max: '1239px' },
-      'md-only': { min: '768', max: '1239px' },
-      lg: '1240px',
+      'md-max': { max: '999px' },
+      'md-only': { min: '768', max: '999px' },
+      lg: '1000px',
     },
     spacing: {
       0: 0,
