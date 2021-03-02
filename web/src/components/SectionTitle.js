@@ -49,10 +49,10 @@ export default function SectionTitle({
         )}
       </div>
       {col_1 && !hide_col_1 && (
-        <p className="f-b2 text-steel md-max:mb-d">{col_1}</p>
+        <p className="f-b1 text-steel md-max:mb-d">{col_1}</p>
       )}
       {col_2 && !hide_col_1 && (
-        <p className="f-b2 text-steel md-max:mb-d">{col_2}</p>
+        <p className="f-b1 text-steel md-max:mb-d">{col_2}</p>
       )}
     </div>
   )
