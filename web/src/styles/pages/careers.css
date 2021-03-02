@@ -2,10 +2,11 @@
 .page-careers {
   .hero {
     min-height: 100vh;
-    padding-top: 125vw;
+    padding-top: 105vw;
 
     @screen md {
-      padding-top: 95vw;
+      padding-top: 0;
+      max-height: none;
     }
 
     @screen lg {

@@ -81,7 +81,7 @@ export default ({ location }) => {
       <SEO title={seo.title} description={seo.description} image={seo.image} />
       <div className="relative mb-g lg:mb-0">
         <div className="hero container text-white flex flex-col justify-end">
-          <div className="z-10 md:grid md:grid-cols-12 h-2/3 items-center">
+          <div className="z-10 grid md:grid-cols-12 h-2/3 items-end lg:items-center">
             <div className="md:col-span-8 lg:col-span-5">
               <h1 className="mb-e text-charcoal">{hero.title}</h1>
               <RichText
