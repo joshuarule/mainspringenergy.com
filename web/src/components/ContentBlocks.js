@@ -33,7 +33,7 @@ export default function ContentBlocks({ blocks }) {
               <Feature2ColumnText
                 key={`block-${i}`}
                 {...block}
-                className="my-h"
+                className="my-g"
               />
             )
           case 'dynamicBlock':

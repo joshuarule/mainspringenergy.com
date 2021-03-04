@@ -207,7 +207,7 @@ export default ({ location }) => {
       </div>
 
       {/* Recent News */}
-      <div id="recent-news" className="bg-footerBg pt-f pb-e mb-f">
+      <div id="recent-news" className="bg-footerBg pt-e pb-f mb-e">
         <div className="container">
           <SectionTitle
             title="Recent News"
@@ -255,7 +255,7 @@ export default ({ location }) => {
           )}
         </div>
       </div>
-      <div className="container" ref={profileRef}>
+      <div className="container mb-f" ref={profileRef}>
         <SectionTitle title="Leadership" />
         <nav className="border-b border-smoke my-f">
           <ul className="flex">
@@ -365,7 +365,7 @@ export default ({ location }) => {
         </ul>
       </div>
       <div className="bg-footerBg">
-        <div className="container pt-e pb-g">
+        <div className="container pt-e pb-f">
           <h1 className="mb-e">{investors.title}</h1>
           <ImageGrid {...investors.logos} />
         </div>

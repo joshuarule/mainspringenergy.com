@@ -1,5 +1,7 @@
 import React from 'react'
 import Img from 'gatsby-image'
+import { Link } from 'gatsby'
+import { LinkPrimary } from './Link'
 
 export default function TextColumns({
   textCol1,
@@ -27,7 +29,17 @@ export default function TextColumns({
         <h2 className="f-h3 mb-e">{title}</h2>
         <div className="lg:grid lg:grid-cols-2">
           <p className="text-steel f-b1 md-max:mb-d">{textCol1}</p>
-          {textCol2 && <p className="text-steel f-b1">{textCol2}</p>}
+          {textCol2 && (
+            <div>
+              <p className="text-steel f-b1">{textCol2}</p>
+              <LinkPrimary
+                className="f-b1 font-medium block mt-e"
+                to={'/vision'}
+              >
+                Read Our Vision
+              </LinkPrimary>
+            </div>
+          )}
         </div>
       </div>
     </section>

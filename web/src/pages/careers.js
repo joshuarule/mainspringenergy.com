@@ -79,10 +79,10 @@ export default ({ location }) => {
   return (
     <Layout location={location}>
       <SEO title={seo.title} description={seo.description} image={seo.image} />
-      <div className="relative mb-g lg:mb-0">
+      <div className="relative mb-g md:mb-f lg:mb-0">
         <div className="hero container text-white flex flex-col justify-end">
-          <div className="z-10 grid md:grid-cols-12 h-2/3 items-end lg:items-center">
-            <div className="md:col-span-8 lg:col-span-5">
+          <div className="z-10 grid md:grid-cols-12 h-full items-end">
+            <div className="md:col-span-8 lg:col-span-5 md:mb-e lg:mb-g">
               <h1 className="mb-e text-charcoal">{hero.title}</h1>
               <RichText
                 content={hero.richText._rawRichText}
