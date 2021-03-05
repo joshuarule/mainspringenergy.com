@@ -182,12 +182,12 @@
     @apply font-heavy;
   }
 
-  blockquote p:before {
+  /* blockquote p:before {
     content: '“';
   }
   blockquote p:after {
     content: '”';
-  }
+  } */
 
   address {
     font-style: normal;
