@@ -25,7 +25,7 @@ export default function MotionBar() {
     return () => {
       unsubscribeScroll()
     }
-  }, [scrollY, isMobile])
+  }, [scrollY, isMobile, x1, x2, x3, x4, scrollYProgress])
 
   const barSize = isMobile ? 24 : 12
   const mobileIncreaseSize = 24 - 12
