@@ -16,5 +16,8 @@
   "devDependencies": {
     "@sanity/cli": "^2.1.4",
     "lerna": "^3.13.1"
+  },
+  "dependencies": {
+    "gatsby-plugin-google-tagmanager": "^3.0.0"
   }
 }
