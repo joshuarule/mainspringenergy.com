@@ -7,6 +7,7 @@ export default function Downloads({ items }) {
   return (
     <ul className="md:grid md:grid-cols-2 lg:grid-cols-3">
       {items.map((item, i) => {
+        if (!item?.src?.src) return null
         const downloadLink = `${item.src.src.asset.url}?dl=${item.src.src.asset.originalFilename}`
         return (
           <li key={`download-${i}`} className="mb-f">
